@@ -1,0 +1,6 @@
+PostgreSQL pass:
+salus2026
+
+
+Email: admin@salus.ee
+Parool: admin123
