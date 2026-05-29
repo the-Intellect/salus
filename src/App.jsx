@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext.jsx';
 import Layout from './components/layout/Layout.jsx';
 import LoginPage from './pages/LoginPage.jsx';
+import SettingsPage from './pages/settings/SettingsPage.jsx';
 import ClientsList from './components/clients/ClientsList.jsx';
 import ClientProfile from './components/clients/ClientProfile.jsx';
 import NewClient from './components/clients/NewClient.jsx';
@@ -40,7 +41,7 @@ function AppRoutes() {
               <Route path="/session" element={<SessionPage />} />
               <Route path="/history" element={<Placeholder title="Sageduste ajalugu" />} />
               <Route path="/reports" element={<Placeholder title="Raportid" />} />
-              <Route path="/settings" element={<Placeholder title="Seaded" />} />
+              <Route path="/settings" element={<SettingsPage />} />
             </Routes>
           </Layout>
         </ProtectedRoute>
