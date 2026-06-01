@@ -1,5 +1,3 @@
-// Kõik API päringud serverile
-
 const BASE = 'http://localhost:3001/api';
 
 function getToken() {
@@ -10,13 +8,11 @@ async function request(method, path, body) {
   const headers = { 'Content-Type': 'application/json' };
   const token = getToken();
   if (token) headers['Authorization'] = `Bearer ${token}`;
-
   const res = await fetch(`${BASE}${path}`, {
     method,
     headers,
     body: body ? JSON.stringify(body) : undefined,
   });
-
   const data = await res.json();
   if (!res.ok) throw new Error(data.error || 'Serveri viga');
   return data;
@@ -49,4 +45,9 @@ export const api = {
   createSession: (data) => request('POST', '/sessions', data),
   updateSession: (id, data) => request('PUT', `/sessions/${id}`, data),
   deleteSession: (id) => request('DELETE', `/sessions/${id}`),
+
+  // Sagedused
+  getFrequencies: () => request('GET', '/frequencies'),
+  getCategories: () => request('GET', '/frequencies/categories'),
+  updateFrequencyDescription: (id, description) => request('PUT', `/frequencies/${id}/description`, { description }),
 };
