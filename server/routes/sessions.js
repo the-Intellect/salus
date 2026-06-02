@@ -7,7 +7,7 @@ const router = express.Router();
 // GET /api/sessions/client/:clientId
 router.get('/client/:clientId', requireAuth, async (req, res) => {
   const { rows: sessions } = await pool.query(`
-    SELECT s.*, u.name as therapist_name
+    SELECT s.*, u.name as therapist_name, s.duration_minutes
     FROM sessions s
     LEFT JOIN users u ON s.therapist_id = u.id
     WHERE s.client_id=$1
@@ -33,10 +33,10 @@ router.get('/client/:clientId', requireAuth, async (req, res) => {
 
 // POST /api/sessions
 router.post('/', requireAuth, async (req, res) => {
-  const { clientId, entries, notes } = req.body;
+  const { clientId, entries, notes, duration } = req.body;
   const { rows } = await pool.query(
-    'INSERT INTO sessions (client_id, therapist_id, notes) VALUES ($1,$2,$3) RETURNING *',
-    [clientId, req.user.id, notes || '']
+    'INSERT INTO sessions (client_id, therapist_id, notes, duration_minutes) VALUES ($1,$2,$3,$4) RETURNING *',
+    [clientId, req.user.id, notes || '', duration || 60]
   );
   const session = rows[0];
   for (let i = 0; i < entries.length; i++) {
@@ -51,8 +51,9 @@ router.post('/', requireAuth, async (req, res) => {
 
 // PUT /api/sessions/:id
 router.put('/:id', requireAuth, async (req, res) => {
-  const { entries, notes } = req.body;
-  await pool.query('UPDATE sessions SET notes=$1 WHERE id=$2', [notes || '', req.params.id]);
+  const { entries, notes, duration } = req.body;
+  await pool.query('UPDATE sessions SET notes=$1, duration_minutes=$2 WHERE id=$3', [notes || '', duration || 60, req.params.id]);
+
   await pool.query('DELETE FROM session_entries WHERE session_id=$1', [req.params.id]);
   for (let i = 0; i < entries.length; i++) {
     const e = entries[i];

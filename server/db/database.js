@@ -94,8 +94,23 @@ export async function initDB() {
       );
       console.log('Admin konto loodud: admin@salus.ee / admin123');
     }
+    await runMigrations(client);
+    await addDurationColumn(client);
     console.log('Andmebaas initsialiseeritud');
   } finally {
     client.release();
   }
+}
+
+export async function runMigrations(client) {
+  await client.query(`
+    ALTER TABLE IF EXISTS frequencies ADD COLUMN IF NOT EXISTS description_en TEXT;
+    ALTER TABLE IF EXISTS users ADD COLUMN IF NOT EXISTS language VARCHAR(5) DEFAULT 'et';
+  `);
+}
+
+export async function addDurationColumn(client) {
+  await client.query(`
+    ALTER TABLE IF EXISTS sessions ADD COLUMN IF NOT EXISTS duration_minutes INTEGER DEFAULT 60;
+  `);
 }

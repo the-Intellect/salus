@@ -13,6 +13,7 @@ export const useAppStore = create((set, get) => ({
         clientId,
         entries: [],
         notes: '',
+        duration: 60,
         therapist: 'Mari Mägi',
         branch: 'Tallinn',
       },
@@ -28,6 +29,7 @@ export const useAppStore = create((set, get) => ({
         clientId,
         entries: session.entries ? [...session.entries] : [],
         notes: session.notes || '',
+        duration: session.duration_minutes || 60,
         therapist: session.therapist || 'Mari Mägi',
         branch: session.branch || 'Tallinn',
       },
@@ -68,6 +70,12 @@ export const useAppStore = create((set, get) => ({
   updateSessionNotes: (notes) => {
     set(state => ({
       activeSession: { ...state.activeSession, notes },
+    }));
+  },
+
+  setDuration: (duration) => {
+    set(state => ({
+      activeSession: { ...state.activeSession, duration },
     }));
   },
 

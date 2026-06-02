@@ -9,13 +9,27 @@ async function request(method, path, body) {
   const token = getToken();
   if (token) headers['Authorization'] = `Bearer ${token}`;
   const res = await fetch(`${BASE}${path}`, {
-    method,
-    headers,
+    method, headers,
     body: body ? JSON.stringify(body) : undefined,
   });
   const data = await res.json();
   if (!res.ok) throw new Error(data.error || 'Serveri viga');
   return data;
+}
+
+async function requestBlob(method, path, body) {
+  const headers = { 'Content-Type': 'application/json' };
+  const token = getToken();
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+  const res = await fetch(`${BASE}${path}`, {
+    method, headers,
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  if (!res.ok) {
+    const data = await res.json();
+    throw new Error(data.error || 'Serveri viga');
+  }
+  return res.blob();
 }
 
 export const api = {
@@ -50,4 +64,7 @@ export const api = {
   getFrequencies: () => request('GET', '/frequencies'),
   getCategories: () => request('GET', '/frequencies/categories'),
   updateFrequencyDescription: (id, description) => request('PUT', `/frequencies/${id}/description`, { description }),
+
+  // Raport
+  generateReport: (sessionId, lang) => requestBlob('POST', `/report/session/${sessionId}`, { lang }),
 };

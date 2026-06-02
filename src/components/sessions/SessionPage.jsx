@@ -7,7 +7,7 @@ import styles from './Session.module.css';
 
 export default function SessionPage() {
   const navigate = useNavigate();
-  const { activeSession, activeClientId, editingSessionId, addEntry, removeEntry, updateEntry, clearSession } = useAppStore();
+  const { activeSession, activeClientId, editingSessionId, addEntry, removeEntry, updateEntry, clearSession, setDuration } = useAppStore();
   const [frequencies, setFrequencies] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -85,9 +85,9 @@ export default function SessionPage() {
   const finishSession = async () => {
     try {
       if (editingSessionId) {
-        await api.updateSession(editingSessionId, { entries: activeSession.entries, notes: activeSession.notes });
+        await api.updateSession(editingSessionId, { entries: activeSession.entries, notes: activeSession.notes, duration: activeSession.duration });
       } else {
-        await api.createSession({ clientId: activeClientId, entries: activeSession.entries, notes: activeSession.notes });
+        await api.createSession({ clientId: activeClientId, entries: activeSession.entries, notes: activeSession.notes, duration: activeSession.duration });
       }
       clearSession();
       navigate(`/clients/${activeClientId}`);
@@ -206,6 +206,20 @@ export default function SessionPage() {
         </div>
 
         <div className={styles.half}>
+          <Card style={{ marginBottom: 10 }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)' }}>Seansi pikkus</span>
+              <select
+                value={activeSession.duration || 60}
+                onChange={e => setDuration(Number(e.target.value))}
+                style={{ fontSize: 13, width: 120 }}
+              >
+                <option value={60}>60 minutit</option>
+                <option value={75}>75 minutit</option>
+                <option value={90}>90 minutit</option>
+              </select>
+            </div>
+          </Card>
           <Card>
             <div className={styles.savedTitle}>Salvestatud sel seansil</div>
             {activeSession.entries.length === 0
