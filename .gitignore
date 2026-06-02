@@ -1,4 +1,31 @@
-node_modules
-dist
+# Sõltuvused
+node_modules/
+
+# Ehitusfailid
+dist/
+
+# Keskkonnamuutujad — MITTE KUNAGI GitHubi!
 .env
-*.local
+*.env
+.env.local
+.env.production
+
+# Paroolid ja võtmed
+*pass*.txt
+*password*.txt
+*secret*.txt
+*key*.txt
+*keys*.txt
+*credentials*.txt
+
+# Andmebaas
+*.db
+*.sqlite
+
+# OS failid
+.DS_Store
+Thumbs.db
+
+# Logid
+*.log
+logs/
