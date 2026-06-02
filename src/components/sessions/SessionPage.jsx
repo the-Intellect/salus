@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../../store/appStore.js';
 import { api } from '../../api/index.js';
+import { FREQUENCIES, CATEGORIES } from '../../db/frequencies.js';
 import { Button, Card, ResultPill, PageHeader, EmptyState } from '../UI.jsx';
 import styles from './Session.module.css';
 
@@ -15,6 +16,9 @@ export default function SessionPage() {
   const [cat, setCat] = useState('');
   const [openFreqId, setOpenFreqId] = useState(null);
   const [entryForm, setEntryForm] = useState({});
+  const [aiSuggestion, setAiSuggestion] = useState('');
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiContext, setAiContext] = useState('');
 
   useEffect(() => {
     Promise.all([api.getFrequencies(), api.getCategories()])
@@ -45,8 +49,7 @@ export default function SessionPage() {
     return matchCat && matchSearch;
   });
 
-  const toggleFreq = (id) => {
-    if (openFreqId === id) { setOpenFreqId(null); return; }
+  const openFreq = (id) => {
     setOpenFreqId(id);
     const existing = activeSession.entries.find(e => e.frequencyId === id);
     if (existing) {
@@ -57,12 +60,25 @@ export default function SessionPage() {
     }
   };
 
+  const closeFreq = () => setOpenFreqId(null);
+
   const setInitial = (id, val) => setEntryForm(ef => ({ ...ef, [id]: { ...ef[id], initial: val } }));
   const setMinute = (id, mi, val) => setEntryForm(ef => {
     const mins = [...(ef[id]?.minutes || ['','','','','','',''])];
     mins[mi] = val;
     return { ...ef, [id]: { ...ef[id], minutes: mins } };
   });
+
+  const hasUnsavedData = (id) => {
+    const ef = entryForm[id];
+    if (!ef?.initial) return false;
+    const isSaved = activeSession.entries.some(e => e.frequencyId === id);
+    if (isSaved) {
+      const existing = activeSession.entries.find(e => e.frequencyId === id);
+      return String(existing.initial) !== ef.initial;
+    }
+    return true;
+  };
 
   const saveEntry = (freq) => {
     const ef = entryForm[freq.id];
@@ -79,7 +95,20 @@ export default function SessionPage() {
     };
     const existing = activeSession.entries.find(e => e.frequencyId === freq.id);
     if (existing) updateEntry(freq.id, entry); else addEntry(entry);
-    setOpenFreqId(null);
+    closeFreq();
+  };
+
+  const fetchAiSuggestion = async () => {
+    if (!activeClientId) return;
+    setAiLoading(true);
+    try {
+      const { suggestion } = await api.getAiSuggestion(activeClientId, activeSession.entries, aiContext);
+      setAiSuggestion(suggestion);
+    } catch (err) {
+      setAiSuggestion('AI soovitus ebaõnnestus: ' + err.message);
+    } finally {
+      setAiLoading(false);
+    }
   };
 
   const finishSession = async () => {
@@ -111,15 +140,11 @@ export default function SessionPage() {
       />
 
       <div className={styles.layout}>
+        {/* VASAK — sageduste otsing */}
         <div className={styles.half}>
           <Card>
             <div className={styles.searchRow}>
-              <input
-                type="text"
-                placeholder="Otsi nimega, kirjeldusega või kategooriaga..."
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-              />
+              <input type="text" placeholder="Otsi sagedust nimega..." value={search} onChange={e => setSearch(e.target.value)} />
               <select value={cat} onChange={e => setCat(e.target.value)}>
                 <option value="">Kõik kategooriad</option>
                 {categories.map(c => (
@@ -136,15 +161,20 @@ export default function SessionPage() {
               {filtered.map(freq => {
                 const isSaved = savedIds.has(freq.id);
                 const isOpen = openFreqId === freq.id;
+                const isUnsaved = !isOpen && hasUnsavedData(freq.id);
                 const ef = entryForm[freq.id] || { initial: '', minutes: ['','','','','','',''] };
+
                 return (
                   <div
                     key={freq.id}
-                    className={`${styles.freqItem} ${isSaved ? styles.freqSaved : ''} ${isOpen ? styles.freqOpen : ''}`}
-                    onClick={() => !isOpen && toggleFreq(freq.id)}
+                    className={`${styles.freqItem} ${isSaved ? styles.freqSaved : ''} ${isOpen ? styles.freqOpen : ''} ${isUnsaved ? styles.freqUnsaved : ''}`}
                   >
-                    <div className={styles.freqTop}>
-                      <div>
+                    {/* Päis — klikk avab/sulgeb */}
+                    <div
+                      className={styles.freqHeader}
+                      onClick={() => isOpen ? closeFreq() : openFreq(freq.id)}
+                    >
+                      <div style={{ flex: 1 }}>
                         <span className={styles.freqName}>{freq.freq_name}</span>
                         <span className={styles.freqId}> #{freq.id}</span>
                         <div className={styles.freqCats}>
@@ -155,10 +185,22 @@ export default function SessionPage() {
                           ))}
                         </div>
                       </div>
-                      {isSaved && <span className={styles.savedBadge}>✓ Salvestatud</span>}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
+                        {isSaved && <span className={styles.savedBadge}>✓</span>}
+                        <span style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>{isOpen ? '▲' : '▼'}</span>
+                      </div>
                     </div>
-                    <div className={styles.freqDesc}>{freq.description}</div>
 
+                    {/* Kirjeldus — klikk avab/sulgeb */}
+                    <div
+                      className={styles.freqDesc}
+                      onClick={() => isOpen ? closeFreq() : openFreq(freq.id)}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      {freq.description}
+                    </div>
+
+                    {/* Sisestusväljad — klikk EI sulge */}
                     {isOpen && (
                       <div className={styles.entryForm} onClick={e => e.stopPropagation()}>
                         <div className={styles.entryRow}>
@@ -191,7 +233,7 @@ export default function SessionPage() {
                           </div>
                         </div>
                         <div className={styles.entryActions}>
-                          <Button variant="ghost" size="sm" onClick={() => setOpenFreqId(null)}>Tühista</Button>
+                          <Button variant="ghost" size="sm" onClick={closeFreq}>Sulge</Button>
                           <Button variant="primary" size="sm" onClick={() => saveEntry(freq)}>
                             {savedIds.has(freq.id) ? '💾 Uuenda' : '💾 Salvesta'}
                           </Button>
@@ -205,21 +247,40 @@ export default function SessionPage() {
           </Card>
         </div>
 
+        {/* PAREM — tööriistad */}
         <div className={styles.half}>
           <Card style={{ marginBottom: 10 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)' }}>Seansi pikkus</span>
-              <select
-                value={activeSession.duration || 60}
-                onChange={e => setDuration(Number(e.target.value))}
-                style={{ fontSize: 13, width: 120 }}
-              >
+              <select value={activeSession.duration || 60} onChange={e => setDuration(Number(e.target.value))} style={{ fontSize: 13, width: 120 }}>
                 <option value={60}>60 minutit</option>
                 <option value={75}>75 minutit</option>
                 <option value={90}>90 minutit</option>
               </select>
             </div>
           </Card>
+
+          <Card style={{ marginBottom: 10 }}>
+            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10, color: 'var(--color-text-primary)' }}>✨ AI soovitus</div>
+            <textarea
+              value={aiContext}
+              onChange={e => setAiContext(e.target.value)}
+              placeholder="Kirjelda kliendi seisundit... (valikuline)"
+              rows={2}
+              style={{ width: '100%', fontSize: 12, resize: 'none', marginBottom: 8 }}
+            />
+            <Button variant="secondary" size="sm" onClick={fetchAiSuggestion}
+              disabled={aiLoading || activeSession.entries.length === 0}
+              style={{ width: '100%', justifyContent: 'center' }}>
+              {aiLoading ? '⏳ Analüüsin...' : '🔍 Küsi soovitust'}
+            </Button>
+            {aiSuggestion && (
+              <div style={{ marginTop: 10, fontSize: 12, lineHeight: 1.6, background: 'var(--color-accent-light)', color: 'var(--color-accent)', padding: '10px 12px', borderRadius: 'var(--radius-md)', whiteSpace: 'pre-wrap' }}>
+                {aiSuggestion}
+              </div>
+            )}
+          </Card>
+
           <Card>
             <div className={styles.savedTitle}>Salvestatud sel seansil</div>
             {activeSession.entries.length === 0
@@ -229,8 +290,8 @@ export default function SessionPage() {
                   <div className={styles.savedTop}>
                     <div className={styles.savedName}>{e.frequencyName}</div>
                     <div className={styles.savedActions}>
-                      <button className={styles.iconBtn} title="Muuda" onClick={() => toggleFreq(e.frequencyId)}>✏️</button>
-                      <button className={styles.iconBtn} title="Kustuta" onClick={() => { removeEntry(e.frequencyId); if (openFreqId === e.frequencyId) setOpenFreqId(null); }}>🗑️</button>
+                      <button className={styles.iconBtn} title="Muuda" onClick={() => openFreq(e.frequencyId)}>✏️</button>
+                      <button className={styles.iconBtn} title="Kustuta" onClick={() => { removeEntry(e.frequencyId); if (openFreqId === e.frequencyId) closeFreq(); }}>🗑️</button>
                     </div>
                   </div>
                   <div className={styles.savedMins}>

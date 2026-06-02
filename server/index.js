@@ -7,6 +7,7 @@ import clientRoutes from './routes/clients.js';
 import sessionRoutes from './routes/sessions.js';
 import frequencyRoutes from './routes/frequencies.js';
 import reportRoutes from './routes/report.js';
+import aiRoutes from './routes/ai.js';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use('/api/clients', clientRoutes);
 app.use('/api/sessions', sessionRoutes);
 app.use('/api/frequencies', frequencyRoutes);
 app.use('/api/report', reportRoutes);
+app.use('/api/ai', aiRoutes);
 
 app.get('/api/health', (req, res) => res.json({ ok: true, time: new Date() }));
 

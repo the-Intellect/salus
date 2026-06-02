@@ -67,4 +67,8 @@ export const api = {
 
   // Raport
   generateReport: (sessionId, lang) => requestBlob('POST', `/report/session/${sessionId}`, { lang }),
+
+  // AI
+  getAiSuggestion: (clientId, entries, clientContext) =>
+    request('POST', '/ai/suggest', { clientId, entries, clientContext }),
 };

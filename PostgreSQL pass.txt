@@ -4,3 +4,13 @@ salus2026
 
 Email: admin@salus.ee
 Parool: admin123
+
+Claude api key for salus
+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
+
+curl https://api.anthropic.com/v1/messages \
+  --header "x-api-key: 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" \
+  --header "anthropic-version: 2023-06-01" \
+  --header "content-type: application/json" \
+  --data '{"model": "claude-sonnet-4-6", "max_tokens": 1024,
+    "messages": [{"role": "user", "content": "Hello, world"}]}'

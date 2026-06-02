@@ -30,8 +30,10 @@
   transition: border-color 0.12s;
 }
 .freqItem:hover { border-color: var(--color-border-strong); }
+.freqHeader { display: flex; align-items: flex-start; justify-content: space-between; cursor: pointer; padding-bottom: 4px; }
 .freqSaved { border-color: #69db7c !important; background: #f4fce3; }
 .freqOpen { border-color: var(--color-accent); cursor: default; }
+.freqUnsaved { border-color: var(--color-warn) !important; background: var(--color-warn-light); }
 
 .freqTop { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
 .freqName { font-size: 13px; font-weight: 600; color: var(--color-text-primary); }

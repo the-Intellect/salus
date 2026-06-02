@@ -23,7 +23,14 @@ router.get('/', requireAuth, async (req, res) => {
     LEFT JOIN frequency_categories fc ON fcm.category_id = fc.id
     WHERE f.is_active = TRUE
     GROUP BY f.id, f.freq_name, f.description
-    ORDER BY f.freq_name
+    ORDER BY
+      -- Numbrilised ID-d enne tekstilisi
+      CASE WHEN f.id ~ '^[0-9]+$' THEN 0 ELSE 1 END,
+      -- Numbrilised ID-d numbri järgi
+      CASE WHEN f.id ~ '^[0-9]+$' THEN f.id::INTEGER ELSE NULL END ASC NULLS LAST,
+      -- Tekst+number (nt "Wellness 1") — teksti osa järgi, siis numbri järgi
+      regexp_replace(f.id, '[0-9]+$', '') ASC,
+      CASE WHEN f.id ~ '[0-9]+$' THEN regexp_replace(f.id, '^[^0-9]*', '')::INTEGER ELSE 0 END ASC
   `);
   res.json(rows);
 });

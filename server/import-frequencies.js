@@ -9,20 +9,15 @@ if (!csvPath) {
   process.exit(1);
 }
 
-// Parsi CSV rida arvestades jutumärke
 function parseCSVLine(line, delimiter = ';') {
   const result = [];
   let current = '';
   let inQuotes = false;
-
   for (let i = 0; i < line.length; i++) {
     const ch = line[i];
     if (ch === '"') {
-      if (inQuotes && line[i+1] === '"') {
-        current += '"'; i++; // escaped quote
-      } else {
-        inQuotes = !inQuotes;
-      }
+      if (inQuotes && line[i+1] === '"') { current += '"'; i++; }
+      else inQuotes = !inQuotes;
     } else if (ch === delimiter && !inQuotes) {
       result.push(current.trim());
       current = '';
@@ -36,7 +31,6 @@ function parseCSVLine(line, delimiter = ';') {
 
 const content = fs.readFileSync(csvPath, 'utf-8').replace(/^\uFEFF/, '');
 const lines = content.split(/\r?\n/);
-
 const header = parseCSVLine(lines[0]).map(h => h.toLowerCase());
 const idIdx = header.indexOf('id');
 const nameIdx = header.indexOf('freq_name');
@@ -45,7 +39,7 @@ const catIdx = header.indexOf('category');
 
 console.log(`Päis: id=${idIdx}, freq_name=${nameIdx}, description=${descIdx}, category=${catIdx}`);
 
-// Uuenda tabelid
+// Uuenda tabelid — ID VARCHAR(100)
 await pool.query(`
   CREATE TABLE IF NOT EXISTS frequency_categories (
     id SERIAL PRIMARY KEY,
@@ -54,7 +48,7 @@ await pool.query(`
     UNIQUE(label_en)
   );
   CREATE TABLE IF NOT EXISTS frequencies (
-    id VARCHAR(20) PRIMARY KEY,
+    id VARCHAR(100) PRIMARY KEY,
     freq_name VARCHAR(500) NOT NULL,
     description TEXT,
     is_active BOOLEAN DEFAULT TRUE,
@@ -62,13 +56,15 @@ await pool.query(`
     updated_at TIMESTAMP DEFAULT NOW()
   );
   CREATE TABLE IF NOT EXISTS frequency_category_map (
-    frequency_id VARCHAR(20) REFERENCES frequencies(id) ON DELETE CASCADE,
+    frequency_id VARCHAR(100) REFERENCES frequencies(id) ON DELETE CASCADE,
     category_id INTEGER REFERENCES frequency_categories(id) ON DELETE CASCADE,
     PRIMARY KEY (frequency_id, category_id)
   );
+  ALTER TABLE IF EXISTS frequencies ALTER COLUMN id TYPE VARCHAR(100);
+  ALTER TABLE IF EXISTS frequency_category_map ALTER COLUMN frequency_id TYPE VARCHAR(100);
+  ALTER TABLE IF EXISTS session_entries ALTER COLUMN frequency_id TYPE VARCHAR(100);
 `);
 
-// Tühjenda vana andmed
 console.log('Tühjandan vanad andmed...');
 await pool.query('DELETE FROM frequency_category_map');
 await pool.query('DELETE FROM frequency_categories');
@@ -76,6 +72,7 @@ await pool.query('DELETE FROM frequencies');
 
 let imported = 0;
 let skipped = 0;
+let skippedRows = [];
 let catCache = {};
 
 for (let i = 1; i < lines.length; i++) {
@@ -85,7 +82,11 @@ for (let i = 1; i < lines.length; i++) {
   const desc = cols[descIdx]?.trim();
   const catRaw = cols[catIdx]?.trim();
 
-  if (!id || !name) { skipped++; continue; }
+  if (!id || !name) {
+    skipped++;
+    if (id || name) skippedRows.push(`Rida ${i+1}: id='${id}' name='${name}'`);
+    continue;
+  }
 
   await pool.query(`
     INSERT INTO frequencies (id, freq_name, description)
@@ -94,7 +95,6 @@ for (let i = 1; i < lines.length; i++) {
   `, [id, name, desc || '']);
 
   if (catRaw) {
-    // Semikoolon on kategooriate eraldaja
     const cats = catRaw.split(';').map(c => c.trim()).filter(Boolean);
     for (const cat of cats) {
       const parts = cat.split('/').map(p => p.trim());
@@ -113,8 +113,7 @@ for (let i = 1; i < lines.length; i++) {
 
       await pool.query(`
         INSERT INTO frequency_category_map (frequency_id, category_id)
-        VALUES ($1, $2)
-        ON CONFLICT DO NOTHING
+        VALUES ($1, $2) ON CONFLICT DO NOTHING
       `, [id, catCache[labelEn]]);
     }
   }
@@ -130,4 +129,8 @@ console.log(`\n✓ Import valmis!`);
 console.log(`  Sagedusi: ${freqCount[0].count}`);
 console.log(`  Kategooriaid: ${catCount[0].count}`);
 console.log(`  Vahele jäetud (tühjad read): ${skipped}`);
+if (skippedRows.length > 0) {
+  console.log(`  Probleemid:`);
+  skippedRows.forEach(r => console.log(`    ${r}`));
+}
 process.exit(0);

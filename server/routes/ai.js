@@ -1,0 +1,136 @@
+import express from 'express';
+import { requireAuth } from '../middleware/auth.js';
+import { pool } from '../db/database.js';
+
+const router = express.Router();
+
+router.post('/suggest', requireAuth, async (req, res) => {
+  const { clientId, entries, clientContext } = req.body;
+
+  if (!process.env.ANTHROPIC_API_KEY) {
+    return res.status(503).json({ error: 'AI pole seadistatud — lisa ANTHROPIC_API_KEY .env faili' });
+  }
+
+  try {
+    // 1. Kliendi põhiandmed (anonüümselt — ainult põhjus ja märkmed)
+    const { rows: clientRows } = await pool.query(
+      'SELECT reason, notes FROM clients WHERE id=$1',
+      [clientId]
+    );
+    const client = clientRows[0] || {};
+
+    // 2. Märkmete ajalugu
+    const { rows: notesHistory } = await pool.query(
+      'SELECT text, saved_at FROM notes_history WHERE client_id=$1 ORDER BY saved_at DESC LIMIT 5',
+      [clientId]
+    );
+
+    // 3. Eelnevate seanside kokkuvõte
+    const { rows: prevEntries } = await pool.query(`
+      SELECT se.frequency_name, se.initial_result, se.final_result,
+             se.minute_results, s.date
+      FROM session_entries se
+      JOIN sessions s ON se.session_id = s.id
+      WHERE s.client_id = $1
+      ORDER BY s.date DESC, se.sort_order
+      LIMIT 60
+    `, [clientId]);
+
+    // 4. Kõik kategooriad sageduste soovituste jaoks
+    const { rows: allCategories } = await pool.query(
+      'SELECT label_en, label_et FROM frequency_categories ORDER BY label_en'
+    );
+
+    // Grupeeri eelnevad seansid kuupäeva järgi
+    const sessionMap = {};
+    for (const e of prevEntries) {
+      const d = e.date?.slice(0, 10) || 'unknown';
+      if (!sessionMap[d]) sessionMap[d] = [];
+      sessionMap[d].push(e);
+    }
+    const prevSessionsText = Object.entries(sessionMap)
+      .slice(0, 5)
+      .map(([date, es]) => {
+        const stressed = es.filter(e => e.initial_result < 50);
+        return `Seanss ${date}: ${es.length} sagedust, pinges: ${stressed.map(e => `${e.frequency_name} (algne ${e.initial_result}→lõpp ${e.final_result})`).join(', ') || 'puudub'}`;
+      }).join('\n') || 'Eelnevaid seanse pole.';
+
+    // Praeguse seansi tulemused
+    const currentText = entries.length > 0
+      ? entries.map(e =>
+          `- ${e.frequencyName}: algne ${e.initial} → ${e.minutes.length} min → lõpp ${e.final}${e.final < 50 ? ' ⚠️ pinge' : ''}`
+        ).join('\n')
+      : 'Seanssi pole veel alustatud.';
+
+    // Märkmed
+    const notesText = notesHistory.length > 0
+      ? notesHistory.map(n => `[${n.saved_at?.slice(0,10)}] ${n.text}`).join('\n\n')
+      : 'Märkmeid pole.';
+
+    // Kategooriad kompaktselt
+    const categoriesText = allCategories
+      .map(c => c.label_et ? `${c.label_en} / ${c.label_et}` : c.label_en)
+      .join(', ');
+
+    const prompt = `Sa oled kogenud biotagasiside teraapia assistent. Analüüsi kliendi infot ja aita terapeuti.
+
+=== KLIENDI PÖÖRDUMISE PÕHJUS ===
+${client.reason || 'Märkimata'}
+
+=== VIIMASED MÄRKMED ===
+${notesText}
+
+=== EELNEVAD SEANSID (kokkuvõte) ===
+${prevSessionsText}
+
+=== PRAEGUNE SEANSS ===
+${currentText}
+
+=== TERAPEUDI LISAINFO / KÜSIMUS ===
+${clientContext || 'Pole lisatud'}
+
+=== SAADAOLEVAD KATEGOORIAD ===
+${categoriesText}
+
+---
+
+Palun anna struktureeritud vastus järgmiselt:
+
+**1. Mustrid ja tähelepanekud**
+Mis korduvad pinged on silma jäänud? Mis on paranenud?
+
+**2. Täpsustavad küsimused**
+Mida võiks terapeut kliendilt veel küsida (2-3 küsimust)?
+
+**3. Soovituslikud kategooriad**
+Milliseid kategooriaid võiks praeguse seansi kontekstis veel testida? Nimeta 3-5 kategooriat meie nimekirjast ja põhjenda lühidalt.
+
+Ole konkreetne, praktiline ja lühike. Vasta eesti keeles. Maksimaalselt 250 sõna.`;
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 600,
+        messages: [{ role: 'user', content: prompt }],
+      }),
+    });
+
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error?.message || 'AI viga');
+
+    const text = data.content?.[0]?.text || '';
+    res.json({ suggestion: text });
+
+  } catch (err) {
+    console.error('AI viga:', err);
+    res.status(500).json({ error: 'AI soovitus ebaõnnestus: ' + err.message });
+  }
+});
+
+export default router;
