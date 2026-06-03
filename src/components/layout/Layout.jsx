@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.jsx';
+import { useAppStore } from '../../store/appStore.js';
 import styles from './Layout.module.css';
 
 const NAV = [
@@ -11,6 +12,8 @@ const NAV = [
 
 export default function Layout({ children }) {
   const { user, logout } = useAuth();
+  const activeSession = useAppStore(s => s.activeSession);
+  const activeClientId = useAppStore(s => s.activeClientId);
   const navigate = useNavigate();
 
   const handleLogout = () => { logout(); navigate('/login'); };

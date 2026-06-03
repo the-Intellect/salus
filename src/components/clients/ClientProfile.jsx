@@ -31,6 +31,9 @@ export default function ClientProfile() {
   const navigate = useNavigate();
   const { user } = useAuth();
   const startSession = useAppStore(s => s.startSession);
+  const clearSession = useAppStore(s => s.clearSession);
+  const activeSession = useAppStore(s => s.activeSession);
+  const activeClientId = useAppStore(s => s.activeClientId);
   const [tab, setTab] = useState('sessions');
   const [client, setClient] = useState(null);
   const [sessions, setSessions] = useState([]);
@@ -90,13 +93,14 @@ export default function ClientProfile() {
         </div>
       </div>
       <div className={styles.tabs}>
-        {['sessions', 'frequencies', 'notes', 'data'].map(t => (
+        {['sessions', 'frequencies', 'ai', 'notes', 'data'].map(t => (
           <button key={t} className={`${styles.tab} ${tab === t ? styles.tabActive : ''}`} onClick={() => setTab(t)}>
-            {{ sessions: 'Seansid', frequencies: 'Sageduste ajalugu', notes: 'Märkmed', data: 'Andmed' }[t]}
+            {{ sessions: 'Seansid', frequencies: 'Sageduste ajalugu', ai: 'AI soovitused', notes: 'Märkmed', data: 'Andmed' }[t]}
           </button>
         ))}
       </div>
       {tab === 'sessions' && <SessionsTab sessions={sessions} clientId={id} navigate={navigate} onRefresh={loadData} />}
+      {tab === 'ai' && <AiTab clientId={id} />}
       {tab === 'frequencies' && <FrequenciesTab history={freqHistory()} />}
       {tab === 'notes' && <NotesTab client={client} clientId={id} onSave={c => setClient(c)} />}
       {tab === 'data' && <DataTab client={client} clientId={id} users={users} currentUser={user} onSave={c => setClient(c)} />}
@@ -139,13 +143,20 @@ function SessionsTab({ sessions, clientId, navigate, onRefresh }) {
 
   if (!sessions.length) return <EmptyState icon="⚡" title="Seanse pole veel" description="Alusta esimene seanss." />;
 
+  // Arvuta seansi number loomise järjekorra järgi (vanim = #1)
+  const sessionNumbers = {};
+  [...sessions].sort((a, b) => new Date(a.created_at || a.date) - new Date(b.created_at || b.date))
+    .forEach((s, i) => { sessionNumbers[s.id] = i + 1; });
+
   return (
     <div className={styles.sessionList}>
-      {sessions.map((s, idx) => (
+      {sessions.map((s) => {
+        const idx = sessionNumbers[s.id];
+        return (
         <Card key={s.id} className={styles.sessionCard}>
           <div className={styles.sessionTop}>
             <div>
-              <div className={styles.sessionDate}>{formatDate(s.date)} · Seanss #{idx + 1}</div>
+              <div className={styles.sessionDate}>{formatDate(s.date)} · Seanss #{idx}</div>
               <div className={styles.sessionMeta}>{s.therapist_name} · {s.entries?.length || 0} sagedust</div>
             </div>
             <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
@@ -173,7 +184,101 @@ function SessionsTab({ sessions, clientId, navigate, onRefresh }) {
             </div>
           )}
         </Card>
-      ))}
+        );
+      })}
+    </div>
+  );
+}
+
+// --- AI soovitused ---
+function AiTab({ clientId }) {
+  const [suggestions, setSuggestions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [editModal, setEditModal] = useState(null);
+  const [editText, setEditText] = useState('');
+  const [newText, setNewText] = useState('');
+  const [saving, setSaving] = useState(false);
+
+  const load = () => api.getAiSuggestions(clientId).then(setSuggestions).finally(() => setLoading(false));
+  useEffect(() => { load(); }, [clientId]);
+
+  const handleSaveNew = async () => {
+    if (!newText.trim()) return;
+    setSaving(true);
+    try { await api.saveAiSuggestion(clientId, null, newText); setNewText(''); load(); }
+    catch(err) { alert(err.message); }
+    finally { setSaving(false); }
+  };
+
+  const handleDelete = async (id) => {
+    if (!window.confirm('Kustuta soovitus?')) return;
+    await api.deleteAiSuggestion(id);
+    load();
+  };
+
+  const handleEditSave = async () => {
+    try { await api.saveAiSuggestion(clientId, null, editText); setEditModal(null); load(); }
+    catch(err) { alert(err.message); }
+  };
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <Card>
+        <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>Uus AI soovitus / märkus</div>
+        <textarea value={newText} onChange={e => setNewText(e.target.value)} rows={4}
+          style={{ width: '100%', resize: 'vertical', marginBottom: 8 }}
+          placeholder="Küsi AI käest soovitust enne seanssi või lisa oma märkus..." />
+        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
+          <Button variant="secondary" size="sm" disabled={saving || !newText.trim()} onClick={async () => {
+            if (!newText.trim()) return;
+            setSaving(true);
+            try {
+              const { suggestion } = await api.getAiSuggestion(clientId, [], newText);
+              setNewText(suggestion);
+            } catch(err) { alert(err.message); }
+            finally { setSaving(false); }
+          }}>
+            {saving ? '⏳...' : '✨ Küsi AI käest'}
+          </Button>
+          <Button variant="primary" size="sm" onClick={handleSaveNew} disabled={!newText.trim() || saving}>
+            💾 Salvesta
+          </Button>
+        </div>
+      </Card>
+
+      {loading ? <p style={{ color: 'var(--color-text-muted)', fontSize: 13 }}>Laadimine...</p> :
+       suggestions.length === 0 ? <EmptyState icon="✨" title="AI soovitusi pole veel salvestatud" /> :
+       suggestions.map(s => (
+         <Card key={s.id}>
+           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+             <span style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>
+               {new Date(s.saved_at).toLocaleDateString('et-EE')} kell {new Date(s.saved_at).toLocaleTimeString('et-EE', { hour: '2-digit', minute: '2-digit' })}
+             </span>
+             <div style={{ display: 'flex', gap: 6 }}>
+               <Button variant="secondary" size="sm" onClick={() => { setEditText(s.text); setEditModal(s.id); }}>✏️</Button>
+               <Button variant="danger" size="sm" onClick={() => handleDelete(s.id)}>🗑️</Button>
+             </div>
+           </div>
+           <div style={{ fontSize: 13, lineHeight: 1.7, whiteSpace: 'pre-wrap', color: 'var(--color-text-primary)' }}>{s.text}</div>
+         </Card>
+       ))
+      }
+
+      {editModal && (
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100 }}
+          onClick={() => setEditModal(null)}>
+          <div style={{ background: 'var(--color-surface)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', width: '90%', maxWidth: 500 }}
+            onClick={e => e.stopPropagation()}>
+            <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 12 }}>Redigeeri soovitust</div>
+            <textarea value={editText} onChange={e => setEditText(e.target.value)} rows={10}
+              style={{ width: '100%', fontSize: 13, resize: 'vertical', marginBottom: 12 }} />
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
+              <Button variant="secondary" onClick={() => setEditModal(null)}>Tühista</Button>
+              <Button variant="primary" onClick={handleEditSave}>💾 Salvesta</Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

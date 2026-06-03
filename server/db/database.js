@@ -96,6 +96,7 @@ export async function initDB() {
     }
     await runMigrations(client);
     await addDurationColumn(client);
+    await addAiSuggestionsTable(client);
     console.log('Andmebaas initsialiseeritud');
   } finally {
     client.release();
@@ -112,5 +113,18 @@ export async function runMigrations(client) {
 export async function addDurationColumn(client) {
   await client.query(`
     ALTER TABLE IF EXISTS sessions ADD COLUMN IF NOT EXISTS duration_minutes INTEGER DEFAULT 60;
+  `);
+}
+
+export async function addAiSuggestionsTable(client) {
+  await client.query(`
+    CREATE TABLE IF NOT EXISTS ai_suggestions (
+      id SERIAL PRIMARY KEY,
+      client_id INTEGER REFERENCES clients(id) ON DELETE CASCADE,
+      session_id INTEGER REFERENCES sessions(id) ON DELETE SET NULL,
+      text TEXT NOT NULL,
+      saved_by INTEGER REFERENCES users(id),
+      saved_at TIMESTAMP DEFAULT NOW()
+    );
   `);
 }

@@ -3,11 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { api } from '../../api/index.js';
 import { Button, Avatar, Badge, PageHeader, EmptyState } from '../UI.jsx';
 import styles from './Clients.module.css';
+import { useAppStore } from '../../store/appStore.js';
 
 const BRANCHES = ['Kõik filiaalid', 'Tallinn', 'Tartu', 'Kuressaare'];
 
 export default function ClientsList() {
   const navigate = useNavigate();
+  const activeSession = useAppStore(s => s.activeSession);
+  const activeClientId = useAppStore(s => s.activeClientId);
+  const clearSession = useAppStore(s => s.clearSession);
   const [clients, setClients] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
@@ -16,6 +20,14 @@ export default function ClientsList() {
   useEffect(() => {
     api.getClients().then(setClients).finally(() => setLoading(false));
   }, []);
+
+  const handleClientClick = (clientId) => {
+    if (activeSession && activeClientId !== clientId) {
+      if (!window.confirm('Sul on aktiivne seanss pooleli. Kas soovid selle katkestada?')) return;
+      clearSession();
+    }
+    navigate(`/clients/${clientId}`);
+  };
 
   const filtered = clients.filter(c => {
     const name = `${c.first_name} ${c.last_name}`.toLowerCase();
@@ -40,7 +52,7 @@ export default function ClientsList() {
        filtered.length === 0 ? <EmptyState icon="👤" title="Kliente ei leitud" description="Muuda otsingut või lisa uus klient." /> :
        <div className={styles.grid}>
          {filtered.map(client => (
-           <ClientCard key={client.id} client={client} onClick={() => navigate(`/clients/${client.id}`)} />
+           <ClientCard key={client.id} client={client} onClick={() => handleClientClick(client.id)} />
          ))}
        </div>
       }

@@ -1,14 +1,19 @@
 import { create } from 'zustand';
 
 export const useAppStore = create((set, get) => ({
+  // Aktiivne seanss — salvestatud kirjed
   activeSession: null,
   activeClientId: null,
-  editingSessionId: null, // kui muudame olemasolevat seanssi
+  editingSessionId: null,
+
+  // Pooleli vormid — püsivad lehevahete üle
+  entryDrafts: {},
 
   startSession: (clientId) => {
     set({
       activeClientId: clientId,
       editingSessionId: null,
+      entryDrafts: {},
       activeSession: {
         clientId,
         entries: [],
@@ -20,11 +25,11 @@ export const useAppStore = create((set, get) => ({
     });
   },
 
-  // Laeb olemasoleva seansi muutmiseks
   loadSessionForEdit: (session, clientId) => {
     set({
       activeClientId: clientId,
       editingSessionId: session.id,
+      entryDrafts: {},
       activeSession: {
         clientId,
         entries: session.entries ? [...session.entries] : [],
@@ -36,26 +41,33 @@ export const useAppStore = create((set, get) => ({
     });
   },
 
+  // Salvestatud kirjed
   addEntry: (entry) => {
     set(state => ({
       activeSession: {
         ...state.activeSession,
-        entries: [entry, ...state.activeSession.entries],
+        entries: [...state.activeSession.entries, entry],
       },
+      // Tühjenda draft pärast salvestamist
+      entryDrafts: Object.fromEntries(
+        Object.entries(state.entryDrafts).filter(([k]) => k !== entry.frequencyId)
+      ),
     }));
   },
 
-  // Kustutab kirje aktiivsest seansist frequencyId järgi
   removeEntry: (frequencyId) => {
     set(state => ({
       activeSession: {
         ...state.activeSession,
         entries: state.activeSession.entries.filter(e => e.frequencyId !== frequencyId),
       },
+      // Kustuta ka draft
+      entryDrafts: Object.fromEntries(
+        Object.entries(state.entryDrafts).filter(([k]) => k !== frequencyId)
+      ),
     }));
   },
 
-  // Uuendab olemasoleva kirje aktiivsest seansist
   updateEntry: (frequencyId, updatedEntry) => {
     set(state => ({
       activeSession: {
@@ -64,6 +76,24 @@ export const useAppStore = create((set, get) => ({
           e.frequencyId === frequencyId ? { ...e, ...updatedEntry } : e
         ),
       },
+      entryDrafts: Object.fromEntries(
+        Object.entries(state.entryDrafts).filter(([k]) => k !== frequencyId)
+      ),
+    }));
+  },
+
+  // Pooleli vormi andmed — salvestatakse store'i
+  setEntryDraft: (frequencyId, draft) => {
+    set(state => ({
+      entryDrafts: { ...state.entryDrafts, [frequencyId]: draft },
+    }));
+  },
+
+  clearEntryDraft: (frequencyId) => {
+    set(state => ({
+      entryDrafts: Object.fromEntries(
+        Object.entries(state.entryDrafts).filter(([k]) => k !== frequencyId)
+      ),
     }));
   },
 
@@ -79,5 +109,13 @@ export const useAppStore = create((set, get) => ({
     }));
   },
 
-  clearSession: () => set({ activeSession: null, activeClientId: null, editingSessionId: null }),
+  clearSession: () => set({
+    activeSession: null,
+    activeClientId: null,
+    editingSessionId: null,
+    entryDrafts: {},
+  }),
+
+  // Kas on pooleli andmeid (salvestamata draft'id)
+  hasDrafts: () => Object.keys(get().entryDrafts).length > 0,
 }));

@@ -71,4 +71,8 @@ export const api = {
   // AI
   getAiSuggestion: (clientId, entries, clientContext) =>
     request('POST', '/ai/suggest', { clientId, entries, clientContext }),
+  saveAiSuggestion: (clientId, sessionId, text) =>
+    request('POST', '/ai/suggestions', { clientId, sessionId, text }),
+  getAiSuggestions: (clientId) => request('GET', `/ai/suggestions/${clientId}`),
+  deleteAiSuggestion: (id) => request('DELETE', `/ai/suggestions/${id}`),
 };

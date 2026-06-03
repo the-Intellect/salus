@@ -2,30 +2,47 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../../store/appStore.js';
 import { api } from '../../api/index.js';
-import { FREQUENCIES, CATEGORIES } from '../../db/frequencies.js';
 import { Button, Card, ResultPill, PageHeader, EmptyState } from '../UI.jsx';
 import styles from './Session.module.css';
 
 export default function SessionPage() {
   const navigate = useNavigate();
-  const { activeSession, activeClientId, editingSessionId, addEntry, removeEntry, updateEntry, clearSession, setDuration } = useAppStore();
+  const {
+    activeSession, activeClientId, editingSessionId,
+    addEntry, removeEntry, updateEntry, clearSession, setDuration,
+    entryDrafts, setEntryDraft, clearEntryDraft,
+  } = useAppStore();
+
   const [frequencies, setFrequencies] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [cat, setCat] = useState('');
   const [openFreqId, setOpenFreqId] = useState(null);
-  const [entryForm, setEntryForm] = useState({});
+  const [clientInfo, setClientInfo] = useState(null);
+  const [clientExpanded, setClientExpanded] = useState(null); // 'reason' | 'notes' | null
+  const [clientNoteText, setClientNoteText] = useState('');
   const [aiSuggestion, setAiSuggestion] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
   const [aiContext, setAiContext] = useState('');
+  const [aiSaveModal, setAiSaveModal] = useState(false);
+  const [aiEditText, setAiEditText] = useState('');
 
   useEffect(() => {
-    Promise.all([api.getFrequencies(), api.getCategories()])
-      .then(([freqs, cats]) => { setFrequencies(freqs); setCategories(cats); })
-      .catch(err => console.error('Sageduste laadimine ebaõnnestus:', err))
+    Promise.all([
+      api.getFrequencies(),
+      api.getCategories(),
+      activeClientId ? api.getClient(activeClientId) : Promise.resolve(null),
+    ]).then(([freqs, cats, client]) => {
+      setFrequencies(freqs);
+      setCategories(cats);
+      if (client) {
+        setClientInfo(client);
+        setClientNoteText(client.notes || '');
+      }
+    }).catch(err => console.error('Laadimine ebaõnnestus:', err))
       .finally(() => setLoading(false));
-  }, []);
+  }, [activeClientId]);
 
   if (!activeSession) return (
     <div>
@@ -51,37 +68,47 @@ export default function SessionPage() {
 
   const openFreq = (id) => {
     setOpenFreqId(id);
-    const existing = activeSession.entries.find(e => e.frequencyId === id);
-    if (existing) {
-      const mins = [...existing.minutes.map(String), ...Array(7).fill('')].slice(0, 7);
-      setEntryForm(ef => ({ ...ef, [id]: { initial: String(existing.initial), minutes: mins } }));
-    } else if (!entryForm[id]) {
-      setEntryForm(ef => ({ ...ef, [id]: { initial: '', minutes: ['','','','','','',''] } }));
+    // Kui pole draft'i, algväärtusta
+    if (!entryDrafts[id]) {
+      const existing = activeSession.entries.find(e => e.frequencyId === id);
+      if (existing) {
+        const mins = [...existing.minutes.map(String), ...Array(7).fill('')].slice(0, 7);
+        setEntryDraft(id, { initial: String(existing.initial), minutes: mins });
+      } else {
+        setEntryDraft(id, { initial: '', minutes: ['','','','','','',''] });
+      }
     }
   };
 
   const closeFreq = () => setOpenFreqId(null);
 
-  const setInitial = (id, val) => setEntryForm(ef => ({ ...ef, [id]: { ...ef[id], initial: val } }));
-  const setMinute = (id, mi, val) => setEntryForm(ef => {
-    const mins = [...(ef[id]?.minutes || ['','','','','','',''])];
-    mins[mi] = val;
-    return { ...ef, [id]: { ...ef[id], minutes: mins } };
-  });
+  const setInitial = (id, val) => {
+    const draft = entryDrafts[id] || { initial: '', minutes: ['','','','','','',''] };
+    setEntryDraft(id, { ...draft, initial: val });
+  };
 
-  const hasUnsavedData = (id) => {
-    const ef = entryForm[id];
-    if (!ef?.initial) return false;
+  const setMinute = (id, mi, val) => {
+    const draft = entryDrafts[id] || { initial: '', minutes: ['','','','','','',''] };
+    const mins = [...(draft.minutes || ['','','','','','',''])];
+    mins[mi] = val;
+    setEntryDraft(id, { ...draft, minutes: mins });
+  };
+
+  // Draft on "pooleli" ainult kui on mittетühi number sisestatud ja pole salvestatud
+  const hasDraft = (id) => {
+    const ef = entryDrafts[id];
+    const initial = ef?.initial?.trim();
+    if (!initial || initial === '') return false; // tühi = ei loe pooleliks
     const isSaved = activeSession.entries.some(e => e.frequencyId === id);
     if (isSaved) {
       const existing = activeSession.entries.find(e => e.frequencyId === id);
-      return String(existing.initial) !== ef.initial;
+      return String(existing.initial) !== initial;
     }
     return true;
   };
 
   const saveEntry = (freq) => {
-    const ef = entryForm[freq.id];
+    const ef = entryDrafts[freq.id];
     if (!ef?.initial) { alert('Lisa vähemalt esialgne tulemus.'); return; }
     const filledMins = ef.minutes.filter(m => m !== '').map(Number);
     const final = filledMins.length ? filledMins[filledMins.length - 1] : Number(ef.initial);
@@ -96,6 +123,14 @@ export default function SessionPage() {
     const existing = activeSession.entries.find(e => e.frequencyId === freq.id);
     if (existing) updateEntry(freq.id, entry); else addEntry(entry);
     closeFreq();
+  };
+
+  const saveClientNote = async () => {
+    if (!activeClientId) return;
+    try {
+      await api.addNote(activeClientId, clientNoteText);
+      setClientInfo(ci => ({ ...ci, notes: clientNoteText }));
+    } catch(err) { alert(err.message); }
   };
 
   const fetchAiSuggestion = async () => {
@@ -123,6 +158,14 @@ export default function SessionPage() {
     } catch (err) { alert(err.message); }
   };
 
+  const handleCancel = () => {
+    if (activeSession.entries.length > 0 || Object.keys(entryDrafts).length > 0) {
+      if (!window.confirm('Seanss on pooleli. Oled kindel, et soovid katkestada? Kõik sisestatud andmed kaovad.')) return;
+    }
+    clearSession();
+    navigate(`/clients/${activeClientId}`);
+  };
+
   const savedIds = new Set(activeSession.entries.map(e => e.frequencyId));
 
   return (
@@ -131,7 +174,7 @@ export default function SessionPage() {
         title={editingSessionId ? 'Muuda seanssi' : 'Uus seanss'}
         action={
           <div style={{ display: 'flex', gap: 8 }}>
-            <Button variant="secondary" onClick={() => { clearSession(); navigate(`/clients/${activeClientId}`); }}>✕ Katkesta</Button>
+            <Button variant="secondary" onClick={handleCancel}>✕ Katkesta</Button>
             <Button variant="primary" onClick={finishSession} disabled={activeSession.entries.length === 0}>
               ✓ {editingSessionId ? 'Salvesta muudatused' : 'Lõpeta seanss'} ({activeSession.entries.length})
             </Button>
@@ -140,7 +183,7 @@ export default function SessionPage() {
       />
 
       <div className={styles.layout}>
-        {/* VASAK — sageduste otsing */}
+        {/* VASAK */}
         <div className={styles.half}>
           <Card>
             <div className={styles.searchRow}>
@@ -161,19 +204,15 @@ export default function SessionPage() {
               {filtered.map(freq => {
                 const isSaved = savedIds.has(freq.id);
                 const isOpen = openFreqId === freq.id;
-                const isUnsaved = !isOpen && hasUnsavedData(freq.id);
-                const ef = entryForm[freq.id] || { initial: '', minutes: ['','','','','','',''] };
+                const isDraft = !isOpen && hasDraft(freq.id);
+                const ef = entryDrafts[freq.id] || { initial: '', minutes: ['','','','','','',''] };
 
                 return (
                   <div
                     key={freq.id}
-                    className={`${styles.freqItem} ${isSaved ? styles.freqSaved : ''} ${isOpen ? styles.freqOpen : ''} ${isUnsaved ? styles.freqUnsaved : ''}`}
+                    className={`${styles.freqItem} ${isSaved ? styles.freqSaved : ''} ${isOpen ? styles.freqOpen : ''} ${isDraft ? styles.freqUnsaved : ''}`}
                   >
-                    {/* Päis — klikk avab/sulgeb */}
-                    <div
-                      className={styles.freqHeader}
-                      onClick={() => isOpen ? closeFreq() : openFreq(freq.id)}
-                    >
+                    <div className={styles.freqHeader} onClick={() => isOpen ? closeFreq() : openFreq(freq.id)}>
                       <div style={{ flex: 1 }}>
                         <span className={styles.freqName}>{freq.freq_name}</span>
                         <span className={styles.freqId}> #{freq.id}</span>
@@ -186,21 +225,16 @@ export default function SessionPage() {
                         </div>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
+                        {isDraft && <span style={{ fontSize: 10, color: 'var(--color-warn)', fontWeight: 600 }}>● Pooleli</span>}
                         {isSaved && <span className={styles.savedBadge}>✓</span>}
                         <span style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>{isOpen ? '▲' : '▼'}</span>
                       </div>
                     </div>
 
-                    {/* Kirjeldus — klikk avab/sulgeb */}
-                    <div
-                      className={styles.freqDesc}
-                      onClick={() => isOpen ? closeFreq() : openFreq(freq.id)}
-                      style={{ cursor: 'pointer' }}
-                    >
+                    <div className={styles.freqDesc} onClick={() => isOpen ? closeFreq() : openFreq(freq.id)} style={{ cursor: 'pointer' }}>
                       {freq.description}
                     </div>
 
-                    {/* Sisestusväljad — klikk EI sulge */}
                     {isOpen && (
                       <div className={styles.entryForm} onClick={e => e.stopPropagation()}>
                         <div className={styles.entryRow}>
@@ -233,7 +267,10 @@ export default function SessionPage() {
                           </div>
                         </div>
                         <div className={styles.entryActions}>
-                          <Button variant="ghost" size="sm" onClick={closeFreq}>Sulge</Button>
+                          <Button variant="ghost" size="sm" onClick={() => {
+                            clearEntryDraft(freq.id);
+                            closeFreq();
+                          }}>Tühista</Button>
                           <Button variant="primary" size="sm" onClick={() => saveEntry(freq)}>
                             {savedIds.has(freq.id) ? '💾 Uuenda' : '💾 Salvesta'}
                           </Button>
@@ -247,8 +284,51 @@ export default function SessionPage() {
           </Card>
         </div>
 
-        {/* PAREM — tööriistad */}
+        {/* PAREM */}
         <div className={styles.half}>
+          {clientInfo && (
+            <Card style={{ marginBottom: 10 }}>
+              <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 8, color: 'var(--color-text-primary)' }}>
+                👤 {clientInfo.first_name} {clientInfo.last_name}
+              </div>
+
+              {/* Pöördumise põhjus */}
+              <div
+                style={{ fontSize: 12, color: 'var(--color-accent)', cursor: 'pointer', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 4 }}
+                onClick={() => setClientExpanded(clientExpanded === 'reason' ? null : 'reason')}
+              >
+                {clientExpanded === 'reason' ? '▲' : '▼'} Pöördumise põhjus
+              </div>
+              {clientExpanded === 'reason' && (
+                <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', lineHeight: 1.6, padding: '6px 10px', background: 'var(--color-surface-2)', borderRadius: 'var(--radius-sm)', marginBottom: 6 }}>
+                  {clientInfo.reason || '—'}
+                </div>
+              )}
+
+              {/* Märkmed */}
+              <div
+                style={{ fontSize: 12, color: 'var(--color-accent)', cursor: 'pointer', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 4 }}
+                onClick={() => setClientExpanded(clientExpanded === 'notes' ? null : 'notes')}
+              >
+                {clientExpanded === 'notes' ? '▲' : '▼'} Märkmed
+              </div>
+              {clientExpanded === 'notes' && (
+                <div style={{ marginBottom: 4 }}>
+                  <textarea
+                    value={clientNoteText}
+                    onChange={e => setClientNoteText(e.target.value)}
+                    rows={4}
+                    style={{ width: '100%', fontSize: 12, resize: 'vertical', marginBottom: 6 }}
+                    placeholder="Lisa märkmed..."
+                  />
+                  <Button variant="primary" size="sm" onClick={saveClientNote} style={{ width: '100%', justifyContent: 'center' }}>
+                    💾 Salvesta märkmed
+                  </Button>
+                </div>
+              )}
+            </Card>
+          )}
+
           <Card style={{ marginBottom: 10 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)' }}>Seansi pikkus</span>
@@ -262,27 +342,37 @@ export default function SessionPage() {
 
           <Card style={{ marginBottom: 10 }}>
             <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10, color: 'var(--color-text-primary)' }}>✨ AI soovitus</div>
-            <textarea
-              value={aiContext}
-              onChange={e => setAiContext(e.target.value)}
+            <textarea value={aiContext} onChange={e => setAiContext(e.target.value)}
               placeholder="Kirjelda kliendi seisundit... (valikuline)"
-              rows={2}
-              style={{ width: '100%', fontSize: 12, resize: 'none', marginBottom: 8 }}
-            />
+              rows={2} style={{ width: '100%', fontSize: 12, resize: 'none', marginBottom: 8 }} />
             <Button variant="secondary" size="sm" onClick={fetchAiSuggestion}
               disabled={aiLoading || activeSession.entries.length === 0}
               style={{ width: '100%', justifyContent: 'center' }}>
               {aiLoading ? '⏳ Analüüsin...' : '🔍 Küsi soovitust'}
             </Button>
             {aiSuggestion && (
-              <div style={{ marginTop: 10, fontSize: 12, lineHeight: 1.6, background: 'var(--color-accent-light)', color: 'var(--color-accent)', padding: '10px 12px', borderRadius: 'var(--radius-md)', whiteSpace: 'pre-wrap' }}>
-                {aiSuggestion}
+              <div>
+                <div style={{ marginTop: 10, fontSize: 12, lineHeight: 1.6, background: 'var(--color-accent-light)', color: 'var(--color-accent)', padding: '10px 12px', borderRadius: 'var(--radius-md)', whiteSpace: 'pre-wrap' }}>
+                  {aiSuggestion}
+                </div>
+                <Button variant="secondary" size="sm"
+                  onClick={() => { setAiEditText(aiSuggestion); setAiSaveModal(true); }}
+                  style={{ marginTop: 8, width: '100%', justifyContent: 'center' }}>
+                  💾 Salvesta soovitus
+                </Button>
               </div>
             )}
           </Card>
 
           <Card>
-            <div className={styles.savedTitle}>Salvestatud sel seansil</div>
+            <div className={styles.savedTitle}>
+              Salvestatud sel seansil
+              {Object.keys(entryDrafts).length > 0 && (
+                <span style={{ marginLeft: 8, fontSize: 11, color: 'var(--color-warn)', fontWeight: 600 }}>
+                  ({Object.keys(entryDrafts).length} pooleli)
+                </span>
+              )}
+            </div>
             {activeSession.entries.length === 0
               ? <p className={styles.emptyNote}>Sagedusi pole veel lisatud.</p>
               : activeSession.entries.map(e => (
@@ -309,6 +399,28 @@ export default function SessionPage() {
           </Card>
         </div>
       </div>
+
+      {/* AI salvestamise modaal */}
+      {aiSaveModal && (
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100 }}
+          onClick={() => setAiSaveModal(false)}>
+          <div style={{ background: 'var(--color-surface)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', width: '90%', maxWidth: 500 }}
+            onClick={e => e.stopPropagation()}>
+            <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 12 }}>Redigeeri ja salvesta soovitus</div>
+            <textarea value={aiEditText} onChange={e => setAiEditText(e.target.value)} rows={10}
+              style={{ width: '100%', fontSize: 13, resize: 'vertical', marginBottom: 12 }} />
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
+              <Button variant="secondary" onClick={() => setAiSaveModal(false)}>Tühista</Button>
+              <Button variant="primary" onClick={async () => {
+                try {
+                  await api.saveAiSuggestion(activeClientId, editingSessionId || null, aiEditText);
+                  setAiSaveModal(false);
+                } catch(err) { alert(err.message); }
+              }}>💾 Salvesta</Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

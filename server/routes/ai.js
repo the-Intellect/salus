@@ -4,6 +4,13 @@ import { pool } from '../db/database.js';
 
 const router = express.Router();
 
+const toDateStr = (d) => {
+  if (!d) return 'teadmata';
+  if (typeof d === 'string') return d.slice(0, 10);
+  if (d instanceof Date) return d.toISOString().slice(0, 10);
+  return String(d).slice(0, 10);
+};
+
 router.post('/suggest', requireAuth, async (req, res) => {
   const { clientId, entries, clientContext } = req.body;
 
@@ -12,20 +19,16 @@ router.post('/suggest', requireAuth, async (req, res) => {
   }
 
   try {
-    // 1. Kliendi põhiandmed (anonüümselt — ainult põhjus ja märkmed)
     const { rows: clientRows } = await pool.query(
-      'SELECT reason, notes FROM clients WHERE id=$1',
-      [clientId]
+      'SELECT reason, notes FROM clients WHERE id=$1', [clientId]
     );
     const client = clientRows[0] || {};
 
-    // 2. Märkmete ajalugu
     const { rows: notesHistory } = await pool.query(
       'SELECT text, saved_at FROM notes_history WHERE client_id=$1 ORDER BY saved_at DESC LIMIT 5',
       [clientId]
     );
 
-    // 3. Eelnevate seanside kokkuvõte
     const { rows: prevEntries } = await pool.query(`
       SELECT se.frequency_name, se.initial_result, se.final_result,
              se.minute_results, s.date
@@ -36,38 +39,36 @@ router.post('/suggest', requireAuth, async (req, res) => {
       LIMIT 60
     `, [clientId]);
 
-    // 4. Kõik kategooriad sageduste soovituste jaoks
     const { rows: allCategories } = await pool.query(
       'SELECT label_en, label_et FROM frequency_categories ORDER BY label_en'
     );
 
-    // Grupeeri eelnevad seansid kuupäeva järgi
     const sessionMap = {};
     for (const e of prevEntries) {
-      const d = e.date?.slice(0, 10) || 'unknown';
+      const d = toDateStr(e.date);
       if (!sessionMap[d]) sessionMap[d] = [];
       sessionMap[d].push(e);
     }
+
     const prevSessionsText = Object.entries(sessionMap)
       .slice(0, 5)
       .map(([date, es]) => {
         const stressed = es.filter(e => e.initial_result < 50);
-        return `Seanss ${date}: ${es.length} sagedust, pinges: ${stressed.map(e => `${e.frequency_name} (algne ${e.initial_result}→lõpp ${e.final_result})`).join(', ') || 'puudub'}`;
+        return `Seanss ${date}: ${es.length} sagedust, pinges: ${
+          stressed.map(e => `${e.frequency_name} (algne ${e.initial_result}→lõpp ${e.final_result})`).join(', ') || 'puudub'
+        }`;
       }).join('\n') || 'Eelnevaid seanse pole.';
 
-    // Praeguse seansi tulemused
     const currentText = entries.length > 0
       ? entries.map(e =>
           `- ${e.frequencyName}: algne ${e.initial} → ${e.minutes.length} min → lõpp ${e.final}${e.final < 50 ? ' ⚠️ pinge' : ''}`
         ).join('\n')
       : 'Seanssi pole veel alustatud.';
 
-    // Märkmed
     const notesText = notesHistory.length > 0
-      ? notesHistory.map(n => `[${n.saved_at?.slice(0,10)}] ${n.text}`).join('\n\n')
+      ? notesHistory.map(n => `[${toDateStr(n.saved_at)}] ${n.text}`).join('\n\n')
       : 'Märkmeid pole.';
 
-    // Kategooriad kompaktselt
     const categoriesText = allCategories
       .map(c => c.label_et ? `${c.label_en} / ${c.label_et}` : c.label_en)
       .join(', ');
@@ -115,8 +116,8 @@ Ole konkreetne, praktiline ja lühike. Vasta eesti keeles. Maksimaalselt 250 sõ
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 600,
+        model: 'claude-sonnet-4-5',
+        max_tokens: 800,
         messages: [{ role: 'user', content: prompt }],
       }),
     });
@@ -134,3 +135,29 @@ Ole konkreetne, praktiline ja lühike. Vasta eesti keeles. Maksimaalselt 250 sõ
 });
 
 export default router;
+
+// POST /api/ai/suggestions — salvesta AI soovitus
+router.post('/suggestions', requireAuth, async (req, res) => {
+  const { clientId, sessionId, text } = req.body;
+  if (!clientId || !text) return res.status(400).json({ error: 'clientId ja text on kohustuslikud' });
+  const { rows } = await pool.query(
+    'INSERT INTO ai_suggestions (client_id, session_id, text, saved_by) VALUES ($1,$2,$3,$4) RETURNING *',
+    [clientId, sessionId || null, text, req.user.id]
+  );
+  res.json(rows[0]);
+});
+
+// GET /api/ai/suggestions/:clientId — lae kliendi AI soovitused
+router.get('/suggestions/:clientId', requireAuth, async (req, res) => {
+  const { rows } = await pool.query(
+    'SELECT * FROM ai_suggestions WHERE client_id=$1 ORDER BY saved_at DESC',
+    [req.params.clientId]
+  );
+  res.json(rows);
+});
+
+// DELETE /api/ai/suggestions/:id
+router.delete('/suggestions/:id', requireAuth, async (req, res) => {
+  await pool.query('DELETE FROM ai_suggestions WHERE id=$1', [req.params.id]);
+  res.json({ ok: true });
+});

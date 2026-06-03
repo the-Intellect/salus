@@ -11,7 +11,7 @@ router.get('/client/:clientId', requireAuth, async (req, res) => {
     FROM sessions s
     LEFT JOIN users u ON s.therapist_id = u.id
     WHERE s.client_id=$1
-    ORDER BY s.date DESC
+    ORDER BY s.created_at DESC
   `, [req.params.clientId]);
 
   for (const session of sessions) {
@@ -53,7 +53,6 @@ router.post('/', requireAuth, async (req, res) => {
 router.put('/:id', requireAuth, async (req, res) => {
   const { entries, notes, duration } = req.body;
   await pool.query('UPDATE sessions SET notes=$1, duration_minutes=$2 WHERE id=$3', [notes || '', duration || 60, req.params.id]);
-
   await pool.query('DELETE FROM session_entries WHERE session_id=$1', [req.params.id]);
   for (let i = 0; i < entries.length; i++) {
     const e = entries[i];
