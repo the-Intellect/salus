@@ -18,16 +18,16 @@ function hasFont() {
 }
 
 function resultColorHex(val) {
-  if (val === null || val === undefined) return '#9CA3AF';
-  if (val >= 85) return '#2F9E44';
-  if (val >= 50) return '#5C940D';
+  if (val === null || val === undefined) return '#6B7280';
+  if (val >= 85) return '#5C940D';
+  if (val >= 50) return '#2F9E44';
   return '#E03131';
 }
 
 function resultBgHex(val) {
-  if (val === null || val === undefined) return '#F3F4F6';
-  if (val >= 85) return '#EBFBEE';
-  if (val >= 50) return '#D3F9D8';
+  if (val === null || val === undefined) return '#FFFFFF';
+  if (val >= 85) return '#D3F9D8';
+  if (val >= 50) return '#EBFBEE';
   return '#FFF5F5';
 }
 
@@ -36,6 +36,33 @@ function formatDate(dateStr) {
   const d = new Date(dateStr);
   if (isNaN(d)) return dateStr;
   return d.toLocaleDateString('et-EE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+}
+
+// Joonistab tabeli jooned — ilma vasaku ja parema välisservata
+// Ainult horisontaalsed jooned + sisemised vertikaalid
+function drawTableLines(doc, ML, y, contentW, rowH, X_TEST, X_MINS, MAX_MINS, COL_W) {
+  doc.save();
+  doc.strokeColor('#E5E7EB').lineWidth(0.5);
+
+  const RIGHT = ML + contentW;
+
+  // Ülemine horisontaaljoon
+  doc.moveTo(ML, y).lineTo(RIGHT, y).stroke();
+  // Alumine horisontaaljoon
+  doc.moveTo(ML, y + rowH).lineTo(RIGHT, y + rowH).stroke();
+
+  // Sisemised vertikaalid — kirjelduse ja Test tulba vahel
+  doc.moveTo(X_TEST, y).lineTo(X_TEST, y + rowH).stroke();
+  // Test ja 1min vahel
+  doc.moveTo(X_MINS, y).lineTo(X_MINS, y + rowH).stroke();
+  // Minutite vahelised jooned
+  for (let m = 1; m < MAX_MINS; m++) {
+    doc.moveTo(X_MINS + m * COL_W, y).lineTo(X_MINS + m * COL_W, y + rowH).stroke();
+  }
+  // Viimane minut parem serv
+  doc.moveTo(X_MINS + MAX_MINS * COL_W, y).lineTo(X_MINS + MAX_MINS * COL_W, y + rowH).stroke();
+
+  doc.restore();
 }
 
 router.post('/session/:sessionId', requireAuth, async (req, res) => {
@@ -48,8 +75,8 @@ router.post('/session/:sessionId', requireAuth, async (req, res) => {
     therapist: isEt ? 'Terapeut' : 'Therapist',
     date: isEt ? 'Kuupäev' : 'Date',
     duration: isEt ? 'Seansi pikkus' : 'Session length',
-    initial: isEt ? 'Esialgne' : 'Initial',
-    prevSession: isEt ? 'Eelmine seanss' : 'Previous session',
+    description: isEt ? 'Kirjeldus' : 'Description',
+    test: 'Test',
     phone: '+372 503 7037',
     website: 'www.lifekeskus.ee',
     email: 'info@lifekeskus.ee',
@@ -106,38 +133,46 @@ router.post('/session/:sessionId', requireAuth, async (req, res) => {
     const PH = doc.page.height;
     const ML = 40, MR = 40;
     const contentW = PW - ML - MR;
-    const FOOTER_H = 36;
+    const FOOTER_H = 38;
     const availH = PH - FOOTER_H - 10;
 
-    // FOOTER funktsioon — täpsed absoluutsed koordinaadid, ei kasuta automaatset positsioneerimist
+    // Tabeli mõõdud
+    const MAX_MINS = 7;
+    const COL_W = 36;
+    const TEST_W = 40;
+    const MINS_W = MAX_MINS * COL_W;
+    const DESC_W = contentW - TEST_W - MINS_W;
+
+    const X_DESC = ML;
+    const X_TEST = ML + DESC_W;
+    const X_MINS = X_TEST + TEST_W;
+
+    // =====================
+    // FOOTER
+    // =====================
     const drawFooter = () => {
       const fy = PH - FOOTER_H;
       doc.save();
-
-      // Joon
       doc.moveTo(ML, fy).lineTo(PW - MR, fy)
         .strokeColor('#3a472e').lineWidth(1).stroke();
-
-      // Logo vasakul
       const hasLogo = fs.existsSync(LOGO_PATH);
       if (hasLogo) {
-        doc.image(LOGO_PATH, ML, fy + 8, { height: 15, fit: [60, 15] });
+        doc.image(LOGO_PATH, ML, fy + 10, { height: 15, fit: [60, 15] });
       }
-
-      // Kontaktandmed paremal — kasuta moveTo et vältida cursor nihkumist
       const contactText = `${t.phone}  |  ${t.website}  |  ${t.email}`;
-      doc.fontSize(8).fillColor('#6B7280').font(R('Regular'));
+      doc.fontSize(10).fillColor('#6B7280').font(R('Regular'));
       const textW2 = doc.widthOfString(contactText);
-      doc.text(contactText, PW - MR - textW2 - 5, fy + 11, { lineBreak: false });
-
+      doc.text(contactText, PW - MR - textW2 - 5, fy + 12, { lineBreak: false });
       doc.restore();
     };
 
+    // =====================
     // PÄIS
-    doc.fontSize(20).fillColor('#1A1916').font(R('Bold')).text(t.title, ML, 40);
+    // =====================
+    doc.fontSize(20).fillColor('#1A1916').font(R('Bold')).text(t.title, ML, 38);
 
-    const infoY = 72;
-    const colW = contentW / 4;
+    const infoY = 68;
+    const colW4 = contentW / 4;
     const dur = session.duration_minutes || 60;
     const durLabel = isEt ? `${dur} minutit` : `${dur} minutes`;
 
@@ -145,27 +180,55 @@ router.post('/session/:sessionId', requireAuth, async (req, res) => {
      [t.therapist, session.therapist_name || '—'],
      [t.date, formatDate(session.date)],
      [t.duration, durLabel]].forEach(([label, val], i) => {
-      const x = ML + i * colW;
+      const x = ML + i * colW4;
       doc.fontSize(8).fillColor('#6B7280').font(R('Regular')).text(label, x, infoY);
-      doc.fontSize(12).fillColor('#1A1916').font(R('Bold')).text(val, x, infoY + 12);
+      doc.fontSize(13).fillColor('#1A1916').font(R('Bold')).text(val, x, infoY + 11);
     });
 
-    doc.moveTo(ML, infoY + 34).lineTo(PW - MR, infoY + 34)
-      .strokeColor('#E5E7EB').lineWidth(0.5).stroke();
+    // Päise ja tabeli vaheline joon PUUDUB — tabeli esimese rea ülemine joon täidab selle rolli
 
-    // SAGEDUSED
-    let y = infoY + 44;
+    // =====================
+    // TABELI PÄIS
+    // =====================
+    let y = infoY + 38;
+    const HEADER_H = 22;
 
-    // Pill joonistamise funktsioon
-    const drawPill = (val, px, py, small = false) => {
-      const fs2 = small ? 7 : 9;
-      const pw2 = small ? 22 : 26;
-      const ph2 = small ? 13 : 15;
-      doc.roundedRect(px, py, pw2, ph2, ph2 / 2).fillColor(resultBgHex(val)).fill();
-      const textY = py + (ph2 / 2) - (fs2 / 2) - 1;
-      doc.fontSize(fs2).fillColor(resultColorHex(val)).font(R('Bold'))
-        .text(String(val ?? '—'), px, textY, { width: pw2, align: 'center', lineBreak: false });
-      return pw2 + 3;
+    // Päise taustad
+    doc.rect(X_DESC, y, DESC_W, HEADER_H).fillColor('#F9FAFB').fill();
+    doc.rect(X_TEST, y, TEST_W, HEADER_H).fillColor('#F9FAFB').fill();
+    for (let m = 0; m < MAX_MINS; m++) {
+      doc.rect(X_MINS + m * COL_W, y, COL_W, HEADER_H).fillColor('#F9FAFB').fill();
+    }
+
+    // Päise tekst
+    doc.fontSize(9).fillColor('#6B7280').font(R('Bold'));
+    doc.text(t.description, X_DESC + 6, y + 7, { lineBreak: false });
+    doc.text(t.test, X_TEST, y + 7, { width: TEST_W, align: 'center', lineBreak: false });
+    for (let m = 0; m < MAX_MINS; m++) {
+      doc.text(`${m + 1}min`, X_MINS + m * COL_W, y + 7, { width: COL_W, align: 'center', lineBreak: false });
+    }
+
+    // Päise jooned (ülemine + alumine + sisemised vertikaalid, EI vasak/parem serv)
+    drawTableLines(doc, ML, y, contentW, HEADER_H, X_TEST, X_MINS, MAX_MINS, COL_W);
+    y += HEADER_H;
+
+    // =====================
+    // SAGEDUSTE READ
+    // =====================
+    const drawTableHeader = (startY) => {
+      doc.rect(X_DESC, startY, DESC_W, HEADER_H).fillColor('#F9FAFB').fill();
+      doc.rect(X_TEST, startY, TEST_W, HEADER_H).fillColor('#F9FAFB').fill();
+      for (let m = 0; m < MAX_MINS; m++) {
+        doc.rect(X_MINS + m * COL_W, startY, COL_W, HEADER_H).fillColor('#F9FAFB').fill();
+      }
+      doc.fontSize(9).fillColor('#6B7280').font(R('Bold'));
+      doc.text(t.description, X_DESC + 6, startY + 7, { lineBreak: false });
+      doc.text(t.test, X_TEST, startY + 7, { width: TEST_W, align: 'center', lineBreak: false });
+      for (let m = 0; m < MAX_MINS; m++) {
+        doc.text(`${m + 1}min`, X_MINS + m * COL_W, startY + 7, { width: COL_W, align: 'center', lineBreak: false });
+      }
+      drawTableLines(doc, ML, startY, contentW, HEADER_H, X_TEST, X_MINS, MAX_MINS, COL_W);
+      return startY + HEADER_H;
     };
 
     for (const entry of entries) {
@@ -173,67 +236,67 @@ router.post('/session/:sessionId', requireAuth, async (req, res) => {
       const minutes = entry.minute_results || [];
       const initVal = entry.initial_result;
       const prev = prevEntryMap[entry.frequency_id];
+      const prevMins = prev?.minute_results || [];
 
-      const descH = doc.heightOfString(desc, { width: contentW - 20, fontSize: 10 });
-      const rowH = descH + 28 + (prev ? 18 : 0) + 10;
+      const descH = doc.heightOfString(desc, { width: DESC_W - 12, fontSize: 9 });
+      const ROW_H = Math.max(descH + 14, 24);
 
-      // Lehevahetus — joonista footer ENNE
-      if (y + rowH > availH) {
+      // Lehevahetus
+      if (y + ROW_H > availH) {
         drawFooter();
         doc.addPage({ size: 'A4', layout: 'landscape', margin: 40 });
-        y = 40;
+        y = drawTableHeader(40);
       }
 
-      // Kirjeldus
-      doc.fontSize(10).fillColor('#374151').font(R('Regular'))
-        .text(desc, ML, y, { width: contentW - 20 });
+      // 1. Eelmise seansi highlight — joonista ENNE teksti (taust)
+      if (prev) {
+        // Test lahter
+        doc.rect(X_TEST, y, TEST_W, ROW_H).fillColor('#F0FDF4').fill();
+        // Minutite lahtrid
+        for (let m = 0; m < prevMins.length && m < MAX_MINS; m++) {
+          doc.rect(X_MINS + m * COL_W, y, COL_W, ROW_H).fillColor('#F0FDF4').fill();
+        }
+      }
 
-      const pillsY = y + descH + 4;
+      // 2. Kirjelduse ala (valge taust, üle eelmise seansi rohelise)
+      doc.rect(X_DESC, y, DESC_W, ROW_H).fillColor('#FFFFFF').fill();
 
-      // Praeguse seansi tulemused
-      let px = ML;
-      doc.fontSize(8).fillColor('#6B7280').font(R('Regular'))
-        .text(`${t.initial}:`, px, pillsY + 3, { lineBreak: false });
-      px += 36;
-      px += drawPill(initVal, px, pillsY);
-      px += 8;
-      minutes.forEach((m, i) => {
-        doc.fontSize(7).fillColor('#9CA3AF').font(R('Regular'))
-          .text(`${i + 1}min`, px, pillsY + 4, { lineBreak: false });
-        px += 20;
-        px += drawPill(m, px, pillsY);
-        px += 4;
+      // 3. Jooned — joonistame PÄRAST tausta aga ENNE teksti
+      drawTableLines(doc, ML, y, contentW, ROW_H, X_TEST, X_MINS, MAX_MINS, COL_W);
+
+      // 4. Kirjelduse tekst
+      doc.fontSize(9).fillColor('#374151').font(R('Regular'))
+        .text(desc, X_DESC + 6, y + 7, { width: DESC_W - 12, lineBreak: true });
+
+      // 5. Test (esialgne) tulemus
+      if (initVal !== null && initVal !== undefined) {
+        const cellCenterY = y + (ROW_H / 2) - 7;
+        doc.rect(X_TEST + 4, cellCenterY, TEST_W - 8, 14)
+          .fillColor(resultBgHex(initVal)).fill();
+        doc.fontSize(9).fillColor(resultColorHex(initVal)).font(R('Bold'))
+          .text(String(initVal), X_TEST + 4, cellCenterY + 3, { width: TEST_W - 8, align: 'center', lineBreak: false });
+      }
+
+      // 6. Minutite tulemused
+      minutes.forEach((m, mi) => {
+        if (mi >= MAX_MINS) return;
+        const cellCenterY = y + (ROW_H / 2) - 7;
+        const cx = X_MINS + mi * COL_W;
+        doc.rect(cx + 4, cellCenterY, COL_W - 8, 14)
+          .fillColor(resultBgHex(m)).fill();
+        doc.fontSize(9).fillColor(resultColorHex(m)).font(R('Bold'))
+          .text(String(m), cx + 4, cellCenterY + 3, { width: COL_W - 8, align: 'center', lineBreak: false });
       });
 
-      // Eelmine seanss
-      if (prev) {
-        const prevY = pillsY + 18;
-        const prevMins = prev.minute_results || [];
-        let ppx = ML;
-        doc.fontSize(7).fillColor('#9CA3AF').font(R('Regular'))
-          .text(`${t.prevSession} (${formatDate(prev.date)}):`, ppx, prevY + 2, { lineBreak: false });
-        ppx += 120;
-        ppx += drawPill(prev.initial_result, ppx, prevY, true);
-        ppx += 8;
-        prevMins.forEach((m, i) => {
-          doc.fontSize(6).fillColor('#C0C0C0').font(R('Regular'))
-            .text(`${i + 1}min`, ppx, prevY + 3, { lineBreak: false });
-          ppx += 18;
-          ppx += drawPill(m, ppx, prevY, true);
-          ppx += 3;
-        });
-      }
-
-      y += rowH + 4;
-
-      // Eraldus joon
-      if (y < availH - 10) {
-        doc.moveTo(ML, y - 4).lineTo(PW - MR, y - 4)
-          .strokeColor('#F3F4F6').lineWidth(0.5).stroke();
-      }
+      y += ROW_H;
     }
 
-    // Footer viimasele lehele
+    // Viimane alumine joon
+    doc.save();
+    doc.strokeColor('#E5E7EB').lineWidth(0.5);
+    doc.moveTo(ML, y).lineTo(ML + contentW, y).stroke();
+    doc.restore();
+
     drawFooter();
     doc.end();
 

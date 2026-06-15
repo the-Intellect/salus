@@ -11,7 +11,7 @@
 .searchRow input { flex: 1; }
 .searchRow select { width: 190px; }
 
-.freqCount { font-size: 12px; color: var(--color-text-muted); margin-bottom: 10px; }
+.freqCount { font-size: 14px; color: var(--color-text-muted); margin-bottom: 10px; }
 
 .freqList {
   display: flex;
@@ -34,12 +34,12 @@
 .freqOpen { border-color: var(--color-accent); cursor: default; }
 
 .freqTop { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
-.freqName { font-size: 13px; font-weight: 600; color: var(--color-text-primary); }
-.freqId { font-size: 11px; color: var(--color-text-muted); font-family: var(--font-mono); }
+.freqName { font-size: 15px; font-weight: 600; color: var(--color-text-primary); }
+.freqId { font-size: 13px; color: var(--color-text-muted); font-family: var(--font-mono); }
 .freqCats { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
-.catTag { font-size: 11px; padding: 1px 7px; background: var(--color-accent-light); color: var(--color-accent); border-radius: 20px; }
-.freqDesc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; margin-top: 4px; }
-.savedBadge { font-size: 11px; font-weight: 500; color: var(--color-ok); white-space: nowrap; flex-shrink: 0; }
+.catTag { font-size: 13px; padding: 1px 7px; background: var(--color-accent-light); color: var(--color-accent); border-radius: 20px; }
+.freqDesc { font-size: 14px; color: var(--color-text-secondary); line-height: 1.5; margin-top: 4px; }
+.savedBadge { font-size: 13px; font-weight: 500; color: var(--color-ok); white-space: nowrap; flex-shrink: 0; }
 
 .entryForm {
   margin-top: 12px;
@@ -50,31 +50,31 @@
   gap: 10px;
 }
 .entryRow { display: flex; align-items: center; gap: 10px; }
-.entryLabel { font-size: 12px; color: var(--color-text-secondary); min-width: 140px; }
+.entryLabel { font-size: 14px; color: var(--color-text-secondary); min-width: 140px; }
 .numInput { width: 70px; font-family: var(--font-mono); text-align: center; }
 .minuteRow { display: flex; align-items: flex-start; gap: 10px; }
 .minuteInputs { display: flex; flex-wrap: wrap; gap: 6px; }
 .minCell { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-.minLabel { font-size: 10px; color: var(--color-text-muted); }
-.numInputSm { width: 48px; font-family: var(--font-mono); text-align: center; font-size: 13px; padding: 4px 6px; }
+.minLabel { font-size: 12px; color: var(--color-text-muted); }
+.numInputSm { width: 48px; font-family: var(--font-mono); text-align: center; font-size: 15px; padding: 4px 6px; }
 .entryActions { display: flex; justify-content: flex-end; gap: 6px; }
 
 /* Parempoolne — salvestatud */
-.savedTitle { font-size: 13px; font-weight: 600; margin-bottom: 12px; }
-.emptyNote { font-size: 12px; color: var(--color-text-muted); }
+.savedTitle { font-size: 15px; font-weight: 600; margin-bottom: 12px; }
+.emptyNote { font-size: 14px; color: var(--color-text-muted); }
 .savedEntry {
   padding: 8px 0;
   border-bottom: 1px solid var(--color-border);
 }
 .savedEntry:last-of-type { border-bottom: none; }
 .savedTop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
-.savedName { font-size: 13px; font-weight: 500; }
+.savedName { font-size: 15px; font-weight: 500; }
 .savedActions { display: flex; gap: 4px; }
 .iconBtn {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   padding: 2px 4px;
   border-radius: var(--radius-sm);
   opacity: 0.6;

@@ -72,3 +72,30 @@ router.post('/:id/notes', requireAuth, async (req, res) => {
 });
 
 export default router;
+
+// DELETE /api/clients/:id/notes/:noteId
+router.delete('/:id/notes/:noteId', requireAuth, async (req, res) => {
+  await pool.query(
+    'DELETE FROM notes_history WHERE id=$1 AND client_id=$2',
+    [req.params.noteId, req.params.id]
+  );
+  const { rows } = await pool.query(
+    'SELECT * FROM notes_history WHERE client_id=$1 ORDER BY saved_at DESC',
+    [req.params.id]
+  );
+  res.json(rows);
+});
+
+// PUT /api/clients/:id/notes/:noteId
+router.put('/:id/notes/:noteId', requireAuth, async (req, res) => {
+  const { text } = req.body;
+  await pool.query(
+    'UPDATE notes_history SET text=$1 WHERE id=$2 AND client_id=$3',
+    [text, req.params.noteId, req.params.id]
+  );
+  const { rows } = await pool.query(
+    'SELECT * FROM notes_history WHERE client_id=$1 ORDER BY saved_at DESC',
+    [req.params.id]
+  );
+  res.json(rows);
+});

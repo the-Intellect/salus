@@ -22,6 +22,9 @@ export default function SessionPage() {
   const [clientInfo, setClientInfo] = useState(null);
   const [clientExpanded, setClientExpanded] = useState(null); // 'reason' | 'notes' | null
   const [clientNoteText, setClientNoteText] = useState('');
+  const [noteSaved, setNoteSaved] = useState(false);
+  const [noteEditingIdx, setNoteEditingIdx] = useState(null);
+  const [noteEditText, setNoteEditText] = useState('');
   const [aiSuggestion, setAiSuggestion] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
   const [aiContext, setAiContext] = useState('');
@@ -94,29 +97,34 @@ export default function SessionPage() {
     setEntryDraft(id, { ...draft, minutes: mins });
   };
 
-  // Draft on "pooleli" ainult kui on mittетühi number sisestatud ja pole salvestatud
+  // Draft on "pooleli" kui on väärtusi sisestatud aga pole salvestatud
   const hasDraft = (id) => {
     const ef = entryDrafts[id];
+    if (!ef) return false;
     const initial = ef?.initial?.trim();
-    if (!initial || initial === '') return false; // tühi = ei loe pooleliks
+    const hasMinutes = ef?.minutes?.some(m => m !== '');
+    // Pooleli kui on initial VÕI minutite väärtused
+    const hasValues = (initial && initial !== '') || hasMinutes;
+    if (!hasValues) return false;
     const isSaved = activeSession.entries.some(e => e.frequencyId === id);
     if (isSaved) {
       const existing = activeSession.entries.find(e => e.frequencyId === id);
-      return String(existing.initial) !== initial;
+      return String(existing.initial) !== (initial || '');
     }
     return true;
   };
 
   const saveEntry = (freq) => {
     const ef = entryDrafts[freq.id];
-    if (!ef?.initial) { alert('Lisa vähemalt esialgne tulemus.'); return; }
+    if (!ef?.initial && !isSpecialId(freq.id)) { alert('Lisa vähemalt esialgne tulemus.'); return; }
     const filledMins = ef.minutes.filter(m => m !== '').map(Number);
-    const final = filledMins.length ? filledMins[filledMins.length - 1] : Number(ef.initial);
+    const initialVal = ef?.initial?.trim() ? Number(ef.initial) : null;
+    const final = filledMins.length ? filledMins[filledMins.length - 1] : initialVal;
     const entry = {
       frequencyId: freq.id,
       frequencyName: freq.freq_name,
       frequencyDescription: freq.description,
-      initial: Number(ef.initial),
+      initial: initialVal,
       minutes: filledMins,
       final,
     };
@@ -126,10 +134,29 @@ export default function SessionPage() {
   };
 
   const saveClientNote = async () => {
-    if (!activeClientId) return;
+    if (!activeClientId || !clientNoteText.trim()) return;
     try {
-      await api.addNote(activeClientId, clientNoteText);
-      setClientInfo(ci => ({ ...ci, notes: clientNoteText }));
+      const notes = await api.addNote(activeClientId, clientNoteText);
+      setClientInfo(ci => ({ ...ci, notes: clientNoteText, notes_history: notes }));
+      setClientNoteText(''); // tühjenda kast
+      setNoteSaved(true);
+      setTimeout(() => setNoteSaved(false), 3000);
+    } catch(err) { alert(err.message); }
+  };
+
+  const deleteClientNote = async (noteId) => {
+    if (!window.confirm('Kustuta märkus?')) return;
+    try {
+      const notes = await api.deleteNote(activeClientId, noteId);
+      setClientInfo(ci => ({ ...ci, notes_history: notes }));
+    } catch(err) { alert(err.message); }
+  };
+
+  const editClientNote = async (noteId, text) => {
+    try {
+      const notes = await api.editNote(activeClientId, noteId, text);
+      setClientInfo(ci => ({ ...ci, notes_history: notes }));
+      setNoteEditingIdx(null);
     } catch(err) { alert(err.message); }
   };
 
@@ -167,6 +194,10 @@ export default function SessionPage() {
   };
 
   const savedIds = new Set(activeSession.entries.map(e => e.frequencyId));
+
+  // Erilised ID-d kus esialgne tulemus on valikuline
+  const SPECIAL_ID_PREFIXES = ['Biofeedback Gems', 'Sarcode', 'Timed specific', 'Wellness'];
+  const isSpecialId = (id) => SPECIAL_ID_PREFIXES.some(p => id?.toLowerCase().startsWith(p.toLowerCase()));
 
   return (
     <div>
@@ -214,8 +245,8 @@ export default function SessionPage() {
                   >
                     <div className={styles.freqHeader} onClick={() => isOpen ? closeFreq() : openFreq(freq.id)}>
                       <div style={{ flex: 1 }}>
-                        <span className={styles.freqName}>{freq.freq_name}</span>
-                        <span className={styles.freqId}> #{freq.id}</span>
+                        <span className={styles.freqName}>#{freq.id}</span>
+                        <span className={styles.freqName}> {freq.freq_name}</span>
                         <div className={styles.freqCats}>
                           {freq.categories?.map(c => (
                             <span key={c.id} className={styles.catTag}>
@@ -238,12 +269,14 @@ export default function SessionPage() {
                     {isOpen && (
                       <div className={styles.entryForm} onClick={e => e.stopPropagation()}>
                         <div className={styles.entryRow}>
-                          <label className={styles.entryLabel}>Esialgne tulemus %</label>
+                          <label className={styles.entryLabel}>
+                            Esialgne tulemus %{isSpecialId(freq.id) && <span style={{ color: 'var(--color-text-muted)', fontWeight: 400 }}> (valikuline)</span>}
+                          </label>
                           <input
                             type="number" min="0" max="100"
                             value={ef.initial}
                             onChange={e => setInitial(freq.id, e.target.value)}
-                            placeholder="0–100"
+                            placeholder={isSpecialId(freq.id) ? '—' : '0–100'}
                             className={styles.numInput}
                             autoFocus
                           />
@@ -288,41 +321,79 @@ export default function SessionPage() {
         <div className={styles.half}>
           {clientInfo && (
             <Card style={{ marginBottom: 10 }}>
-              <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 8, color: 'var(--color-text-primary)' }}>
+              <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 8, color: 'var(--color-text-primary)' }}>
                 👤 {clientInfo.first_name} {clientInfo.last_name}
               </div>
 
               {/* Pöördumise põhjus */}
               <div
-                style={{ fontSize: 12, color: 'var(--color-accent)', cursor: 'pointer', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 4 }}
+                style={{ fontSize: 14, color: 'var(--color-accent)', cursor: 'pointer', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 4 }}
                 onClick={() => setClientExpanded(clientExpanded === 'reason' ? null : 'reason')}
               >
                 {clientExpanded === 'reason' ? '▲' : '▼'} Pöördumise põhjus
               </div>
               {clientExpanded === 'reason' && (
-                <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', lineHeight: 1.6, padding: '6px 10px', background: 'var(--color-surface-2)', borderRadius: 'var(--radius-sm)', marginBottom: 6 }}>
+                <div style={{ fontSize: 14, color: 'var(--color-text-secondary)', lineHeight: 1.6, padding: '6px 10px', background: 'var(--color-surface-2)', borderRadius: 'var(--radius-sm)', marginBottom: 6 }}>
                   {clientInfo.reason || '—'}
                 </div>
               )}
 
               {/* Märkmed */}
               <div
-                style={{ fontSize: 12, color: 'var(--color-accent)', cursor: 'pointer', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 4 }}
+                style={{ fontSize: 14, color: 'var(--color-accent)', cursor: 'pointer', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 4 }}
                 onClick={() => setClientExpanded(clientExpanded === 'notes' ? null : 'notes')}
               >
                 {clientExpanded === 'notes' ? '▲' : '▼'} Märkmed
               </div>
               {clientExpanded === 'notes' && (
                 <div style={{ marginBottom: 4 }}>
+                  {/* Eelnevad märkmed */}
+                  {(clientInfo.notes_history || []).length > 0 && (
+                    <div style={{ marginBottom: 10 }}>
+                      {(clientInfo.notes_history || []).map((n, i) => (
+                        <div key={i} style={{ borderLeft: '3px solid var(--color-border)', paddingLeft: 8, marginBottom: 8 }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <span style={{ fontSize: 10, color: 'var(--color-text-muted)' }}>
+                              {new Date(n.saved_at).toLocaleDateString('et-EE')} {new Date(n.saved_at).toLocaleTimeString('et-EE', {hour:'2-digit',minute:'2-digit'})}
+                            </span>
+                            <div style={{ display: 'flex', gap: 3 }}>
+                              <button onClick={() => { setNoteEditingIdx(n.id); setNoteEditText(n.text); }}
+                                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 12, opacity: 0.6 }}>✏️</button>
+                              <button onClick={() => deleteClientNote(n.id)}
+                                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 12, opacity: 0.6 }}>🗑️</button>
+                            </div>
+                          </div>
+                          {noteEditingIdx === n.id ? (
+                            <div>
+                              <textarea value={noteEditText} onChange={e => setNoteEditText(e.target.value)}
+                                rows={2} style={{ width: '100%', fontSize: 11, resize: 'vertical', marginTop: 4 }} />
+                              <div style={{ display: 'flex', gap: 4, marginTop: 4 }}>
+                                <button onClick={() => setNoteEditingIdx(null)} style={{ fontSize: 11, cursor: 'pointer', background: 'none', border: '1px solid var(--color-border)', borderRadius: 4, padding: '2px 6px' }}>Tühista</button>
+                                <button onClick={() => editClientNote(n.id, noteEditText)} style={{ fontSize: 11, cursor: 'pointer', background: 'var(--color-accent)', color: '#fff', border: 'none', borderRadius: 4, padding: '2px 6px' }}>Salvesta</button>
+                              </div>
+                            </div>
+                          ) : (
+                            <div style={{ fontSize: 14, color: 'var(--color-text-secondary)', marginTop: 2 }}>{n.text}</div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {/* Uus märkus */}
                   <textarea
                     value={clientNoteText}
                     onChange={e => setClientNoteText(e.target.value)}
-                    rows={4}
+                    rows={3}
                     style={{ width: '100%', fontSize: 12, resize: 'vertical', marginBottom: 6 }}
-                    placeholder="Lisa märkmed..."
+                    placeholder="Lisa uus märkus..."
                   />
-                  <Button variant="primary" size="sm" onClick={saveClientNote} style={{ width: '100%', justifyContent: 'center' }}>
-                    💾 Salvesta märkmed
+                  <Button
+                    variant={noteSaved ? 'secondary' : 'primary'}
+                    size="sm"
+                    onClick={saveClientNote}
+                    disabled={!clientNoteText.trim()}
+                    style={{ width: '100%', justifyContent: 'center', background: noteSaved ? 'var(--color-ok)' : undefined, color: noteSaved ? '#fff' : undefined }}>
+                    {noteSaved ? '✓ Salvestatud' : '💾 Salvesta märkmed'}
                   </Button>
                 </div>
               )}
@@ -331,8 +402,8 @@ export default function SessionPage() {
 
           <Card style={{ marginBottom: 10 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)' }}>Seansi pikkus</span>
-              <select value={activeSession.duration || 60} onChange={e => setDuration(Number(e.target.value))} style={{ fontSize: 13, width: 120 }}>
+              <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)' }}>Seansi pikkus</span>
+              <select value={activeSession.duration || 60} onChange={e => setDuration(Number(e.target.value))} style={{ fontSize: 14, width: 120 }}>
                 <option value={60}>60 minutit</option>
                 <option value={75}>75 minutit</option>
                 <option value={90}>90 minutit</option>
@@ -341,10 +412,10 @@ export default function SessionPage() {
           </Card>
 
           <Card style={{ marginBottom: 10 }}>
-            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10, color: 'var(--color-text-primary)' }}>✨ AI soovitus</div>
+            <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 10, color: 'var(--color-text-primary)' }}>✨ AI soovitus</div>
             <textarea value={aiContext} onChange={e => setAiContext(e.target.value)}
               placeholder="Kirjelda kliendi seisundit... (valikuline)"
-              rows={2} style={{ width: '100%', fontSize: 12, resize: 'none', marginBottom: 8 }} />
+              rows={2} style={{ width: '100%', fontSize: 14, resize: 'none', marginBottom: 8 }} />
             <Button variant="secondary" size="sm" onClick={fetchAiSuggestion}
               disabled={aiLoading || activeSession.entries.length === 0}
               style={{ width: '100%', justifyContent: 'center' }}>
@@ -352,7 +423,7 @@ export default function SessionPage() {
             </Button>
             {aiSuggestion && (
               <div>
-                <div style={{ marginTop: 10, fontSize: 12, lineHeight: 1.6, background: 'var(--color-accent-light)', color: 'var(--color-accent)', padding: '10px 12px', borderRadius: 'var(--radius-md)', whiteSpace: 'pre-wrap' }}>
+                <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.6, background: 'var(--color-accent-light)', color: 'var(--color-accent)', padding: '10px 12px', borderRadius: 'var(--radius-md)', whiteSpace: 'pre-wrap' }}>
                   {aiSuggestion}
                 </div>
                 <Button variant="secondary" size="sm"
@@ -406,9 +477,9 @@ export default function SessionPage() {
           onClick={() => setAiSaveModal(false)}>
           <div style={{ background: 'var(--color-surface)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', width: '90%', maxWidth: 500 }}
             onClick={e => e.stopPropagation()}>
-            <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 12 }}>Redigeeri ja salvesta soovitus</div>
+            <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 12 }}>Redigeeri ja salvesta soovitus</div>
             <textarea value={aiEditText} onChange={e => setAiEditText(e.target.value)} rows={10}
-              style={{ width: '100%', fontSize: 13, resize: 'vertical', marginBottom: 12 }} />
+              style={{ width: '100%', fontSize: 14, resize: 'vertical', marginBottom: 12 }} />
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
               <Button variant="secondary" onClick={() => setAiSaveModal(false)}>Tühista</Button>
               <Button variant="primary" onClick={async () => {

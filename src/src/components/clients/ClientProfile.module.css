@@ -9,7 +9,7 @@
   margin-bottom: 1.25rem;
 }
 .profileName { font-size: 17px; font-weight: 600; }
-.profileMeta { font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+.profileMeta { font-size: 15px; color: var(--color-text-secondary); margin-top: 2px; }
 
 .tabs {
   display: flex;
@@ -19,7 +19,7 @@
 }
 .tab {
   padding: 8px 18px;
-  font-size: 13px;
+  font-size: 15px;
   color: var(--color-text-secondary);
   background: none;
   border: none;
@@ -34,25 +34,25 @@
 .sessionList { display: flex; flex-direction: column; gap: 10px; }
 .sessionCard { padding: 1rem 1.25rem !important; }
 .sessionTop { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-.sessionDate { font-size: 14px; font-weight: 600; }
-.sessionMeta { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; }
+.sessionDate { font-size: 16px; font-weight: 600; }
+.sessionMeta { font-size: 14px; color: var(--color-text-secondary); margin-top: 2px; }
 .entryList { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--color-border); padding-top: 10px; }
-.entry { display: flex; align-items: center; justify-content: space-between; font-size: 13px; }
+.entry { display: flex; align-items: center; justify-content: space-between; font-size: 15px; }
 .entryName { color: var(--color-text-primary); }
 .entryMins { display: flex; gap: 4px; align-items: center; }
 
 .freqTable { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; }
-.freqHeader { display: grid; grid-template-columns: 1fr auto auto auto; gap: 1rem; padding: 10px 1.25rem; background: var(--color-surface-2); font-size: 12px; font-weight: 500; color: var(--color-text-secondary); }
-.freqRow { display: grid; grid-template-columns: 1fr auto auto auto; gap: 1rem; padding: 10px 1.25rem; border-top: 1px solid var(--color-border); align-items: center; font-size: 13px; }
+.freqHeader { display: grid; grid-template-columns: 1fr auto auto auto; gap: 1rem; padding: 10px 1.25rem; background: var(--color-surface-2); font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+.freqRow { display: grid; grid-template-columns: 1fr auto auto auto; gap: 1rem; padding: 10px 1.25rem; border-top: 1px solid var(--color-border); align-items: center; font-size: 15px; }
 .freqName { font-weight: 500; }
-.freqCount { font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary); }
-.freqDate { font-size: 12px; color: var(--color-text-secondary); }
+.freqCount { font-family: var(--font-mono); font-size: 14px; color: var(--color-text-secondary); }
+.freqDate { font-size: 14px; color: var(--color-text-secondary); }
 
 .dataHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-.dataTitle { font-size: 14px; font-weight: 600; }
-.dataRow { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 13px; gap: 1rem; }
+.dataTitle { font-size: 16px; font-weight: 600; }
+.dataRow { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 15px; gap: 1rem; }
 .dataRow:last-child { border-bottom: none; }
-.dataLabel { color: var(--color-text-secondary); font-size: 12px; min-width: 150px; }
+.dataLabel { color: var(--color-text-secondary); font-size: 14px; min-width: 150px; }
 .dataValue { color: var(--color-text-primary); }
 
 /* Märkmed */
@@ -61,13 +61,13 @@
   padding-left: 12px;
 }
 .noteDate {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--color-text-muted);
   margin-bottom: 4px;
   font-family: var(--font-mono);
 }
 .noteText {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--color-text-primary);
   line-height: 1.6;
   white-space: pre-wrap;
@@ -102,15 +102,15 @@
   flex-direction: column;
   gap: 2px;
 }
-.freqName { font-size: 14px; font-weight: 600; color: var(--color-text-primary); }
-.freqMeta { font-size: 12px; color: var(--color-text-secondary); }
+.freqName { font-size: 16px; font-weight: 600; color: var(--color-text-primary); }
+.freqMeta { font-size: 14px; color: var(--color-text-secondary); }
 .accordionRight {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 .accordionChevron {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--color-text-muted);
 }
 .accordionBody {
@@ -123,7 +123,7 @@
   gap: 1rem;
   padding: 8px 1.25rem;
   background: var(--color-surface-2);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--color-text-muted);
   text-transform: uppercase;
@@ -136,11 +136,11 @@
   padding: 10px 1.25rem;
   border-top: 1px solid var(--color-border);
   align-items: center;
-  font-size: 13px;
+  font-size: 15px;
 }
 .historyDate {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-text-secondary);
 }
 .historyMins {
@@ -149,18 +149,18 @@
   gap: 4px;
 }
 .minChip {
-  font-size: 11px;
+  font-size: 13px;
   padding: 2px 8px;
   background: var(--color-surface-2);
   border-radius: 20px;
   color: var(--color-text-secondary);
   font-family: var(--font-mono);
 }
-.noMins { color: var(--color-text-muted); font-size: 12px; }
+.noMins { color: var(--color-text-muted); font-size: 14px; }
 
 /* Seansid - kirjeldus */
 .entryDesc {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--color-text-primary);
   flex: 1;
   line-height: 1.5;

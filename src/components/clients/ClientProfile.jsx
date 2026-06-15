@@ -112,6 +112,7 @@ export default function ClientProfile() {
 function SessionsTab({ sessions, clientId, navigate, onRefresh }) {
   const loadSessionForEdit = useAppStore(s => s.loadSessionForEdit);
   const [reportLoading, setReportLoading] = useState(null);
+  const [openSessionId, setOpenSessionId] = useState(null);
 
   const handleDelete = async (sessionId) => {
     if (!window.confirm('Oled kindel, et soovid selle seansi kustutada?')) return;
@@ -149,41 +150,48 @@ function SessionsTab({ sessions, clientId, navigate, onRefresh }) {
     .forEach((s, i) => { sessionNumbers[s.id] = i + 1; });
 
   return (
-    <div className={styles.sessionList}>
+    <div className={styles.freqAccordion}>
       {sessions.map((s) => {
         const idx = sessionNumbers[s.id];
+        const isOpen = openSessionId === s.id;
         return (
-        <Card key={s.id} className={styles.sessionCard}>
-          <div className={styles.sessionTop}>
-            <div>
-              <div className={styles.sessionDate}>{formatDate(s.date)} · Seanss #{idx}</div>
-              <div className={styles.sessionMeta}>{s.therapist_name} · {s.entries?.length || 0} sagedust</div>
+          <div key={s.id} className={`${styles.accordionItem} ${isOpen ? styles.accordionOpen : ''}`}>
+            {/* Päis — klikk avab/sulgeb */}
+            <div className={styles.accordionHeader} onClick={() => setOpenSessionId(isOpen ? null : s.id)}>
+              <div className={styles.accordionLeft}>
+                <span className={styles.freqName}>{formatDate(s.date)} · Seanss #{idx}</span>
+                <span className={styles.freqMeta}>{s.therapist_name} · {s.entries?.length || 0} sagedust · {s.duration_minutes || 60} min</span>
+              </div>
+              <div className={styles.accordionRight} onClick={e => e.stopPropagation()}>
+                <Button variant="secondary" size="sm" onClick={() => handleEdit(s)}>✏️</Button>
+                <Button variant="danger" size="sm" onClick={() => handleDelete(s.id)}>🗑️</Button>
+                <Button variant="secondary" size="sm" onClick={() => handleReport(s, 'et')} disabled={!!reportLoading}>
+                  {reportLoading === s.id + 'et' ? '...' : '↓ ET'}
+                </Button>
+                <Button variant="secondary" size="sm" onClick={() => handleReport(s, 'en')} disabled={!!reportLoading}>
+                  {reportLoading === s.id + 'en' ? '...' : '↓ EN'}
+                </Button>
+                <span className={styles.accordionChevron}>{isOpen ? '▲' : '▼'}</span>
+              </div>
             </div>
-            <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-              <Button variant="secondary" size="sm" onClick={() => handleEdit(s)}>✏️ Muuda</Button>
-              <Button variant="danger" size="sm" onClick={() => handleDelete(s.id)}>🗑️ Kustuta</Button>
-              <Button variant="secondary" size="sm" onClick={() => handleReport(s, 'et')} disabled={!!reportLoading}>
-                {reportLoading === s.id + 'et' ? '...' : '↓ ET'}
-              </Button>
-              <Button variant="secondary" size="sm" onClick={() => handleReport(s, 'en')} disabled={!!reportLoading}>
-                {reportLoading === s.id + 'en' ? '...' : '↓ EN'}
-              </Button>
-            </div>
+            {/* Tulemused */}
+            {isOpen && (
+              <div className={styles.accordionBody}>
+                {!s.entries?.length
+                  ? <p style={{ fontSize: 14, color: 'var(--color-text-muted)', padding: '12px 1.25rem' }}>Sagedusi pole</p>
+                  : s.entries.map((e, i) => (
+                    <div key={i} className={styles.sessionEntry}>
+                      <span className={styles.sessionEntryDesc}>{e.frequencyDescription || e.frequencyName}</span>
+                      <div className={styles.sessionEntryMins}>
+                        {e.initial !== null && e.initial !== undefined && <ResultPill value={e.initial} />}
+                        {(e.minutes || []).map((m, mi) => <ResultPill key={mi} value={m} />)}
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+            )}
           </div>
-          {s.entries?.length > 0 && (
-            <div className={styles.entryList}>
-              {s.entries.map((e, i) => (
-                <div key={i} className={styles.entry}>
-                  <span className={styles.entryDesc}>{e.frequencyDescription || e.frequencyName}</span>
-                  <div className={styles.entryMins}>
-                    <ResultPill value={e.initial} />
-                    {(e.minutes || []).map((m, mi) => <ResultPill key={mi} value={m} />)}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </Card>
         );
       })}
     </div>
@@ -224,7 +232,7 @@ function AiTab({ clientId }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Card>
-        <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>Uus AI soovitus / märkus</div>
+        <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 10 }}>Uus AI soovitus / märkus</div>
         <textarea value={newText} onChange={e => setNewText(e.target.value)} rows={4}
           style={{ width: '100%', resize: 'vertical', marginBottom: 8 }}
           placeholder="Küsi AI käest soovitust enne seanssi või lisa oma märkus..." />
@@ -246,7 +254,7 @@ function AiTab({ clientId }) {
         </div>
       </Card>
 
-      {loading ? <p style={{ color: 'var(--color-text-muted)', fontSize: 13 }}>Laadimine...</p> :
+      {loading ? <p style={{ color: 'var(--color-text-muted)', fontSize: 14 }}>Laadimine...</p> :
        suggestions.length === 0 ? <EmptyState icon="✨" title="AI soovitusi pole veel salvestatud" /> :
        suggestions.map(s => (
          <Card key={s.id}>
@@ -259,7 +267,7 @@ function AiTab({ clientId }) {
                <Button variant="danger" size="sm" onClick={() => handleDelete(s.id)}>🗑️</Button>
              </div>
            </div>
-           <div style={{ fontSize: 13, lineHeight: 1.7, whiteSpace: 'pre-wrap', color: 'var(--color-text-primary)' }}>{s.text}</div>
+           <div style={{ fontSize: 14, lineHeight: 1.7, whiteSpace: 'pre-wrap', color: 'var(--color-text-primary)' }}>{s.text}</div>
          </Card>
        ))
       }
@@ -269,9 +277,9 @@ function AiTab({ clientId }) {
           onClick={() => setEditModal(null)}>
           <div style={{ background: 'var(--color-surface)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', width: '90%', maxWidth: 500 }}
             onClick={e => e.stopPropagation()}>
-            <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 12 }}>Redigeeri soovitust</div>
+            <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 12 }}>Redigeeri soovitust</div>
             <textarea value={editText} onChange={e => setEditText(e.target.value)} rows={10}
-              style={{ width: '100%', fontSize: 13, resize: 'vertical', marginBottom: 12 }} />
+              style={{ width: '100%', fontSize: 14, resize: 'vertical', marginBottom: 12 }} />
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
               <Button variant="secondary" onClick={() => setEditModal(null)}>Tühista</Button>
               <Button variant="primary" onClick={handleEditSave}>💾 Salvesta</Button>
@@ -332,34 +340,73 @@ function FrequenciesTab({ history }) {
 
 // --- Märkmed ---
 function NotesTab({ client, clientId, onSave }) {
-  const [text, setText] = useState(client.notes || '');
+  const [text, setText] = useState('');
   const [saved, setSaved] = useState(false);
-  const history = client.notes_history || [];
+  const [editingNote, setEditingNote] = useState(null); // { index, text }
+  const [history, setHistory] = useState(client.notes_history || []);
 
   const handleSave = async () => {
+    if (!text.trim()) return;
     const notes = await api.addNote(clientId, text);
     onSave({ ...client, notes: text, notes_history: notes });
+    setHistory(notes);
+    setText(''); // tühjenda kast peale salvestust
     setSaved(true);
     setTimeout(() => setSaved(false), 3000);
+  };
+
+  const handleDeleteNote = async (noteId) => {
+    if (!window.confirm('Kustuta märkus?')) return;
+    try {
+      const notes = await api.deleteNote(clientId, noteId);
+      setHistory(notes);
+      onSave({ ...client, notes_history: notes });
+    } catch(err) { alert(err.message); }
+  };
+
+  const handleEditNote = async (noteId, newText) => {
+    try {
+      const notes = await api.editNote(clientId, noteId, newText);
+      setHistory(notes);
+      onSave({ ...client, notes_history: notes });
+      setEditingNote(null);
+    } catch(err) { alert(err.message); }
   };
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Card>
         <textarea value={text} onChange={e => { setText(e.target.value); setSaved(false); }}
-          rows={6} style={{ width: '100%', resize: 'vertical' }} placeholder="Kliendi ajalugu, tähelepanekud..." />
+          rows={4} style={{ width: '100%', resize: 'vertical' }} placeholder="Lisa uus märkus..." />
         <div style={{ marginTop: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          {saved ? <span style={{ fontSize: 13, color: 'var(--color-ok)' }}>✓ Salvestatud</span> : <span />}
-          <Button variant="primary" onClick={handleSave}>💾 Salvesta märkmed</Button>
+          {saved ? <span style={{ fontSize: 14, color: 'var(--color-ok)' }}>✓ Salvestatud</span> : <span />}
+          <Button variant="primary" onClick={handleSave} disabled={!text.trim()}>💾 Salvesta märkmed</Button>
         </div>
       </Card>
       {history.length > 0 && (
         <Card>
-          <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 12 }}>Märkmete ajalugu</div>
+          <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 12 }}>Märkmete ajalugu</div>
           {history.map((e, i) => (
             <div key={i} className={styles.noteEntry}>
-              <div className={styles.noteDate}>{formatDateTime(e.saved_at)}</div>
-              <div className={styles.noteText}>{e.text}</div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                <div className={styles.noteDate}>{formatDateTime(e.saved_at)}</div>
+                <div style={{ display: 'flex', gap: 4 }}>
+                  <Button variant="secondary" size="sm" onClick={() => setEditingNote({ noteId: e.id, text: e.text })}>✏️</Button>
+                  <Button variant="danger" size="sm" onClick={() => handleDeleteNote(e.id)}>🗑️</Button>
+                </div>
+              </div>
+              {editingNote?.noteId === e.id ? (
+                <div style={{ marginTop: 6 }}>
+                  <textarea value={editingNote.text} onChange={ev => setEditingNote({ ...editingNote, text: ev.target.value })}
+                    rows={3} style={{ width: '100%', fontSize: 13, resize: 'vertical', marginBottom: 6 }} />
+                  <div style={{ display: 'flex', gap: 6, justifyContent: 'flex-end' }}>
+                    <Button variant="secondary" size="sm" onClick={() => setEditingNote(null)}>Tühista</Button>
+                    <Button variant="primary" size="sm" onClick={() => handleEditNote(e.id, editingNote.text)}>💾 Salvesta</Button>
+                  </div>
+                </div>
+              ) : (
+                <div className={styles.noteText}>{e.text}</div>
+              )}
             </div>
           ))}
         </Card>

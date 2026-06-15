@@ -53,6 +53,8 @@ export const api = {
   createClient: (data) => request('POST', '/clients', data),
   updateClient: (id, data) => request('PUT', `/clients/${id}`, data),
   addNote: (clientId, text) => request('POST', `/clients/${clientId}/notes`, { text }),
+  deleteNote: (clientId, noteId) => request('DELETE', `/clients/${clientId}/notes/${noteId}`),
+  editNote: (clientId, noteId, text) => request('PUT', `/clients/${clientId}/notes/${noteId}`, { text }),
 
   // Seansid
   getSessions: (clientId) => request('GET', `/sessions/client/${clientId}`),
