@@ -18,6 +18,12 @@ dist/
 *keys*.txt
 *credentials*.txt
 
+# Arhiivid - võivad sisaldada saladusi
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
 # Andmebaas
 *.db
 *.sqlite
