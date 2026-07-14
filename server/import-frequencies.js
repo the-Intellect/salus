@@ -35,9 +35,10 @@ const header = parseCSVLine(lines[0]).map(h => h.toLowerCase());
 const idIdx = header.indexOf('id');
 const nameIdx = header.indexOf('freq_name');
 const descIdx = header.indexOf('description');
+const descEnIdx = header.indexOf('description_en');
 const catIdx = header.indexOf('category');
 
-console.log(`Päis: id=${idIdx}, freq_name=${nameIdx}, description=${descIdx}, category=${catIdx}`);
+console.log(`Päis: id=${idIdx}, freq_name=${nameIdx}, description=${descIdx}, description_en=${descEnIdx}, category=${catIdx}`);
 
 // Uuenda tabelid — ID VARCHAR(100)
 await pool.query(`
@@ -51,10 +52,12 @@ await pool.query(`
     id VARCHAR(100) PRIMARY KEY,
     freq_name VARCHAR(500) NOT NULL,
     description TEXT,
+    description_en TEXT,
     is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP DEFAULT NOW()
   );
+  ALTER TABLE IF EXISTS frequencies ADD COLUMN IF NOT EXISTS description_en TEXT;
   CREATE TABLE IF NOT EXISTS frequency_category_map (
     frequency_id VARCHAR(100) REFERENCES frequencies(id) ON DELETE CASCADE,
     category_id INTEGER REFERENCES frequency_categories(id) ON DELETE CASCADE,
@@ -80,6 +83,7 @@ for (let i = 1; i < lines.length; i++) {
   const id = cols[idIdx]?.trim();
   const name = cols[nameIdx]?.trim();
   const desc = cols[descIdx]?.trim();
+  const descEn = descEnIdx >= 0 ? cols[descEnIdx]?.trim() : '';
   const catRaw = cols[catIdx]?.trim();
 
   if (!id || !name) {
@@ -89,10 +93,10 @@ for (let i = 1; i < lines.length; i++) {
   }
 
   await pool.query(`
-    INSERT INTO frequencies (id, freq_name, description)
-    VALUES ($1, $2, $3)
-    ON CONFLICT (id) DO UPDATE SET freq_name=$2, description=$3, updated_at=NOW()
-  `, [id, name, desc || '']);
+    INSERT INTO frequencies (id, freq_name, description, description_en)
+    VALUES ($1, $2, $3, $4)
+    ON CONFLICT (id) DO UPDATE SET freq_name=$2, description=$3, description_en=$4, updated_at=NOW()
+  `, [id, name, desc || '', descEn || '']);
 
   if (catRaw) {
     const cats = catRaw.split(';').map(c => c.trim()).filter(Boolean);

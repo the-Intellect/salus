@@ -19,16 +19,12 @@ function hasFont() {
 
 function resultColorHex(val) {
   if (val === null || val === undefined) return '#6B7280';
-  if (val >= 85) return '#5C940D';
   if (val >= 50) return '#2F9E44';
   return '#E03131';
 }
 
 function resultBgHex(val) {
-  if (val === null || val === undefined) return '#FFFFFF';
-  if (val >= 85) return '#D3F9D8';
-  if (val >= 50) return '#EBFBEE';
-  return '#FFF5F5';
+  return '#FFFFFF'; // ei kasuta enam taustavärvi
 }
 
 function formatDate(dateStr) {
@@ -84,7 +80,7 @@ router.post('/session/:sessionId', requireAuth, async (req, res) => {
 
   try {
     const { rows: sessions } = await pool.query(`
-      SELECT s.*, u.name as therapist_name
+      SELECT s.*, u.name as therapist_name, s.client_recommendation
       FROM sessions s LEFT JOIN users u ON s.therapist_id = u.id
       WHERE s.id = $1
     `, [req.params.sessionId]);
@@ -124,7 +120,8 @@ router.post('/session/:sessionId', requireAuth, async (req, res) => {
     }
     const R = (name) => useFont ? name : (name === 'Bold' ? 'Helvetica-Bold' : 'Helvetica');
 
-    const filename = `raport_${formatDate(session.date).replace(/\./g, '-')}_${lang}.pdf`;
+    const clientName = `${client.first_name}_${client.last_name}`.replace(/\s+/g, '_');
+    const filename = `${clientName}_${formatDate(session.date).replace(/\./g, '-')}_${lang}.pdf`;
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
     doc.pipe(res);
@@ -296,6 +293,27 @@ router.post('/session/:sessionId', requireAuth, async (req, res) => {
     doc.strokeColor('#E5E7EB').lineWidth(0.5);
     doc.moveTo(ML, y).lineTo(ML + contentW, y).stroke();
     doc.restore();
+
+    // AI SOOVITUS KLIENDILE
+    if (session.client_recommendation) {
+      const recLabel = isEt ? 'Soovitus:' : 'Recommendation:';
+
+      // Kontrolli kas mahub lehele — arvuta ENNE y muutmist
+      const recTextH = doc.heightOfString(session.client_recommendation, { width: contentW - 20, fontSize: 10 });
+      const recBlockH = recTextH + 50; // pealkiri + vabakäigu + tekst
+
+      if (y + 20 + recBlockH > availH) {
+        drawFooter();
+        doc.addPage({ size: 'A4', layout: 'landscape', margin: 40 });
+        y = 40;
+      }
+
+      // Nüüd joonista õigele y-le
+      const rY = y + 20;
+      doc.fontSize(11).fillColor('#1A1916').font(R('Bold')).text(recLabel, ML, rY);
+      doc.fontSize(10).fillColor('#374151').font(R('Regular'))
+        .text(session.client_recommendation, ML, rY + 18, { width: contentW - 20, lineBreak: true });
+    }
 
     drawFooter();
     doc.end();

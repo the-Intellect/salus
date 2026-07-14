@@ -61,7 +61,7 @@
   border-radius: 20px;
 }
 .pillEmpty { color: var(--color-text-muted); font-size: 15px; }
-.pill-ok { background: #D3F9D8; color: #5C940D; }
+.pill-ok { background: #D3F9D8; color: #2F9E44; }
 .pill-ok-light { background: #EBFBEE; color: #2F9E44; }
 .pill-stress { background: var(--color-stress-light); color: var(--color-stress); }
 

@@ -161,3 +161,80 @@ router.delete('/suggestions/:id', requireAuth, async (req, res) => {
   await pool.query('DELETE FROM ai_suggestions WHERE id=$1', [req.params.id]);
   res.json({ ok: true });
 });
+
+// POST /api/ai/client-recommendation — AI soovitus kliendile pärast seanssi
+router.post('/client-recommendation', requireAuth, async (req, res) => {
+  const { clientId, entries, therapistNote, language = 'et' } = req.body;
+
+  if (!process.env.ANTHROPIC_API_KEY) {
+    return res.status(503).json({ error: 'AI pole seadistatud' });
+  }
+
+  const isEt = language === 'et';
+
+  try {
+    const { rows: clientRows } = await pool.query(
+      'SELECT reason FROM clients WHERE id=$1', [clientId]
+    );
+    const reason = clientRows[0]?.reason || '';
+
+    const { rows: therapistRows } = await pool.query(
+      'SELECT name FROM users WHERE id=$1', [req.user.id]
+    );
+    const therapistName = therapistRows[0]?.name || '';
+
+    const entriesText = entries.length > 0
+      ? entries.map(e => `- ${e.frequencyName}: ${e.initial} -> ${e.final}`).join('\n')
+      : isEt ? 'Andmed puuduvad' : 'No data';
+
+    const prompt = isEt
+      ? `Sa oled biotagasiside teraapia assistent. Koosta lühike ja soe soovitus kliendile.
+
+Poordumise pohjus: ${reason || 'Markimata'}
+Seansil toodeldud teemad: ${entriesText}
+${therapistNote ? `Terapeudi lisainfo: ${therapistNote}` : ''}
+
+Juhised:
+- Kirjuta otse kliendile (sina-vormis), soe ja toetav
+- Maksimaalselt 150 sona
+- Ara mainigi sagedusi ega numbreid
+- Ara kasuta tarne (**), pealkirju ega erilisi marke
+- Ara alusta poordumisega (nt "Armas klient")
+- Lõpeta soovitus terapeudi nimega eraldi real: ${therapistName}`
+      : `You are a biofeedback therapy assistant. Write a short, warm recommendation for the client.
+
+Reason for visit: ${reason || 'Not specified'}
+Topics addressed: ${entriesText}
+${therapistNote ? `Therapist note: ${therapistNote}` : ''}
+
+Instructions:
+- Write directly to the client using "you", warm and supportive
+- Maximum 150 words
+- Do not mention frequencies or numbers
+- Do not use asterisks (**), headers or special formatting marks
+- Do not start with a greeting like "Dear client"
+- End with the therapist name on a new line: ${therapistName}`;
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-5',
+        max_tokens: 400,
+        messages: [{ role: 'user', content: prompt }],
+      }),
+    });
+
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error?.message || 'AI viga');
+    res.json({ recommendation: data.content?.[0]?.text || '' });
+
+  } catch (err) {
+    console.error('AI soovitus kliendile:', err);
+    res.status(500).json({ error: err.message });
+  }
+});

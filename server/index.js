@@ -7,6 +7,7 @@ import clientRoutes from './routes/clients.js';
 import sessionRoutes from './routes/sessions.js';
 import frequencyRoutes from './routes/frequencies.js';
 import reportRoutes from './routes/report.js';
+import { scheduleBackup } from './backup.js';
 import aiRoutes from './routes/ai.js';
 
 dotenv.config();
@@ -27,7 +28,9 @@ app.use('/api/ai', aiRoutes);
 app.get('/api/health', (req, res) => res.json({ ok: true, time: new Date() }));
 
 initDB().then(() => {
-  app.listen(PORT, () => {
+  scheduleBackup();
+
+app.listen(PORT, () => {
     console.log(`Salus server jookseb: http://localhost:${PORT}`);
   });
 }).catch(err => {

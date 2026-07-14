@@ -11,6 +11,7 @@ router.get('/', requireAuth, async (req, res) => {
       f.id,
       f.freq_name,
       f.description,
+      f.description_en,
       COALESCE(
         array_agg(
           json_build_object('id', fc.id, 'label_en', fc.label_en, 'label_et', fc.label_et)
@@ -22,7 +23,7 @@ router.get('/', requireAuth, async (req, res) => {
     LEFT JOIN frequency_category_map fcm ON f.id = fcm.frequency_id
     LEFT JOIN frequency_categories fc ON fcm.category_id = fc.id
     WHERE f.is_active = TRUE
-    GROUP BY f.id, f.freq_name, f.description
+    GROUP BY f.id, f.freq_name, f.description, f.description_en
     ORDER BY
       -- Numbrilised ID-d enne tekstilisi
       CASE WHEN f.id ~ '^[0-9]+$' THEN 0 ELSE 1 END,
@@ -50,10 +51,10 @@ router.get('/categories', requireAuth, async (req, res) => {
 
 // PUT /api/frequencies/:id/description — admin muudab kirjeldust
 router.put('/:id/description', requireAuth, requireAdmin, async (req, res) => {
-  const { description } = req.body;
+  const { description, description_en } = req.body;
   const { rows } = await pool.query(
-    'UPDATE frequencies SET description=$1, updated_at=NOW() WHERE id=$2 RETURNING *',
-    [description, req.params.id]
+    'UPDATE frequencies SET description=$1, description_en=$2, updated_at=NOW() WHERE id=$3 RETURNING *',
+    [description, description_en || '', req.params.id]
   );
   if (!rows[0]) return res.status(404).json({ error: 'Sagedust ei leitud' });
   res.json(rows[0]);

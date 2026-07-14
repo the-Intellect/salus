@@ -39,6 +39,12 @@ export const api = {
   forgotPassword: (email) => request('POST', '/auth/forgot', { email }),
   setPassword: (token, password) => request('POST', '/auth/set-password', { token, password }),
   updateProfile: (data) => request('PUT', '/auth/profile', data),
+  updateLanguage: (language) => request('PUT', '/auth/language', { language }),
+  getStats: () => request('GET', '/auth/stats'),
+  getBranches: () => request('GET', '/auth/branches'),
+  addBranch: (data) => request('POST', '/auth/branches', data),
+  updateBranch: (id, data) => request('PUT', `/auth/branches/${id}`, data),
+  deleteBranch: (id) => request('DELETE', `/auth/branches/${id}`),
   changePassword: (currentPassword, newPassword) => request('PUT', '/auth/change-password', { currentPassword, newPassword }),
 
   // Kasutajad (admin)
@@ -65,12 +71,17 @@ export const api = {
   // Sagedused
   getFrequencies: () => request('GET', '/frequencies'),
   getCategories: () => request('GET', '/frequencies/categories'),
+  updateFrequencyDescription: (id, description, description_en) =>
+    request('PUT', `/frequencies/${encodeURIComponent(id)}/description`, { description, description_en }),
   updateFrequencyDescription: (id, description) => request('PUT', `/frequencies/${id}/description`, { description }),
 
   // Raport
   generateReport: (sessionId, lang) => requestBlob('POST', `/report/session/${sessionId}`, { lang }),
 
   // AI
+  getClientRecommendation: (clientId, entries, therapistNote, language) =>
+    request('POST', '/ai/client-recommendation', { clientId, entries, therapistNote, language }),
+
   getAiSuggestion: (clientId, entries, clientContext) =>
     request('POST', '/ai/suggest', { clientId, entries, clientContext }),
   saveAiSuggestion: (clientId, sessionId, text) =>

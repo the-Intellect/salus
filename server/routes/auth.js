@@ -94,7 +94,7 @@ router.post('/set-password', async (req, res) => {
 
 // GET /api/auth/me
 router.get('/me', requireAuth, async (req, res) => {
-  const { rows } = await pool.query('SELECT id,name,email,role,branch,phone,avatar_initials FROM users WHERE id=$1', [req.user.id]);
+  const { rows } = await pool.query('SELECT id,name,email,role,branch,phone,avatar_initials,preferred_language FROM users WHERE id=$1', [req.user.id]);
   res.json(rows[0]);
 });
 
@@ -103,8 +103,19 @@ router.put('/profile', requireAuth, async (req, res) => {
   const { name, phone, branch } = req.body;
   const initials = name?.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
   const { rows } = await pool.query(
-    'UPDATE users SET name=$1, phone=$2, branch=$3, avatar_initials=$4 WHERE id=$5 RETURNING id,name,email,role,branch,phone,avatar_initials',
+    'UPDATE users SET name=$1, phone=$2, branch=$3, avatar_initials=$4 WHERE id=$5 RETURNING id,name,email,role,branch,phone,avatar_initials,preferred_language',
     [name, phone, branch, initials, req.user.id]
+  );
+  res.json(rows[0]);
+});
+
+// PUT /api/auth/language
+router.put('/language', requireAuth, async (req, res) => {
+  const { language } = req.body;
+  if (!['et', 'en'].includes(language)) return res.status(400).json({ error: 'Vale keel' });
+  const { rows } = await pool.query(
+    'UPDATE users SET preferred_language=$1 WHERE id=$2 RETURNING id,name,email,role,branch,phone,avatar_initials,preferred_language',
+    [language, req.user.id]
   );
   res.json(rows[0]);
 });
@@ -176,3 +187,132 @@ router.delete('/users/:id', requireAuth, requireAdmin, async (req, res) => {
 });
 
 export default router;
+
+// GET /api/auth/stats — admin statistika
+router.get('/stats', requireAuth, async (req, res) => {
+  if (req.user.role !== 'admin') return res.status(403).json({ error: 'Ainult admin' });
+
+  // Seansside arv kuude kaupa (viimased 12 kuud)
+  const { rows: monthly } = await pool.query(`
+    SELECT 
+      TO_CHAR(s.date, 'YYYY-MM') as month,
+      u.branch,
+      u.name as therapist_name,
+      COUNT(*) as session_count,
+      SUM(s.duration_minutes) as total_minutes
+    FROM sessions s
+    LEFT JOIN users u ON s.therapist_id = u.id
+    WHERE s.date >= NOW() - INTERVAL '12 months'
+    GROUP BY TO_CHAR(s.date, 'YYYY-MM'), u.branch, u.name
+    ORDER BY month DESC, u.branch, u.name
+  `);
+
+  // Terapeudide kokkuvõte
+  const { rows: therapists } = await pool.query(`
+    SELECT 
+      u.name, u.branch,
+      COUNT(s.id) as session_count,
+      SUM(s.duration_minutes) as total_minutes,
+      COUNT(DISTINCT s.client_id) as client_count
+    FROM users u
+    LEFT JOIN sessions s ON s.therapist_id = u.id
+    WHERE u.role = 'therapist' OR u.role = 'admin'
+    GROUP BY u.id, u.name, u.branch
+    ORDER BY session_count DESC
+  `);
+
+  // Filiaalide kokkuvõte
+  const { rows: branches } = await pool.query(`
+    SELECT 
+      u.branch,
+      COUNT(DISTINCT s.id) as session_count,
+      COUNT(DISTINCT s.client_id) as client_count,
+      SUM(s.duration_minutes) as total_minutes
+    FROM sessions s
+    LEFT JOIN users u ON s.therapist_id = u.id
+    GROUP BY u.branch
+    ORDER BY session_count DESC
+  `);
+
+  // Klientide koguarv
+  const { rows: totals } = await pool.query(`
+    SELECT 
+      COUNT(DISTINCT c.id) as total_clients,
+      COUNT(DISTINCT s.id) as total_sessions,
+      SUM(s.duration_minutes) as total_minutes
+    FROM clients c
+    LEFT JOIN sessions s ON s.client_id = c.id
+  `);
+
+  res.json({ monthly, therapists, branches, totals: totals[0] });
+});
+
+// GET /api/auth/branches
+router.get('/branches', requireAuth, async (req, res) => {
+  const { rows } = await pool.query('SELECT * FROM branches WHERE is_active=true ORDER BY name');
+  res.json(rows);
+});
+
+// POST /api/auth/branches
+router.post('/branches', requireAuth, async (req, res) => {
+  if (req.user.role !== 'admin') return res.status(403).json({ error: 'Ainult admin' });
+  const { name, city, address } = req.body;
+  const { rows } = await pool.query(
+    'INSERT INTO branches (name, city, address) VALUES ($1,$2,$3) RETURNING *',
+    [name, city || '', address || '']
+  );
+  res.json(rows[0]);
+});
+
+// PUT /api/auth/branches/:id
+router.put('/branches/:id', requireAuth, async (req, res) => {
+  if (req.user.role !== 'admin') return res.status(403).json({ error: 'Ainult admin' });
+  const { name, city, address } = req.body;
+  const { rows } = await pool.query(
+    'UPDATE branches SET name=$1, city=$2, address=$3 WHERE id=$4 RETURNING *',
+    [name, city || '', address || '', req.params.id]
+  );
+  res.json(rows[0]);
+});
+
+// DELETE /api/auth/branches/:id
+router.delete('/branches/:id', requireAuth, async (req, res) => {
+  if (req.user.role !== 'admin') return res.status(403).json({ error: 'Ainult admin' });
+  await pool.query('UPDATE branches SET is_active=false WHERE id=$1', [req.params.id]);
+  res.json({ ok: true });
+});
+
+// GET /api/auth/backup — käsitsi varukoopia JSON-na
+router.get('/backup', requireAuth, async (req, res) => {
+  if (req.user.role !== 'admin') return res.status(403).json({ error: 'Ainult admin' });
+  try {
+    const [clients, sessions, entries, notes, users, aiSuggestions, branches] = await Promise.all([
+      pool.query('SELECT * FROM clients ORDER BY id'),
+      pool.query('SELECT * FROM sessions ORDER BY id'),
+      pool.query('SELECT * FROM session_entries ORDER BY id'),
+      pool.query('SELECT * FROM notes_history ORDER BY id'),
+      pool.query('SELECT id,name,email,role,branch,phone,preferred_language FROM users ORDER BY id'),
+      pool.query('SELECT * FROM ai_suggestions ORDER BY id'),
+      pool.query('SELECT * FROM branches ORDER BY id'),
+    ]);
+    const backup = {
+      version: '1.0',
+      exported_at: new Date().toISOString(),
+      data: {
+        clients: clients.rows,
+        sessions: sessions.rows,
+        session_entries: entries.rows,
+        notes_history: notes.rows,
+        users: users.rows,
+        ai_suggestions: aiSuggestions.rows,
+        branches: branches.rows,
+      }
+    };
+    const filename = `salus_backup_${new Date().toISOString().slice(0,10)}.json`;
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+    res.json(backup);
+  } catch(err) {
+    res.status(500).json({ error: err.message });
+  }
+});

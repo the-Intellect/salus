@@ -1,17 +1,19 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.jsx';
+import { useLanguage } from '../../context/useLanguage.js';
 import { useAppStore } from '../../store/appStore.js';
 import styles from './Layout.module.css';
 
 const NAV = [
-  { to: '/clients', icon: '👥', label: 'Kliendid' },
-  { to: '/session', icon: '⚡', label: 'Aktiivne seanss' },
-  { to: '/history', icon: '📊', label: 'Sageduste ajalugu' },
-  { to: '/reports', icon: '📄', label: 'Raportid' },
+  { to: '/clients', icon: '👥', key: 'nav_clients' },
+  { to: '/session', icon: '⚡', key: 'nav_session', badge: true },
+  { to: '/history', icon: '📊', key: 'nav_history' },
+  { to: '/reports', icon: '📄', key: 'nav_reports' },
 ];
 
 export default function Layout({ children }) {
   const { user, logout } = useAuth();
+  const { t } = useLanguage();
   const activeSession = useAppStore(s => s.activeSession);
   const activeClientId = useAppStore(s => s.activeClientId);
   const navigate = useNavigate();
@@ -33,16 +35,21 @@ export default function Layout({ children }) {
           {NAV.map(item => (
             <NavLink key={item.to} to={item.to} className={({ isActive }) => `${styles.navItem} ${isActive ? styles.navActive : ''}`}>
               <span className={styles.navIcon}>{item.icon}</span>
-              <span>{item.label}</span>
+              <span>{t(item.key)}</span>
+              {item.badge && activeSession && (
+                <span style={{ marginLeft: 'auto', background: 'var(--color-warn)', color: '#fff', fontSize: 10, fontWeight: 700, padding: '1px 6px', borderRadius: 20 }}>
+                  {activeSession.entries.length}
+                </span>
+              )}
             </NavLink>
           ))}
         </nav>
         <div className={styles.sidebarFooter}>
           <NavLink to="/settings" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.navActive : ''}`}>
-            <span className={styles.navIcon}>⚙️</span><span>Seaded</span>
+            <span className={styles.navIcon}>⚙️</span><span>{t('nav_settings')}</span>
           </NavLink>
           <button className={`${styles.navItem} ${styles.logoutBtn}`} onClick={handleLogout}>
-            <span className={styles.navIcon}>🚪</span><span>Logi välja</span>
+            <span className={styles.navIcon}>🚪</span><span>{t('nav_logout')}</span>
           </button>
           <div className={styles.userCard} style={{ cursor: 'pointer' }} onClick={() => navigate('/settings')}>
             <div className={styles.userAvatar}>{initials}</div>

@@ -97,6 +97,10 @@ export async function initDB() {
     await runMigrations(client);
     await addDurationColumn(client);
     await addAiSuggestionsTable(client);
+    await addLanguageColumn(client);
+    await addClientRecommendationColumn(client);
+    await addStartTimeColumn(client);
+    await addBranchesTable(client);
     console.log('Andmebaas initsialiseeritud');
   } finally {
     client.release();
@@ -126,5 +130,38 @@ export async function addAiSuggestionsTable(client) {
       saved_by INTEGER REFERENCES users(id),
       saved_at TIMESTAMP DEFAULT NOW()
     );
+  `);
+}
+
+export async function addLanguageColumn(client) {
+  await client.query(`
+    ALTER TABLE IF EXISTS users ADD COLUMN IF NOT EXISTS preferred_language VARCHAR(2) DEFAULT 'et';
+  `);
+}
+
+export async function addClientRecommendationColumn(client) {
+  await client.query(`
+    ALTER TABLE IF EXISTS sessions ADD COLUMN IF NOT EXISTS client_recommendation TEXT;
+  `);
+}
+
+export async function addBranchesTable(client) {
+  await client.query(`
+    CREATE TABLE IF NOT EXISTS branches (
+      id SERIAL PRIMARY KEY,
+      name VARCHAR(100) NOT NULL UNIQUE,
+      city VARCHAR(100),
+      address VARCHAR(255),
+      is_active BOOLEAN DEFAULT TRUE,
+      created_at TIMESTAMP DEFAULT NOW()
+    );
+    INSERT INTO branches (name) VALUES ('Tallinn'), ('Tartu'), ('Kuressaare')
+    ON CONFLICT (name) DO NOTHING;
+  `);
+}
+
+export async function addStartTimeColumn(client) {
+  await client.query(`
+    ALTER TABLE IF EXISTS sessions ADD COLUMN IF NOT EXISTS start_time VARCHAR(5);
   `);
 }

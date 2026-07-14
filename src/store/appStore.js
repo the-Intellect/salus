@@ -1,6 +1,9 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
-export const useAppStore = create((set, get) => ({
+export const useAppStore = create(
+  persist(
+    (set, get) => ({
   // Aktiivne seanss — salvestatud kirjed
   activeSession: null,
   activeClientId: null,
@@ -9,16 +12,26 @@ export const useAppStore = create((set, get) => ({
   // Pooleli vormid — püsivad lehevahete üle
   entryDrafts: {},
 
+  // Järjekorda märgitud sagedused (ilma numbriteta veel)
+  queuedIds: [],
+
   startSession: (clientId) => {
+    const now = new Date();
+    const hh = String(now.getHours()).padStart(2, '0');
+    const rawMin = now.getMinutes();
+    const roundedMin = Math.floor(rawMin / 5) * 5;
+    const mm = String(roundedMin).padStart(2, '0');
     set({
       activeClientId: clientId,
       editingSessionId: null,
       entryDrafts: {},
+      queuedIds: [],
       activeSession: {
         clientId,
         entries: [],
         notes: '',
         duration: 60,
+        startTime: `${hh}:${mm}`,
         therapist: 'Mari Mägi',
         branch: 'Tallinn',
       },
@@ -30,11 +43,14 @@ export const useAppStore = create((set, get) => ({
       activeClientId: clientId,
       editingSessionId: session.id,
       entryDrafts: {},
+      queuedIds: [],
       activeSession: {
         clientId,
         entries: session.entries ? [...session.entries] : [],
         notes: session.notes || '',
         duration: session.duration_minutes || 60,
+        startTime: session.start_time || '',
+        clientRecommendation: session.client_recommendation || '',
         therapist: session.therapist || 'Mari Mägi',
         branch: session.branch || 'Tallinn',
       },
@@ -97,9 +113,31 @@ export const useAppStore = create((set, get) => ({
     }));
   },
 
+  // Lisa sagedus järjekorda
+  addToQueue: (frequencyId) => {
+    set(state => ({
+      queuedIds: state.queuedIds.includes(frequencyId)
+        ? state.queuedIds
+        : [...state.queuedIds, frequencyId],
+    }));
+  },
+
+  // Eemalda järjekorrast
+  removeFromQueue: (frequencyId) => {
+    set(state => ({
+      queuedIds: state.queuedIds.filter(id => id !== frequencyId),
+    }));
+  },
+
   updateSessionNotes: (notes) => {
     set(state => ({
       activeSession: { ...state.activeSession, notes },
+    }));
+  },
+
+  setStartTime: (startTime) => {
+    set(state => ({
+      activeSession: { ...state.activeSession, startTime },
     }));
   },
 
@@ -114,8 +152,21 @@ export const useAppStore = create((set, get) => ({
     activeClientId: null,
     editingSessionId: null,
     entryDrafts: {},
+    queuedIds: [],
   }),
 
   // Kas on pooleli andmeid (salvestamata draft'id)
   hasDrafts: () => Object.keys(get().entryDrafts).length > 0,
-}));
+    }),
+    {
+      name: 'salus-active-session', // localStorage võti
+      partialize: (state) => ({
+        activeSession: state.activeSession,
+        activeClientId: state.activeClientId,
+        editingSessionId: state.editingSessionId,
+        entryDrafts: state.entryDrafts,
+        queuedIds: state.queuedIds,
+      }),
+    }
+  )
+);

@@ -4,6 +4,7 @@ import { api } from '../../api/index.js';
 import { Button, Avatar, Card, Field, ResultPill, PageHeader, EmptyState } from '../UI.jsx';
 import { useAppStore } from '../../store/appStore.js';
 import { useAuth } from '../../context/AuthContext.jsx';
+import { useLanguage } from '../../context/useLanguage.js';
 import styles from './ClientProfile.module.css';
 
 function formatDate(dateStr) {
@@ -30,6 +31,8 @@ export default function ClientProfile() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useAuth();
+  const { language, t } = useLanguage();
+  const isEt = language === 'et';
   const startSession = useAppStore(s => s.startSession);
   const clearSession = useAppStore(s => s.clearSession);
   const activeSession = useAppStore(s => s.activeSession);
@@ -81,25 +84,31 @@ export default function ClientProfile() {
     <div>
       <PageHeader title={name} action={
         <div style={{ display: 'flex', gap: 8 }}>
-          <Button variant="secondary" onClick={() => navigate('/clients')}>← Tagasi</Button>
-          <Button variant="primary" onClick={() => { startSession(Number(id)); navigate('/session'); }}>⚡ Alusta seanssi</Button>
+          <Button variant="secondary" onClick={() => navigate('/clients')}>← {t('back')}</Button>
+          {activeSession && activeClientId === Number(id) ? (
+            <Button variant="primary" onClick={() => navigate('/session')}>
+              ⚡ {isEt ? 'Jätka seanssi' : 'Continue session'}
+            </Button>
+          ) : (
+            <Button variant="primary" onClick={() => { startSession(Number(id)); navigate('/session'); }}>{t('start_session')}</Button>
+          )}
         </div>
       } />
       <div className={styles.profileHeader}>
         <Avatar name={name} size={48} />
         <div>
           <div className={styles.profileName}>{name}</div>
-          <div className={styles.profileMeta}>{client.branch} · {sessions.length} seanssi</div>
+          <div className={styles.profileMeta}>{client.branch} · {sessions.length} {t('client_sessions_count')}</div>
         </div>
       </div>
       <div className={styles.tabs}>
-        {['sessions', 'frequencies', 'ai', 'notes', 'data'].map(t => (
-          <button key={t} className={`${styles.tab} ${tab === t ? styles.tabActive : ''}`} onClick={() => setTab(t)}>
-            {{ sessions: 'Seansid', frequencies: 'Sageduste ajalugu', ai: 'AI soovitused', notes: 'Märkmed', data: 'Andmed' }[t]}
+        {['sessions', 'frequencies', 'ai', 'notes', 'data'].map(tabId => (
+          <button key={tabId} className={`${styles.tab} ${tab === tabId ? styles.tabActive : ''}`} onClick={() => setTab(tabId)}>
+            {{ sessions: t('tab_sessions'), frequencies: t('tab_frequencies'), ai: t('tab_ai'), notes: t('tab_notes'), data: t('tab_data') }[tabId]}
           </button>
         ))}
       </div>
-      {tab === 'sessions' && <SessionsTab sessions={sessions} clientId={id} navigate={navigate} onRefresh={loadData} />}
+      {tab === 'sessions' && <SessionsTab sessions={sessions} clientId={id} client={client} navigate={navigate} onRefresh={loadData} />}
       {tab === 'ai' && <AiTab clientId={id} />}
       {tab === 'frequencies' && <FrequenciesTab history={freqHistory()} />}
       {tab === 'notes' && <NotesTab client={client} clientId={id} onSave={c => setClient(c)} />}
@@ -109,8 +118,9 @@ export default function ClientProfile() {
 }
 
 // --- Seansid ---
-function SessionsTab({ sessions, clientId, navigate, onRefresh }) {
+function SessionsTab({ sessions, clientId, client, navigate, onRefresh }) {
   const loadSessionForEdit = useAppStore(s => s.loadSessionForEdit);
+  const { language, t } = useLanguage();
   const [reportLoading, setReportLoading] = useState(null);
   const [openSessionId, setOpenSessionId] = useState(null);
 
@@ -132,7 +142,7 @@ function SessionsTab({ sessions, clientId, navigate, onRefresh }) {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `raport_${formatDate(session.date).replace(/\./g, '-')}_${lang}.pdf`;
+      a.download = `${client.first_name}_${client.last_name}_${formatDate(session.date).replace(/\./g, '-')}_${lang}.pdf`;
       a.click();
       URL.revokeObjectURL(url);
     } catch (err) {
@@ -142,7 +152,7 @@ function SessionsTab({ sessions, clientId, navigate, onRefresh }) {
     }
   };
 
-  if (!sessions.length) return <EmptyState icon="⚡" title="Seanse pole veel" description="Alusta esimene seanss." />;
+  if (!sessions.length) return <EmptyState icon="⚡" title={t('no_sessions_title')} description={t('no_sessions_desc')} />;
 
   // Arvuta seansi number loomise järjekorra järgi (vanim = #1)
   const sessionNumbers = {};
@@ -160,7 +170,7 @@ function SessionsTab({ sessions, clientId, navigate, onRefresh }) {
             <div className={styles.accordionHeader} onClick={() => setOpenSessionId(isOpen ? null : s.id)}>
               <div className={styles.accordionLeft}>
                 <span className={styles.freqName}>{formatDate(s.date)} · Seanss #{idx}</span>
-                <span className={styles.freqMeta}>{s.therapist_name} · {s.entries?.length || 0} sagedust · {s.duration_minutes || 60} min</span>
+                <span className={styles.freqMeta}>{s.therapist_name} · {s.entries?.length || 0} {t('frequencies_count')} · {s.duration_minutes || 60} min</span>
               </div>
               <div className={styles.accordionRight} onClick={e => e.stopPropagation()}>
                 <Button variant="secondary" size="sm" onClick={() => handleEdit(s)}>✏️</Button>
@@ -181,7 +191,7 @@ function SessionsTab({ sessions, clientId, navigate, onRefresh }) {
                   ? <p style={{ fontSize: 14, color: 'var(--color-text-muted)', padding: '12px 1.25rem' }}>Sagedusi pole</p>
                   : s.entries.map((e, i) => (
                     <div key={i} className={styles.sessionEntry}>
-                      <span className={styles.sessionEntryDesc}>{e.frequencyDescription || e.frequencyName}</span>
+                      <span className={styles.sessionEntryDesc}>{(language === 'en' && e.frequencyDescriptionEn ? e.frequencyDescriptionEn : e.frequencyDescription) || e.frequencyName}</span>
                       <div className={styles.sessionEntryMins}>
                         {e.initial !== null && e.initial !== undefined && <ResultPill value={e.initial} />}
                         {(e.minutes || []).map((m, mi) => <ResultPill key={mi} value={m} />)}
@@ -200,6 +210,7 @@ function SessionsTab({ sessions, clientId, navigate, onRefresh }) {
 
 // --- AI soovitused ---
 function AiTab({ clientId }) {
+  const { t } = useLanguage();
   const [suggestions, setSuggestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [editModal, setEditModal] = useState(null);
@@ -232,10 +243,10 @@ function AiTab({ clientId }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Card>
-        <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 10 }}>Uus AI soovitus / märkus</div>
+        <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 10 }}>{t('ai_new_suggestion')}</div>
         <textarea value={newText} onChange={e => setNewText(e.target.value)} rows={4}
           style={{ width: '100%', resize: 'vertical', marginBottom: 8 }}
-          placeholder="Küsi AI käest soovitust enne seanssi või lisa oma märkus..." />
+          placeholder={t('ai_placeholder')} />
         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
           <Button variant="secondary" size="sm" disabled={saving || !newText.trim()} onClick={async () => {
             if (!newText.trim()) return;
@@ -246,7 +257,7 @@ function AiTab({ clientId }) {
             } catch(err) { alert(err.message); }
             finally { setSaving(false); }
           }}>
-            {saving ? '⏳...' : '✨ Küsi AI käest'}
+            {saving ? '⏳...' : t('ai_ask_button')}
           </Button>
           <Button variant="primary" size="sm" onClick={handleSaveNew} disabled={!newText.trim() || saving}>
             💾 Salvesta
@@ -255,7 +266,7 @@ function AiTab({ clientId }) {
       </Card>
 
       {loading ? <p style={{ color: 'var(--color-text-muted)', fontSize: 14 }}>Laadimine...</p> :
-       suggestions.length === 0 ? <EmptyState icon="✨" title="AI soovitusi pole veel salvestatud" /> :
+       suggestions.length === 0 ? <EmptyState icon="✨" title={t('ai_empty')} /> :
        suggestions.map(s => (
          <Card key={s.id}>
            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
@@ -293,8 +304,9 @@ function AiTab({ clientId }) {
 
 // --- Sageduste ajalugu ---
 function FrequenciesTab({ history }) {
+  const { t } = useLanguage();
   const [openId, setOpenId] = useState(null);
-  if (!history.length) return <EmptyState icon="📊" title="Andmeid pole veel" />;
+  if (!history.length) return <EmptyState icon="📊" title={t('no_freq_history')} />;
   return (
     <div className={styles.freqAccordion}>
       {history.map(f => {
@@ -305,7 +317,7 @@ function FrequenciesTab({ history }) {
             <div className={styles.accordionHeader} onClick={() => setOpenId(isOpen ? null : f.frequencyId)}>
               <div className={styles.accordionLeft}>
                 <span className={styles.freqName}>{f.frequencyName}</span>
-                <span className={styles.freqMeta}>{f.history.length}× tehtud · viimati {formatDate(last?.date)}</span>
+                <span className={styles.freqMeta}>{f.history.length}× {t('freq_done')} · {t('freq_last')} {formatDate(last?.date)}</span>
               </div>
               <div className={styles.accordionRight}>
                 <ResultPill value={last?.final} />
@@ -315,7 +327,7 @@ function FrequenciesTab({ history }) {
             {isOpen && (
               <div className={styles.accordionBody}>
                 <div className={styles.historyHeader}>
-                  <span>Kuupäev</span><span>Esialgne</span><span>Minutite tulemused</span><span>Lõpptulemus</span>
+                  <span>{t('freq_date')}</span><span>{t('freq_initial')}</span><span>{t('freq_balancing')}</span><span>{t('freq_end_result')}</span>
                 </div>
                 {f.history.map((h, i) => (
                   <div key={i} className={styles.historyRow}>
@@ -340,6 +352,7 @@ function FrequenciesTab({ history }) {
 
 // --- Märkmed ---
 function NotesTab({ client, clientId, onSave }) {
+  const { t } = useLanguage();
   const [text, setText] = useState('');
   const [saved, setSaved] = useState(false);
   const [editingNote, setEditingNote] = useState(null); // { index, text }
@@ -377,15 +390,15 @@ function NotesTab({ client, clientId, onSave }) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Card>
         <textarea value={text} onChange={e => { setText(e.target.value); setSaved(false); }}
-          rows={4} style={{ width: '100%', resize: 'vertical' }} placeholder="Lisa uus märkus..." />
+          rows={4} style={{ width: '100%', resize: 'vertical' }} placeholder={t('notes_placeholder')} />
         <div style={{ marginTop: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           {saved ? <span style={{ fontSize: 14, color: 'var(--color-ok)' }}>✓ Salvestatud</span> : <span />}
-          <Button variant="primary" onClick={handleSave} disabled={!text.trim()}>💾 Salvesta märkmed</Button>
+          <Button variant="primary" onClick={handleSave} disabled={!text.trim()}>{t('notes_save_btn')}</Button>
         </div>
       </Card>
       {history.length > 0 && (
         <Card>
-          <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 12 }}>Märkmete ajalugu</div>
+          <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 12 }}>{t('notes_history_title')}</div>
           {history.map((e, i) => (
             <div key={i} className={styles.noteEntry}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -417,6 +430,7 @@ function NotesTab({ client, clientId, onSave }) {
 
 // --- Andmed ---
 function DataTab({ client, clientId, users, currentUser, onSave }) {
+  const { t } = useLanguage();
   const [editing, setEditing] = useState(false);
   const [form, setForm] = useState({
     firstName: client.first_name, lastName: client.last_name,
@@ -429,23 +443,23 @@ function DataTab({ client, clientId, users, currentUser, onSave }) {
   const handleSave = async () => { const c = await api.updateClient(clientId, form); onSave(c); setEditing(false); };
 
   const rows = [
-    { label: 'Eesnimi', key: 'firstName', type: 'text' },
-    { label: 'Perekonnanimi', key: 'lastName', type: 'text' },
-    { label: 'Sünnikuupäev', key: 'dob', type: 'dob' },
-    { label: 'Sugu', key: 'gender', type: 'select', opts: ['Naine', 'Mees', 'Laps (N)', 'Laps (M)'] },
-    { label: 'Email', key: 'email', type: 'email' },
-    { label: 'Telefon', key: 'phone', type: 'tel' },
-    { label: 'Filiaali', key: 'branch', type: 'select', opts: ['Tallinn', 'Tartu', 'Kuressaare'] },
-    { label: 'Pöördumise põhjus', key: 'reason', type: 'text' },
-    { label: 'Kust kuulis meist', key: 'source', type: 'text' },
+    { label: t('data_first_name'), key: 'firstName', type: 'text' },
+    { label: t('data_last_name'), key: 'lastName', type: 'text' },
+    { label: t('data_birth_date'), key: 'dob', type: 'dob' },
+    { label: t('data_gender'), key: 'gender', type: 'select', opts: ['Naine', 'Mees', 'Laps (N)', 'Laps (M)'] },
+    { label: t('data_email'), key: 'email', type: 'email' },
+    { label: t('data_phone'), key: 'phone', type: 'tel' },
+    { label: t('data_branch'), key: 'branch', type: 'select', opts: ['Tallinn', 'Tartu', 'Kuressaare'] },
+    { label: t('data_reason'), key: 'reason', type: 'text' },
+    { label: t('data_heard_from'), key: 'source', type: 'text' },
   ];
 
   return (
     <Card style={{ maxWidth: 520 }}>
       <div className={styles.dataHeader}>
-        <span className={styles.dataTitle}>Kliendi andmed</span>
+        <span className={styles.dataTitle}>{t('data_title')}</span>
         {!editing
-          ? <Button variant="secondary" size="sm" onClick={() => setEditing(true)}>✏️ Muuda</Button>
+          ? <Button variant="secondary" size="sm" onClick={() => setEditing(true)}>✏️ {t('data_edit')}</Button>
           : <div style={{ display: 'flex', gap: 6 }}>
               <Button variant="secondary" size="sm" onClick={() => setEditing(false)}>Tühista</Button>
               <Button variant="primary" size="sm" onClick={handleSave}>💾 Salvesta</Button>

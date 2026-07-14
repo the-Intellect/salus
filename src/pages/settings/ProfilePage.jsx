@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext.jsx';
+import { useLanguage } from '../../context/useLanguage.js';
 import { api } from '../../api/index.js';
 import { Card, Button, Field } from '../../components/UI.jsx';
 import styles from './Settings.module.css';
 
 export default function ProfilePage() {
   const { user, updateUser } = useAuth();
+  const { language, setLanguage, t } = useLanguage();
   const [form, setForm] = useState({ name: user?.name || '', phone: user?.phone || '', branch: user?.branch || 'Tallinn' });
   const [pwForm, setPwForm] = useState({ currentPassword: '', newPassword: '', confirm: '' });
   const [saved, setSaved] = useState(false);
@@ -32,8 +34,8 @@ export default function ProfilePage() {
 
   const handleChangePassword = async () => {
     setPwError('');
-    if (pwForm.newPassword !== pwForm.confirm) { setPwError('Paroolid ei kattu'); return; }
-    if (pwForm.newPassword.length < 8) { setPwError('Parool peab olema vähemalt 8 tähemärki'); return; }
+    if (pwForm.newPassword !== pwForm.confirm) { setPwError(t('settings_password_mismatch')); return; }
+    if (pwForm.newPassword.length < 8) { setPwError(t('settings_password_too_short')); return; }
     setLoading(true);
     try {
       await api.changePassword(pwForm.currentPassword, pwForm.newPassword);
@@ -52,23 +54,23 @@ export default function ProfilePage() {
   return (
     <div className={styles.profileLayout}>
       <Card style={{ maxWidth: 480 }}>
-        <div className={styles.cardTitle}>Minu profiil</div>
+        <div className={styles.cardTitle}>{t('settings_my_profile')}</div>
 
         <div className={styles.avatarRow}>
           <div className={styles.avatarLarge}>{initials}</div>
           <div>
             <div className={styles.avatarName}>{user?.name}</div>
-            <div className={styles.avatarRole}>{user?.role === 'admin' ? 'Administraator' : 'Terapeut'} · {user?.email}</div>
+            <div className={styles.avatarRole}>{user?.role === 'admin' ? t('settings_admin') : t('settings_therapist')} · {user?.email}</div>
           </div>
         </div>
 
-        <Field label="Täisnimi">
+        <Field label={t('settings_full_name')}>
           <input value={form.name} onChange={e => set('name', e.target.value)} placeholder="Mari Mägi" />
         </Field>
-        <Field label="Telefon" >
+        <Field label={t('settings_phone')} >
           <input value={form.phone} onChange={e => set('phone', e.target.value)} placeholder="+372 5123 4567" />
         </Field>
-        <Field label="Filiaali">
+        <Field label={t('settings_branch')}>
           <select value={form.branch} onChange={e => set('branch', e.target.value)}>
             <option>Tallinn</option>
             <option>Tartu</option>
@@ -77,26 +79,36 @@ export default function ProfilePage() {
         </Field>
 
         <div className={styles.saveRow}>
-          {saved && <span className={styles.savedMsg}>✓ Profiil salvestatud</span>}
-          <Button variant="primary" onClick={handleSaveProfile} disabled={loading}>💾 Salvesta profiil</Button>
+          {saved && <span className={styles.savedMsg}>{t('settings_profile_saved')}</span>}
+          <Button variant="primary" onClick={handleSaveProfile} disabled={loading}>{t('settings_save_profile')}</Button>
         </div>
       </Card>
 
       <Card style={{ maxWidth: 480 }}>
-        <div className={styles.cardTitle}>Muuda parooli</div>
-        <Field label="Praegune parool">
+        <div className={styles.cardTitle}>{t('settings_language')}</div>
+        <Field label={t('settings_language')}>
+          <select value={language} onChange={e => setLanguage(e.target.value)}>
+            <option value="et">{t('settings_language_et')}</option>
+            <option value="en">{t('settings_language_en')}</option>
+          </select>
+        </Field>
+      </Card>
+
+      <Card style={{ maxWidth: 480 }}>
+        <div className={styles.cardTitle}>{t('settings_change_password')}</div>
+        <Field label={t('settings_current_password')}>
           <input type="password" value={pwForm.currentPassword} onChange={e => setPw('currentPassword', e.target.value)} placeholder="••••••••" />
         </Field>
-        <Field label="Uus parool">
-          <input type="password" value={pwForm.newPassword} onChange={e => setPw('newPassword', e.target.value)} placeholder="Vähemalt 8 tähemärki" />
+        <Field label={t('settings_new_password')}>
+          <input type="password" value={pwForm.newPassword} onChange={e => setPw('newPassword', e.target.value)} placeholder="••••••••" />
         </Field>
-        <Field label="Korda uut parooli">
+        <Field label={t('settings_repeat_password')}>
           <input type="password" value={pwForm.confirm} onChange={e => setPw('confirm', e.target.value)} placeholder="••••••••" />
         </Field>
         {pwError && <div className={styles.errorMsg}>{pwError}</div>}
         <div className={styles.saveRow}>
-          {pwSaved && <span className={styles.savedMsg}>✓ Parool muudetud</span>}
-          <Button variant="primary" onClick={handleChangePassword} disabled={loading}>🔒 Muuda parool</Button>
+          {pwSaved && <span className={styles.savedMsg}>{t('settings_password_changed')}</span>}
+          <Button variant="primary" onClick={handleChangePassword} disabled={loading}>🔒 {t('settings_change_password')}</Button>
         </div>
       </Card>
     </div>

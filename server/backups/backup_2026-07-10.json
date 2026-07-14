@@ -1,0 +1,1648 @@
+{
+  "version": "1.0",
+  "exported_at": "2026-07-10T06:52:20.420Z",
+  "data": {
+    "clients": [
+      {
+        "id": 1,
+        "first_name": "Johan",
+        "last_name": "Vahter",
+        "dob": "04/12/1988",
+        "gender": "Mees",
+        "email": "johan.vahter@gmail.com",
+        "phone": "+3725000000",
+        "branch": "Tallinn",
+        "reason": "Depressiooni ilmingud, lahkuminek, pidev süütunne, viha.",
+        "source": "Sõbra soovitus",
+        "therapist_id": 2,
+        "notes": "",
+        "created_at": "2026-05-27T06:49:13.535Z"
+      },
+      {
+        "id": 2,
+        "first_name": "Mart",
+        "last_name": "Puusepp",
+        "dob": "14/07/1985",
+        "gender": "Mees",
+        "email": "mart@puusepp.ee",
+        "phone": "+3725864652",
+        "branch": "Tallinn",
+        "reason": "Tunnen, et jaks on otsas, elurõõmu ei ole. Lähedaste on tuimad suhted, ei viitsi suhelda ega rääkida.",
+        "source": "Google",
+        "therapist_id": 1,
+        "notes": " ,,lömnn.,mö,-huhj",
+        "created_at": "2026-06-01T20:08:01.823Z"
+      },
+      {
+        "id": 3,
+        "first_name": "Mattias",
+        "last_name": "Metsamaa",
+        "dob": "24/04/2010",
+        "gender": "Laps (M)",
+        "email": "kai.matlik+1@gmail.com",
+        "phone": "+3725176465",
+        "branch": "Tallinn",
+        "reason": "Ema kirjutas: Mattias lõpetab hetkel põhikooli. Juba esimesest klassist alates ta ei tahtnud koolis käia ja õppida, see tundus tema jaoks igav ja mõtetu. Lapsevanemana olen väga palju aega panustanud selleks, et tema kooliteed toetada. Eesti keele ja matemaatika eksam said õnneks tehtud napilt üle 50% tulemusele, aga edasiste koolivalikute osas tema väljavaade liiga hea ei ole. Ilmselgelt on koolilõpp ja eesootav aeg pingeline. Pinget lisab veel see, et minu ja Mattiase isa kooselu lõppes 2 kuud tagasi. Ta ise ütleb, et tal on sellest ükskõik, kuid see on arvatavasti lihtsalt tema kaitsereaktsioon. Seoses pikaajalise kooselu lõppemisega käin ka ise hetkel Angelika juures teraapias. Juba suhteliselt väiksest peast on Mattiasel olnud terviseärevus, mis vahepeal taandub ja keerulisematel hetkedel uuesti avaldub. Viimati 2 nädalat tagasi ta ütles, et tunneb end halvasti. Võimalik, et tänu sellele, et vahepeal vaimse tervise õe juures käis, siis seekord läks see mure kiiresti üle ja siiani uuesti ei ole avaldunud. Tavaliselt ta kahtlustab, et tal on mingi raske haigus. Vaimse tervise õe juures sai tehtud ka ATH test, mis viitas võimalikule ATH'le, kuid kuna diagnoosini jõudmine oleks olnud pikk ja kurnav protsess, siis otsustasime sellega mitte jätkata. Viimased 12 kuud on Mattias väga pühendunud discgolfile. Tal on suured eesmärgid ja suure venna Rasmuse eeskuju ja vend on ka treeneriks. Neil on 16 a vanusevahe, aga nad on sellest hoolimata olnud Mattiase sünnist saadik väga lähedased. Kuna Rasmus on ise biofeedback teraapias käinud, siis ta rääkis Mattiasega, et ta võiks teraapiasse tulla, kuna see aitaks teda discgolfis. Viimasel kahel nädalalõpul on olnud võistlused, kuhu Mattias on läinud kõrgete ootustega, kuid tulemused pole olnud sellised nagu lootis. Mattias ise väga jutukas ei ole ja Angelika soovitusel kirjutasin siia eelloo natuke pikemalt, et oleks natuke rohkem infot, mis tema elus hetkel toimub. Mattias ise arvab hetkel, et ta tuleb teraapiasse selleks, et see aitab tal discgolfis saada paremaks.\n",
+        "source": "Vend ja ema soovitasid",
+        "therapist_id": 2,
+        "notes": "Lisame",
+        "created_at": "2026-06-02T20:01:13.592Z"
+      }
+    ],
+    "sessions": [
+      {
+        "id": 9,
+        "client_id": 3,
+        "therapist_id": 2,
+        "date": "2026-06-27T21:00:00.000Z",
+        "notes": "",
+        "created_at": "2026-06-28T19:10:12.332Z",
+        "duration_minutes": 75,
+        "client_recommendation": null
+      },
+      {
+        "id": 11,
+        "client_id": 1,
+        "therapist_id": 2,
+        "date": "2026-07-05T21:00:00.000Z",
+        "notes": "",
+        "created_at": "2026-07-06T14:53:34.562Z",
+        "duration_minutes": 60,
+        "client_recommendation": "Täna tegid sa väga olulist tööd enda heaks – oled väärt tunnustust! Sinu keha ja meel said võimaluse puhata ning leida rahu.\n\nJärgnevatel päevadel pane tähele:\n- Kuidas su mõtted on muutunud rahulisemaks ja selgemaks\n- Võid tunda kergendust rindkere piirkonnas\n- Uni võib olla sügavam ja puhkavam\n\nKuidas hoida tasakaalu:\n- Anna endale luba tunda – kõik emotsioonid on lubatud\n- Joo piisavalt puhast vett (aitab kehalisel tasandil puhastumist)\n- Väldi esimestel päevadel suuri otsuseid – lase endal lihtsalt olla\n- Kui mõtted hakkavad ringles käima, pane käsi südamele ja hinga sügavalt\n\nLahkumineku töötlemine võtab aega – ole enda vastu hell ja kannatlik. Oled õigel teel.\n\nSinu keha teab, kuidas tasakaalu taastada – usalda seda protsessi. 💚\n\nSooja kallistusega,  \nSinu teraapia assistent"
+      },
+      {
+        "id": 12,
+        "client_id": 1,
+        "therapist_id": 2,
+        "date": "2026-07-05T21:00:00.000Z",
+        "notes": "",
+        "created_at": "2026-07-06T16:57:20.428Z",
+        "duration_minutes": 60,
+        "client_recommendation": "Olen väga rahul, et said täna võimaluse enda eest hoolitseda. Sinu seanss keskendus südamele ja emotsionaalsele tervendamisele – need teemad, mis on lahkumineku ja kaotuse järel nii olulised.\n\nMärkasin, et töötasime sügavalt läbi pikaajalise leina, südamevalu ja emotsionaalse valu, aidates sul leida teed tagasi rahu ja tasakaalu juurde. Samuti pöörasime tähelepanu lapsepõlve rahu ja sisemise turvalisuse taastamisele, mis annab sulle tugeva aluse edasiseks.\n\nPeale seansi võid tunda end rahulikumana ja kergemana. Luba endal puhata ja anna oma kehale ning meelele aega seda tööd seedida. Võid märgata, et süütunne ja viha hakkavad järk-järgult taanduma, tehes ruumi hellusele iseenda vastu.\n\nJätka endaga kannatlikult – tervendamine on protsess ja sina oled juba teinud julge sammu. Olen siin, et sind sinu teel toetada.\n\nSoojan tervitusega,\nKristo"
+      },
+      {
+        "id": 13,
+        "client_id": 2,
+        "therapist_id": 2,
+        "date": "2026-07-06T21:00:00.000Z",
+        "notes": "",
+        "created_at": "2026-07-07T07:17:28.312Z",
+        "duration_minutes": 60,
+        "client_recommendation": null
+      }
+    ],
+    "session_entries": [
+      {
+        "id": 232,
+        "session_id": 9,
+        "frequency_id": "2741",
+        "frequency_name": "CALM CHILD",
+        "frequency_description": "Sisemise lapse rahustamine (sisemine laps on pettunud ja pahane), neutraliseerides emotsionaalset tasakaalutust, viha või pettumuse tunnet ning aktiveerides õnnetunnet.",
+        "initial_result": 35,
+        "minute_results": [
+          62,
+          88
+        ],
+        "final_result": 88,
+        "sort_order": 0,
+        "frequency_description_en": "Calming the inner child (the inner child is disappointed and frustrated) by neutralizing emotional imbalance, anger or disappointment and activating happiness."
+      },
+      {
+        "id": 233,
+        "session_id": 9,
+        "frequency_id": "2815",
+        "frequency_name": "TRANQUILITY",
+        "frequency_description": "Mõtete ja emotsioonide vaigistamine. Aktiveerib sisemist rahu ja sügavat lõdvestumist.",
+        "initial_result": 76,
+        "minute_results": [],
+        "final_result": 76,
+        "sort_order": 1,
+        "frequency_description_en": "Silencing thoughts and emotions. Activates inner calm and deep relaxation."
+      },
+      {
+        "id": 234,
+        "session_id": 9,
+        "frequency_id": "2830",
+        "frequency_name": "UN-STRESS",
+        "frequency_description": "Mentaalne kurnatus (stress ja ülekoormatus) - liiga palju tegevusi ja/või mõtteid hetkel või minevikust ja/või kohustusi, millega füüsilisel kehal on raske toime tulla.",
+        "initial_result": 62,
+        "minute_results": [],
+        "final_result": 62,
+        "sort_order": 2,
+        "frequency_description_en": "Mental exhaustion (stress and overload), too many activities and/or thoughts in the moment or from the past and/or too many obligations that weigh on the physical body."
+      },
+      {
+        "id": 235,
+        "session_id": 9,
+        "frequency_id": "Timed specific_1",
+        "frequency_name": "Pineal gland-to stimulate",
+        "frequency_description": "Kontakt sisetundega (mis on õige/vale, mida soovid)",
+        "initial_result": null,
+        "minute_results": [
+          61
+        ],
+        "final_result": 61,
+        "sort_order": 3,
+        "frequency_description_en": "Being in touch with intuition (what is right/wrong, what you wish / do not wish)."
+      },
+      {
+        "id": 236,
+        "session_id": 9,
+        "frequency_id": "Wellness_10",
+        "frequency_name": "Limpic System",
+        "frequency_description": "Mitte teadvustatud shokid/traumad, sh mälupildid traumadest. Emotsionaalne tasakaal.",
+        "initial_result": null,
+        "minute_results": [
+          61
+        ],
+        "final_result": 61,
+        "sort_order": 4,
+        "frequency_description_en": "Unrecognized shocks/traumas, including memories of traumas. Emotional balance."
+      },
+      {
+        "id": 237,
+        "session_id": 9,
+        "frequency_id": "Wellness_21",
+        "frequency_name": "Alpha",
+        "frequency_description": "Lõdvestus",
+        "initial_result": null,
+        "minute_results": [
+          75
+        ],
+        "final_result": 75,
+        "sort_order": 5,
+        "frequency_description_en": "Relaxation"
+      },
+      {
+        "id": 238,
+        "session_id": 9,
+        "frequency_id": "Wellness_22",
+        "frequency_name": "Theta",
+        "frequency_description": "Sügav lõdvestus",
+        "initial_result": null,
+        "minute_results": [
+          92
+        ],
+        "final_result": 92,
+        "sort_order": 6,
+        "frequency_description_en": "Deep relaxation"
+      },
+      {
+        "id": 239,
+        "session_id": 9,
+        "frequency_id": "4369",
+        "frequency_name": "Brow",
+        "frequency_description": "Otsustamine ja sisetunne.",
+        "initial_result": 80,
+        "minute_results": [],
+        "final_result": 80,
+        "sort_order": 7,
+        "frequency_description_en": "Making decisions and intuition."
+      },
+      {
+        "id": 240,
+        "session_id": 9,
+        "frequency_id": "4462",
+        "frequency_name": "Crown",
+        "frequency_description": "Närvisüsteemi rahustamine, sisemine tasakaal, ideede ja lahenduste leidmine.",
+        "initial_result": 74,
+        "minute_results": [],
+        "final_result": 74,
+        "sort_order": 8,
+        "frequency_description_en": "Calming the nervous system, inner balance, finding ideas and solutions."
+      },
+      {
+        "id": 241,
+        "session_id": 9,
+        "frequency_id": "2745",
+        "frequency_name": "Cherry Plum (Bach)",
+        "frequency_description": "Oma esimese sisetunde usaldamine (mõistus dikteerib, mis on õige. Hirm kaotada kontrolli oma mõtete/tegude üle). Aktiveerib usaldama oma spontaanset sisetunnet ning julgust järgida oma südamesoove.",
+        "initial_result": 8,
+        "minute_results": [
+          99
+        ],
+        "final_result": 99,
+        "sort_order": 9,
+        "frequency_description_en": "Trusting one's initial intuition (the rational mind dictates what is appropriate, fear of losing control over one's thoughts/actions). Activates trust in one's spontaneous intuition and courage to follow the heart's desires."
+      },
+      {
+        "id": 242,
+        "session_id": 9,
+        "frequency_id": "2821",
+        "frequency_name": "Ultra-Constitutions #11",
+        "frequency_description": "Mitte usaldav, kahtlustav/kahtlustamine, paranoiline - vastupidi aktiveerib usaldust ja enesekindlust.",
+        "initial_result": 14,
+        "minute_results": [
+          47,
+          51,
+          54,
+          88
+        ],
+        "final_result": 88,
+        "sort_order": 10,
+        "frequency_description_en": "Mistrustful, suspicious/suspicion, paranoid - activates the opposites of trust and confidence."
+      },
+      {
+        "id": 243,
+        "session_id": 9,
+        "frequency_id": "2827",
+        "frequency_name": "Ultra-Constitutions #7",
+        "frequency_description": "Ärevus, muretsemine, kannatamatus, usaldamatus - vastupidi aktiveerib rahulikkust, lõdvestumist, usaldust, turvatunnet.",
+        "initial_result": 27,
+        "minute_results": [
+          81,
+          96
+        ],
+        "final_result": 96,
+        "sort_order": 11,
+        "frequency_description_en": "Anxiety, worry, impatience, mistrust - activates the opposites of tranquillity, relaxation, trust, safety."
+      },
+      {
+        "id": 244,
+        "session_id": 9,
+        "frequency_id": "4524",
+        "frequency_name": "Distrust",
+        "frequency_description": "Üleüldine usaldamatus kellegi või millegi suhtes (ei usalda elu, ennast ega teisi inimesi).",
+        "initial_result": 21,
+        "minute_results": [
+          52,
+          86
+        ],
+        "final_result": 86,
+        "sort_order": 12,
+        "frequency_description_en": "A general mistrust of someone or something (not trusting life, oneself or other people)."
+      },
+      {
+        "id": 245,
+        "session_id": 9,
+        "frequency_id": "4432",
+        "frequency_name": "Compulsive",
+        "frequency_description": "Kompulsiivsus/korduvad sundteod ja kinnisideed, mida võidakse kasutada ärevuse maandamiseks.",
+        "initial_result": 2,
+        "minute_results": [
+          13,
+          42,
+          53,
+          71,
+          86
+        ],
+        "final_result": 86,
+        "sort_order": 13,
+        "frequency_description_en": "Compulsion / repetitive compulsive behaviour and obsessions that may be used to channel anxiety."
+      },
+      {
+        "id": 246,
+        "session_id": 9,
+        "frequency_id": "2736",
+        "frequency_name": "Aspen (Bach)",
+        "frequency_description": "Ebamäärased hirmud ja ärevus, mis ilmnevad ootamatult ilma ilmse põhjuseta. Need võivad olla ka õudusunenäod või erinevad hirmud.",
+        "initial_result": 0,
+        "minute_results": [
+          94
+        ],
+        "final_result": 94,
+        "sort_order": 14,
+        "frequency_description_en": "Vague fears and anxiety that manifest unexpectedly and without an apparent reason. Could also take the form of nightmares or various phobias."
+      },
+      {
+        "id": 247,
+        "session_id": 9,
+        "frequency_id": "2753",
+        "frequency_name": "COURAGE",
+        "frequency_description": "Erinevate hirmude mõttevormid, sh ka teiste inimeste hirmud. Aitab tuvastada ja neutraliseerida hirmutunnet ning erinevaid hirmutundmise mustreid.",
+        "initial_result": 17,
+        "minute_results": [
+          60,
+          93
+        ],
+        "final_result": 93,
+        "sort_order": 15,
+        "frequency_description_en": "Thought forms of various fears, including the fears of others. Helps to identify and neutralize fear and the various patterns of feeling fear."
+      },
+      {
+        "id": 248,
+        "session_id": 9,
+        "frequency_id": "2763",
+        "frequency_name": "FR-TRST",
+        "frequency_description": "Hirm läbikukkumise ja mittetunnustamise ees. Neutraliseerib hirmudega seotud sümptomeid, mis tulenevad varasematest emotsionaalsetest haiget saamistest, lahusolekutest ja/või lahkuminekutest, äraütlemistest.",
+        "initial_result": 52,
+        "minute_results": [],
+        "final_result": 52,
+        "sort_order": 16,
+        "frequency_description_en": "Fear of failure and lack of recognition. Neutralizes fear-related symptoms due to past emotional hurts, separations and/or break-ups, rejections."
+      },
+      {
+        "id": 249,
+        "session_id": 9,
+        "frequency_id": "2786",
+        "frequency_name": "Mimulus (Bach)",
+        "frequency_description": "Tuntumad/tavapärasemad hirmud: pimedus, vaesus, kõrgus, haigus, surm jne. Seotud ka foobiatega.",
+        "initial_result": 5,
+        "minute_results": [
+          26,
+          68,
+          74,
+          79,
+          93
+        ],
+        "final_result": 93,
+        "sort_order": 17,
+        "frequency_description_en": "The more well-known/common fears: darkness, poverty, heights, disease, death, etc. Also related to phobias."
+      },
+      {
+        "id": 250,
+        "session_id": 9,
+        "frequency_id": "2819",
+        "frequency_name": "Ultra-Constitutions #1",
+        "frequency_description": "Hirm, paanika, kartlikkus - vastupidi aktiveerib julgust, enesekindlust ja seiklushimu.",
+        "initial_result": 28,
+        "minute_results": [
+          92
+        ],
+        "final_result": 92,
+        "sort_order": 18,
+        "frequency_description_en": "Fear, panic, apprehension - activates the opposites of courage, confidence and a sense of adventure."
+      },
+      {
+        "id": 251,
+        "session_id": 9,
+        "frequency_id": "4599",
+        "frequency_name": "Fear of exams",
+        "frequency_description": "Hirm hakkama saamise ees olukordades, mis nõuavad suurt pingutust ja tähelepanu - võib esineda stressi ja ärevust, nt eksamid.",
+        "initial_result": 7,
+        "minute_results": [
+          61,
+          93
+        ],
+        "final_result": 93,
+        "sort_order": 19,
+        "frequency_description_en": "Fear regarding coping in situations that require much effort and attention, may be accompanied by stress and anxiety, e.g. exams."
+      },
+      {
+        "id": 252,
+        "session_id": 9,
+        "frequency_id": "4604",
+        "frequency_name": "Fears from past rejection",
+        "frequency_description": "Hirmud, mis tulenevad minevikus toimunud äraütlemistest ja/või tõrjumisest.",
+        "initial_result": 22,
+        "minute_results": [
+          37,
+          92
+        ],
+        "final_result": 92,
+        "sort_order": 20,
+        "frequency_description_en": "Fears resulting from past dismissals and/or rejection."
+      },
+      {
+        "id": 253,
+        "session_id": 9,
+        "frequency_id": "2765",
+        "frequency_name": "FRST-RSC",
+        "frequency_description": "Suur ärevus. Traumad, mis tulenevad leinast ja/või šokist.",
+        "initial_result": 24,
+        "minute_results": [
+          86
+        ],
+        "final_result": 86,
+        "sort_order": 21,
+        "frequency_description_en": "Extreme anxiety. Trauma resulting from grief and/or shock."
+      },
+      {
+        "id": 254,
+        "session_id": 9,
+        "frequency_id": "4296",
+        "frequency_name": "ANXIETY MED",
+        "frequency_description": "Ärevus on tekkinud pikaajalisest stressist.",
+        "initial_result": 34,
+        "minute_results": [
+          89
+        ],
+        "final_result": 89,
+        "sort_order": 22,
+        "frequency_description_en": "Anxiety is caused by prolonged stress."
+      },
+      {
+        "id": 255,
+        "session_id": 9,
+        "frequency_id": "4297",
+        "frequency_name": "Anxious worry",
+        "frequency_description": "Ärevuslik muretsemine.",
+        "initial_result": 3,
+        "minute_results": [
+          65,
+          84,
+          85
+        ],
+        "final_result": 85,
+        "sort_order": 23,
+        "frequency_description_en": "Anxious worrying."
+      },
+      {
+        "id": 256,
+        "session_id": 9,
+        "frequency_id": "4301",
+        "frequency_name": "Apprehension #1",
+        "frequency_description": "Kartlikkus #1: ärevus/hirm, et võib juhtuda midagi halba või ebameeldivat.",
+        "initial_result": 23,
+        "minute_results": [
+          45,
+          67,
+          92
+        ],
+        "final_result": 92,
+        "sort_order": 24,
+        "frequency_description_en": "Apprehension #1: anxiety/fear that something bad or unpleasant may happen."
+      },
+      {
+        "id": 257,
+        "session_id": 9,
+        "frequency_id": "2795",
+        "frequency_name": "Pine (Bach)",
+        "frequency_description": "Endaga rahulolematus ning enda süüdistamine selles, et hetkel paremini ei lähe. Süütunne, kahetsus, sh süüdistades end ka teiste vigade eest.",
+        "initial_result": 16,
+        "minute_results": [
+          77,
+          92
+        ],
+        "final_result": 92,
+        "sort_order": 25,
+        "frequency_description_en": "Dissatisfaction with oneself and blaming oneself for not doing better at the moment. Guilt, regret, including blaming oneself for the faults of others."
+      },
+      {
+        "id": 258,
+        "session_id": 9,
+        "frequency_id": "2818",
+        "frequency_name": "Ultra Constitutions #5",
+        "frequency_description": "Süüdistamine, kriitilisus, süütunne, häbi, piinlikkus, enesele etteheidete tegemine.",
+        "initial_result": 22,
+        "minute_results": [
+          38,
+          62,
+          91
+        ],
+        "final_result": 91,
+        "sort_order": 26,
+        "frequency_description_en": "Blame, criticism, guilt, shame, embarrassment, self-condemnation."
+      },
+      {
+        "id": 259,
+        "session_id": 9,
+        "frequency_id": "5192",
+        "frequency_name": "Self-blame",
+        "frequency_description": "Enese süüdistamine.",
+        "initial_result": 15,
+        "minute_results": [
+          100
+        ],
+        "final_result": 100,
+        "sort_order": 27,
+        "frequency_description_en": "Self-blame."
+      },
+      {
+        "id": 260,
+        "session_id": 9,
+        "frequency_id": "4518",
+        "frequency_name": "Disappointment #2",
+        "frequency_description": "Pettumus #2",
+        "initial_result": 18,
+        "minute_results": [
+          86
+        ],
+        "final_result": 86,
+        "sort_order": 28,
+        "frequency_description_en": "Disappointment #2"
+      },
+      {
+        "id": 261,
+        "session_id": 9,
+        "frequency_id": "2755",
+        "frequency_name": "DISSOLVE GUILT",
+        "frequency_description": "Süütunne, eneses kahtlemine ja hukkamõistmine. Tunne, et ei ole piisavalt hea. Süütunne avaldub enesevihkamisest kuni kergemate tundmusteni (enese armastuse puudus, ei tunne end õnneliku elu väärilisena).",
+        "initial_result": 27,
+        "minute_results": [
+          82,
+          95
+        ],
+        "final_result": 95,
+        "sort_order": 29,
+        "frequency_description_en": "Guilt, self-doubt and self-condemnation. Not feeling good enough. The expressions of guilt range from self-loathing to milder sensations (lack of self-love, not feeling worthy of happiness)."
+      },
+      {
+        "id": 262,
+        "session_id": 9,
+        "frequency_id": "2758",
+        "frequency_name": "EMOTIONAL HEALING",
+        "frequency_description": "Negatiivsete mõttemustrite ja enesekriitilisuse neutraliseerimine. Aktiveerib intuitsiooni, turva- ja õnnetunnet ning enesest arusaamist. Neutraliseerib seosed emotsioonide ja füüsiliste probleemide vahel.",
+        "initial_result": 5,
+        "minute_results": [
+          12,
+          74,
+          84,
+          100
+        ],
+        "final_result": 100,
+        "sort_order": 30,
+        "frequency_description_en": "Neutralizing negative thought patters and self-criticism, activates intuition, a sense of safety and happiness and introspection. Neutralizes connections between emotions and physical issues."
+      },
+      {
+        "id": 263,
+        "session_id": 9,
+        "frequency_id": "4703",
+        "frequency_name": "Hesitation",
+        "frequency_description": "Kahtlemine/kõhklemine, aitab võtta otsuseid paremini vastu.",
+        "initial_result": 32,
+        "minute_results": [
+          96
+        ],
+        "final_result": 96,
+        "sort_order": 31,
+        "frequency_description_en": "Doubt/hesitation, improves decision making."
+      },
+      {
+        "id": 264,
+        "session_id": 9,
+        "frequency_id": "5327",
+        "frequency_name": "Thought disturbances",
+        "frequency_description": "Segavad mõtted (võivad olla seotud ärevuse ja stressiga).",
+        "initial_result": 30,
+        "minute_results": [
+          69,
+          74,
+          82,
+          98
+        ],
+        "final_result": 98,
+        "sort_order": 32,
+        "frequency_description_en": "Disturbing thoughts (may be associated with anxiety and stress)."
+      },
+      {
+        "id": 265,
+        "session_id": 9,
+        "frequency_id": "4769",
+        "frequency_name": "Inner joy",
+        "frequency_description": "Sisemine rõõm.",
+        "initial_result": 13,
+        "minute_results": [
+          44,
+          77,
+          82,
+          95
+        ],
+        "final_result": 95,
+        "sort_order": 33,
+        "frequency_description_en": "Inner joy."
+      },
+      {
+        "id": 336,
+        "session_id": 13,
+        "frequency_id": "934",
+        "frequency_name": "ADD",
+        "frequency_description": "Tähelepanupuudulikkus #1",
+        "initial_result": 25,
+        "minute_results": [
+          50,
+          86
+        ],
+        "final_result": 86,
+        "sort_order": 0,
+        "frequency_description_en": "Attention Deficit Disorder #1"
+      },
+      {
+        "id": 337,
+        "session_id": 13,
+        "frequency_id": "2731",
+        "frequency_name": "ACHIV",
+        "frequency_description": "Ülemäärane söögiisu, rasvumine ja/või üldiselt täitmatuse tunne (söögiisu, emotsionaalsus, tühjuse tunne jms). Vajadus teadvustada seni lahendamata probleemide põhjuseid ning nende ümber kujundamine.",
+        "initial_result": 2,
+        "minute_results": [
+          50,
+          73,
+          86
+        ],
+        "final_result": 86,
+        "sort_order": 1,
+        "frequency_description_en": "Excessive appetite, obesity and/or a general sense of insatiability (appetite, heightened emotions, feeling empty, etc.). A need to recognize the causes of unresolved problems, and reversing the issues."
+      },
+      {
+        "id": 338,
+        "session_id": 11,
+        "frequency_id": "2741",
+        "frequency_name": "CALM CHILD",
+        "frequency_description": "Sisemise lapse rahustamine (sisemine laps on pettunud ja pahane), neutraliseerides emotsionaalset tasakaalutust, viha või pettumuse tunnet ning aktiveerides õnnetunnet.",
+        "initial_result": 5,
+        "minute_results": [
+          75,
+          90
+        ],
+        "final_result": 90,
+        "sort_order": 0,
+        "frequency_description_en": "Calming the inner child (the inner child is disappointed and frustrated) by neutralizing emotional imbalance, anger or disappointment and activating happiness."
+      },
+      {
+        "id": 339,
+        "session_id": 11,
+        "frequency_id": "2815",
+        "frequency_name": "TRANQUILITY",
+        "frequency_description": "Mõtete ja emotsioonide vaigistamine. Aktiveerib sisemist rahu ja sügavat lõdvestumist.",
+        "initial_result": 0,
+        "minute_results": [
+          29,
+          49,
+          74,
+          78,
+          88
+        ],
+        "final_result": 88,
+        "sort_order": 1,
+        "frequency_description_en": "Silencing thoughts and emotions. Activates inner calm and deep relaxation."
+      },
+      {
+        "id": 340,
+        "session_id": 11,
+        "frequency_id": "2830",
+        "frequency_name": "UN-STRESS",
+        "frequency_description": "Mentaalne kurnatus (stress ja ülekoormatus) - liiga palju tegevusi ja/või mõtteid hetkel või minevikust ja/või kohustusi, millega füüsilisel kehal on raske toime tulla.",
+        "initial_result": 32,
+        "minute_results": [
+          42,
+          79,
+          95
+        ],
+        "final_result": 95,
+        "sort_order": 2,
+        "frequency_description_en": "Mental exhaustion (stress and overload), too many activities and/or thoughts in the moment or from the past and/or too many obligations that weigh on the physical body."
+      },
+      {
+        "id": 341,
+        "session_id": 11,
+        "frequency_id": "Timed specific_1",
+        "frequency_name": "Pineal gland-to stimulate",
+        "frequency_description": "Kontakt sisetundega (mis on õige/vale, mida soovid)",
+        "initial_result": null,
+        "minute_results": [
+          66
+        ],
+        "final_result": 66,
+        "sort_order": 3,
+        "frequency_description_en": "Being in touch with intuition (what is right/wrong, what you wish / do not wish)."
+      },
+      {
+        "id": 342,
+        "session_id": 11,
+        "frequency_id": "Wellness_10",
+        "frequency_name": "Limpic System",
+        "frequency_description": "Mitte teadvustatud shokid/traumad, sh mälupildid traumadest. Emotsionaalne tasakaal.",
+        "initial_result": null,
+        "minute_results": [
+          78
+        ],
+        "final_result": 78,
+        "sort_order": 4,
+        "frequency_description_en": "Unrecognized shocks/traumas, including memories of traumas. Emotional balance."
+      },
+      {
+        "id": 343,
+        "session_id": 11,
+        "frequency_id": "Wellness_21",
+        "frequency_name": "Alpha",
+        "frequency_description": "Lõdvestus",
+        "initial_result": null,
+        "minute_results": [
+          20,
+          33,
+          77,
+          81,
+          88
+        ],
+        "final_result": 88,
+        "sort_order": 5,
+        "frequency_description_en": "Relaxation"
+      },
+      {
+        "id": 344,
+        "session_id": 11,
+        "frequency_id": "Wellness_22",
+        "frequency_name": "Theta",
+        "frequency_description": "Sügav lõdvestus",
+        "initial_result": null,
+        "minute_results": [
+          40,
+          90
+        ],
+        "final_result": 90,
+        "sort_order": 6,
+        "frequency_description_en": "Deep relaxation"
+      },
+      {
+        "id": 345,
+        "session_id": 11,
+        "frequency_id": "4369",
+        "frequency_name": "Brow",
+        "frequency_description": "Otsustamine ja sisetunne.",
+        "initial_result": 46,
+        "minute_results": [
+          94
+        ],
+        "final_result": 94,
+        "sort_order": 7,
+        "frequency_description_en": "Making decisions and intuition."
+      },
+      {
+        "id": 346,
+        "session_id": 11,
+        "frequency_id": "4462",
+        "frequency_name": "Crown",
+        "frequency_description": "Närvisüsteemi rahustamine, sisemine tasakaal, ideede ja lahenduste leidmine.",
+        "initial_result": 83,
+        "minute_results": [],
+        "final_result": 83,
+        "sort_order": 8,
+        "frequency_description_en": "Calming the nervous system, inner balance, finding ideas and solutions."
+      },
+      {
+        "id": 347,
+        "session_id": 11,
+        "frequency_id": "4989",
+        "frequency_name": "Obsession",
+        "frequency_description": "Sundmõtted ja/või sundteod #1 (korduvad mõtted ehk mõtled pidevalt ühtesid ja samasid mõtteid, korduvad hirmudest tulenevad teod).",
+        "initial_result": 86,
+        "minute_results": [],
+        "final_result": 86,
+        "sort_order": 9,
+        "frequency_description_en": "Compulsive thinking and/or compulsive behaviour #1 (rumination, i.e. the same thoughts on a loop, repetitive fear-driven behaviour)."
+      },
+      {
+        "id": 348,
+        "session_id": 11,
+        "frequency_id": "2762",
+        "frequency_name": "FR-RLS",
+        "frequency_description": "Sundmõtted ja ettekujutamine, mida kõike halba võib juhtuda. Neutraliseerib paanikahoogude, ärevusest tuleneva värisemise, rahutuse ja/või hakkama saamise hirmuga seotud sümptomeid. Ehmumine/hirmutunne, muretsemine ja kompulsiivsed ideed. Need tundmused võivad omakorda põhjustada ärevust.",
+        "initial_result": 15,
+        "minute_results": [
+          33,
+          90
+        ],
+        "final_result": 90,
+        "sort_order": 10,
+        "frequency_description_en": "Compulsive thinking and imagining negative scenarios. Neutralizes tremors due to panic attacks and anxiety, and symptoms associated with restlessness and/or the fear of not coping. Being easily startled / feeling fearful, worrying and compulsive ideas. These sensations may then cause anxiety."
+      },
+      {
+        "id": 349,
+        "session_id": 11,
+        "frequency_id": "4433",
+        "frequency_name": "Compulsive thinking",
+        "frequency_description": "Kompulsiivne mõtlemine (korduvad mõtted, millest on raske vabaneda), mida võidakse kasutada ärevuse maandamiseks.",
+        "initial_result": 35,
+        "minute_results": [
+          55,
+          70,
+          83,
+          94
+        ],
+        "final_result": 94,
+        "sort_order": 11,
+        "frequency_description_en": "Compulsive thinking (repetitive thoughts that are hard to release) that may be used to channel anxiety."
+      },
+      {
+        "id": 350,
+        "session_id": 11,
+        "frequency_id": "4441",
+        "frequency_name": "Constant brooding over tr",
+        "frequency_description": "Ärevuslik ja pidev muretsemine mingi teema osas, millest on keeruline vabaneda.",
+        "initial_result": 20,
+        "minute_results": [
+          99
+        ],
+        "final_result": 99,
+        "sort_order": 12,
+        "frequency_description_en": "Anxious and constant worrying about a topic that is hard to release."
+      },
+      {
+        "id": 351,
+        "session_id": 11,
+        "frequency_id": "2738",
+        "frequency_name": "AURA CLEANSER",
+        "frequency_description": "Minevikust pärit negatiivsete emotsioonide ja mõtete neutraliseerimine, aidates elus edasi liikuda.",
+        "initial_result": 22,
+        "minute_results": [
+          64,
+          90
+        ],
+        "final_result": 90,
+        "sort_order": 13,
+        "frequency_description_en": "Neutralizing negative emotions and thoughts originating from the past, helping to move on with life."
+      },
+      {
+        "id": 352,
+        "session_id": 11,
+        "frequency_id": "2748",
+        "frequency_name": "CLEANSING FIRE",
+        "frequency_description": "Neutraliseerib minevikukogemustest tekkinud/välja kujunenud/tulenevaid negatiivseid mõttemustreid, emotsioone ning piiranguid.",
+        "initial_result": 70,
+        "minute_results": [],
+        "final_result": 70,
+        "sort_order": 14,
+        "frequency_description_en": "Neutralizes negative thought patters, emotions and limitations originating from / shaped by / resulting from past experiences."
+      },
+      {
+        "id": 353,
+        "session_id": 11,
+        "frequency_id": "2836",
+        "frequency_name": "White Chestnut (Bach)",
+        "frequency_description": "Soovimatud/segavad mõtted ja mured, mis näivad lõputult korduvat ja mis võivad põhjustada unetust. Aktiveerib tasakaalustatud meeleseisundit ja oskust oma mõtteid konstruktiivselt kasutada.",
+        "initial_result": 27,
+        "minute_results": [
+          92
+        ],
+        "final_result": 92,
+        "sort_order": 15,
+        "frequency_description_en": "Unwanted/disturbing thoughts and worries that seem to run in a loop and may cause insomnia. Activates a balanced state of mind and the ability to use one's thoughts constructively."
+      },
+      {
+        "id": 354,
+        "session_id": 11,
+        "frequency_id": "2736",
+        "frequency_name": "Aspen (Bach)",
+        "frequency_description": "Ebamäärased hirmud ja ärevus, mis ilmnevad ootamatult ilma ilmse põhjuseta. Need võivad olla ka õudusunenäod või erinevad hirmud.",
+        "initial_result": 31,
+        "minute_results": [
+          79,
+          79,
+          90
+        ],
+        "final_result": 90,
+        "sort_order": 16,
+        "frequency_description_en": "Vague fears and anxiety that manifest unexpectedly and without an apparent reason. Could also take the form of nightmares or various phobias."
+      },
+      {
+        "id": 355,
+        "session_id": 11,
+        "frequency_id": "2763",
+        "frequency_name": "FR-TRST",
+        "frequency_description": "Hirm läbikukkumise ja mittetunnustamise ees. Neutraliseerib hirmudega seotud sümptomeid, mis tulenevad varasematest emotsionaalsetest haiget saamistest, lahusolekutest ja/või lahkuminekutest, äraütlemistest.",
+        "initial_result": 88,
+        "minute_results": [],
+        "final_result": 88,
+        "sort_order": 17,
+        "frequency_description_en": "Fear of failure and lack of recognition. Neutralizes fear-related symptoms due to past emotional hurts, separations and/or break-ups, rejections."
+      },
+      {
+        "id": 356,
+        "session_id": 11,
+        "frequency_id": "2819",
+        "frequency_name": "Ultra-Constitutions #1",
+        "frequency_description": "Hirm, paanika, kartlikkus - vastupidi aktiveerib julgust, enesekindlust ja seiklushimu.",
+        "initial_result": 70,
+        "minute_results": [],
+        "final_result": 70,
+        "sort_order": 18,
+        "frequency_description_en": "Fear, panic, apprehension - activates the opposites of courage, confidence and a sense of adventure."
+      },
+      {
+        "id": 357,
+        "session_id": 11,
+        "frequency_id": "4599",
+        "frequency_name": "Fear of exams",
+        "frequency_description": "Hirm hakkama saamise ees olukordades, mis nõuavad suurt pingutust ja tähelepanu - võib esineda stressi ja ärevust, nt eksamid.",
+        "initial_result": 22,
+        "minute_results": [
+          44,
+          54,
+          69,
+          93
+        ],
+        "final_result": 93,
+        "sort_order": 19,
+        "frequency_description_en": "Fear regarding coping in situations that require much effort and attention, may be accompanied by stress and anxiety, e.g. exams."
+      },
+      {
+        "id": 358,
+        "session_id": 11,
+        "frequency_id": "4604",
+        "frequency_name": "Fears from past rejection",
+        "frequency_description": "Hirmud, mis tulenevad minevikus toimunud äraütlemistest ja/või tõrjumisest.",
+        "initial_result": 24,
+        "minute_results": [
+          96
+        ],
+        "final_result": 96,
+        "sort_order": 20,
+        "frequency_description_en": "Fears resulting from past dismissals and/or rejection."
+      },
+      {
+        "id": 359,
+        "session_id": 11,
+        "frequency_id": "2765",
+        "frequency_name": "FRST-RSC",
+        "frequency_description": "Suur ärevus. Traumad, mis tulenevad leinast ja/või šokist.",
+        "initial_result": 14,
+        "minute_results": [
+          20,
+          58,
+          90
+        ],
+        "final_result": 90,
+        "sort_order": 21,
+        "frequency_description_en": "Extreme anxiety. Trauma resulting from grief and/or shock."
+      },
+      {
+        "id": 360,
+        "session_id": 11,
+        "frequency_id": "4296",
+        "frequency_name": "ANXIETY MED",
+        "frequency_description": "Ärevus on tekkinud pikaajalisest stressist.",
+        "initial_result": 3,
+        "minute_results": [
+          21,
+          89
+        ],
+        "final_result": 89,
+        "sort_order": 22,
+        "frequency_description_en": "Anxiety is caused by prolonged stress."
+      },
+      {
+        "id": 361,
+        "session_id": 11,
+        "frequency_id": "4297",
+        "frequency_name": "Anxious worry",
+        "frequency_description": "Ärevuslik muretsemine.",
+        "initial_result": 39,
+        "minute_results": [
+          85
+        ],
+        "final_result": 85,
+        "sort_order": 23,
+        "frequency_description_en": "Anxious worrying."
+      },
+      {
+        "id": 362,
+        "session_id": 11,
+        "frequency_id": "2744",
+        "frequency_name": "Cerato (Bach)",
+        "frequency_description": "Oma sisetunde mitte usaldamine, vajadus küsida teiste nõuandeid ja arvamusi, isegi kui sellised nõuanded on eksitavad. Aktiveerib usaldama enda sisetunnet.",
+        "initial_result": 23,
+        "minute_results": [
+          65,
+          84,
+          84,
+          90
+        ],
+        "final_result": 90,
+        "sort_order": 24,
+        "frequency_description_en": "Not trusting one's intuition, a need to ask others for advice and opinions, even if being misled. Activates trust in one's intuition."
+      },
+      {
+        "id": 363,
+        "session_id": 11,
+        "frequency_id": "4524",
+        "frequency_name": "Distrust",
+        "frequency_description": "Üleüldine usaldamatus kellegi või millegi suhtes (ei usalda elu, ennast ega teisi inimesi).",
+        "initial_result": 10,
+        "minute_results": [
+          41,
+          59,
+          97
+        ],
+        "final_result": 97,
+        "sort_order": 25,
+        "frequency_description_en": "A general mistrust of someone or something (not trusting life, oneself or other people)."
+      },
+      {
+        "id": 364,
+        "session_id": 11,
+        "frequency_id": "2818",
+        "frequency_name": "Ultra Constitutions #5",
+        "frequency_description": "Süüdistamine, kriitilisus, süütunne, häbi, piinlikkus, enesele etteheidete tegemine.",
+        "initial_result": 7,
+        "minute_results": [
+          96
+        ],
+        "final_result": 96,
+        "sort_order": 26,
+        "frequency_description_en": "Blame, criticism, guilt, shame, embarrassment, self-condemnation."
+      },
+      {
+        "id": 365,
+        "session_id": 11,
+        "frequency_id": "4642",
+        "frequency_name": "Fright",
+        "frequency_description": "Äkiline võimas hirmutunne, mis võib aktiveerida ärevust, paanikat (nii sisemine kui väline ehmumine/reageerimine, sh tühistel põhjustel).",
+        "initial_result": 36,
+        "minute_results": [
+          98
+        ],
+        "final_result": 98,
+        "sort_order": 27,
+        "frequency_description_en": "A sudden powerful fear that may activate anxiety and panic (both mental and physical startling/reacting, including for insignificant reasons)."
+      },
+      {
+        "id": 366,
+        "session_id": 11,
+        "frequency_id": "4302",
+        "frequency_name": "Apprehension #2",
+        "frequency_description": "Kartlikkus #2: ärevus/hirm, et võib juhtuda midagi halba või ebameeldivat.",
+        "initial_result": 8,
+        "minute_results": [
+          16,
+          38,
+          71,
+          91
+        ],
+        "final_result": 91,
+        "sort_order": 28,
+        "frequency_description_en": "Apprehension #2: anxiety/fear that something bad or unpleasant may happen."
+      },
+      {
+        "id": 367,
+        "session_id": 11,
+        "frequency_id": "2838",
+        "frequency_name": "Wild Rose (Rose)",
+        "frequency_description": "Apaatia/tundetus ei lase tunda entusiasmi ja elurõõmu. Aktiveerib oskust elu mõtestada ja tunda rõõmu.",
+        "initial_result": 31,
+        "minute_results": [
+          47,
+          58,
+          88
+        ],
+        "final_result": 88,
+        "sort_order": 29,
+        "frequency_description_en": "Apathy/numbness keep from feeling enthusiastic and cheerful. Activates the ability to find meaning in life and to feel joy."
+      },
+      {
+        "id": 368,
+        "session_id": 11,
+        "frequency_id": "4769",
+        "frequency_name": "Inner joy",
+        "frequency_description": "Sisemine rõõm.",
+        "initial_result": 90,
+        "minute_results": [],
+        "final_result": 90,
+        "sort_order": 30,
+        "frequency_description_en": "Inner joy."
+      },
+      {
+        "id": 406,
+        "session_id": 12,
+        "frequency_id": "2741",
+        "frequency_name": "CALM CHILD",
+        "frequency_description": "Sisemise lapse rahustamine (sisemine laps on pettunud ja pahane), neutraliseerides emotsionaalset tasakaalutust, viha või pettumuse tunnet ning aktiveerides õnnetunnet.",
+        "initial_result": 16,
+        "minute_results": [
+          72,
+          78,
+          92
+        ],
+        "final_result": 92,
+        "sort_order": 0,
+        "frequency_description_en": "Calming the inner child (the inner child is disappointed and frustrated) by neutralizing emotional imbalance, anger or disappointment and activating happiness."
+      },
+      {
+        "id": 407,
+        "session_id": 12,
+        "frequency_id": "2815",
+        "frequency_name": "TRANQUILITY",
+        "frequency_description": "Mõtete ja emotsioonide vaigistamine. Aktiveerib sisemist rahu ja sügavat lõdvestumist.",
+        "initial_result": 63,
+        "minute_results": [],
+        "final_result": 63,
+        "sort_order": 1,
+        "frequency_description_en": "Silencing thoughts and emotions. Activates inner calm and deep relaxation."
+      },
+      {
+        "id": 408,
+        "session_id": 12,
+        "frequency_id": "2830",
+        "frequency_name": "UN-STRESS",
+        "frequency_description": "Mentaalne kurnatus (stress ja ülekoormatus) - liiga palju tegevusi ja/või mõtteid hetkel või minevikust ja/või kohustusi, millega füüsilisel kehal on raske toime tulla.",
+        "initial_result": 68,
+        "minute_results": [],
+        "final_result": 68,
+        "sort_order": 2,
+        "frequency_description_en": "Mental exhaustion (stress and overload), too many activities and/or thoughts in the moment or from the past and/or too many obligations that weigh on the physical body."
+      },
+      {
+        "id": 409,
+        "session_id": 12,
+        "frequency_id": "Wellness_21",
+        "frequency_name": "Alpha",
+        "frequency_description": "Lõdvestus",
+        "initial_result": null,
+        "minute_results": [
+          93
+        ],
+        "final_result": 93,
+        "sort_order": 3,
+        "frequency_description_en": "Relaxation"
+      },
+      {
+        "id": 410,
+        "session_id": 12,
+        "frequency_id": "Wellness_22",
+        "frequency_name": "Theta",
+        "frequency_description": "Sügav lõdvestus",
+        "initial_result": null,
+        "minute_results": [
+          89
+        ],
+        "final_result": 89,
+        "sort_order": 4,
+        "frequency_description_en": "Deep relaxation"
+      },
+      {
+        "id": 411,
+        "session_id": 12,
+        "frequency_id": "Wellness_6",
+        "frequency_name": "Frontal Lobe",
+        "frequency_description": "Enesekontroll: mõtete ja emotsioonide reguleerimine.",
+        "initial_result": null,
+        "minute_results": [
+          60
+        ],
+        "final_result": 60,
+        "sort_order": 5,
+        "frequency_description_en": "Self-control: regulating thoughts and emotions."
+      },
+      {
+        "id": 412,
+        "session_id": 12,
+        "frequency_id": "Wellness_7",
+        "frequency_name": "Hypothalamus",
+        "frequency_description": "\"Võitle-põgene-tardu\" stressireaktsioon. Pidev nö valvel olek, mis takistab lõdvestumist.",
+        "initial_result": null,
+        "minute_results": [
+          95
+        ],
+        "final_result": 95,
+        "sort_order": 6,
+        "frequency_description_en": "Fight-flight-freeze stress response. A constant state of alertness that prevents relaxation."
+      },
+      {
+        "id": 413,
+        "session_id": 12,
+        "frequency_id": "Sarcode_1",
+        "frequency_name": "Vagus Nerve",
+        "frequency_description": "Närvisüsteemi rahustamine",
+        "initial_result": null,
+        "minute_results": [
+          63
+        ],
+        "final_result": 63,
+        "sort_order": 7,
+        "frequency_description_en": "Calming the nervous system"
+      },
+      {
+        "id": 414,
+        "session_id": 12,
+        "frequency_id": "2762",
+        "frequency_name": "FR-RLS",
+        "frequency_description": "Sundmõtted ja ettekujutamine, mida kõike halba võib juhtuda. Neutraliseerib paanikahoogude, ärevusest tuleneva värisemise, rahutuse ja/või hakkama saamise hirmuga seotud sümptomeid. Ehmumine/hirmutunne, muretsemine ja kompulsiivsed ideed. Need tundmused võivad omakorda põhjustada ärevust.",
+        "initial_result": 93,
+        "minute_results": [],
+        "final_result": 93,
+        "sort_order": 8,
+        "frequency_description_en": "Compulsive thinking and imagining negative scenarios. Neutralizes tremors due to panic attacks and anxiety, and symptoms associated with restlessness and/or the fear of not coping. Being easily startled / feeling fearful, worrying and compulsive ideas. These sensations may then cause anxiety."
+      },
+      {
+        "id": 415,
+        "session_id": 12,
+        "frequency_id": "4433",
+        "frequency_name": "Compulsive thinking",
+        "frequency_description": "Kompulsiivne mõtlemine (korduvad mõtted, millest on raske vabaneda), mida võidakse kasutada ärevuse maandamiseks.",
+        "initial_result": 62,
+        "minute_results": [],
+        "final_result": 62,
+        "sort_order": 9,
+        "frequency_description_en": "Compulsive thinking (repetitive thoughts that are hard to release) that may be used to channel anxiety."
+      },
+      {
+        "id": 416,
+        "session_id": 12,
+        "frequency_id": "2736",
+        "frequency_name": "Aspen (Bach)",
+        "frequency_description": "Ebamäärased hirmud ja ärevus, mis ilmnevad ootamatult ilma ilmse põhjuseta. Need võivad olla ka õudusunenäod või erinevad hirmud.",
+        "initial_result": 21,
+        "minute_results": [
+          61,
+          93
+        ],
+        "final_result": 93,
+        "sort_order": 10,
+        "frequency_description_en": "Vague fears and anxiety that manifest unexpectedly and without an apparent reason. Could also take the form of nightmares or various phobias."
+      },
+      {
+        "id": 417,
+        "session_id": 12,
+        "frequency_id": "2787",
+        "frequency_name": "MND-MMRY",
+        "frequency_description": "Leina, šoki, pettumuste, usalduse kaotuse, hirmu ja muude lapsepõlve väärkohtlemise tagajärgedega seotud mõttemustrid. Aktiveerib mineviku või oleviku emotsionaalsete raskuste aktsepteerimist.",
+        "initial_result": 4,
+        "minute_results": [
+          77,
+          93
+        ],
+        "final_result": 93,
+        "sort_order": 11,
+        "frequency_description_en": "Thought patters associated with grief, shock, disappointment, loss of trust, fear and other consequences of childhood abuse. Activates the ability to accept past or present emotional difficulties."
+      },
+      {
+        "id": 418,
+        "session_id": 12,
+        "frequency_id": "4599",
+        "frequency_name": "Fear of exams",
+        "frequency_description": "Hirm hakkama saamise ees olukordades, mis nõuavad suurt pingutust ja tähelepanu - võib esineda stressi ja ärevust, nt eksamid.",
+        "initial_result": 40,
+        "minute_results": [
+          69,
+          82,
+          100
+        ],
+        "final_result": 100,
+        "sort_order": 12,
+        "frequency_description_en": "Fear regarding coping in situations that require much effort and attention, may be accompanied by stress and anxiety, e.g. exams."
+      },
+      {
+        "id": 419,
+        "session_id": 12,
+        "frequency_id": "2765",
+        "frequency_name": "FRST-RSC",
+        "frequency_description": "Suur ärevus. Traumad, mis tulenevad leinast ja/või šokist.",
+        "initial_result": 89,
+        "minute_results": [],
+        "final_result": 89,
+        "sort_order": 13,
+        "frequency_description_en": "Extreme anxiety. Trauma resulting from grief and/or shock."
+      },
+      {
+        "id": 420,
+        "session_id": 12,
+        "frequency_id": "2744",
+        "frequency_name": "Cerato (Bach)",
+        "frequency_description": "Oma sisetunde mitte usaldamine, vajadus küsida teiste nõuandeid ja arvamusi, isegi kui sellised nõuanded on eksitavad. Aktiveerib usaldama enda sisetunnet.",
+        "initial_result": 77,
+        "minute_results": [],
+        "final_result": 77,
+        "sort_order": 14,
+        "frequency_description_en": "Not trusting one's intuition, a need to ask others for advice and opinions, even if being misled. Activates trust in one's intuition."
+      },
+      {
+        "id": 421,
+        "session_id": 12,
+        "frequency_id": "2745",
+        "frequency_name": "Cherry Plum (Bach)",
+        "frequency_description": "Oma esimese sisetunde usaldamine (mõistus dikteerib, mis on õige. Hirm kaotada kontrolli oma mõtete/tegude üle). Aktiveerib usaldama oma spontaanset sisetunnet ning julgust järgida oma südamesoove.",
+        "initial_result": 39,
+        "minute_results": [
+          68,
+          94
+        ],
+        "final_result": 94,
+        "sort_order": 15,
+        "frequency_description_en": "Trusting one's initial intuition (the rational mind dictates what is appropriate, fear of losing control over one's thoughts/actions). Activates trust in one's spontaneous intuition and courage to follow the heart's desires."
+      },
+      {
+        "id": 422,
+        "session_id": 12,
+        "frequency_id": "2821",
+        "frequency_name": "Ultra-Constitutions #11",
+        "frequency_description": "Mitte usaldav, kahtlustav/kahtlustamine, paranoiline - vastupidi aktiveerib usaldust ja enesekindlust.",
+        "initial_result": 10,
+        "minute_results": [
+          33,
+          42,
+          71,
+          72,
+          99
+        ],
+        "final_result": 99,
+        "sort_order": 16,
+        "frequency_description_en": "Mistrustful, suspicious/suspicion, paranoid - activates the opposites of trust and confidence."
+      },
+      {
+        "id": 423,
+        "session_id": 12,
+        "frequency_id": "2827",
+        "frequency_name": "Ultra-Constitutions #7",
+        "frequency_description": "Ärevus, muretsemine, kannatamatus, usaldamatus - vastupidi aktiveerib rahulikkust, lõdvestumist, usaldust, turvatunnet.",
+        "initial_result": 74,
+        "minute_results": [],
+        "final_result": 74,
+        "sort_order": 17,
+        "frequency_description_en": "Anxiety, worry, impatience, mistrust - activates the opposites of tranquillity, relaxation, trust, safety."
+      },
+      {
+        "id": 424,
+        "session_id": 12,
+        "frequency_id": "4524",
+        "frequency_name": "Distrust",
+        "frequency_description": "Üleüldine usaldamatus kellegi või millegi suhtes (ei usalda elu, ennast ega teisi inimesi).",
+        "initial_result": 76,
+        "minute_results": [],
+        "final_result": 76,
+        "sort_order": 18,
+        "frequency_description_en": "A general mistrust of someone or something (not trusting life, oneself or other people)."
+      },
+      {
+        "id": 425,
+        "session_id": 12,
+        "frequency_id": "4302",
+        "frequency_name": "Apprehension #2",
+        "frequency_description": "Kartlikkus #2: ärevus/hirm, et võib juhtuda midagi halba või ebameeldivat.",
+        "initial_result": 24,
+        "minute_results": [
+          52,
+          52,
+          90
+        ],
+        "final_result": 90,
+        "sort_order": 19,
+        "frequency_description_en": "Apprehension #2: anxiety/fear that something bad or unpleasant may happen."
+      },
+      {
+        "id": 426,
+        "session_id": 12,
+        "frequency_id": "4517",
+        "frequency_name": "Disappointment #1",
+        "frequency_description": "Pettumus #1",
+        "initial_result": 74,
+        "minute_results": [],
+        "final_result": 74,
+        "sort_order": 20,
+        "frequency_description_en": "Disappointment #1"
+      },
+      {
+        "id": 427,
+        "session_id": 12,
+        "frequency_id": "2789",
+        "frequency_name": "MVON",
+        "frequency_description": "Vihaga seotud allasurutud ja sügavad emotsioonid või varasemate traumade ja väärkohtlemisega seotud hoiakud. Neutraliseerib leina, pettumuse ja kaotusega seotud tundeid ning aitab elus edasi liikuda.",
+        "initial_result": 18,
+        "minute_results": [
+          54,
+          98
+        ],
+        "final_result": 98,
+        "sort_order": 21,
+        "frequency_description_en": "Anger-related repressed and deep emotions or attitudes associated with past trauma and abuse. Neutralizes feelings associated with grief, disappointment and loss, and helps to move on with life."
+      },
+      {
+        "id": 428,
+        "session_id": 12,
+        "frequency_id": "2825",
+        "frequency_name": "Ultra-Constitutions #4",
+        "frequency_description": "Lein, kurbus, kahetsus - vastupidi aktiveerib õnnetunnet, rahulolu ja rõõmsameelsust.",
+        "initial_result": 9,
+        "minute_results": [
+          62,
+          93
+        ],
+        "final_result": 93,
+        "sort_order": 22,
+        "frequency_description_en": "Grief, sadness, regret - activates the opposites of happiness, contentment and cheerfulness."
+      },
+      {
+        "id": 429,
+        "session_id": 12,
+        "frequency_id": "4672",
+        "frequency_name": "Grief #1",
+        "frequency_description": "Lein #1: surm, kaotus, lahkuminek, mingi eluperioodi lõppemine.",
+        "initial_result": 6,
+        "minute_results": [
+          38,
+          70,
+          80,
+          86
+        ],
+        "final_result": 86,
+        "sort_order": 23,
+        "frequency_description_en": "Grief #1: death, loss, a break-up, ending of a life phase."
+      },
+      {
+        "id": 430,
+        "session_id": 12,
+        "frequency_id": "4673",
+        "frequency_name": "Grief #2",
+        "frequency_description": "Lein #2: surm, kaotus, lahkuminek, mingi eluperioodi lõppemine.",
+        "initial_result": 7,
+        "minute_results": [
+          23,
+          79,
+          87
+        ],
+        "final_result": 87,
+        "sort_order": 24,
+        "frequency_description_en": "Grief #2: death, loss, a break-up, ending of a life phase."
+      },
+      {
+        "id": 431,
+        "session_id": 12,
+        "frequency_id": "4865",
+        "frequency_name": "Long/lasting grief",
+        "frequency_description": "Kauakestev lein.",
+        "initial_result": 2,
+        "minute_results": [
+          3,
+          19,
+          37,
+          95
+        ],
+        "final_result": 95,
+        "sort_order": 25,
+        "frequency_description_en": "Long-lasting grief."
+      },
+      {
+        "id": 432,
+        "session_id": 12,
+        "frequency_id": "5184",
+        "frequency_name": "Sadness #1",
+        "frequency_description": "Kurbus #1",
+        "initial_result": 23,
+        "minute_results": [
+          95
+        ],
+        "final_result": 95,
+        "sort_order": 26,
+        "frequency_description_en": "Sadness #1"
+      },
+      {
+        "id": 433,
+        "session_id": 12,
+        "frequency_id": "4268",
+        "frequency_name": "Anguish #1",
+        "frequency_description": "Ängistus, ahastus, hingepiin #1",
+        "initial_result": 6,
+        "minute_results": [
+          58,
+          82,
+          89
+        ],
+        "final_result": 89,
+        "sort_order": 27,
+        "frequency_description_en": "Distress, anguish, torment #1"
+      },
+      {
+        "id": 434,
+        "session_id": 12,
+        "frequency_id": "4269",
+        "frequency_name": "Anguish #2",
+        "frequency_description": "Ängistus, ahastus, hingepiin #2",
+        "initial_result": 20,
+        "minute_results": [
+          75,
+          98
+        ],
+        "final_result": 98,
+        "sort_order": 28,
+        "frequency_description_en": "Distress, anguish, torment #2"
+      },
+      {
+        "id": 435,
+        "session_id": 12,
+        "frequency_id": "2769",
+        "frequency_name": "HEALING HEART",
+        "frequency_description": "Hingehaavad: andestamine, mõistmine, suhtlemine, usaldamine, avatus ja aktsepteerimine nii olnud kui olemasolevates suhetes (sh vastassooga). Aktiveerib tasakaalu, aidates luua paremaid suhteid.",
+        "initial_result": 12,
+        "minute_results": [
+          48,
+          98
+        ],
+        "final_result": 98,
+        "sort_order": 29,
+        "frequency_description_en": "Emotional wounds: forgiveness, understanding, communication, trust, openness and acceptance regarding both past and present relationships (including with the opposite sex). Activates balance, helping to create better relationships."
+      },
+      {
+        "id": 436,
+        "session_id": 12,
+        "frequency_id": "5016",
+        "frequency_name": "Painfull emotional attached",
+        "frequency_description": "Valus emotsionaalne side, st kellestki/millestki kinni hoidmine/ei soovita lahti lasta, sh võib olla ka kiindumussuhte trauma.",
+        "initial_result": 21,
+        "minute_results": [
+          81,
+          81,
+          96
+        ],
+        "final_result": 96,
+        "sort_order": 30,
+        "frequency_description_en": "A painful emotional attachment, including clinging to someone/something / not wishing to let go, may also be accompanied by attachment trauma."
+      },
+      {
+        "id": 437,
+        "session_id": 12,
+        "frequency_id": "5111",
+        "frequency_name": "Psychic pain",
+        "frequency_description": "Psüühiline valu (emotsionaalne valu/kannatus).",
+        "initial_result": 26,
+        "minute_results": [
+          41,
+          58,
+          78,
+          84,
+          86
+        ],
+        "final_result": 86,
+        "sort_order": 31,
+        "frequency_description_en": "Psychic pain (emotional pain/suffering)."
+      },
+      {
+        "id": 438,
+        "session_id": 12,
+        "frequency_id": "4691",
+        "frequency_name": "Heartache",
+        "frequency_description": "Südamevalu: keegi või midagi tekitab südamevalu.",
+        "initial_result": 31,
+        "minute_results": [
+          98
+        ],
+        "final_result": 98,
+        "sort_order": 32,
+        "frequency_description_en": "Heartache: someone or something is causing heartache."
+      },
+      {
+        "id": 439,
+        "session_id": 12,
+        "frequency_id": "2792",
+        "frequency_name": "Oak (Bach)",
+        "frequency_description": "Liigne rangus enda suhtes on võtnud rõõmutunde (võib olla võetud ka liiga palju kohustusi).  Aktiveerib rõõmutunnet ning oskust hakata tegema aeg-ajalt pausi oma ettevõtmistes.",
+        "initial_result": 100,
+        "minute_results": [],
+        "final_result": 100,
+        "sort_order": 33,
+        "frequency_description_en": "Excessive harshness towards oneself has left one joyless (one may have also assumed too many obligations). Activates joy and the ability to introduce periods of no activity."
+      },
+      {
+        "id": 440,
+        "session_id": 12,
+        "frequency_id": "2838",
+        "frequency_name": "Wild Rose (Rose)",
+        "frequency_description": "Apaatia/tundetus ei lase tunda entusiasmi ja elurõõmu. Aktiveerib oskust elu mõtestada ja tunda rõõmu.",
+        "initial_result": 34,
+        "minute_results": [
+          58,
+          88
+        ],
+        "final_result": 88,
+        "sort_order": 34,
+        "frequency_description_en": "Apathy/numbness keep from feeling enthusiastic and cheerful. Activates the ability to find meaning in life and to feel joy."
+      },
+      {
+        "id": 441,
+        "session_id": 12,
+        "frequency_id": "4348",
+        "frequency_name": "Bliss",
+        "frequency_description": "Õnnetunne / suur rõõm.",
+        "initial_result": 98,
+        "minute_results": [],
+        "final_result": 98,
+        "sort_order": 35,
+        "frequency_description_en": "Bliss."
+      },
+      {
+        "id": 442,
+        "session_id": 12,
+        "frequency_id": "4584",
+        "frequency_name": "Faith",
+        "frequency_description": "Täielik usk endasse ning usaldus kellegi või millegi vastu.",
+        "initial_result": 56,
+        "minute_results": [],
+        "final_result": 56,
+        "sort_order": 36,
+        "frequency_description_en": "Complete self-confidence and trust in someone or something."
+      }
+    ],
+    "notes_history": [
+      {
+        "id": 1,
+        "client_id": 3,
+        "text": "Esimene seanss: Mattias väga palju ei rääkinud. Lihtsalt, kui küsisin küsimusi, siis ta vastas. Peamiselt oli meie jutuajamine discgolfist ja teraapia tutvustamisest. Ta ise tundis kohati ebakindlalt ja ärevalt. Tema kehakeel oli vahepeal rahutu.",
+        "saved_at": "2026-06-03T08:11:09.788Z",
+        "saved_by": 2
+      },
+      {
+        "id": 2,
+        "client_id": 3,
+        "text": "Teine seanss: Mattias kohe peale seanssi paar päeva ei tajunud midagi, aga siis hiljem märkas muutust, et on rahulikum ja vähem mõtteid, lisaks olevat teised ka märganud ja väljendanud seda. Lisaks discgolfis on mäng ka parem, paremad tulemused ja Mattias ise tunneb mängides palju rahulikumalt. Suutis end muidu närvilistel hetkedel hoida tasakaalukamana. Lisamärkusena: See aasta soovib paljudel võistlustel käia, järgmine on nt Baltic Championship alutagusel 5. juuni.\n",
+        "saved_at": "2026-06-03T08:15:17.644Z",
+        "saved_by": 2
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "name": "Admin",
+        "email": "admin@salus.ee",
+        "role": "admin",
+        "branch": "Tallinn",
+        "phone": ""
+      },
+      {
+        "id": 2,
+        "name": "Kristo Epner",
+        "email": "kristo@lifekeskus.ee",
+        "role": "therapist",
+        "branch": "Tallinn",
+        "phone": "kristo@lifekeskus.ee"
+      }
+    ],
+    "ai_suggestions": []
+  }
+}

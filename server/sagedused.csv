@@ -1,704 +1,704 @@
-﻿id;freq_name;description;category
-934;ADD;Tähelepanupuudulikkus #1;"Attention / Tähelepanu; Hyperactivity / Hüperaktiivsus"
-938;ADHD;Tähelepanupuudulikkus koos hüperaktiivsusega #1;"Attention / Tähelepanu; Hyperactivity / Hüperaktiivsus"
-960;Asperger Syndrome;Sotsiaalsus, suhtlemine, väljendusoskus #1;"Asperger / Asperger; Autism / Autism"
-962;Autism;Sotsiaalsus, suhtlemine, väljendusoskus #2;Autism / Autism
-1066;Landau-Kleffner Syndrome;Sotsiaalsus, suhtlemine, väljendusoskus #3;"Autism / Autism; Speech / Kõne"
-1234;Tourette`s Syndrome;Sundhäälitsused ja -liigutused #1;Tourette / Tourette
-1732;Attention Deficit Dis.;Tähelepanupuudulikkus #2;Attention / Tähelepanu
-1733;Attention-Deficit Hyperactivity;Tähelepanupuudulikkus koos hüperaktiivsusega #2;"Attention / Tähelepanu; Hyperactivity / Hüperaktiivsus"
-2160;Insomnia;Unetus.;Insomnia / Unetus
-2511;Tourette`s Syndrome;Sundhäälitsused ja -liigutused #2;Tourette / Tourette
-2731;ACHIV;Ülemäärane söögiisu, rasvumine ja/või üldiselt täitmatuse tunne (söögiisu, emotsionaalsus, tühjuse tunne jms).                                                                                                                                                        Vajadus teadvustada seni lahendamata probleemide põhjuseid ning nende ümber kujundamine.;"Appetite / Ülemäärane söögiisu; Lethargy / Letargia; Sluggishness / Loidus"
-2732;ADPTIN;Ängistus ja rahutus. Raskused uue keskkonna/olukorraga kohanemisel. Ei tea, kuhu sobituda.;"Adapt / Kohanema; Anguish / Ängistus"
-2733;Agrimony (Bach);Oma murede varjamine enda ja teiste eest, nende pisendamine/väiksemaks tegemine ning teistega mitte jagamine. Vaidluste, vastasseisu ja/või üksiolemise vältimine. Valu vältimiseks/maandamiseks võidakse kasutada alkoholi, narkootikume, toitu, tööd, poodlemist jms. Aktiveerib oskust olla oma tunnete suhtes aus ja neid väljendada.;"Alcohol / Alkohol; Avoid / Vältimine"
-2734;ANGR-FLX;Viha, pettumus/frustratsioon, paindumatus, kangekaelsus, kannatamatus, andestamatus ning nendega seotud sümptomite neutraliseerimine (nö kanged mehed ja naised/poisid ja tüdrukud).;"Anger / Viha; Flexibility / Paindlikkus; Forgive / Andestamine; Stubborness / Kangekaelsus"
-2735;ANGR-RLS;Varjatud viha: minevikus toimunud leinade ja alanduste mõjutusel elamine, kergesti solvuv ja provotseeritav. Ärrituvus.;"Anger / Viha; Humiliations / Alandamised"
-2736;Aspen (Bach);Ebamäärased hirmud ja ärevus, mis ilmnevad ootamatult ilma ilmse põhjuseta. Need võivad olla ka õudusunenäod või erinevad hirmud. ;"Apprehension / Kartlikkus; Fear / Hirmud"
-2737;ATHLETE´S SPIRIT;Aktiveerib paremat mõistmist, meeskonnatööd ja sooritusvõimet, sh intuitsiooni, koordineerimist, fokusseerimist, keskendumisvõimet, täpsust ning tasakaalu.;"Focus / Keskenduma; Teamwork / Meeskonnatöö"
-2738;AURA CLEANSER;Minevikust pärit negatiivsete emotsioonide ja mõtete neutraliseerimine, aidates elus edasi liikuda. ;Aura / Energiaväli
-2739;Beech (Bach);Tolerantsus ja erinevuste aktsepteerimine, sh süüdlase otsimise soov. ;"Accept / Aktsepteerima; Tolerance / Tolerantsus"
-2740;BRIGHT MORNINGS;"""Säravad hommikud"": rasked ja kurvad tundmused takistavad kogemast entusiasmi ja elujõudu. Neutraliseerib leina/kaotuse tunnet/kurbust ning aktiveerib positiivset suhtumist, entusiasmi, elujõudu.";"Sadness / Kurbus; Enthusiasm / Entusiasm; Vitality / Elujõud"
-2741;CALM CHILD;Sisemise lapse rahustamine (sisemine laps on pettunud ja pahane), neutraliseerides emotsionaalset tasakaalutust, viha või pettumuse tunnet ning aktiveerides õnnetunnet.;Calm / Rahulikkus
-2742;CAREHRT;Võõrandumine, ükskõiksuse tunne (sh lähedaste suhtes). Ebameeldivatele olukordadele/mõtetele keskendumine. Neutraliseerides häbelikkust ja suhtlematust, aktiveerides entusiasmi ning positiivset osalemist elus.;"Alienation / Võõrandumine; Enthusiasm / Entusiasm; Shy / Häbelikkus"
-2743;Centaury (Bach);"Neile, kes alati püüavad teistele meeldida ning raske on öelda ""Ei"" isegi siis, kui neid ära kasutatakse.";Please others / Teiste soovide järgi
-2744;Cerato (Bach);Oma sisetunde mitte usaldamine, vajadus küsida teiste nõuandeid ja arvamusi, isegi kui sellised nõuanded on eksitavad. Aktiveerib usaldama enda sisetunnet.;Trust / Usaldus
-2745;Cherry Plum (Bach);Oma esimese sisetunde usaldamine (mõistus dikteerib, mis on õige. Hirm kaotada kontrolli oma mõtete/tegude üle). Aktiveerib usaldama oma spontaanset sisetunnet ning julgust järgida oma südamesoove.;Trust / Usaldus
-2746;Chestnut Bud (Bach);Sarnaste vigade kordamine läbi elu, õppimata varasematest kogemustest. Aktiveerib elukogemustest õppimist ning aitab pöörata tähelepanu olevikule.;"Learn / Õppimine; Past / Minevik"
-2747;Chicory (Bach);Perekonna ja lähedaste sõprade suhtes kontrolliv käitumine ja/või armastatutele oma standardite kehtestamine (nõudlik, dikteeriv, paindumatu). Aktiveerib tingimusteta armastust.;"Family / Peresuhted; Love / Armastus"
-2748;CLEANSING FIRE;Neutraliseerib minevikukogemustest tekkinud/välja kujunenud/tulenevaid negatiivseid mõttemustreid, emotsioone ning piiranguid. ;Aura / Energiaväli
-2749;CLEAR COMMUNICATION;Raskused eneseväljendamisel ning sellest tulenev pettumus/frustratsioon. Aktiveerib väljendusoskust, soodustades individuaalsetes ja grupisituatsioonides selget ja ladusat suhtlemist. Toetab esinemishirmu korral ning neutraliseerib ärevust.;"Communication / Kommunikatsioon; Expression / Eneseväljendamine"
-2750;CLEAR SPIRIT;Muutused tekitavad mentaalseid blokke ja pingeid. Aktiveerib tähelepanelikkust, intuitsiooni, muutustega kohanemist, kontakti oma sisetundega, mh toetab mediteerimist.;"Change / Muutused; Relax / Lõdvestuma; Spirit / Vaimne"
-2751;Clematis (Bach);Oma elu õnnetuks pidamine ning tõmbumine fantaasiamaailma. Ükskõiksuse tunne igapäevaelu suhtes. Aitab ühendada reaalse elu unistustega, aidates olla käesolevas hetkes, siin ja praegu. Aktiveerib loovust.;"Creativity / Loovus; Grounded / Vaimne tasakaal"
-2752;CLR-MND;Väärtusetuse ja alaväärsuse tunne, identiteedi segadus ning eesmärgi ebaselgus.;"Clarity / Selgus; Confusion / Segadus; Identity / Identiteet; Unworthiness / Ei ole vääriline"
-2753;COURAGE;Erinevate hirmude mõttevormid, sh ka teiste inimeste hirmud. Aitab tuvastada ja neutraliseerida hirmutunnet ning erinevaid hirmutundmise mustreid. ;Fear / Hirmud
-2754;Crab Apple (Bach);Häbi ja halb enesepilt/enesehinnang. Oma keha ja keskkonna aktsepteerimine.;"Accept / Aktsepteerima; Shame / Häbi"
-2755;DISSOLVE GUILT;Süütunne, eneses kahtlemine ja hukkamõistmine. Tunne, et ei ole piisavalt hea. Süütunne avaldub enesevihkamisest kuni kergemate tundmusteni (enese armastuse puudus, ei tunne end õnneliku elu väärilisena). ;"Guilt / Süütunne; Happiness / Õnnetunne; Sabotage / Sabotaaž"
-2756;DREAMS COME TRUE;Eneseusaldamine tuleviku kujundamisel, toetades eesmärgi selgust, visualiseerimist ja enesekehtestamist. ;"Future / Tulevik; Trust / Usaldus"
-2757;Elm (Bach);Kohustustest ja vastutusest tulenev ülekoormatus - tunne, et mingit ülesannet on lihtsalt liiga raske täita. Aktiveerib rahulikkust ja võimet näha probleeme asjakohases perspektiivis.;Accomplish / Saavutama
-2758;EMOTIONAL HEALING;Negatiivsete mõttemustrite ja enesekriitilisuse neutraliseerimine. Aktiveerib intuitsiooni, turva- ja õnnetunnet ning enesest arusaamist. Neutraliseerib seosed emotsioonide ja füüsiliste probleemide vahel.;"Change / Muutused; Critical / Kriitilisus; Happiness / Õnnetunne"
-2759;EXPSSN;Raskused eneseväljendamisel, hirm suhtlemise ees ja/või esinemishirm. Enda võimete alahindamine ja mentaalsed blokid. Võib olla ka istuvast või üksluisest eluviisist tingitud kurnatus.;"Apprehension / Kartlikkus; Fright / Äkiline hirm; Stage fright / Esinemishirm"
-2760;FAERIE FOOD;Tasakaalustab ja aitab kaasa mõttevormide muutumisele ja vaimsele arengule, toetab elus edasi liikumist.;Spirit / Vaimne
-2761;FEMFLWR;Naiselik eneseväljendamine ning enda naiselikkuse aktsepteerimine.;"Expression / Eneseväljendamine; Female / Naiselikkus"
-2762;FR-RLS;Sundmõtted ja ettekujutamine, mida kõike halba võib juhtuda. Neutraliseerib paanikahoogude, ärevusest tuleneva värisemise, rahutuse ja/või hakkama saamise hirmuga seotud sümptomeid. Ehmumine/hirmutunne, muretsemine ja kompulsiivsed ideed. Need tundmused võivad omakorda põhjustada ärevust.;"Compulsive / Kompulsiivsus; Fear / Hirmud; Fright / Äkiline hirm; Panic / Paanika; Trembling / Sisemine värin"
-2763;FR-TRST;Hirm läbikukkumise ja mittetunnustamise ees. Neutraliseerib hirmudega seotud sümptomeid, mis tulenevad varasematest emotsionaalsetest haiget saamistest, lahusolekutest ja/või lahkuminekutest, äraütlemistest. ;"Fear / Hirmud; Rejection / Tagasilükkamine"
-2764;FRGV;Raskused andestamisel ja armastuse vastuvõtmisel. Võib olla kergesti solvuv ja ennast hukkamõistev.;Love / Armastus
-2765;FRST-RSC;Suur ärevus. Traumad, mis tulenevad leinast ja/või šokist.;Anxiety / Ärevus
-2766;FS-MND;Ületöötamine ja suur vaimne väsimus, mis on põhjustatud vaimsest ja/või füüsilisest kurnatusest või haigustest. Neutraliseerib segaduse ja liigse ülitundlikkusega seotud sümptomeid.;"Confusion / Segadus; Fatigue / Väsimus; Overworked / Ületöötanud"
-2767;Gentian (Bach);Aktiveerib enesekindlust oma probleemidest üle saamiseks. Kahtlus/kõhklus, mis võib tuleneda ka tühistest asjaoludest ja/või väikestest takistustest.;"Confidence / Enesekindlus; Depression / Pikaajaline stress; Discouragement / Arglikkus"
-2768;Gorse (Bach);Meeleheide ja lootusetuse tunne. Tunne, et midagi enamat pole võimalik teha (sageli krooniliste haiguste korral). Aktiveerib usku tervenemisse, lahenduste leidmist ja enesekindlust. ;"Confidence / Enesekindlus; Despair / Meeleheide; Hope / Lootus"
-2769;HEALING HEART;Hingehaavad: andestamine, mõistmine, suhtlemine, usaldamine, avatus ja aktsepteerimine nii olnud kui olemasolevates suhetes (sh vastassooga). Aktiveerib tasakaalu, aidates luua paremaid suhteid. ;"Forgive / Andestamine; Pain / Valu"
-2770;Heather (Bach);Neile, kellel on pidevalt vajadus rääkida endast ja oma probleemidest. Raske on olla üksinda. Aktiveerib oskust teisi kuulata.;Lone / Üksindus
-2771;HIDDEN ISSUES;Sissehoitud kurbus, viha ja ennast piiravad mõttevormid on põhjustanud enese vastu töötamist (peidetud negatiivsed mälestused, mõtted ja emotsioonid). Varjatud emotsioonidele viitavad viha, korduv enesesabotaaž, sõltuvuskäitumine või kurbus, mis pole praeguse olukorraga/eluoluga tasakaalus.;"Addictive / Sõltuvust tekitav; Anger / Viha; Sabotage / Sabotaaž; Sadness / Kurbus"
-2772;Holly (Bach);Viha ja kadedus, mis tuleneb tundest, et ei saa piisavalt armastust. Aktiveerib armastuse tunnet.;Love / Armastus
-2773;Honeysuckle (Bach);Minevikus elamine (kaotatud armastus või täitumatud unistused) on võtnud rõõmutunde. Tunne, et enam ei ole võimalik õnnelikuks saada. Aktiveerib oskust tunda rõõmu käesolevas hetkes. ;Joy / Rõõm
-2774;Hornbeam (Bach);Sisemise jõu puudus tavapäraste igapäevaste tegevustega toimetulekuks. Aktiveerib entusiasmi ja vaimset erksust.;Enthusiasm / Entusiasm
-2775;HRMNY;Melanhoolsus tekkinud šokkidest, leinast ja/või pettumusest - aktiveerib rahulolu ja head enesetunnet. Võib olla kalduvus muutuda rahutuks, loiuks, melanhoolseks või kahtlustavaks. Vajadus lohutuse järgi, kuid samas ei suuda seda vastu võtta.;"Listless / Tuim; Melanholic / Melanhoolsus"
-2776;IMMUNE ENERGY;Mõjutatud negatiivsete inimeste energiast ning võõrenergiast (kadedad, õelad, pahatahtlikud, negatiivsed). Neutraliseerib igasuguseid negatiivseid energeetilisi mõjutusi. Soovitus: hoidke end eemale ebameeldivate emotsionaalsete olukordade, negatiivse vaimse keskkonna, psüühiliselt toksiliste inimeste, kohtade või mõtete eest. ;Aura / Energiaväli
-2777;Impatiens (Bach);Kiiresti tegutsemine ja mõtlemine ning kannatamatus inimeste suhtes, kes tegutsevad aeglasemalt. Üksinda töötamise eelistamine. Aktiveerib teiste suhtes empaatiat, mõistmist ja kannatlikkust.;"Empathy / Empaatia; Lone / Üksindus"
-2778;INCDNT-RLS;Šokist, traumast ja teistest haavatavatest olukordadest tulenevad mälestused. Neutraliseerib varasemate traumaatiliste kogemustega seotud mõttemustreid ja emotsioone. ;"Past / Minevik; Shock / Šokk; Trauma / Trauma"
-2779;INSPIRATION;Inspiratsioon/loomingulisus. Aktiveerib probleemide lahendamise oskust, aidates leida uusi ja paremaid viise, kuidas asju teha.;"Creativity / Loovus; Imagination / Kujutlusvõime; Inspiration / Inspiratsioon"
-2780;Larch (Bach);Enesekindluse puudumine ning ebaõnnestumisele häälestumine. Aktiveerib enesekindlust ja otsustavust väljakutseid vastu võtta.;Confidence / Enesekindlus
-2781;LF-CHNGS;Meeleheide, pahameel, kriitilisus. Aktiveerib lahti laskma valest minapildist, mis ei toeta enam.;"Despond / Ahastus; Discouragement / Arglikkus; False image / Vale enesepilt; Sullenness / Pahurus"
-2782;LTGO;Ahastus, rahutus, negatiivsed mõttemustrid, kangekaelsus, armukadedus, kadedus, kahtlustamine ja isekus. Oluliste füüsiliste ja emotsionaalsete vajaduste mahasurumine.;"Anguish / Ängistus; Jealousy / Armukadedus; Restless / Rahutus; Stubborness / Kangekaelsus; Suppression / Allasurumine"
-2783;LVJY;Šokk ja pikaaegne lein. Rahutus/ebakindlus tuleviku suhtes. Aktiveerib elurõõmu ja armastuse tunnet.;Future / Tulevik
-2784;MALE SUPPORT;Sisemine jõud, kannatlikkus, tasakaal, enesekindlus ja võime lahendada elus esinevaid probleeme sügavamal tasandil.;Centering / Tähelepanu koondamine
-2785;MENTAL FOCUS;Tähelepanu ja keskendumisvõime. Soodustab õppimist ja/või eksamiteks valmistumist. Aitab mõista enda mõttemustreid ja lõpetada oma elus ikka ja jälle samade vigade kordamist ilma nendest õppimata (aitab mõista elus esinevaid õppetunde).;"Concentration / Kontsentratsioon; Focus / Keskenduma; Learn / Õppimine"
-2786;Mimulus (Bach);Tuntumad/tavapärasemad hirmud: pimedus, vaesus, kõrgus, haigus, surm jne. Seotud ka foobiatega.;Fear / Hirmud
-2787;MND-MMRY;Leina, šoki, pettumuste, usalduse kaotuse, hirmu ja muude lapsepõlve väärkohtlemise tagajärgedega seotud mõttemustrid. Aktiveerib mineviku või oleviku emotsionaalsete raskuste aktsepteerimist.;"Abuse / Väärkohtlemine; Childhood / Lapsepõlv; Fear / Hirmud"
-2788;Mustard (Bach);Ängistus, ahastus, hingepiin, kurbus, masendus teadmata/ilma nähtavate põhjusteta. Aktiveerib sisemist stabiilsust, rõõmsameelsust ja rahulikkust.;"Cheerful / Rõõmsameelsus; Depression / Pikaajaline stress; Serenity / Rahulikkus"
-2789;MVON;Vihaga seotud allasurutud ja sügavad emotsioonid või varasemate traumade ja väärkohtlemisega seotud hoiakud. Neutraliseerib leina, pettumuse ja kaotusega seotud tundeid ning aitab elus edasi liikuda.;"Abuse / Väärkohtlemine; Anger / Viha"
-2790;NEW PATTERNS;Neutraliseerib vanasid mõttemustreid ning nendega kaasnevaid emotsioone ja vajadusi, sh sõltuvust tekitavaid käitumismustreid (nt isu ebatervisliku toidu, alkoholi järgi jne). ;"Addictive / Sõltuvust tekitav; Change / Muutused"
-2791;NU-DRCTN;Kinnijäämise tunne. Hirm muutuste ees.;"Change / Muutused; Fear / Hirmud; Stuck / Kinni olema"
-2792;Oak (Bach);Liigne rangus enda suhtes on võtnud rõõmutunde (võib olla võetud ka liiga palju kohustusi).  Aktiveerib rõõmutunnet ning oskust hakata tegema aeg-ajalt pausi oma ettevõtmistes.;Joy / Rõõm
-2793;Olive (Bach);Vaimne ja füüsiline kurnatus, mis on põhjustatud haigustest või isiklikest katsumustest/väljakutsetest. Aktiveerib elujõudu.;"Exhaust / Kurnatus; Vitality / Elujõud"
-2794;PERFECT BALANCE;Tasakaal ja rõõm. Aitab taastada ja säilitada meelerahu. Eriti hea neile, kes on ülitundlikud.;Joy / Rõõm
-2795;Pine (Bach);Endaga rahulolematus ning enda süüdistamine selles, et hetkel paremini ei lähe. Süütunne, kahetsus, sh süüdistades end ka teiste vigade eest.;"Blame / Süütunne; Guilt / Süütunne; Regret / Kahetsus"
-2796;POST OPERATIVE;Aitab emotsionaalselt taastuda operatsioonijärgsetest traumadest.;Operative / Operatsioon
-2797;PRE OPERATIVE;Aitab emotsionaalselt valmistada ette operatsiooniks või millestki vabanemiseks.;Operative / Operatsioon
-2798;PRSVR;Väsimuse, lõpetatuse ja täieliku apaatiaga seotud mõttemustrid. Aktiveerib vastupidavust, usaldusväärsust, jõudu, muutust ja sihikindlust jõuda soovitud eesmärgini. Leevendab kalduvust entusiasmiga projekte alustada ja hiljem huvi või energia puudumise tõttu neist loobuda.;"Enthusiasm / Entusiasm; Exhaust / Kurnatus; Reliability / Usaldusväärsus; Utterly apathetic / Täielik apaatsus"
-2799;PRTCT;Elujõu kaotus, peapööritus, väsimus ja kurnatus, sh füüsilise šoki, traumaga seotud mõttemustrid. Ülitundlikkus igasuguste väliste mõjutuste suhtes.;"Debility / Nõrkus; Exhaust / Kurnatus; Loss / Kaotus; Shock / Šokk; Trauma / Trauma"
-2800;PSTVTY;Lootusetus ja meeleheide taastumise suhtes, ülitundlikkus välistele pingetele.;"Despair / Meeleheide; Hope / Lootus"
-2801;RAPID RECOVERY;Läbipõlemissündroom. Vaimne ja/või füüsiline kurnatus, aitab aktiveerida sisemist jõudu.;"Burnout / Läbipõlemine; Exhaust / Kurnatus"
-2802;Red Chestnut (Bach);Pidevalt muretsemine oma armastatud inimeste heaolu pärast ja ette kujutamine, mida halba võib nendega juhtuda. Aktiveerib võimet mõelda positiivselt isegi siis, kui ollakse keerulises olukorras.;Worry / Muretsemine
-2803;Rescue Remedy (Bach);Šokk, trauma ja stress. Tasakaalustab emotsionaalset seisundit.;Shock / Šokk
-2804;RLXTN;Närvilisus, kurnatus, pinge (sh ka kaelas ja seljas olevad stressist tulenevad pinged), ärevus ja vaimne segadus. Ülitundlikkus nii füüsiliselt kui vaimselt.;"Anxious / Ärev, murelik; Exhaust / Kurnatus; Tension / Pinged"
-2805;Rock Rose (Bach);Paanika ja hirmud.;Panic / Paanika
-2806;Rock Water (Bach);Sisemine paindlikkus ja avatud meel. Enda suhtes ülemäärane karmus, jäigad isiklikud arusaamised ning endale naudingute keelamine. ;"Flexibility / Paindlikkus; Open-mind / Avatud meel"
-2807;Scleranthus (Bach);Sageli kahe valiku vahel ja ei suuda nende vahel otsustada, ka meeleolumuutused. Aktiveerib keskendumist, sisemist tasakaalu ja paindlikkust.;"Concentration / Kontsentratsioon; Flexibility / Paindlikkus; Mood / Meeleolu"
-2808;SEXUAL HEALING;Külmunud romantilised tunded.;"Female / Naiselikkus; Sensual / Sensuaalsus; Sex / Seksuaalsus"
-2809;SLFSTM;Madal enesekindlus ja -hinnang. Pelglikkus, reserveeritus ja raskus toime tulla mis tahes väljakutsetega. Kergesti mõjutatav, alaväärsuse- ja kasutuse tunne.;"Confidence / Enesekindlus; Self-esteem / Enesehinnang"
-2810;SOMATICA;Allasurutud hirmudest ja emotsioonidest tekkinud pinged lihastes ja elundites. ;"Fear / Hirmud; Tension / Pinged"
-2811;Star Of Bethlehem (Bach);Minevikutraumad ja šokid, mõjutades praegust elu. Aktiveerib nendest taastumist.;"Past / Minevik; Shock / Šokk; Trauma / Trauma"
-2812;STRNG-MND;Kurbus, meeleheide, lootusetuse tunne, apaatsus ja sisemine emotsionaalne pinge. Aktiveerib sisemist vitaalsust/elujõudu.;"Apathy / Apaatsus; Fright / Äkiline hirm; Hope / Lootus; Sadness / Kurbus; Vitality / Elujõud"
-2813;SUSTAINABLE ENERGY;"Elukogemuste ""läbi seedimine"". Aktiveerib sisemist vitaalsust/elujõudu.";Digest / Elukogemuste läbiseedimine
-2814;Sweet Chestnut (Bach);Ängistus, ahastus, hingepiin - tunne, et enam ei jaksa. Aktiveerib eneseusku ning usku, et muutused on võimalikud.;"Anguish / Ängistus; Change / Muutused; Trust / Usaldus"
-2815;TRANQUILITY;Mõtete ja emotsioonide vaigistamine. Aktiveerib sisemist rahu ja sügavat lõdvestumist. ;Calm / Rahulikkus
-2816;TRANSFORM ANGER;Vihaga seotud mõttemustrid, pahameel, pettumus, ärrituvus, raev ja agressioon. ;Anger / Viha
-2817;TRAUMA;Emotsionaalsed ja/või füüsilised traumad. Aitab seda protsessida, terveneda ja elus edasi liikuda.  ;"Aura / Energiaväli; Shock / Šokk; Trauma / Trauma"
-2818;Ultra Constitutions #5;Süüdistamine, kriitilisus, süütunne, häbi, piinlikkus, enesele etteheidete tegemine. ;"Blame / Süütunne; Critical / Kriitilisus; Embarrasment / Piinlikkus; Guilt / Süütunne; Shame / Häbi"
-2819;Ultra-Constitutions #1;Hirm, paanika, kartlikkus - vastupidi aktiveerib julgust, enesekindlust ja seiklushimu.;"Adventurous / Seiklushimuline; Apprehension / Kartlikkus; Fear / Hirmud; Panic / Paanika"
-2820;Ultra-Constitutions #10;Hüljatus, üksindus, tühjuse tunne, kinnisus - vastupidi aktiveerib turvalisust, rahulolu ja avatust.;"Abandonment / Hüljatus; Extrovert / Ekstravert; Lone / Üksindus; Secure / Turvatunne"
-2821;Ultra-Constitutions #11;Mitte usaldav, kahtlustav/kahtlustamine, paranoiline - vastupidi aktiveerib usaldust ja enesekindlust.;Trust / Usaldus
-2822;Ultra-Constitutions #12;Traumadest tekkinud enesekesksus ja isekus - vastupidi aktiveerib suuremeelsust, üllust, heasüdamlikkust, õiglustunnet. ;"Generosity / Suuremeelsus; Greed / Ahnus"
-2823;Ultra-Constitutions #2;Traumadest tekkinud käitumisprobleemid - vastupidi aktiveerib armastuse ja helluse tunnet.;Awkward / Käitumisraskused
-2824;Ultra-Constitutions #3;Nõudlik, kontrolliv, jäik - vastupidi aktiveerib alandlikkust, paindlikkust ja tagasihoidlikkust.;Rigidity / Jäikus
-2825;Ultra-Constitutions #4;Lein, kurbus, kahetsus - vastupidi aktiveerib õnnetunnet, rahulolu ja rõõmsameelsust. ;"Cheerful / Rõõmsameelsus; Grief / Lein; Regret / Kahetsus; Sadness / Kurbus"
-2826;Ultra-Constitutions #6;Nõrk, jõuetu, sageli haige - vastupidi aktiveerib tugevust, stabiilsust, sisemist jõudu. ;Power / Sisemine jõud
-2827;Ultra-Constitutions #7;Ärevus, muretsemine, kannatamatus, usaldamatus - vastupidi aktiveerib rahulikkust, lõdvestumist, usaldust, turvatunnet. ;"Anxiety / Ärevus; Relax / Lõdvestuma; Secure / Turvatunne; Trust / Usaldus; Worry / Muretsemine"
-2828;Ultra-Constitutions #8;Traumadest tekkinud viha, sallimatus, ärrituvus, vägivaldsus - vastupidi aktiveerib lahkust, õrnust, viisakust ja hoolivust. ;"Anger / Viha; Kindness / Heatahtlikkus"
-2829;Ultra-Constitutions #9;Uimasus, loidus, ängistus, segadus - vastupidi aktiveerib sisemist jõudu, mängulisust, arusaamist ja tähelepanelikkust. ;"Confusion / Segadus; Depression / Pikaajaline stress"
-2830;UN-STRESS;Mentaalne kurnatus (stress ja ülekoormatus) - liiga palju tegevusi ja/või mõtteid hetkel või minevikust ja/või kohustusi, millega füüsilisel kehal on raske toime tulla.                                                                                    ;Calm / Rahulikkus
-2831;Vervain (Bach);Enesesabotaaž, sh teiste veenmine oma tõekspidamiste õigsuses ning liigne entusiasm, mis hakkab šaboteerima häid kavatsusi ja see ei lase elus edasi liikuda. Aktiveerib paindlikkust ning entusiasmi.;"Enthusiasm / Entusiasm; Sabotage / Sabotaaž"
-2832;Vine (Bach);Ootus, et teised teeksid asju nii nagu mina soovin. Aktiveerib mõistmist, et tõeline juhtimine tähendab teiste juhtimisomaduste julgustamist.;Leadership / Juhiomadused
-2833;VTLTY;Sügav ja sisemine väsimus, mis tuleneb pikaajalistest emotsionaalsest stressist, leinast või ärevusest. Aktiveerib vitaalsust ja emotsionaalset elujõudu.;Vitality / Elujõud
-2834;Walnut (Bach);Kergesti mõjutatav välistest asjaoludest (oma sisetunde ja eneseusaldamine, mis on seotud positiivsete muutustega, mida soovitakse elus teha. Toetab uude eluetappi üleminekut).;Change / Muutused
-2835;Water Violet (Bach);Koostöö ja suhtlemine teistega. NB! Neile, kes soovivad teha asju iseseisvalt/üksinda ja on sellest tulenevalt üksildased, kuna nad kardavad kaotada oma sõltumatust. ;Lone / Üksindus
-2836;White Chestnut (Bach);Soovimatud/segavad mõtted ja mured, mis näivad lõputult korduvat ja mis võivad põhjustada unetust. Aktiveerib tasakaalustatud meeleseisundit ja oskust oma mõtteid konstruktiivselt kasutada.;Insomnia / Unetus
-2837;Wild Oat (Bach);Rahulolematus ja ebakindlus. Inimestele, kes tahavad oma elus midagi saavutada, kuid pole selget eesmärki. Aktiveerib keskendumisvõimet ja võimet leida soovitud suund oma elus.;Accomplish / Saavutama
-2838;Wild Rose (Rose);Apaatia/tundetus ei lase tunda entusiasmi ja elurõõmu. Aktiveerib oskust elu mõtestada ja tunda rõõmu.;"Apathy / Apaatsus; Joy / Rõõm; Resignation / Soov kellestki või millestki eemalduda"
-2839;Willow (Bach);Pahameel ja tunne, et elu on ebaõiglane. Teiste rõõmsameelsus võib ärritada. Aktiveerib võtma vastutust oma elu eest.;Resentment / Pahameel
-2840;WOMAN´S HARMONY;Nais- ja meesenergia tasakaalustamine, aktiveerides juurdepääsu kõigile oma sisemistele ressurssidele ja tasakaalu.;Female / Naiselikkus
-2841;WRMLV;Valus emotsionaalne kiindumussuhe/side ning südamevaluga seotud tunded ja mõttemustrid (keegi või midagi tekitab südamevalu). Soov olla omaette ja/või olukorrast põgeneda, võib esineda ükskõiksust lähedaste suhtes. Aktiveerib harmooniat. ;"Attachment / Kiindumus; Heartache / Südamevalu; Pain / Valu"
-2938;Pineal Gland;Kontakt sisetundega #1 (mis on õige/vale, mida sina soovid/ei soovi).;Pineal / Kontakt sisetundega
-3691;Dopamine #1;Meeleolu, motivatsiooni ja rahulolu tasakaalustamine #1;Dopamine / Dopamiin
-3692;Dopamine #2;Meeleolu, motivatsiooni ja rahulolu tasakaalustamine #2;Dopamine / Dopamiin
-3748;Oxytocin;Armastuse tunde aktiveerimine.;Oxytocin / Armastuse tunde tõstmine
-3773;Serotonin;Meeleolu, kognitiivsete võimete, õppimise, tähelepanu ja mälu tasakaalustamine.;Serotonin / Serotoniin
-4219;Abandonment;Hüljatuse tunne: hirm mahajätmise, hülgamise ja/või üksinduse ees.;Abandonment / Hüljatus
-4221;Ability to accept praise;Võime/oskus võtta vastu kiitust ja tunnustust.;Accept / Aktsepteerima
-4222;Abusive;Pahatahtlikkus tekkinud traumadest.;Abusive / Pahatahtlikkus
-4223;Accept masculine side;Oma mehelike omaduste aktsepteerimine ja vastuvõtmine.;Masculine / Maskuliinsus
-4224;Acceptance of female aspe;Oma naiselike omaduste aktsepteerimine ja vastuvõtmine.;Female / Naiselikkus
-4225;Acceptance;Aktsepteerimine: olukorra ja/või inimese vastuvõtmine sellisena nagu see/ta on.;Accept / Aktsepteerima
-4231;Addictive;Sõltuvus millegi või kellegi suhtes.;Addictive / Sõltuvust tekitav
-4232;Adjustment disorder;Kohanemisraskus: ärevusega seotud reaktsioon mingile elusündmusele/olukorrale.;Adjustment / Kohanemine
-4241;Aggression;Agressiivsus, mis on tekkinud traumadest, foobiatest, usaldamatusest, ebakindlusest ja kinnismõtetest.;Aggression / Agressiivsus
-4242;Aggression Release;Agressiivsuse neutraliseerimine.;Aggression / Agressiivsus
-4243;Aging conflict;Vananemise konflikt: üks osa sinust aktsepteerib vananemist, teine osa ei aktsepteeri.;"Aging / Vananemine; Conflict / Konflikt"
-4244;Agitation;Ärevusest ja/või närvilisusest tekkinud rahutus #1;Agitation / Rahutus
-4245;Aimless activity;Sihitu tegutsemine/tegevus.;Aimless / Sihitu
-4247;Alienation;Võõrandumine (sh inimeste vältimine, soov hoida teistest eemale ja olla omaette).;Alienation / Võõrandumine
-4260;Anger #1;Viha #1;Anger / Viha
-4261;Anger #2;Viha #2;Anger / Viha
-4262;Anger #3;Viha #3;Anger / Viha
-4263;Anger #4;Viha #4;Anger / Viha
-4264;ANGER #5;Viha #5;Anger / Viha
-4265;Anger #6;Viha #6;Anger / Viha
-4266;ANGER MED;Viha ja ärrituvus on tekkinud pikaajalisest stressist.;Anger / Viha
-4267;Anger Release;Viha neutraliseerimine #1;Anger / Viha
-4268;Anguish #1;Ängistus, ahastus, hingepiin #1;Anguish / Ängistus
-4269;Anguish #2;Ängistus, ahastus, hingepiin #2;Anguish / Ängistus
-4270;Anguish #3;Ängistus, ahastus, hingepiin #3;Anguish / Ängistus
-4290;Anxiety #1;Ärevus #1;Anxiety / Ärevus
-4291;Anxiety #2;Ärevus #2;Anxiety / Ärevus
-4292;Anxiety #3;Ärevus #3;Anxiety / Ärevus
-4293;Anxiety #4;Ärevus #4;Anxiety / Ärevus
-4294;ANXIETY #5;Ärevus #5;Anxiety / Ärevus
-4295;Anxiety #6;Ärevus #6;Anxiety / Ärevus
-4296;ANXIETY MED;Ärevus on tekkinud pikaajalisest stressist.;Anxiety / Ärevus
-4297;Anxious worry;Ärevuslik muretsemine.;"Anxious / Ärev, murelik; Worry / Muretsemine"
-4298;Anxiousness;Ärevuslikkus.;Anxious / Ärev, murelik
-4299;Apathy;Apaatsus (huvi ja entusiasmi puudus).;Apathy / Apaatsus
-4300;Appreciation;Tänulikkus kellegi või millegi suhtes.;Appreciation / Tänulikkus
-4301;Apprehension #1;Kartlikkus #1: ärevus/hirm, et võib juhtuda midagi halba või ebameeldivat.;Apprehension / Kartlikkus
-4302;Apprehension #2;Kartlikkus #2: ärevus/hirm, et võib juhtuda midagi halba või ebameeldivat.;Apprehension / Kartlikkus
-4305;Arousal Awareness Stim;Teadlikkuse stimuleerimine.;Awareness / Teadlikkus
-4308;Arrogance;Üleolevus, mis on tekkinud usaldamatusest ja ebakindlusest.;Arrogance / Ülbus
-4313;Assertiveness conflict;Enesekehtestamise konflikt: üks osa sinust soovib kehtestada ennast selgelt ja konkreetselt, kuid teisi austavalt, teine osa mitte.;"Assertiveness / Enesekehtestamine; Conflict / Konflikt"
-4317;Attention Deficit;Tähelepanupuudulikkus #3;Attention / Tähelepanu
-4318;Attention Stim 1;Tähelepanu stimuleerimine #1;"Attention / Tähelepanu; Focus / Keskenduma"
-4319;Attention Stim 2;Tähelepanu stimuleerimine #2;"Attention / Tähelepanu; Focus / Keskenduma"
-4320;Attitude Change;Aktiveerib võimet/oskust suhtumist ümber hinnata, kui oled saanud uut informatsiooni/teavet.;Attitude / Suhtumine
-4321;Autism;Sotsiaalsus, suhtlemine, väljendusoskus #4;Autism / Autism
-4322;Avoidence;Vältimine.;Avoid / Vältimine
-4331;Bargaining;Läbirääkimine/tingimine.;Bargaining / Läbirääkimine
-4332;Base;Emotsionaalsed traumad seotud ellujäämisega, sh traumad, viha, väärkohtlemine, vägivald + enese mitte väärtustamine. Elus edasi liikumine.;"Chakra / Energiakeskused; Life / Elu eesmärk; Trust / Usaldus; Vitality / Elujõud"
-4334;Behavior Change;Erinevate negatiivsete käitumismustrite neutraliseerimine.;Behavior / Käitumine
-4335;Being stuck;Kinnijäämise tunne: tunne, et ei saa elus edasi liikuda - midagi justkui hoiab kinni.;"Being stuck / Kinnijäämine; Stuck / Kinni olema"
-4336;Belief conflict;Uskumuste konflikt: üks osa usub millessegi/kellessegi, teine osa ei usu. Erinevad uskumused võivad tekitada segadust.;Conflict / Konflikt
-4340;Betrayal;Tunne, et on reedetud (usaldus, printsiibid, sõbrad jne).;Betrayal / Reedetuse tunne
-4341;Bi-Polar Disorder;Tujude kõikumine pikaajalisest stressist.;Bi-polar / Tujude kõikumine
-4343;BIO-CLOCK REGULATOR;Unetus/raske uinuda.;Insomnia / Unetus
-4348;Bliss;Õnnetunne / suur rõõm.;Bliss / Suur rõõm
-4354;Body/Mind Integration;Keha/vaimu integreerimine psühhoteraapia kontekstis: aitab mõista ja aru saada, kuidas kõik erinevad eluosad on omavahel seotud.;Body-mind integration / Keha-vaimu integreerimine
-4369;Brow;Otsustamine ja sisetunne.;Chakra / Energiakeskused
-4384;Calmness;Rahulikkus.;Calm / Rahulikkus
-4392;Carelessness #1;Hoolimatus tekkinud traumadest #1;Carelessness / Hoolimatus
-4393;Carelessness #2;Hoolimatus tekkinud traumadest #2;Carelessness / Hoolimatus
-4401;Centering;Tähelepanu koondamine konkreetsele stiimulile või olemasolevale keskkonnale/olukorrale.;Centering / Tähelepanu koondamine
-4403;CEPHALO-LD;Õppimise soodustamine ja mentaalne selgus.;Learn / Õppimine
-4406;CEREBRAL-MET;Õppimine ja mälu.;Learn / Õppimine
-4408;Change conflict;Muutuste konflikt: üks osa sinust soovib muutusi ja teine osa ei soovi.;"Change / Muutused; Conflict / Konflikt"
-4409;Change in personality;Aktiveerib positiivseid mõttemustreid, käitumist ja emotsioone.;Change / Muutused
-4421;Cognitive function;Kognitiivsete võimete (nt taju, tähelepanu, mälu) aktiveerimine.;Cognitive / Kognitiivsed võimed
-4427;Commitment conflict;Pühendumise konflikt: üks osa sinust soovib kellelegi/millelegi pühenduda, teine osa mitte.;Conflict / Konflikt
-4428;Communication;Kommunikatsioon/suhtlemine, tasakaalustades aktiveerib paremat suhtlemis- ja eneseväljendamisoskust.;Communication / Kommunikatsioon
-4429;Communication conflict;Kommunikatsiooni/suhtlemise konflikt: üks osa sinust soovib suhelda, teine osa ei soovi.;"Communication / Kommunikatsioon; Conflict / Konflikt"
-4430;Compassion;Kaastundlikkus, tasakaalustades aktiveerib kaastundlikkust ja teiste suhtes paremat mõistmist.;Compassion / Kaastundlikkus
-4431;Completion conflict;Lõpetamise konflikt: üks osa sinust tahab mingit protsessi lõpetada, teine osa mitte.;Conflict / Konflikt
-4432;Compulsive;Kompulsiivsus/korduvad sundteod ja kinnisideed, mida võidakse kasutada ärevuse maandamiseks.;Compulsive / Kompulsiivsus
-4433;Compulsive thinking;Kompulsiivne mõtlemine (korduvad mõtted, millest on raske vabaneda), mida võidakse kasutada ärevuse maandamiseks.;Compulsive / Kompulsiivsus
-4435;Concentration Stim;Keskendumise stimuleerimine (õppimise, töötamise jms kontekstis).;"Concentration / Kontsentratsioon; Focus / Keskenduma"
-4437;Confusion #1;Meelte segadus #1: ebaselgus, kaos, raske mõista käimasolevat protsessi/olukorda/seisundit.;Confusion / Segadus
-4438;Confusion #2;Meelte segadus #2: ebaselgus, kaos, raske mõista käimasolevat protsessi/olukorda/seisundit.;Confusion / Segadus
-4439;Confusion #3;Meelte segadus #3: ebaselgus, kaos, raske mõista käimasolevat protsessi/olukorda/seisundit.;Confusion / Segadus
-4441;Constant brooding over tr;Ärevuslik ja pidev muretsemine mingi teema osas, millest on keeruline vabaneda.;Brood / Pidev muretsemine
-4444;Contempt;Põlgus kellegi või millegi suhtes.;Contempt / Põlgamine
-4447;Cooperative;Koostöö/koostöövalmidus.;Cooperative / Koostöövalmidus
-4453;Courage;Julgus.;Courage / Julgus
-4454;Cowardice;Arglikkus.;Coward / Arglikkus
-4456;Craving for sympathy;Soov kaastunde järgi.;Craving for sympathy / Soov kaastunde järgi
-4457;Craving;Soov/isu millegi või kellegi järgi, nt mingi emotsiooni, toidu, suitsetamise jne.;Craving / Soov-isu millegi järgi
-4459;Creative expression.;Loominguline väljendamine: kunst, muusika, kirjutamine vms.;Expression / Eneseväljendamine
-4460;Creativity conflict;Loomingulisuse konflikt: üks osa sinust tahab olla loominguline, teine osa ei taha.;"Creativity / Loovus; Conflict / Konflikt"
-4462;Crown;Närvisüsteemi rahustamine, sisemine tasakaal, ideede ja lahenduste leidmine.;Chakra / Energiakeskused
-4463;Cruelty;Julmus tekkinud traumadest.;Cruelty / Julmus
-4464;Crying #1;Nutmine #1;Cry / Nutmine
-4465;CRYING #2;Nutmine #2;Cry / Nutmine
-4466;Cultural conflict;Kultuuriline konflikt/erinevad arusaamised.;Conflict / Konflikt
-4470;Daydreaming;Liigne unistamine, mille tulemusel on keskendumisvõime häiritud. Aktiveerib keskendumisvõimet.;Daydreaming / Unistamine
-4473;Debility;Füüsiline nõrkus, mis on tekkinud haigustest.;Debility / Nõrkus
-4474;Decision conflict;Otsuse vastuvõtmise konflikt: üks osa sinust soovib vastu võtta mingi otsuse, teine osa mitte.;Conflict / Konflikt
-4475;Decisive;Otsusekindlus.;Decisive / Otsusekindlus
-4476;Decisiveness;Otsustusvõime - aktiveerib võimet võtta otsuseid vastu kiiresti ja efektiivselt.;Decisive / Otsusekindlus
-4477;Deep inner tiredness from #1;Sügav sisemine väsimus #1;Tiredness / Väsimus
-4478;Deep inner tiredness from #2;Sügav sisemine väsimus #2;Tiredness / Väsimus
-4479;Deep inner tiredness from #3;Sügav sisemine väsimus #3;Tiredness / Väsimus
-4482;Delirium #1;Deliirium #1;Delirium / Deliirium
-4483;Delirium #2;Deliirium #2;Delirium / Deliirium
-4484;DELIRIUM MED;Deliirium tekkinud pikaajalisest stressist ja traumadest.;Delirium / Deliirium
-4485;Delusion #1;Pettekujutlus #1;Delusion / Pettekujutelm
-4486;DELUSION #2;Pettekujutlus #2;Delusion / Pettekujutelm
-4487;Delusion #3;Pettekujutlus #3;Delusion / Pettekujutelm
-4488;Delusions;Pettekujutlused.;Delusion / Pettekujutelm
-4490;Denial;Eitamine/salgamine.;Denial / Eitamine
-4493;Depression #1;Pikaajaline stress #1;Depression / Pikaajaline stress
-4494;Depression #2;Pikaajaline stress #2;Depression / Pikaajaline stress
-4495;Depression #3;Pikaajaline stress #3;Depression / Pikaajaline stress
-4496;DEPRESSION #4;Pikaajaline stress #4;Depression / Pikaajaline stress
-4497;Depression #5;Pikaajaline stress #5;Depression / Pikaajaline stress
-4498;DEPRESSION ANTITOX;Pikaajalise stressi neutraliseerimine.;Depression / Pikaajaline stress
-4499;DEPRESSION MED;Pikaajaline stress ja melanhoolsus.;"Depression / Pikaajaline stress; Melanholic / Melanhoolsus"
-4503;Desire conflict;Soovide/ihalduste konflikt: üks osa sinust soovib/ihaldab midagi/kedagi, teine osa mitte.;"Desire / Iha; Conflict / Konflikt"
-4504;Desire for solitude;Soov olla üksinda/omaette.;Desire / Iha
-4505;Desire to run away;Soov põgeneda mingist olukorrast/situatsioonist, otsides väljapääsu. Võib olla põhjustatud stressist.;"Desire / Iha; Run away / Soov minema joosta"
-4506;Despair of recovery;Lootusetuse tunne paranemise suhtes.;Despair / Meeleheide
-4507;Despondency;Ahastus/lootusetus/meeleheide.;Despond / Ahastus
-4508;Despondent;Meeleheide/rusutus/lootusetus.;Despond / Ahastus
-4511;Difficulty to forgive;Raske andestada.;Forgive / Andestamine
-4517;Disappointment #1;Pettumus #1;Disappointment / Pettumus
-4518;Disappointment #2;Pettumus #2;Disappointment / Pettumus
-4519;Disappointment #3;Pettumus #3;Disappointment / Pettumus
-4520;Discipline conflict;Distsipliini konflikt: üks osa sinust soovib kokkulepitud reeglitest kinni pidada, teine osa ei soovi.;Conflict / Konflikt
-4521;Discouragement;Arglikkus. Enesekindluse ja entusiasmi puudus, mis on tekkinud hirmudest.;"Courage / Julgus; Discouragement / Arglikkus"
-4523;Displeasure;Meelepaha/rahulolematus.;"Displeasure / Meelepaha; Pleasure / Nauding"
-4524;Distrust;Üleüldine usaldamatus kellegi või millegi suhtes (ei usalda elu, ennast ega teisi inimesi).;Trust / Usaldus
-4526;Dogmatic;Dogmaatiline: kindlad fikseeritud seisukohad.;Dogmatic / Dogmaatiline
-4527;Dominating;Domineerimine tekkinud stressist ja traumadest.;Dominating / Domineeriv
-4528;Dread of future;Hirm tuleviku ees, võib olla seotud ärevuse ja paanikaga.;Future / Tulevik
-4529;Dwelling on unpleasant th;Pidevalt mõtlemine ebameeldivate asjade peale ja/või nendest rääkimine.;Dwelling on unpleasent / Ebameeldivatest asjadest mõtlemine
-4535;Easily Influenced;Kergesti mõjutatav.;Easily / Kergesti mõjutatav-solvuv
-4536;Easily offended #1;Kergesti solvuv #1;Easily / Kergesti mõjutatav-solvuv
-4537;Easily offended #2;Kergesti solvuv #2;Easily / Kergesti mõjutatav-solvuv
-4538;Easy laugh/cry;Nutmine ja/või naermine tühistel põhjustel.;"Cry / Nutmine; Laugh / Naermine"
-4539;Ecstasy;Ekstaasi tunne: ülevoolav rõõmutunne ja/või elevus.;Ecstasy / Ekstaasi tunne
-4541;Effects of childhood abus;Lapsepõlves toimunud väärkohtlemised: emotsionaalsed ja/või füüsilised traumad.;Childhood / Lapsepõlv
-4542;Effects of shock;Erinevate šokkide mõju.;Shock / Šokk
-4543;Egoistical;Egoistlikkus, võib olla tekkinud madalast enesehinnangust, šokkidest või traumadest.;Ego / Ego
-4547;Embarrassment;Piinlikkus.;Embarrasment / Piinlikkus
-4548;EMOTION MED;Meeleolumuutused tekkinud pikaajalisest stressist.;"Emotion / Emotsioonid; Mood / Meeleolu"
-4549;Emotional conflict;Emotsionaalsuse konflikt: üks osa sinust soovib vabaneda mingitest negatiivsetest emotsioonidest, teine osa mitte.;"Emotion / Emotsioonid; Conflict / Konflikt"
-4550;Emotional instability;Emotsionaalne ebastabiilsus.;Emotion / Emotsioonid
-4551;Emotional Release;Negatiivsete emotsioonide vabastamine.;Emotion / Emotsioonid
-4552;Emotional Stability;Emotsionaalne stabiilsus.;Emotion / Emotsioonid
-4553;Emotional tension;Emotsionaalne pinge/stress.;"Emotion / Emotsioonid; Tension / Pinged"
-4554;Emotional Trauma;Emotsionaalne trauma.;"Emotion / Emotsioonid; Trauma / Trauma"
-4555;Emotions;Emotsioonide tasakaalustamine.;Emotion / Emotsioonid
-4560;Enthusiasm #1;Entusiasm #1;Enthusiasm / Entusiasm
-4561;Enthusiasm #2;Entusiasm #2;Enthusiasm / Entusiasm
-4564;Environmental;Elektromagnetiline reostus.;Environment / Keskkond
-4569;Escapism;Põgenemine aktuaalsest reaalsusest (karjäär, usulised tõekspidamised, arvutimängud, st kõik, mida saab kasutada kompenseeriva vahendina, sh asendades erinevaid lahendamata probleeme).;Escapism / Põgenemine reaalsusest
-4571;Ethical conflict;Eetiline konflikt: üks osa soovib käituda eetiliselt, teine osa mitte.;Conflict / Konflikt
-4573;Exhausted;Kurnatus/vaevatus, nt tööst, mingist tegevusest.;Exhaust / Kurnatus
-4574;Exhaustion;Füüsiline või mentaalne väsimus, sh mingi pingutuse tagajärjena.;Exhaust / Kurnatus
-4575;Exhaustion due to sedenta;Istuvast tööst/tegevusest tulenev väsimus.;Exhaust / Kurnatus
-4577;Extroverted depression;Tunnete välja elamine (nt viha) on tekitanud pikaaegset stressi.;"Depression / Pikaajaline stress; Extrovert / Ekstravert"
-4584;Faith;Täielik usk endasse ning usaldus kellegi või millegi vastu.;Faith / Usk
-4585;Family conflict;Perekondlik konflikt: keerulised perekondlikud suhted, milles üks osa sinust soovib konflikti lahendada, teine osa ei soovi.;"Family / Peresuhted; Conflict / Konflikt"
-4586;FATIGUE MED;Mentaalne ja/või füüsiline väsimus tekkinud pikaaegsest stressist;Fatigue / Väsimus
-4587;Fatigue Reduction;Mentaalse ja/või füüsilise väsimuse vähendamine.;Fatigue / Väsimus
-4590;Fear #1;Hirm #1 ;Fear / Hirmud
-4591;Fear #2;Hirm #2;Fear / Hirmud
-4592;Fear #3;Hirm #3;Fear / Hirmud
-4593;FEAR #4;Hirm #4;Fear / Hirmud
-4594;Fear #5;Hirm #5;Fear / Hirmud
-4595;Fear of aging;Hirm vananemise ees.;"Aging / Vananemine; Fear / Hirmud"
-4596;Fear of change #1;Hirm muutuste ees #1;"Change / Muutused; Fear / Hirmud"
-4597;Fear of change #2;Hirm muutuste ees #2;"Change / Muutused; Fear / Hirmud"
-4598;Fear of death;Hirm surma ees.;Fear / Hirmud
-4599;Fear of exams;Hirm hakkama saamise ees olukordades, mis nõuavad suurt pingutust ja tähelepanu - võib esineda stressi ja ärevust, nt eksamid.;Fear / Hirmud
-4600;Fear of intimacy;Hirm intiimsuse ees.;"Fear / Hirmud; Intimacy / Intiimsus"
-4601;Fear Reduction;Hirmude vähendamine.;Fear / Hirmud
-4602;Fear something bad will h;Hirm, et võib juhtuda midagi halba.;Fear / Hirmud
-4603;Fears from past emotional;Emotsionaalsed hirmud minevikust.;"Fear / Hirmud; Past / Minevik"
-4604;Fears from past rejection;Hirmud, mis tulenevad minevikus toimunud äraütlemistest ja/või tõrjumisest.;"Fear / Hirmud; Past / Minevik; Rejection / Tagasilükkamine"
-4606;Feel a victim;Ohvri tunne: tunne, et on haiget tehtud ning enda ohvrina tundmine.;Victim / Ohvritunne
-4607;Feeling free;Enda vabalt tundmine. Vabadus, sh kellestki/millestki lahtilaskmine.;Feeling / Enesetunne
-4608;Feeling inferior;Alaväärsustunne.;"Feeling / Enesetunne; Inferior / Väärtusetuse tunne"
-4609;Feeling useless;Tunne, et olen kasutu.;Feeling / Enesetunne
-4610;Feelings of worthlessness;Tunne, et olen väärtusetu.;Feeling / Enesetunne
-4622;Financial conflict;Finantskonflikt: üks osa sinust soovib raha vastu võtta/teenida, teine osa ei soovi.;Conflict / Konflikt
-4624;Fixed negative ideas;Fikseeritud negatiivsed ideed.;Fixed negative ideas / Fikseeritud negatiivsed ideed
-4625;Fleeting attention;Raske hoida tähelepanu ühel objektil/tegevusel, tähelepanu liigub pidevalt ühelt objektilt teisele.;Attention / Tähelepanu
-4626;FLEX MED;Paindumatus tekkinud pikaajalisest stressist.;Flexibility / Paindlikkus
-4627;Flexibility Stimulation;Paindlikkuse stimuleerimine.;Flexibility / Paindlikkus
-4628;Floating sensation;Ujuv/kõikuv tunne (seotud paanika, pingete, ärevuse või tinnitusega).;Floating / Ujuv tunne
-4633;Focus-Mind/Body;Keskendumine (meeled/keha).;Focus / Keskenduma
-4636;Food conflict;Toidukonflikt: üks osa sinust soovib toituda kehavajadustest lähtuvalt, teine osa ei soovi (nt süües rämpstoitu, näljutades ennast vms).;Conflict / Konflikt
-4639;Forgiveness;Andestamine #1;Forgive / Andestamine
-4641;Friendship;Sõprussuhted: aktiveerib sõprussuhete loomist ja nende hoidmist.;Friendship / Sõprussuhted
-4642;Fright;Äkiline võimas hirmutunne, mis võib aktiveerida ärevust, paanikat (nii sisemine kui väline ehmumine/reageerimine, sh tühistel põhjustel).;Fright / Äkiline hirm
-4644;Frustration;Frustratsioon.;Frustration / Frustratsioon
-4656;Gender conflict;Soorolli konflikt.;Conflict / Konflikt
-4657;Generosity;Suuremeelsus.;Generosity / Suuremeelsus
-4658;Gentleness;Õrnus.;Gentleness / Õrnus
-4668;Great fright;Suur äkiline võimas hirmutunne, mis võib aktiveerida ärevust, paanikat (nii sisemine kui väline ehmumine/reageerimine, sh tühistel põhjustel).;Fright / Äkiline hirm
-4669;Greed;Ahnus tekkinud traumadest #1;Greed / Ahnus
-4670;Greed;Ahnus tekkinud traumadest #2;Greed / Ahnus
-4672;Grief #1;Lein #1: surm, kaotus, lahkuminek, mingi eluperioodi lõppemine.;Grief / Lein
-4673;Grief #2;Lein #2: surm, kaotus, lahkuminek, mingi eluperioodi lõppemine.;Grief / Lein
-4674;Grief #3;Lein #3: surm, kaotus, lahkuminek, mingi eluperioodi lõppemine.;Grief / Lein
-4675;Grief #4;Lein #4: surm, kaotus, lahkuminek, mingi eluperioodi lõppemine.;Grief / Lein
-4677;Grounded;Vaimne tasakaal (arusaav, mõistev, hooliv).;Grounded / Vaimne tasakaal
-4679;Harshness;Karmus tekkinud traumadest.;Harsh / Karmus
-4680;Hate #1;Vihkamine tekkinud traumadest #1;Hate / Vihkamine
-4681;HATE #2;Vihkamine tekkinud traumadest #2;Hate / Vihkamine
-4684;Health conflict;Tervise konflikt: üks osa soovib terve olla, teine osa ei taha.;Conflict / Konflikt
-4686;Heart #2;Armastus ja andestus.;"Chakra / Energiakeskused; Compassion / Kaastundlikkus; Life / Elu eesmärk; Love / Armastus; Passion / Kirglikkus"
-4691;Heartache;Südamevalu: keegi või midagi tekitab südamevalu.;Heartache / Südamevalu
-4693;Helplessness;Abituse tunne tekkinud traumadest ja pikaajalisest stressist.;Helplessness / Abitusetunne
-4703;Hesitation;Kahtlemine/kõhklemine, aitab võtta otsuseid paremini vastu.;Hesitation / Kahtlemine
-4706;Honesty;Ausus.;Honesty / Ausus
-4707;Honesty conflict;Aususe konflikt: üks osa soovib olla aus, teine osa ei soovi.;"Honesty / Ausus; Conflict / Konflikt"
-4708;Hope;Lootus.;Hope / Lootus
-4709;Hopelessness #1;Lootusetuse tunne #1;Hope / Lootus
-4710;Hopelessness #2;Lootusetuse tunne #2;Hope / Lootus
-4712;Hostility;Vaenulikkus tekkinud traumadest.;Hostility / Vaenulikkus
-4716;Hurtfull memories of trau;Valusad mälestused traumadest.;Hurtfull / Valusad mälestused
-4718;Hyperactivity;Hüperaktiivsus #1;Hyperactivity / Hüperaktiivsus
-4719;Hyperactivity Disorder;Hüperaktiivsus #2;Hyperactivity / Hüperaktiivsus
-4728;Hysteria #1;Hüsteeria #1;Hysteria / Hüsteeria
-4729;Hysteria #2;Hüsteeria #2;Hysteria / Hüsteeria
-4730;HYSTERIA MED;Hüsteeria tekkinud pikaajalisest stressist.;Hysteria / Hüsteeria
-4731;Identity;Identiteet: kellena ennast tajun ja kuhu sobitun.;Identity / Identiteet
-4732;Identity conflict;Identiteedi konflikt: üks osa tajub, kuhu sa kuulud/sobitud, teine osa ei taju.;"Identity / Identiteet; Conflict / Konflikt"
-4736;Impatience;Kannatamatus.;Impatience / Kannatamatus
-4737;Impulsivity;Impulsiivsus.;Impulsivity / Impulsiivsus
-4738;Inability to accept love;Raske võtta armastust vastu.;"Inability / Suutmatus; Love / Armastus"
-4739;Inability to adapt to new;Raskus kohaneda uute tingimuste/olukordadega.;Inability / Suutmatus
-4740;Inability to cooordinate;Raskus koordineerida/kooskõlla viia/juhtida mingit protsessi.;Inability / Suutmatus
-4741;Inability to express ones;Raske ennast väljendada.;Inability / Suutmatus
-4742;Inability to face challen;Raske võtta vastu väljakutseid / seista nendega silmitsi.;Inability / Suutmatus
-4743;Inability to fix mind on;Raskused keskendumisel/tähelepanu suunamisel konkreetsele tegevusele.;Inability / Suutmatus
-4744;Inability to grasp ideas;Raskused ideedest arusaamisel.;Inability / Suutmatus
-4745;Inability to perform cont;Raskused enda teostamisel.;Inability / Suutmatus
-4746;Inadequate;Ebapiisavuse/puudulikkuse tunne (emotsionaalses, intellektuaalses, sotsiaalses kontekstis).;Inadequate / Ebapiisavus
-4747;Inattentiveness;Tähelepanematus.;Inattentiveness / Tähelepanematus
-4748;Inclination to constantly;Oma eesmärkidest ja soovidest kõrvale kaldumine.;Inclination / Kõrvale kalduma
-4749;Indifference;Ükskõiksuse tunne/tundetus.;Indifference / Ükskõiksus
-4750;Indifference to loved one;Ükskõiksuse tunne/tundetus lähedaste inimeste suhtes.;"Indifference / Ükskõiksus; Love / Armastus"
-4751;Indignation;Nördimus seotud viha ja ärrituvusega.;Indignation / Nördimus
-4755;Iner Awareness;Sisemine teadlikkus.;Awareness / Teadlikkus
-4757;Inferiority;Alaväärsus.;Inferior / Väärtusetuse tunne
-4760;Inflexibility;Paindumatus #1;Flexibility / Paindlikkus
-4761;Inflexible;Paindumatus #2;Flexibility / Paindlikkus
-4767;Inner conflict;Sisemine konflikt.;Conflict / Konflikt
-4768;Inner Guidance;Sisetunne/sisemine teejuht, aktiveerides paremat arusaamist inimestest, olukordadest ning otsuste vastu võtmist.;Inner guidance / Sisemine teejuht
-4769;Inner joy;Sisemine rõõm.;Joy / Rõõm
-4770;Inner Peace;Sisemine rahu #1;Inner peace / Sisemine rahu
-4771;Inner peace;Sisemine rahu #2;Inner peace / Sisemine rahu
-4772;Inner Wisdom;Sisemine tarkus #1;Wisdom / Tarkus
-4774;Insensitivity;Tundetus, sh ükskõiksus teiste inimeste tunnete suhtes.;Insensitivity / Tundetus
-4775;Insight;Taipamine/arusaamine/läbinägelikkus.;Insight / Taipamine
-4776;INSOMNIA MED;Unetus tekkinud pikaajalisest stressist.;Insomnia / Unetus
-4777;Inspiration;Inspiratsioon.;Inspiration / Inspiratsioon
-4779;Integrity conflict;Põhimõtete ja väärtushinnangute konflikt.;Conflict / Konflikt
-4780;Intellectual conflict;Intellektuaalne/vaimse arengu konflikt: üks osa soovib vaimselt areneda, teine osa ei soovi.;Conflict / Konflikt
-4781;Intelligence Stim;Intelligentsuse/arukuse stimuleerimine.;Focus / Keskenduma
-4785;Intimacy;Intiimsus.;Intimacy / Intiimsus
-4786;Introverted depression;Tunnete (nt viha, kurbus) sisse hoidmine on tekitanud pikaaegset stressi.;Depression / Pikaajaline stress
-4787;Intuition;Intuitsioon.;Intuition / Intuitsioon
-4789;Irresponsibility;Vastutustundetus tekkinud traumadest.;Irresponsibility / Vastutustundetus
-4790;Irritability;Ärrituvus #1;Irritability / Ärrituvus
-4791;Irritable depression;Ärrituvus tekkinud pikaajalisest stressist.;"Depression / Pikaajaline stress; Irritability / Ärrituvus"
-4792;Irritability;Ärrituvus #2;Irritability / Ärrituvus
-4794;Jealousy #1;Armukadedus #1;Jealousy / Armukadedus
-4795;Jealousy #2;Armukadedus #2;Jealousy / Armukadedus
-4796;JEALOUSY #3;Armukadedus #3;Jealousy / Armukadedus
-4797;Jealousy #4;Armukadedus #4;Jealousy / Armukadedus
-4798;Joy #1;Rõõm #1;Joy / Rõõm
-4799;JOY #2;Rõõm #2;Joy / Rõõm
-4800;Joy #3;Rõõm #3;Joy / Rõõm
-4810;Kindness;Heatahtlikkus.;Kindness / Heatahtlikkus
-4819;Lack of clarity of purpos;Eesmärkide ebaselgus.;Clarity / Selgus
-4820;Lack of female expression;Naiselik väljendus.;"Expression / Eneseväljendamine; Female / Naiselikkus"
-4821;Lack of forgiveness;Andestamine #2;Forgive / Andestamine
-4822;Lack of grit;Mentaalne tugevus/meelekindlus.;Grit / Meelekindlus
-4823;Lack of imagination;Kujutlusvõime.;Imagination / Kujutlusvõime
-4824;Lack of intrest;Huvipuudus.;Intrest / Huvipuudus
-4825;Lack of vitality from emo;Elujõu puudus (tekkinud pikaajalisest stressist).;Vitality / Elujõud
-4832;Laughter #1;Naermine #1;Laugh / Naermine
-4833;LAUGHTER #2;Naermine #2;Laugh / Naermine
-4835;Learning Disibility;Õpiraskused.;Learn / Õppimine
-4836;LEARNING MED;Raskused õppimisel tekkinud pikaajalisest stressist.;Learn / Õppimine
-4837;Learning Stim #1;Õppimise stimuleerimine #1;"Focus / Keskenduma; Learn / Õppimine"
-4838;Learning Stim #2;Õppimise stimuleerimine #2;"Focus / Keskenduma; Learn / Õppimine"
-4843;Legal conflict;Õiguslik konflikt: üks osa soovib käituda nii nagu on ühiskondlikete reeglitele vastav/lubatud, teine ei osa ei soovi.;Conflict / Konflikt
-4844;Lethargy #1;Täielik tundetus pikaajalisest stressist #1;Lethargy / Letargia
-4845;Lethargy #2;Täielik tundetus pikaajalisest stressist #2;Lethargy / Letargia
-4846;Letting go of false image;Oma valest/mitte toetavast mina-pildist lahti laskmine.;False image / Vale enesepilt
-4849;Life purpose;Oma elu eesmärgi mõistmise ja tasakaalu aktiveerimine.;Life / Elu eesmärk
-4850;Life-Direction conflict;Elusuuna konflikt: üks osa soovib elusuunda muuta/valida, teine osa ei soovi.;"Life / Elu eesmärk; Conflict / Konflikt"
-4854;Listless;Huvi-, energia- ja entusiasmipuudus.;Listless / Tuim
-4862;Logic Stim;Loogilise mõtlemise stimuleerimine.;"Focus / Keskenduma; Logic / Loogika"
-4863;Loneliness;Üksindus.;Lone / Üksindus
-4865;Long/lasting grief;Kauakestev lein.;Grief / Lein
-4866;Loss;Kaotus.;Loss / Kaotus
-4867;Loss of confidence;Enesekindluse kaotus.;"Confidence / Enesekindlus; Loss / Kaotus"
-4868;Loss of vigor;Sisemise jõu kaotus.;Loss / Kaotus
-4869;Love;Armastuse tunne.;Love / Armastus
-4870;Low confidence;Madal enesekindlus.;Confidence / Enesekindlus
-4871;Low self-esteem;Madal enesehinnang.;Self-esteem / Enesehinnang
-4872;Loyalty;Lojaalsus kellegi või millegi suhtes.;Loyalty / Lojaalsus
-4878;Lust #1;Iha #1;Lust / Iha
-4879;LUST #2;Iha #2;Lust / Iha
-4880;Lust #3;Iha #3;Lust / Iha
-4899;Male/female balance;Mees- ja naisenergia tasakaal.;"Female / Naiselikkus; Male-female balance / Mees-naisenergia tasakaal"
-4901;Mania #1;Maania tekkinud stressist #1;Mania / Maania
-4902;Mania #2;Maania tekkinud stressist #2;Mania / Maania
-4903;Mania #3;Maania tekkinud stressist #3;Mania / Maania
-4904;MANIA #4;Maania tekkinud stressist #4;Mania / Maania
-4905;MANIA MED;Maania tekkinud pikaajalisest stressist.;Mania / Maania
-4906;Manipulative;Manipuleerivus tekkinud traumadest.;Manipulative / Manipuleeriv
-4909;Melancholic #1;Melanhoolik/olemuselt kurvameelne #1, sh kurbade mälestuste meenutamine.;Melanholic / Melanhoolsus
-4910;Melancholic #2;Melanhoolik/olemuselt kurvameelne #2, sh kurbade mälestuste meenutamine.;Melanholic / Melanhoolsus
-4911;Melancholy;Melanhoolsus/kurvameelsus.;Melanholic / Melanhoolsus
-4912;Melatonin;Hea une aktiveerimine.;Sleep / Uni
-4913;Memory conflict;Mälu konflikt: üks osa soovib mäletada, teine osa ei soovi.;"Memory / Mälu; Conflict / Konflikt"
-4914;MEMORY MED;Raske asju meelde jätta, tekkinud pikaajalisest stressist.;Memory / Mälu
-4918;Mental blocks;Mentaalsed blokid (võimatu jälgida mõtteid, mis mõjutavad käitumist, vähendavad efektiivsust ja piiravad potentsiaali lõpliku eesmärgi saavutamisel).;Mental blocks / Mentaalsus
-4919;Mental confusion #1;Mentaalne segadus #1;Confusion / Segadus
-4920;Mental confusion #2;Mentaalne segadus #2;Confusion / Segadus
-4921;Mental Energy Stim;Mentaalse energia stimuleerimine.;"Focus / Keskenduma; Mental blocks / Mentaalsus"
-4922;Mental fatigue;Mentaalne tugev väsimus.;"Fatigue / Väsimus; Mental blocks / Mentaalsus"
-4924;Mental weakness;Mentaalne nõrkus.;Mental blocks / Mentaalsus
-4940;Mind/Body Unity;Meele/keha tasakaal/sünkroonsus.;Unity / Ühtsus
-4944;Monotony;Monotoonsus/üksluisus.;Monotony / Üksluisus
-4945;Mood disorders;Meeleolu kõikumised tekkinud traumadest.;Mood / Meeleolu
-4946;Mood Elevation;Meeleolu tõus/kõrgendatud meeleolu.;Mood / Meeleolu
-4947;Mood swings;Meeleolu kõikumine/tujukus.;Mood / Meeleolu
-4948;Moral conflict;Moraalne konflikt: üks osa soovib olla õiglane, teine osa ei soovi.;Conflict / Konflikt
-4949;Motivation conflict;Motivatsiooni konflikt: üks osa soovib olla motiveeritud, teine osa ei soovi.;Conflict / Konflikt
-4960;Need for positive involvm;Vajadus positiivse kaasamise järele.;Positive involvm / Positiivne kaasatus
-4961;Need of enthusiasm;Vajadus entusiasmi järgi.;Enthusiasm / Entusiasm
-4962;Need to change;Vajadus muutuda, kuid samas enesele valetamine ja muutuste keelamine (leitakse vabandusi, miks ei saa muutusi teha, nt ei ole õige aeg, kunagi hiljem, ootan õiget aega, ei ole turvaline jne).;Change / Muutused
-4963;Need to recognize & resol;Oma probleemide tunnistamine ja soov leida neile lahendus.;Need to recognize / Oma probleemide tunnistamine
-4964;Needing comfort but unabl;Vajadus tunda heaolutunnet, kuid ei ole selleks võimeline (tulenevalt näiteks käesolevast eluperioodist vms).;Comfort / Mugavus
-4965;Negativity;Negatiivsus tekkinud stressist.;Negativity / Negatiivsus
-4974;Nervous exhaustion;Kurnatus, mis on tekkinud närvilisusest.;"Exhaust / Kurnatus; Nervousness / Närvilisus"
-4975;Nervousness;Närvilisus tekkinud stressist #1;Nervousness / Närvilisus
-4978;NEUROCALM;Närvisüsteemi rahustamine.;Calm / Rahulikkus
-4983;No zest for life;Elurõõmu ja entusiasmi puudus.;Life / Elu eesmärk
-4984;Non-communicative;Ei soovi suhelda/kommunikeeruda.;Non-communicative / Suhtlematus
-4985;Not knowing where one fit;Ei tea, kuhu kuuluda/sobituda.;Fit / Sobitumine
-4986;Nurturing #1;Hoolimise tunne/hoolitsemine #1;Nurturing / Hoolimise tunne
-4987;Nurturing #2;Hoolimise tunne/hoolitsemine #2;Nurturing / Hoolimise tunne
-4988;Observant;Tähelepanelikkus, sh teiste suhtes.;Observant / Tähelepanelikkus
-4989;Obsession;Sundmõtted ja/või sundteod #1 (korduvad mõtted ehk mõtled pidevalt ühtesid ja samasid mõtteid, korduvad hirmudest tulenevad teod).;Obsess / Sundmõtted
-4990;Obsessive;Sundmõtted ja/või sundteod #2 (korduvad mõtted ehk mõtled pidevalt ühtesid ja samasid mõtteid, korduvad hirmudest tulenevad teod).;Obsess / Sundmõtted
-4991;Open-mind;Avatud meel (võime suhtuda eelarvamusteta uutesse ja/või erinevatesse ja/või enda senistele arusaamadele vastukäivatesse vaadetesse).;Open-mind / Avatud meel
-4992;Optimistic;Optimistlikkus.;Optimistic / Optimistlikkus
-4995;Orderliness conflict;Korralikkuse konflikt: üks osa soovib olla korralik, teine osa ei soovi.;Conflict / Konflikt
-5002;Over sensativity to all I;Ülitundlikkus kõige suhtes.;Sensativity / Ülitundlikkus
-5003;Over talkativeness;Ülevoolav rääkimine, mis on tekkinud traumadest ja/või stressist.;Talkativeness / Ülevoolav rääkimine
-5004;Over-sensativity to exter;Liigne ülitundlikkus välismõjude suhtes.;Sensativity / Ülitundlikkus
-5005;Overly ambitious;Liigne ambitsioonikus, mis on tekkinud traumadest.;Overly ambitious / Liigne ambitsioonikus
-5006;Oversensativity;Ülitundlikkus.;Sensativity / Ülitundlikkus
-5007;Overworked;Ületöötamine.;Overworked / Ületöötanud
-5016;Painfull emotional attached;Valus emotsionaalne side, st kellestki/millestki kinni hoidmine/ei soovita lahti lasta, sh võib olla ka kiindumussuhte trauma.;"Attachment / Kiindumus; Pain / Valu"
-5017;Painfull events in past;Valusad sündmused/mälestused minevikust.;"Pain / Valu; Past / Minevik"
-5023;Panic;Paanika.;Panic / Paanika
-5029;Passion;Kirglikkus.;Passion / Kirglikkus
-5030;Past humiliations;Alandused minevikust.;"Humiliations / Alandamised; Past / Minevik"
-5032;Patience;Kannatlikkus.;Impatience / Kannatamatus
-5033;Peaceful;Rahumeelsus.;Peaceful / Rahumeelsus
-5034;Perfectionistic;Liigne perfektsionism, mis tekitab igapäevaelus stressi.;Perfect / Perfektsionism
-5035;Performance conflict;Soorituse konflikt: üks osa on valmis sooritamise nimel pingutama, teine osa ei ole.;Conflict / Konflikt
-5036;Perseverance;Püsivus/sihikindlus.;Perseverance / Püsivus
-5037;Persistence;Järjekindlus.;Pesistence / Järjekindlus
-5038;Pessimistice;Pessimistlikkus tekkinud traumadest.;Pessimist / Pessimistlik
-5040;Philosophical conflict;Filosoofiline konflikt: üks osa soovib olla filosoofiline, teine osa ei soovi.;Conflict / Konflikt
-5041;Phobias;Foobiad #1;Phobias / Foobiad
-5042;Physical conflict;Füüsiline konflikt: üks osa soovib olla füüsiliselt aktiivne, teine osa ei soovi.;Conflict / Konflikt
-5044;Pineal;Kontakt sisetundega #2 (mis on õige/vale, mida sina soovid/ei soovi).;Pineal / Kontakt sisetundega
-5060;PINEAL-MET;Stressist tulenev unetus, aktiveerib head und ja neutraliseerib stressi.;Pineal / Kontakt sisetundega
-5065;Pleasure;Nauding.;Pleasure / Nauding
-5071;Political conflict;Poliitiline konflikt.;Conflict / Konflikt
-5077;Power;Sisemine jõud #1 (aitab inimestel tegutseda ja otsuseid vastu võtta).;Power / Sisemine jõud
-5078;Power conflict;Sisemise jõu konflikt, sh oma sisemise jõu andmine teistele (oma jõu ja vabaduse ära andmine, tegutsedes nii nagu teistele meeldib).;"Power / Sisemine jõud; Conflict / Konflikt"
-5079;Power;Sisemine jõud #2 (aitab saada oma vajadused täidetud läbi eneseväljenduse).;Power / Sisemine jõud
-5081;Pride;Liigne uhkus tekkinud traumadest.;Pride / Uhkus
-5083;Projection #1;Oma negatiivsete tunnete teistele projetseerimine #1 (kaitstes kuvandit endast ja oma maailmapilti).;Projection / Projetseerimine
-5084;Projection #2;Oma negatiivsete tunnete teistele projetseerimine #2 (kaitstes kuvandit endast ja oma maailmapilti).;Projection / Projetseerimine
-5093;Protection conflict;Kaitsekonflikt (mingil põhjusel laseb ise kaitse maha, st tahab olla hea, hakkab kahju, soovib anda enda eluenergiat jne).;"Protection / Kaitse; Conflict / Konflikt"
-5096;PSY-ADJ;Raske sotsiaalselt kohaneda.;"Adjustment / Kohanemine; Social / Sotsiaalsus"
-5097;PSY-ANX;Ärevus on tekkinud traumadest.;Anxiety / Ärevus
-5100;PSY-DEP;Pikaajaline stress.;Depression / Pikaajaline stress
-5101;PSY-DEP/EX;Väljaelatud tunded on põhjustanud pikaajalist stressi.;Depression / Pikaajaline stress
-5102;PSY-DEP/IN;Sissehoitud tunded  on põhjustanud pikaajalist stressi.;Depression / Pikaajaline stress
-5103;PSY-DIS;Psühholoogiline tasakaalutus tekkinud traumadest ja/või pikaajalisest stressist.;Logic / Loogika
-5104;PSY-HYS;Hüsteeria tekkinud traumadest ja/või pikaajalisest stressist.;Hysteria / Hüsteeria
-5105;PSY-MANIA;Maania tekkinud traumadest ja/või pikaajalisest stressist.;Mania / Maania
-5106;PSY-MOOD;Sage meeleolu kõikumine tekkinud stressist.;Mood / Meeleolu
-5107;PSY-PER;Sage meeleolu kõikumine.;Personality disorder / Isiksusehäire
-5109;PSY-SEX;Psühholoogiline tasakaalutus seoses seksuaalsusega.;Sex / Seksuaalsus
-5110;Psychic clarity;Psüühiline selgus.;Clarity / Selgus
-5111;Psychic pain;Psüühiline valu (emotsionaalne valu/kannatus).;Pain / Valu
-5112;Psychic protection;Psüühiline kaitse/piiride seadmine: luba olla rahulik ja õnnelik (vajalik selleks, et me suudaksime end igapäevase stressi keskel maandada, olla rahulikud ja õnnelikud).;Protection / Kaitse
-5113;Psychic tension;Psüühilised pinged (liiga palju mõtteid peas).;Tension / Pinged
-5114;Psychogenic stress;Emotsionaalne/psüühiline stress.;Stress / Stress
-5115;Psychological conflict;Psühholoogiline konflikt.;"Logic / Loogika; Conflict / Konflikt"
-5121;Qi Gong Stim;Meele ja keha tasakaalustamine/stimuleerimine.;Qi Gong stim / Meele ja keha tasakaalustamine
-5122;Quarrelsome;Riiakus tekkinud stressist.;Quarrelsome / Riiakus
-5126;Rage;Raev (äkiline võimas tunne).;Rage / Raev
-5127;Rage from slightest contr;Raev tühistest asjadest.;Rage / Raev
-5128;Rationalization #1;Ratsionaliseerimine #1;Rationalization / Ratsionaliseerimine
-5129;RATIONALIZATION #2;Ratsionaliseerimine #2;Rationalization / Ratsionaliseerimine
-5131;Reckless;Hooletus tekkinud traumadest/pikaajalisest stressist #1;Reckless / Hoolimatus
-5132;Recklessness;Hooletus tekkinud traumadest/pikaajalisest stressist #2;Reckless / Hoolimatus
-5135;REDUCE ANGER;Viha neutraliseerimine #2;Anger / Viha
-5136;Reduce irritability;Ärrituvuse neutraliseerimine.;Irritability / Ärrituvus
-5137;Regret;Kahetsus.;Regret / Kahetsus
-5139;Relationship conflict;Suhtekonflikt: üks osa soovib olla suhtes, teine osa ei soovi.;Conflict / Konflikt
-5140;Relax-Mind, Body, Spirit;Meele, keha ja vaimu lõõgastumine.;Relax / Lõdvestuma
-5141;Relaxation conflict;Lõõgastuskonflikt: üks osa soovib lõõgastuda, teine osa ei soovi.;"Relax / Lõdvestuma; Conflict / Konflikt"
-5142;Relaxation;Lõõgastus.;Relax / Lõdvestuma
-5143;Relaxed Focus;Lõdvestunud keskendumine.;"Focus / Keskenduma; Relax / Lõdvestuma"
-5144; Reliability conflict;Usaldusväärsuse konflikt: üks osa usaldab kedagi/midagi, teine osa ei usalda.;"Reliability / Usaldusväärsus; Conflict / Konflikt"
-5147;Repressed emotion connect #1;Allasurutud emotsioonide teadvustamine #1;Repressed / Allasurutus
-5148;Repressed emotion connect #2;Allasurutud emotsioonide teadvustamine #2;Repressed / Allasurutus
-5149;Repressed emotions;Allasurutud emotsioonid.;Repressed / Allasurutus
-5150;Repression;Survestatud olemine kellegi ja/või millegi poolt.;Repressed / Allasurutus
-5151;Resentment;Vimm ja pahameel.;Resentment / Pahameel
-5152;Reservedness;Reserveeritus.;Reservedness / Reserveeritus
-5153;Resignation;Soov kellestki ja/või millestki eemalduda/tagasi astuda.;Resignation / Soov kellestki või millestki eemalduda
-5154;Resistance to change;Vastuseis muutuste ees.;"Change / Muutused; Resistance / Vastuseis"
-5155;Resistance to confront em;Vaidlustes raske kontrollida oma emotsioone.;Resistance / Vastuseis
-5156;Respect;Austus, aukartus, lugupidamine.;Respect / Austus
-5158;Responsibility conflict;Vastutuse konflikt: üks osa soovib võtta vastutust, teine osa ei soovi.;Conflict / Konflikt
-5159;Restless;Rahutus ja püsimatus.;Restless / Rahutus
-5160;Restlessness #1;Rahutus #1;Restless / Rahutus
-5161;Restlessness #2;Rahutus #2;Restless / Rahutus
-5162;Restlessness #3;Rahutus #3;Restless / Rahutus
-5165;Rett Syndrome;Raskusi kõnelemisel #1;Speech / Kõne
-5174;Rigidity;Jäikus/paindumatus.;Rigidity / Jäikus
-5175;RLX-ESSENCE;Lõdvestus (lihaste lõdvestamine, unetus ja stress).;Nervousness / Närvilisus
-5177;Ruthlessness;Halastamatus (võitlus ja konkureerimine tekkinud traumadest).;Ruthlessness / Halastamatus
-5183;Saddness;Kurbus.;Sadness / Kurbus
-5184;Sadness #1;Kurbus #1;Sadness / Kurbus
-5185;SADNESS #2;Kurbus #2;Sadness / Kurbus
-5186;Sarcasm;Sarkasm tekkinud traumadest.;Sarcasm / Sarkasm
-5192;Self-blame;Enese süüdistamine.;Blame / Süütunne
-5193;Self-care;Enese eest hoolitsemine.;Self-care / Enese eest hoolitsemine
-5194;Self-condeming;Ennast hukkamõistev.;Self-condeming / Enese hukkamõistmine
-5195;Self-confidence;Enesekindlus.;Confidence / Enesekindlus
-5196;Self-deception;Enesepettus/enesele valetamine.;Self-deception / Enesepettus
-5197;Self-destructive;Ennasthävitav käitumine.;Self-destructive / Ennasthävitav käitumine
-5198;Self-determination;Enesemääratlemine/võtad ise otsuseid vastu, ei lase teistel ennast mõjutada.;Self-determination / Enesekehtestamine
-5199;Self-esteem conflict;Enesehinnangu konflikt: ühel osal sinust on hea enesehinnang ja teisel osal ei ole.;"Self-esteem / Enesehinnang; Conflict / Konflikt"
-5200;Self-expression;Eneseväljendamine.;Expression / Eneseväljendamine
-5201;Self-importance;Liigne enesetähtsustamine tekkinud traumadest ja šokkidest.;Self-importance / Liigne enesetähtsus
-5202;Self-reliance;Enesekindlus/vastutuse võtmine oma elu eest/iseseisvus ja iseseisvalt hakkama saamine.;Self-reliance / Eneseusaldus
-5203;Selfishness;Isekus tekkinud traumadest ja šokkidest.;Selfishness / Isekus
-5204;Sensativity to disorder;Liigne ülitundlikkus on tekkinud traumadest.;Sensativity / Ülitundlikkus
-5205;Sense of fun;Lõbususe tunne.;Sense of fun / Lõbususe tunne
-5206;Sensual conflict;Sensuaalsuse konflikt: üks osa soovib olla sensuaalne, teine osa ei soovi.;"Sensual / Sensuaalsus; Conflict / Konflikt"
-5207;Sensuality;Sensuaalsus.;Sensual / Sensuaalsus
-5208;SERENAFEM;Emotsionaalsuse rahustamine.;Calm / Rahulikkus
-5209;Serenity;Rahulikkus.;Serenity / Rahulikkus
-5211;Sexual conflict;Seksuaalsuse konflikt: üks osa soovib olla seksuaalne, teine osa ei soovi.;"Sex / Seksuaalsus; Conflict / Konflikt"
-5212;Sexual confusion;Segadus orientatsiooni osas.;Sex / Seksuaalsus
-5213;Sexual pleasure;Seksuaalne nauding.;"Pleasure / Nauding; Sex / Seksuaalsus"
-5214;Sexuality;Seksuaalsus.;Sex / Seksuaalsus
-5215;Shame;Häbi.;Shame / Häbi
-5217;Shock #1;Šokk #1;Shock / Šokk
-5218;Shock #2;Šokk #2;Shock / Šokk
-5219;Shyness #1;Häbelikkus #1;Shy / Häbelikkus
-5220;Shyness #2;Häbelikkus #2;Shy / Häbelikkus
-5221;SHYNESS #3;Häbelikkus #3;Shy / Häbelikkus
-5227;Skepticism;Skeptilisus.;Skepticism / Skeptilisus
-5234;Sleep conflict;Une konflikt.;"Sleep / Uni; Conflict / Konflikt"
-5235;Sluggishness;Loidus.;Sluggishness / Loidus
-5243;Social conflict;Sotsiaalsuse konflikt: üks osa soovib olla sotsiaalne, teine osa ei soovi.;"Social / Sotsiaalsus; Conflict / Konflikt"
-5247;Space conflict;Sobitumise konflikt: üks osa sobib olemasolevasse keskkonda/struktuuri, teine osa ei sobi.;Conflict / Konflikt
-5249;Speech Impediment;Raskusi kõnelemisel #2;Speech / Kõne
-5252;Spiritual balance;Vaimne tasakaal.;Spirit / Vaimne
-5253;Spiritual conflict;Mõistuse ja südametunde konflikt #1: mõistus tahab ühte, kuid süda teist asja (mõistus juhib ja ei kuula südametunnet).;"Spirit / Vaimne; Conflict / Konflikt"
-5254;Spiritual conflict;Mõistuse ja südametunde konflikt #2: mõistus tahab ühte, kuid süda teist asja (mõistus juhib ja ei kuula südametunnet).;"Spirit / Vaimne; Conflict / Konflikt"
-5255;Spiritual connection;Vaimne ühenduvus kõige ja kõigiga.;Spirit / Vaimne
-5256;Spiritual healing;Hingehaavad, mis on tekkinud traumadest ja šokkidest.;Spirit / Vaimne
-5257;Spiritual longing;Soov vaimselt areneda ja kuuluda vastavasse toetavasse gruppi.;Spirit / Vaimne
-5258;Spiritual search;Elu tähenduse otsimine ja oma eluülesande/teekonna mõistmine.;Spirit / Vaimne
-5261;Spleen #2;Optimism, suhted (abielu, sõprus või tööalane partnerlus) ja seksuaalsus.;"Chakra / Energiakeskused; Anger / Viha; Confidence / Enesekindlus; Creativity / Loovus; Fear / Hirmud; Female / Naiselikkus; Male-female balance / Mees-naisenergia tasakaal; Sex / Seksuaalsus"
-5266;SRT-ESSENCE;Raskused uinumisel/uneprobleemid ja pikaaegne stress.;Depression / Pikaajaline stress
-5268;Starting project with ent;Mingi tegevuse või projektiga entusiastlikult alustamine.;Starting project / Millegagi alustamine
-5271;Stomach #2;Enesehinnang, enesekindlus, tahtejõud ja eneseaustus.;"Chakra / Energiakeskused; Lust / Iha; Mood / Meeleolu; Nervousness / Närvilisus; Self-esteem / Enesehinnang"
-5278;Strength;Sisemine tugevus #1;Strength / Tugevus
-5279;Strength;Sisemine tugevus #2;Strength / Tugevus
-5280;Stress #1;Stress #1;Stress / Stress
-5281;STRESS #2;Stress #2;Stress / Stress
-5282;Stress #3;Stress #3;Stress / Stress
-5283;STRESS MED;Pikaajaline ja tugev stress tekkinud pingetest ja kurnatusest.;Stress / Stress
-5284;STRESS RESISTANCE;Võime igapäevase stressiga toime tulla/vastupanuvõime stressile.;Stress / Stress
-5287;Stubborness;Kangekaelsus #1;Stubborness / Kangekaelsus
-5288;Stubbornness;Kangekaelsus #2;Stubborness / Kangekaelsus
-5289;Submissive;Allaheitlik/alistuv.;Submissive / Allaheitlik
-5291;Sullenness;Pahurus.;Sullenness / Pahurus
-5293;Suppression;Allasurutus.;Suppression / Allasurumine
-5294;Supression of important n;Emotsionaalsete ja füüsiliste vajaduste mahasurumine.;Supression / Oluliste vajaduste allasurumine
-5296;Suspicion;Kahtlus.;Suspicious / Kahtlus
-5297;Suspicious;Kahtlustamine.;Suspicious / Kahtlus
-5318;Tension held in muscles/o;Pinged, mis on hoitud lihastes ja organites.;Tension / Pinged
-5327;Thought disturbances;Segavad mõtted (võivad olla seotud ärevuse ja stressiga).;Thought disturbances / Segavad mõtted
-5329;Throat #2;Sissehoitud tunded ja eneseväljendamine.;"Chakra / Energiakeskused; Communication / Kommunikatsioon; Expression / Eneseväljendamine"
-5339;Time conflict;Aja konflikt: soovib jõuda õigeks ajaks, kuid arvestab valesti ning jääb hiljaks.;Conflict / Konflikt
-5340;Timidity;Pelglikkus: julguse ja enesekindluse puudus.;Timidity / Pelglikkus
-5346;Tolerance;Tolerantsus.;Tolerance / Tolerantsus
-5349;Torment;Piinlemine/kannatamine, mis on tekkinud traumadest.;Torment / Piin
-5354;Transformation;Transformatsioon/muutumine: aitab meil muutuda, õpetab kuulama oma sisetunnet, aitab vabaneda vanadest ja samas ka hävitavatest programmidest.;Transformation / Muutumine
-5355;Transformation conflict;Transformatsiooni/muutuste konflikt: üks osa sinust soovib muutuda + kuulata oma hinge ning teine osa ei soovi.;"Transformation / Muutumine; Conflict / Konflikt"
-5356;Trauma;Trauma.;Trauma / Trauma
-5357;Trauma/psychical shock;Trauma ja füüsiline šokk.;"Shock / Šokk; Trauma / Trauma"
-5358;Traumas from past;Traumad minevikust.;"Past / Minevik; Trauma / Trauma"
-5361;Trembling;Ärevusest tekkinud sisemine värin.;Trembling / Sisemine värin
-5364;Unconditional love;Tingimusteta armastus: tähendab lubamist olla kõigel just nii nagu see on.;Love / Armastus
-5365;Under valuing of ability;Enda võimete/võimekuse alahindamine.;Under valuing / Oma võimete alahindamine
-5366;Understanding;Asjadest/olukordadest arusaamine.;Understanding / Arusaamine
-5367;Uneasiness about future;Liigne muretsemine/rahutus, mis tulevikus võib juhtuda.;Future / Tulevik
-5368;Unfit for exersions;Raskused pingutamisel.;Exersion / Pingutus
-5369;Unity With All;Soov olla ühenduses kõigega.;Unity / Ühtsus
-5370;Unworthiness;Tunne, et ei ole kellegi või millegi vääriline.;Unworthiness / Ei ole vääriline
-5376;Utterly apathetic;Täielik apaatsus tekkinud pikaajalisest stressist.;"Apathy / Apaatsus; Utterly apathetic / Täielik apaatsus"
-5379;Vaniety;Edevus tekkinud traumadest.;Vaniety / Edevus
-5394;VITALIFEM;Naiselik vitaalsus.;Female / Naiselikkus
-5395;VITALITY MED;Vitaalsuse puudus, mis on tekkinud pikaajalisest stressist.;Vitality / Elujõud
-5399;Vulnerability;Haavatavus.;Vulnerability / Haavatavus
-5400;Wandering mind;Uitmõtted.;Wandering mind / Uitmõtted
-5404;Will To Live Stim;Elutahte stimuleerimine.;Will to live / Elutahte stimuleerimine
-5405;Willingness to give;Valmisolek anda.;Willingness / Valmisolek anda
-5406;Willingness to receive;Valmisolek vastu võtta.;Willingness / Valmisolek anda
-5407;Willpower;Tahtejõud.;Power / Sisemine jõud
-5409;Wisdom;Sisemine tarkus #2;Wisdom / Tarkus
-5411;Work conflict;Töökonflikt: üks osa soovib antud tööd teha, teine osa ei soovi.;Conflict / Konflikt
-5412;Worry #1;Muretsemine #1;Worry / Muretsemine
-5413;Worry #2;Muretsemine #2;Worry / Muretsemine
-5414;WORRY #3;Muretsemine #3;Worry / Muretsemine
-5415;Worry #4;Muretsemine #4;Worry / Muretsemine
-5420;Youthfullness;Nooruslikkus.;Youthfullness / Nooruslikkus
-5635;Autism;Sotsiaalsus, suhtlemine, väljendusoskus #5;Autism / Autism
-5655;Nervousness;Närvilisus tekkinud stressist #2;Nervousness / Närvilisus
-5664;Restless Agitation;Ärevusest ja/või närvilisusest tekkinud rahutus #2;"Agitation / Rahutus; Restless / Rahutus"
-6428;Pineal;Kontakt sisetundega #3 (mis on õige/vale, mida sina soovid/ei soovi).;Pineal / Kontakt sisetundega
-6429;PINEAL GLAND;Kontakt sisetundega #4 (mis on õige/vale, mida sina soovid/ei soovi).;Pineal / Kontakt sisetundega
-Wellness_25;Tourette;Sundhäälitsused ja -liigutused #3;Tourette / Tourette
-Biofeedback Gems;Phobias;Foobiad #2;Phobias / Foobiad
-Timed specific_1;Pineal gland-to stimulate;Kontakt sisetundega (mis on õige/vale, mida soovid);Brain / Aju
-Wellness_1;Basal Ganglia;Ühendab tunded ja tegutsema hakkamise. ;Brain / Aju
-Wellness_2;Brainstem;Brainstem?;Brain / Aju
-Wellness_3;Cerebellum;Cerebellum?;Brain / Aju
-Wellness_4;Cerebral Cortex;Uue teabe õppimine, mõtete kujundamine ja otsuste langetamine;Brain / Aju
-Wellness_5;Corpus Callosum;Corpus Callosum?;Brain / Aju
-Wellness_6;Frontal Lobe;Enesekontroll: mõtete ja emotsioonide reguleerimine.;Brain / Aju
-Wellness_7;Hypothalamus;"""Võitle-põgene-tardu"" stressireaktsioon. Pidev nö valvel olek, mis takistab lõdvestumist.";Brain / Aju
-Wellness_8;Internal Capsule;Internal Capsule?;Brain / Aju
-Wellness_9;Left Hemisphere;Left Hemisphere?;Brain / Aju
-Wellness_10;Limpic System;Mitte teadvustatud shokid/traumad, sh mälupildid traumadest. Emotsionaalne tasakaal.;Brain / Aju
-Wellness_11;Medulla Oblongata;Medulla Oblongata?;Brain / Aju
-Wellness_12;Midbrain;Midbrain?;Brain / Aju
-Wellness_13;Occipital Lobe;Occipital Lobe?;Brain / Aju
-Wellness_14;Parietal Lobe;Parietal Lobe?;Brain / Aju
-Wellness_15;Pons;Pons?;Brain / Aju
-Wellness_16;Reticular Activating Sys.;Vastutab une, teadveloleku ja tähelepanu eest. Muutunud teadvuse seisund.;Brain / Aju
-Wellness_17;Right Hemisphere;Right Hemisphere?;Brain / Aju
-Wellness_18;Temporal Lobe;Temporal Lobe?;Brain / Aju
-Wellness_19;Thalamus;Aitab kaasa afektiivsele väljendusele. Teadvuse taseme muutus. Taju kaotus.;Brain / Aju
-Wellness_20;Beta;Fookus;Brain / Aju
-Wellness_21;Alpha;Lõdvestus;Brain / Aju
-Wellness_22;Theta;Sügav lõdvestus;Brain / Aju
-Wellness_23;Delta;Sügav uni;Brain / Aju
-Wellness_24;Brain Feedback;Ajuosade tasakaalustamine;Brain / Aju
-Sarcode_1;Vagus Nerve;Närvisüsteemi rahustamine;"Sarcode; Nervous system / Närvisüsteem"
-Sarcode_2;Brain Detox;Ajupuhastus?;Sarcode
-Timed specific_2;Sympathetic;Sümpaatilise närvisüsteemi rahustamine;Nervous system / Närvisüsteem
-Timed specific_3;Para-sympathetic;Parasümpaatilise närvisüsteemi rahustamine;Nervous system / Närvisüsteem
+﻿id;freq_name;description;description_en;category
+934;ADD;Tähelepanupuudulikkus #1;Attention Deficit Disorder #1;"Attention / Tähelepanu; Hyperactivity / Hüperaktiivsus"
+938;ADHD;Tähelepanupuudulikkus koos hüperaktiivsusega #1;Attention Deficit Hyperactivity Disorder #1;"Attention / Tähelepanu; Hyperactivity / Hüperaktiivsus"
+960;Asperger Syndrome;Sotsiaalsus, suhtlemine, väljendusoskus #1;Sociability, communication, expression #1;"Asperger / Asperger; Autism / Autism"
+962;Autism;Sotsiaalsus, suhtlemine, väljendusoskus #2;Sociability, communication, expression #2;Autism / Autism
+1066;Landau-Kleffner Syndrome;Sotsiaalsus, suhtlemine, väljendusoskus #3;Sociability, communication, expression #3;"Autism / Autism; Speech / Kõne"
+1234;Tourette`s Syndrome;Sundhäälitsused ja -liigutused #1;Forced sounds and movements #1;Tourette / Tourette
+1732;Attention Deficit Dis.;Tähelepanupuudulikkus #2;Attention Deficit Disorder #2;Attention / Tähelepanu
+1733;Attention-Deficit Hyperactivity;Tähelepanupuudulikkus koos hüperaktiivsusega #2;Attention Deficit Hyperactivity Disorder #2;"Attention / Tähelepanu; Hyperactivity / Hüperaktiivsus"
+2160;Insomnia;Unetus.;Insomnia.;Insomnia / Unetus
+2511;Tourette`s Syndrome;Sundhäälitsused ja -liigutused #2;Forced sounds and movements #2;Tourette / Tourette
+2731;ACHIV;Ülemäärane söögiisu, rasvumine ja/või üldiselt täitmatuse tunne (söögiisu, emotsionaalsus, tühjuse tunne jms). Vajadus teadvustada seni lahendamata probleemide põhjuseid ning nende ümber kujundamine.;Excessive appetite, obesity and/or a general sense of insatiability (appetite, heightened emotions, feeling empty, etc.). A need to recognize the causes of unresolved problems, and reversing the issues.;"Appetite / Ülemäärane söögiisu; Lethargy / Letargia; Sluggishness / Loidus"
+2732;ADPTIN;Ängistus ja rahutus. Raskused uue keskkonna/olukorraga kohanemisel. Ei tea, kuhu sobituda.;Distress and restlessness. Difficulties adapting to new environments/situations, not knowing where to fit in.;"Adapt / Kohanema; Anguish / Ängistus"
+2733;Agrimony (Bach);Oma murede varjamine enda ja teiste eest, nende pisendamine/väiksemaks tegemine ning teistega mitte jagamine. Vaidluste, vastasseisu ja/või üksiolemise vältimine. Valu vältimiseks/maandamiseks võidakse kasutada alkoholi, narkootikume, toitu, tööd, poodlemist jms. Aktiveerib oskust olla oma tunnete suhtes aus ja neid väljendada.;Concealing one's concerns from oneself and others, diminishing/downplaying and keeping them from others. Avoiding arguments, conflicts and/or being alone. To avoid/channel pain, a tendency to resort to alcohol, drugs, food, overworking, shopping, etc. Activates the ability to recognize and express one's true feelings.;"Alcohol / Alkohol; Avoid / Vältimine"
+2734;ANGR-FLX;Viha, pettumus/frustratsioon, paindumatus, kangekaelsus, kannatamatus, andestamatus ning nendega seotud sümptomite neutraliseerimine (nö kanged mehed ja naised/poisid ja tüdrukud).;Anger, disappointment/frustration, rigidity, obstinance, impatience, unwillingness to forgive and neutralizing the relevant symptoms (so-called tough guys and women / boys and girls).;"Anger / Viha; Flexibility / Paindlikkus; Forgive / Andestamine; Stubborness / Kangekaelsus"
+2735;ANGR-RLS;Varjatud viha: minevikus toimunud leinade ja alanduste mõjutusel elamine, kergesti solvuv ja provotseeritav. Ärrituvus.;Repressed anger: living under the influence of past grief and humiliation, easily offended and provoked. Irritability.;"Anger / Viha; Humiliations / Alandamised"
+2736;Aspen (Bach);Ebamäärased hirmud ja ärevus, mis ilmnevad ootamatult ilma ilmse põhjuseta. Need võivad olla ka õudusunenäod või erinevad hirmud. ;Vague fears and anxiety that manifest unexpectedly and without an apparent reason. Could also take the form of nightmares or various phobias.;"Apprehension / Kartlikkus; Fear / Hirmud"
+2737;ATHLETE´S SPIRIT;Aktiveerib paremat mõistmist, meeskonnatööd ja sooritusvõimet, sh intuitsiooni, koordineerimist, fokusseerimist, keskendumisvõimet, täpsust ning tasakaalu.;Activates improved discernment, teamwork and performance, including intuition, coordination, focus, concentration, precision and balance.;"Focus / Keskenduma; Teamwork / Meeskonnatöö"
+2738;AURA CLEANSER;Minevikust pärit negatiivsete emotsioonide ja mõtete neutraliseerimine, aidates elus edasi liikuda. ;Neutralizing negative emotions and thoughts originating from the past, helping to move on with life.;Aura / Energiaväli
+2739;Beech (Bach);Tolerantsus ja erinevuste aktsepteerimine, sh süüdlase otsimise soov. ;Tolerance and accepting differences, including refraining from looking for the perpetrator.;"Accept / Aktsepteerima; Tolerance / Tolerantsus"
+2740;BRIGHT MORNINGS;"""Säravad hommikud"": rasked ja kurvad tundmused takistavad kogemast entusiasmi ja elujõudu. Neutraliseerib leina/kaotuse tunnet/kurbust ning aktiveerib positiivset suhtumist, entusiasmi, elujõudu.";"""Bright mornings"": heavy and sad sensations obstruct from experiencing enthusiasm and vitality. Neutralizes the sense of grief/loss or sadness and activates a positive outlook, enthusiasm and vitality.";"Sadness / Kurbus; Enthusiasm / Entusiasm; Vitality / Elujõud"
+2741;CALM CHILD;Sisemise lapse rahustamine (sisemine laps on pettunud ja pahane), neutraliseerides emotsionaalset tasakaalutust, viha või pettumuse tunnet ning aktiveerides õnnetunnet.;Calming the inner child (the inner child is disappointed and frustrated) by neutralizing emotional imbalance, anger or disappointment and activating happiness.;Calm / Rahulikkus
+2742;CAREHRT;Võõrandumine, ükskõiksuse tunne (sh lähedaste suhtes). Ebameeldivatele olukordadele/mõtetele keskendumine. Neutraliseerides häbelikkust ja suhtlematust, aktiveerides entusiasmi ning positiivset osalemist elus.;Alienation, indifference (including towards loved ones), focusing on unpleasant situations/thoughts. Neutralizes shyness and closed-offness, activates enthusiasm and positive participation in life.;"Alienation / Võõrandumine; Enthusiasm / Entusiasm; Shy / Häbelikkus"
+2743;Centaury (Bach);"Neile, kes alati püüavad teistele meeldida ning raske on öelda ""Ei"" isegi siis, kui neid ära kasutatakse.";"For people pleasers and those who cannot say ""no"", even if being taken advantage of.";Please others / Teiste soovide järgi
+2744;Cerato (Bach);Oma sisetunde mitte usaldamine, vajadus küsida teiste nõuandeid ja arvamusi, isegi kui sellised nõuanded on eksitavad. Aktiveerib usaldama enda sisetunnet.;Not trusting one's intuition, a need to ask others for advice and opinions, even if being misled. Activates trust in one's intuition.;Trust / Usaldus
+2745;Cherry Plum (Bach);Oma esimese sisetunde usaldamine (mõistus dikteerib, mis on õige. Hirm kaotada kontrolli oma mõtete/tegude üle). Aktiveerib usaldama oma spontaanset sisetunnet ning julgust järgida oma südamesoove.;Trusting one's initial intuition (the rational mind dictates what is appropriate, fear of losing control over one's thoughts/actions). Activates trust in one's spontaneous intuition and courage to follow the heart's desires.;Trust / Usaldus
+2746;Chestnut Bud (Bach);Sarnaste vigade kordamine läbi elu, õppimata varasematest kogemustest. Aktiveerib elukogemustest õppimist ning aitab pöörata tähelepanu olevikule.;Repeating similar mistakes throughout life without learning from past experiences. Activates learning from life experiences and helps focus on the present moment.;"Learn / Õppimine; Past / Minevik"
+2747;Chicory (Bach);Perekonna ja lähedaste sõprade suhtes kontrolliv käitumine ja/või armastatutele oma standardite kehtestamine (nõudlik, dikteeriv, paindumatu). Aktiveerib tingimusteta armastust.;Controlling behaviour towards family and close friends and/or imposing standards on romantic partners (being demanding, overbearing, inflexible). Activates unconditional love.;"Family / Peresuhted; Love / Armastus"
+2748;CLEANSING FIRE;Neutraliseerib minevikukogemustest tekkinud/välja kujunenud/tulenevaid negatiivseid mõttemustreid, emotsioone ning piiranguid. ;Neutralizes negative thought patters, emotions and limitations originating from / shaped by / resulting from past experiences.;Aura / Energiaväli
+2749;CLEAR COMMUNICATION;Raskused eneseväljendamisel ning sellest tulenev pettumus/frustratsioon. Aktiveerib väljendusoskust, soodustades individuaalsetes ja grupisituatsioonides selget ja ladusat suhtlemist. Toetab esinemishirmu korral ning neutraliseerib ärevust.;Difficulties with self-expression and the resulting disappointment/frustration. Activates expression, promoting clear and uninhibited communication in one-on-one and group settings. Helps with performance anxiety and neutralizes anxiety.;"Communication / Kommunikatsioon; Expression / Eneseväljendamine"
+2750;CLEAR SPIRIT;Muutused tekitavad mentaalseid blokke ja pingeid. Aktiveerib tähelepanelikkust, intuitsiooni, muutustega kohanemist, kontakti oma sisetundega, mh toetab mediteerimist.;Mental blockages and tension brought on by changes. Activates attention, intuition, adaptation to changes and getting in touch with one's intuition, and promotes meditation.;"Change / Muutused; Relax / Lõdvestuma; Spirit / Vaimne"
+2751;Clematis (Bach);Oma elu õnnetuks pidamine ning tõmbumine fantaasiamaailma. Ükskõiksuse tunne igapäevaelu suhtes. Aitab ühendada reaalse elu unistustega, aidates olla käesolevas hetkes, siin ja praegu. Aktiveerib loovust.;Considering one's life unhappy and retreating to a fantasy world. A sense of apathy towards daily life. Assists in harmonizing practical circumstances with dreams by helping to abide in the present moment, in the here and now. Activates creativity.;"Creativity / Loovus; Grounded / Vaimne tasakaal"
+2752;CLR-MND;Väärtusetuse ja alaväärsuse tunne, identiteedi segadus ning eesmärgi ebaselgus.;A sense of unworthiness and inferiority, a confused identity and vague objectives.;"Clarity / Selgus; Confusion / Segadus; Identity / Identiteet; Unworthiness / Ei ole vääriline"
+2753;COURAGE;Erinevate hirmude mõttevormid, sh ka teiste inimeste hirmud. Aitab tuvastada ja neutraliseerida hirmutunnet ning erinevaid hirmutundmise mustreid. ;Thought forms of various fears, including the fears of others. Helps to identify and neutralize fear and the various patterns of feeling fear.;Fear / Hirmud
+2754;Crab Apple (Bach);Häbi ja halb enesepilt/enesehinnang. Oma keha ja keskkonna aktsepteerimine.;Shame and poor self-image/self-esteem. Accepting one's body and environment.;"Accept / Aktsepteerima; Shame / Häbi"
+2755;DISSOLVE GUILT;Süütunne, eneses kahtlemine ja hukkamõistmine. Tunne, et ei ole piisavalt hea. Süütunne avaldub enesevihkamisest kuni kergemate tundmusteni (enese armastuse puudus, ei tunne end õnneliku elu väärilisena). ;Guilt, self-doubt and self-condemnation. Not feeling good enough. The expressions of guilt range from self-loathing to milder sensations (lack of self-love, not feeling worthy of happiness).;"Guilt / Süütunne; Happiness / Õnnetunne; Sabotage / Sabotaaž"
+2756;DREAMS COME TRUE;Eneseusaldamine tuleviku kujundamisel, toetades eesmärgi selgust, visualiseerimist ja enesekehtestamist. ;Trusting oneself when shaping the future by supporting clear objectives, visualization and assertiveness.;"Future / Tulevik; Trust / Usaldus"
+2757;Elm (Bach);Kohustustest ja vastutusest tulenev ülekoormatus - tunne, et mingit ülesannet on lihtsalt liiga raske täita. Aktiveerib rahulikkust ja võimet näha probleeme asjakohases perspektiivis.;Feeling overwhelmed by obligations and responsibility, feeling that some tasks are simply too difficult to complete. Activates serenity and the ability to put problems in perspective.;Accomplish / Saavutama
+2758;EMOTIONAL HEALING;Negatiivsete mõttemustrite ja enesekriitilisuse neutraliseerimine. Aktiveerib intuitsiooni, turva- ja õnnetunnet ning enesest arusaamist. Neutraliseerib seosed emotsioonide ja füüsiliste probleemide vahel.;Neutralizing negative thought patters and self-criticism, activates intuition, a sense of safety and happiness and introspection. Neutralizes connections between emotions and physical issues.;"Change / Muutused; Critical / Kriitilisus; Happiness / Õnnetunne"
+2759;EXPSSN;Raskused eneseväljendamisel, hirm suhtlemise ees ja/või esinemishirm. Enda võimete alahindamine ja mentaalsed blokid. Võib olla ka istuvast või üksluisest eluviisist tingitud kurnatus.;Difficulties with self-expression, social anxiety and/or performance anxiety. Underestimating one's abilities, and mental blockages. Could also be exhaustion due to a sedentary or monotonous lifestyle.;"Apprehension / Kartlikkus; Fright / Äkiline hirm; Stage fright / Esinemishirm"
+2760;FAERIE FOOD;Tasakaalustab ja aitab kaasa mõttevormide muutumisele ja vaimsele arengule, toetab elus edasi liikumist.;Acts as a balancing agent and promotes changes in thought forms and spiritual development, supports progress in life.;Spirit / Vaimne
+2761;FEMFLWR;Naiselik eneseväljendamine ning enda naiselikkuse aktsepteerimine.;Feminine self-expression and accepting one's femininity.;"Expression / Eneseväljendamine; Female / Naiselikkus"
+2762;FR-RLS;Sundmõtted ja ettekujutamine, mida kõike halba võib juhtuda. Neutraliseerib paanikahoogude, ärevusest tuleneva värisemise, rahutuse ja/või hakkama saamise hirmuga seotud sümptomeid. Ehmumine/hirmutunne, muretsemine ja kompulsiivsed ideed. Need tundmused võivad omakorda põhjustada ärevust.;Compulsive thinking and imagining negative scenarios. Neutralizes tremors due to panic attacks and anxiety, and symptoms associated with restlessness and/or the fear of not coping. Being easily startled / feeling fearful, worrying and compulsive ideas. These sensations may then cause anxiety.;"Compulsive / Kompulsiivsus; Fear / Hirmud; Fright / Äkiline hirm; Panic / Paanika; Trembling / Sisemine värin"
+2763;FR-TRST;Hirm läbikukkumise ja mittetunnustamise ees. Neutraliseerib hirmudega seotud sümptomeid, mis tulenevad varasematest emotsionaalsetest haiget saamistest, lahusolekutest ja/või lahkuminekutest, äraütlemistest. ;Fear of failure and lack of recognition. Neutralizes fear-related symptoms due to past emotional hurts, separations and/or break-ups, rejections.;"Fear / Hirmud; Rejection / Tagasilükkamine"
+2764;FRGV;Raskused andestamisel ja armastuse vastuvõtmisel. Võib olla kergesti solvuv ja ennast hukkamõistev.;Difficulties with forgiveness and receiving love. May be easily offended and self-deprecating.;Love / Armastus
+2765;FRST-RSC;Suur ärevus. Traumad, mis tulenevad leinast ja/või šokist.;Extreme anxiety. Trauma resulting from grief and/or shock.;Anxiety / Ärevus
+2766;FS-MND;Ületöötamine ja suur vaimne väsimus, mis on põhjustatud vaimsest ja/või füüsilisest kurnatusest või haigustest. Neutraliseerib segaduse ja liigse ülitundlikkusega seotud sümptomeid.;Overworking and extreme mental fatigue brought on by mental and/or physical exhaustion or illness. Neutralizes symptoms associated with confusion and excessive hypersensitivity.;"Confusion / Segadus; Fatigue / Väsimus; Overworked / Ületöötanud"
+2767;Gentian (Bach);Aktiveerib enesekindlust oma probleemidest üle saamiseks. Kahtlus/kõhklus, mis võib tuleneda ka tühistest asjaoludest ja/või väikestest takistustest.;Activates confidence to overcome problems. Doubt/hesitation that may also result from insignificant factors and/or small hurdles.;"Confidence / Enesekindlus; Depression / Pikaajaline stress; Discouragement / Arglikkus"
+2768;Gorse (Bach);Meeleheide ja lootusetuse tunne. Tunne, et midagi enamat pole võimalik teha (sageli krooniliste haiguste korral). Aktiveerib usku tervenemisse, lahenduste leidmist ja enesekindlust. ;Despair and hopelessness. Feeling that there is nothing to be done (often with chronic illness). Activates faith in healing, finding solutions and confidence.;"Confidence / Enesekindlus; Despair / Meeleheide; Hope / Lootus"
+2769;HEALING HEART;Hingehaavad: andestamine, mõistmine, suhtlemine, usaldamine, avatus ja aktsepteerimine nii olnud kui olemasolevates suhetes (sh vastassooga). Aktiveerib tasakaalu, aidates luua paremaid suhteid. ;Emotional wounds: forgiveness, understanding, communication, trust, openness and acceptance regarding both past and present relationships (including with the opposite sex). Activates balance, helping to create better relationships.;"Forgive / Andestamine; Pain / Valu"
+2770;Heather (Bach);Neile, kellel on pidevalt vajadus rääkida endast ja oma probleemidest. Raske on olla üksinda. Aktiveerib oskust teisi kuulata.;For those constantly in need of discussing their life and problems, who have trouble being alone. Activates listening skills.;Lone / Üksindus
+2771;HIDDEN ISSUES;Sissehoitud kurbus, viha ja ennast piiravad mõttevormid on põhjustanud enese vastu töötamist (peidetud negatiivsed mälestused, mõtted ja emotsioonid). Varjatud emotsioonidele viitavad viha, korduv enesesabotaaž, sõltuvuskäitumine või kurbus, mis pole praeguse olukorraga/eluoluga tasakaalus.;Pent-up sadness, anger and limiting beliefs have resulted in self-sabotage (repressed negative memories, thoughts and emotions). Signs of repressed emotions include anger, repeated self-sabotage, addictive behaviours or sadness that is disproportionate to the present situation/circumstances.;"Addictive / Sõltuvust tekitav; Anger / Viha; Sabotage / Sabotaaž; Sadness / Kurbus"
+2772;Holly (Bach);Viha ja kadedus, mis tuleneb tundest, et ei saa piisavalt armastust. Aktiveerib armastuse tunnet.;Anger and jealousy because of not having received enough love. Activates feelings of love.;Love / Armastus
+2773;Honeysuckle (Bach);Minevikus elamine (kaotatud armastus või täitumatud unistused) on võtnud rõõmutunde. Tunne, et enam ei ole võimalik õnnelikuks saada. Aktiveerib oskust tunda rõõmu käesolevas hetkes. ;Living in the past (lost love or failed dreams) has removed all joy, feeling that happiness has become elusive. Activates the ability to enjoy the moment.;Joy / Rõõm
+2774;Hornbeam (Bach);Sisemise jõu puudus tavapäraste igapäevaste tegevustega toimetulekuks. Aktiveerib entusiasmi ja vaimset erksust.;Not feeling up to coping with routine daily activities. Activates enthusiasm and mental alertness.;Enthusiasm / Entusiasm
+2775;HRMNY;Melanhoolsus tekkinud šokkidest, leinast ja/või pettumusest - aktiveerib rahulolu ja head enesetunnet. Võib olla kalduvus muutuda rahutuks, loiuks, melanhoolseks või kahtlustavaks. Vajadus lohutuse järgi, kuid samas ei suuda seda vastu võtta.;Melancholy due to shock, grief and/or disappointment, activates contentment and well-being. May be prone to restlessness, apathy, melancholy or suspicion. A need for comfort while not being able to embrace it.;"Listless / Tuim; Melanholic / Melanhoolsus"
+2776;IMMUNE ENERGY;Mõjutatud negatiivsete inimeste energiast ning võõrenergiast (kadedad, õelad, pahatahtlikud, negatiivsed). Neutraliseerib igasuguseid negatiivseid energeetilisi mõjutusi. Soovitus: hoidke end eemale ebameeldivate emotsionaalsete olukordade, negatiivse vaimse keskkonna, psüühiliselt toksiliste inimeste, kohtade või mõtete eest. ;Affected by the energy of negative people and alien energies (jealousy, meanness, malevolence, negativity). Neutralizes any negative energetic influences. Advice: stay away from emotionally unpleasant mental environments and psychically toxic people, places or thoughts.;Aura / Energiaväli
+2777;Impatiens (Bach);Kiiresti tegutsemine ja mõtlemine ning kannatamatus inimeste suhtes, kes tegutsevad aeglasemalt. Üksinda töötamise eelistamine. Aktiveerib teiste suhtes empaatiat, mõistmist ja kannatlikkust.;Acting and thinking fast and impatience with slower-paced people. Preference towards working alone. Activates empathy, understanding and patience.;"Empathy / Empaatia; Lone / Üksindus"
+2778;INCDNT-RLS;Šokist, traumast ja teistest haavatavatest olukordadest tulenevad mälestused. Neutraliseerib varasemate traumaatiliste kogemustega seotud mõttemustreid ja emotsioone. ;Memories resulting from shock, trauma and other vulnerable situations. Neutralizes thought patterns and emotions associated with past traumatic experiences.;"Past / Minevik; Shock / Šokk; Trauma / Trauma"
+2779;INSPIRATION;Inspiratsioon/loomingulisus. Aktiveerib probleemide lahendamise oskust, aidates leida uusi ja paremaid viise, kuidas asju teha.;Inspiration/creativity. Activates problem solving skills, helping to find new and improved ways of doing things.;"Creativity / Loovus; Imagination / Kujutlusvõime; Inspiration / Inspiratsioon"
+2780;Larch (Bach);Enesekindluse puudumine ning ebaõnnestumisele häälestumine. Aktiveerib enesekindlust ja otsustavust väljakutseid vastu võtta.;Lack of confidence and attunement to failure. Activates confidence and assertiveness in taking on challenges.;Confidence / Enesekindlus
+2781;LF-CHNGS;Meeleheide, pahameel, kriitilisus. Aktiveerib lahti laskma valest minapildist, mis ei toeta enam.;Despair, frustration, criticism. Helps to release a false self-image that no longer serves.;"Despond / Ahastus; Discouragement / Arglikkus; False image / Vale enesepilt; Sullenness / Pahurus"
+2782;LTGO;Ahastus, rahutus, negatiivsed mõttemustrid, kangekaelsus, armukadedus, kadedus, kahtlustamine ja isekus. Oluliste füüsiliste ja emotsionaalsete vajaduste mahasurumine.;Anguish, restlessness, negative thought patterns, obstinance, jealousy, envy, suspicion and selfishness, repressing vital physical and emotional needs.;"Anguish / Ängistus; Jealousy / Armukadedus; Restless / Rahutus; Stubborness / Kangekaelsus; Suppression / Allasurumine"
+2783;LVJY;Šokk ja pikaaegne lein. Rahutus/ebakindlus tuleviku suhtes. Aktiveerib elurõõmu ja armastuse tunnet.;Shock and prolonged grief. Restlessness/uncertainty regarding the future. Activates enjoyment and love.;Future / Tulevik
+2784;MALE SUPPORT;Sisemine jõud, kannatlikkus, tasakaal, enesekindlus ja võime lahendada elus esinevaid probleeme sügavamal tasandil.;Vigor, patience, balance, confidence and the ability to solve life's problems on a deeper level.;Centering / Tähelepanu koondamine
+2785;MENTAL FOCUS;Tähelepanu ja keskendumisvõime. Soodustab õppimist ja/või eksamiteks valmistumist. Aitab mõista enda mõttemustreid ja lõpetada oma elus ikka ja jälle samade vigade kordamist ilma nendest õppimata (aitab mõista elus esinevaid õppetunde).;Attention and concentration. Assists in learning and preparing for exams. Helps to make sense of thought patterns and stop repeating the same mistakes without learning from them (helps to understand life lessons).;"Concentration / Kontsentratsioon; Focus / Keskenduma; Learn / Õppimine"
+2786;Mimulus (Bach);Tuntumad/tavapärasemad hirmud: pimedus, vaesus, kõrgus, haigus, surm jne. Seotud ka foobiatega.;The more well-known/common fears: darkness, poverty, heights, disease, death, etc. Also related to phobias.;Fear / Hirmud
+2787;MND-MMRY;Leina, šoki, pettumuste, usalduse kaotuse, hirmu ja muude lapsepõlve väärkohtlemise tagajärgedega seotud mõttemustrid. Aktiveerib mineviku või oleviku emotsionaalsete raskuste aktsepteerimist.;Thought patters associated with grief, shock, disappointment, loss of trust, fear and other consequences of childhood abuse. Activates the ability to accept past or present emotional difficulties.;"Abuse / Väärkohtlemine; Childhood / Lapsepõlv; Fear / Hirmud"
+2788;Mustard (Bach);Ängistus, ahastus, hingepiin, kurbus, masendus teadmata/ilma nähtavate põhjusteta. Aktiveerib sisemist stabiilsust, rõõmsameelsust ja rahulikkust.;Distress, anguish, torment, sadness, depression for no known/apparent reason. Activates inner stability, cheerfulness and tranquillity.;"Cheerful / Rõõmsameelsus; Depression / Pikaajaline stress; Serenity / Rahulikkus"
+2789;MVON;Vihaga seotud allasurutud ja sügavad emotsioonid või varasemate traumade ja väärkohtlemisega seotud hoiakud. Neutraliseerib leina, pettumuse ja kaotusega seotud tundeid ning aitab elus edasi liikuda.;Anger-related repressed and deep emotions or attitudes associated with past trauma and abuse. Neutralizes feelings associated with grief, disappointment and loss, and helps to move on with life.;"Abuse / Väärkohtlemine; Anger / Viha"
+2790;NEW PATTERNS;Neutraliseerib vanasid mõttemustreid ning nendega kaasnevaid emotsioone ja vajadusi, sh sõltuvust tekitavaid käitumismustreid (nt isu ebatervisliku toidu, alkoholi järgi jne). ;Neutralizes old thought patterns and the accompanying emotions and needs, including addictive behavioural patterns (e.g. craving for unhealthy food, alcohol, etc.).;"Addictive / Sõltuvust tekitav; Change / Muutused"
+2791;NU-DRCTN;Kinnijäämise tunne. Hirm muutuste ees.;A feeling of stuckness. Fear of change.;"Change / Muutused; Fear / Hirmud; Stuck / Kinni olema"
+2792;Oak (Bach);Liigne rangus enda suhtes on võtnud rõõmutunde (võib olla võetud ka liiga palju kohustusi).  Aktiveerib rõõmutunnet ning oskust hakata tegema aeg-ajalt pausi oma ettevõtmistes.;Excessive harshness towards oneself has left one joyless (one may have also assumed too many obligations). Activates joy and the ability to introduce periods of no activity.;Joy / Rõõm
+2793;Olive (Bach);Vaimne ja füüsiline kurnatus, mis on põhjustatud haigustest või isiklikest katsumustest/väljakutsetest. Aktiveerib elujõudu.;Mental and physical exhaustion brought on by illness or personal difficulties/challenges. Activates vitality.;"Exhaust / Kurnatus; Vitality / Elujõud"
+2794;PERFECT BALANCE;Tasakaal ja rõõm. Aitab taastada ja säilitada meelerahu. Eriti hea neile, kes on ülitundlikud.;Balance and joy. Helps to restore and maintain peace of mind. Especially beneficial for highly sensitive people.;Joy / Rõõm
+2795;Pine (Bach);Endaga rahulolematus ning enda süüdistamine selles, et hetkel paremini ei lähe. Süütunne, kahetsus, sh süüdistades end ka teiste vigade eest.;Dissatisfaction with oneself and blaming oneself for not doing better at the moment. Guilt, regret, including blaming oneself for the faults of others.;"Blame / Süütunne; Guilt / Süütunne; Regret / Kahetsus"
+2796;POST OPERATIVE;Aitab emotsionaalselt taastuda operatsioonijärgsetest traumadest.;Helps to recover emotionally from post-operative trauma.;Operative / Operatsioon
+2797;PRE OPERATIVE;Aitab emotsionaalselt valmistada ette operatsiooniks või millestki vabanemiseks.;Helps to prepare emotionally for an operation, for releasing something.;Operative / Operatsioon
+2798;PRSVR;Väsimuse, lõpetatuse ja täieliku apaatiaga seotud mõttemustrid. Aktiveerib vastupidavust, usaldusväärsust, jõudu, muutust ja sihikindlust jõuda soovitud eesmärgini. Leevendab kalduvust entusiasmiga projekte alustada ja hiljem huvi või energia puudumise tõttu neist loobuda.;Thought patterns associated with fatigue, finiteness and complete apathy. Activates resilience, reliability, strength, initiative for change and orientation towards achieving goals. Relieves the tendency to initiate new projects enthusiastically only to abandon them later for lack for interest or energy.;"Enthusiasm / Entusiasm; Exhaust / Kurnatus; Reliability / Usaldusväärsus; Utterly apathetic / Täielik apaatsus"
+2799;PRTCT;Elujõu kaotus, peapööritus, väsimus ja kurnatus, sh füüsilise šoki, traumaga seotud mõttemustrid. Ülitundlikkus igasuguste väliste mõjutuste suhtes.;Loss of vitality, dizziness, fatigue and exhaustion, including thought patterns associated with physical shock and trauma. Hypersensitivity to all types of external stimuli.;"Debility / Nõrkus; Exhaust / Kurnatus; Loss / Kaotus; Shock / Šokk; Trauma / Trauma"
+2800;PSTVTY;Lootusetus ja meeleheide taastumise suhtes, ülitundlikkus välistele pingetele.;Hopelessness and despair regarding recovery, hypersensitivity to external tensions.;"Despair / Meeleheide; Hope / Lootus"
+2801;RAPID RECOVERY;Läbipõlemissündroom. Vaimne ja/või füüsiline kurnatus, aitab aktiveerida sisemist jõudu.;Burnout syndrome, mental and/or physical exhaustion, helps to activate vigor.;"Burnout / Läbipõlemine; Exhaust / Kurnatus"
+2802;Red Chestnut (Bach);Pidevalt muretsemine oma armastatud inimeste heaolu pärast ja ette kujutamine, mida halba võib nendega juhtuda. Aktiveerib võimet mõelda positiivselt isegi siis, kui ollakse keerulises olukorras.;Constant concern for the well-being of loved ones and imagining negative scenarios regarding their lives. Activates the ability to think positively even if in a complicated situation.;Worry / Muretsemine
+2803;Rescue Remedy (Bach);Šokk, trauma ja stress. Tasakaalustab emotsionaalset seisundit.;Shock, trauma and stress. Balances the emotions.;Shock / Šokk
+2804;RLXTN;Närvilisus, kurnatus, pinge (sh ka kaelas ja seljas olevad stressist tulenevad pinged), ärevus ja vaimne segadus. Ülitundlikkus nii füüsiliselt kui vaimselt.;Nervousness, exhaustion, tension (including stress-related tension in the neck and back), anxiety and mental confusion. Both physical and mental hypersensitivity.;"Anxious / Ärev, murelik; Exhaust / Kurnatus; Tension / Pinged"
+2805;Rock Rose (Bach);Paanika ja hirmud.;Panic and fears.;Panic / Paanika
+2806;Rock Water (Bach);Sisemine paindlikkus ja avatud meel. Enda suhtes ülemäärane karmus, jäigad isiklikud arusaamised ning endale naudingute keelamine. ;Inner flexibility and an open mind. Excessive harshness towards oneself, rigid personal beliefs and denying pleasure to oneself.;"Flexibility / Paindlikkus; Open-mind / Avatud meel"
+2807;Scleranthus (Bach);Sageli kahe valiku vahel ja ei suuda nende vahel otsustada, ka meeleolumuutused. Aktiveerib keskendumist, sisemist tasakaalu ja paindlikkust.;Often being conflicted between two options, also mood swings. Activates concentration, inner balance and flexibility.;"Concentration / Kontsentratsioon; Flexibility / Paindlikkus; Mood / Meeleolu"
+2808;SEXUAL HEALING;Külmunud romantilised tunded.;Frozen romantic feelings.;"Female / Naiselikkus; Sensual / Sensuaalsus; Sex / Seksuaalsus"
+2809;SLFSTM;Madal enesekindlus ja -hinnang. Pelglikkus, reserveeritus ja raskus toime tulla mis tahes väljakutsetega. Kergesti mõjutatav, alaväärsuse- ja kasutuse tunne.;Low confidence and self-esteem. Timidity, restraint and difficulties coping with any type of challenge. Easily manipulated, a sense of inferiority and uselessness.;"Confidence / Enesekindlus; Self-esteem / Enesehinnang"
+2810;SOMATICA;Allasurutud hirmudest ja emotsioonidest tekkinud pinged lihastes ja elundites. ;Tensions in muscles and organs due to repressed fears and emotions.;"Fear / Hirmud; Tension / Pinged"
+2811;Star Of Bethlehem (Bach);Minevikutraumad ja šokid, mõjutades praegust elu. Aktiveerib nendest taastumist.;Past trauma and shock affecting current life circumstances. Activates recovery.;"Past / Minevik; Shock / Šokk; Trauma / Trauma"
+2812;STRNG-MND;Kurbus, meeleheide, lootusetuse tunne, apaatsus ja sisemine emotsionaalne pinge. Aktiveerib sisemist vitaalsust/elujõudu.;Sadness, despair, hopelessness, apathy and inner emotional tension. Activates inner vitality / life force.;"Apathy / Apaatsus; Fright / Äkiline hirm; Hope / Lootus; Sadness / Kurbus; Vitality / Elujõud"
+2813;SUSTAINABLE ENERGY;"Elukogemuste ""läbi seedimine"". Aktiveerib sisemist vitaalsust/elujõudu.";"""Digesting"" life experiences. Activates inner vitality / life force.";Digest / Elukogemuste läbiseedimine
+2814;Sweet Chestnut (Bach);Ängistus, ahastus, hingepiin - tunne, et enam ei jaksa. Aktiveerib eneseusku ning usku, et muutused on võimalikud.;Distress, anguish, torment, a feeling of giving up. Activates confidence and faith in the possibility of change.;"Anguish / Ängistus; Change / Muutused; Trust / Usaldus"
+2815;TRANQUILITY;Mõtete ja emotsioonide vaigistamine. Aktiveerib sisemist rahu ja sügavat lõdvestumist. ;Silencing thoughts and emotions. Activates inner calm and deep relaxation.;Calm / Rahulikkus
+2816;TRANSFORM ANGER;Vihaga seotud mõttemustrid, pahameel, pettumus, ärrituvus, raev ja agressioon. ;Anger-related thought patterns, frustration, disappointment, irritability, rage and aggression.;Anger / Viha
+2817;TRAUMA;Emotsionaalsed ja/või füüsilised traumad. Aitab seda protsessida, terveneda ja elus edasi liikuda.  ;Emotional and/or physical trauma. Helps to process trauma and to heal and move on with life.;"Aura / Energiaväli; Shock / Šokk; Trauma / Trauma"
+2818;Ultra Constitutions #5;Süüdistamine, kriitilisus, süütunne, häbi, piinlikkus, enesele etteheidete tegemine. ;Blame, criticism, guilt, shame, embarrassment, self-condemnation.;"Blame / Süütunne; Critical / Kriitilisus; Embarrasment / Piinlikkus; Guilt / Süütunne; Shame / Häbi"
+2819;Ultra-Constitutions #1;Hirm, paanika, kartlikkus - vastupidi aktiveerib julgust, enesekindlust ja seiklushimu.;Fear, panic, apprehension - activates the opposites of courage, confidence and a sense of adventure.;"Adventurous / Seiklushimuline; Apprehension / Kartlikkus; Fear / Hirmud; Panic / Paanika"
+2820;Ultra-Constitutions #10;Hüljatus, üksindus, tühjuse tunne, kinnisus - vastupidi aktiveerib turvalisust, rahulolu ja avatust.;Feeling abandoned, lonely, empty, closed off - activates the opposites of safety, contentment and openness.;"Abandonment / Hüljatus; Extrovert / Ekstravert; Lone / Üksindus; Secure / Turvatunne"
+2821;Ultra-Constitutions #11;Mitte usaldav, kahtlustav/kahtlustamine, paranoiline - vastupidi aktiveerib usaldust ja enesekindlust.;Mistrustful, suspicious/suspicion, paranoid - activates the opposites of trust and confidence.;Trust / Usaldus
+2822;Ultra-Constitutions #12;Traumadest tekkinud enesekesksus ja isekus - vastupidi aktiveerib suuremeelsust, üllust, heasüdamlikkust, õiglustunnet. ;Trauma-related self-centeredness and selfishness - activates the opposites of generosity, nobleness, kind-heartedness and a sense of justice.;"Generosity / Suuremeelsus; Greed / Ahnus"
+2823;Ultra-Constitutions #2;Traumadest tekkinud käitumisprobleemid - vastupidi aktiveerib armastuse ja helluse tunnet.;Trauma-related behavioural issues - activates the opposites of love and tenderness.;Awkward / Käitumisraskused
+2824;Ultra-Constitutions #3;Nõudlik, kontrolliv, jäik - vastupidi aktiveerib alandlikkust, paindlikkust ja tagasihoidlikkust.;Demanding, controlling, rigid - activates the opposites of humility, flexibility and modesty.;Rigidity / Jäikus
+2825;Ultra-Constitutions #4;Lein, kurbus, kahetsus - vastupidi aktiveerib õnnetunnet, rahulolu ja rõõmsameelsust. ;Grief, sadness, regret - activates the opposites of happiness, contentment and cheerfulness.;"Cheerful / Rõõmsameelsus; Grief / Lein; Regret / Kahetsus; Sadness / Kurbus"
+2826;Ultra-Constitutions #6;Nõrk, jõuetu, sageli haige - vastupidi aktiveerib tugevust, stabiilsust, sisemist jõudu. ;Weak, lethargic, often ill - activates the opposites of stamina, stability and vigor.;Power / Sisemine jõud
+2827;Ultra-Constitutions #7;Ärevus, muretsemine, kannatamatus, usaldamatus - vastupidi aktiveerib rahulikkust, lõdvestumist, usaldust, turvatunnet. ;Anxiety, worry, impatience, mistrust - activates the opposites of tranquillity, relaxation, trust, safety.;"Anxiety / Ärevus; Relax / Lõdvestuma; Secure / Turvatunne; Trust / Usaldus; Worry / Muretsemine"
+2828;Ultra-Constitutions #8;Traumadest tekkinud viha, sallimatus, ärrituvus, vägivaldsus - vastupidi aktiveerib lahkust, õrnust, viisakust ja hoolivust. ;Trauma-related anger, intolerance, irritability, violence - activates the opposites of kindness, gentleness, politeness and caring.;"Anger / Viha; Kindness / Heatahtlikkus"
+2829;Ultra-Constitutions #9;Uimasus, loidus, ängistus, segadus - vastupidi aktiveerib sisemist jõudu, mängulisust, arusaamist ja tähelepanelikkust. ;Drowsiness, passivity, distress, confusion - activates the opposites of vigor, playfulness, understanding and consideration.;"Confusion / Segadus; Depression / Pikaajaline stress"
+2830;UN-STRESS;Mentaalne kurnatus (stress ja ülekoormatus) - liiga palju tegevusi ja/või mõtteid hetkel või minevikust ja/või kohustusi, millega füüsilisel kehal on raske toime tulla.                                                                                    ;Mental exhaustion (stress and overload), too many activities and/or thoughts in the moment or from the past and/or too many obligations that weigh on the physical body.;Calm / Rahulikkus
+2831;Vervain (Bach);Enesesabotaaž, sh teiste veenmine oma tõekspidamiste õigsuses ning liigne entusiasm, mis hakkab šaboteerima häid kavatsusi ja see ei lase elus edasi liikuda. Aktiveerib paindlikkust ning entusiasmi.;Self-sabotage, including convincing others of the rightness of one's beliefs, and excessive enthusiasm that begins to undermine good intentions, resulting in staying stuck. Activates flexibility and enthusiasm.;"Enthusiasm / Entusiasm; Sabotage / Sabotaaž"
+2832;Vine (Bach);Ootus, et teised teeksid asju nii nagu mina soovin. Aktiveerib mõistmist, et tõeline juhtimine tähendab teiste juhtimisomaduste julgustamist.;Expecting others to do as one wishes. Activates the insight that true leadership means encouraging the leadership qualities of others.;Leadership / Juhiomadused
+2833;VTLTY;Sügav ja sisemine väsimus, mis tuleneb pikaajalistest emotsionaalsest stressist, leinast või ärevusest. Aktiveerib vitaalsust ja emotsionaalset elujõudu.;Deep inner exhaustion caused by prolonged emotional stress, grief or anxiety. Activates vitality and emotional life force.;Vitality / Elujõud
+2834;Walnut (Bach);Kergesti mõjutatav välistest asjaoludest (oma sisetunde ja eneseusaldamine, mis on seotud positiivsete muutustega, mida soovitakse elus teha. Toetab uude eluetappi üleminekut).;Easily affected by external factors (trusting oneself and one's intuition with regard to desired positive changes, supports transitioning to a new life phase).;Change / Muutused
+2835;Water Violet (Bach);Koostöö ja suhtlemine teistega. NB! Neile, kes soovivad teha asju iseseisvalt/üksinda ja on sellest tulenevalt üksildased, kuna nad kardavad kaotada oma sõltumatust. ;Cooperation and interacting with others. NB! Especially for people who prefer to operate independently and alone and are therefore lonely, as they are afraid of losing their independence.;Lone / Üksindus
+2836;White Chestnut (Bach);Soovimatud/segavad mõtted ja mured, mis näivad lõputult korduvat ja mis võivad põhjustada unetust. Aktiveerib tasakaalustatud meeleseisundit ja oskust oma mõtteid konstruktiivselt kasutada.;Unwanted/disturbing thoughts and worries that seem to run in a loop and may cause insomnia. Activates a balanced state of mind and the ability to use one's thoughts constructively.;Insomnia / Unetus
+2837;Wild Oat (Bach);Rahulolematus ja ebakindlus. Inimestele, kes tahavad oma elus midagi saavutada, kuid pole selget eesmärki. Aktiveerib keskendumisvõimet ja võimet leida soovitud suund oma elus.;Dissatisfaction and insecurity. For people wishing to achieve something in life, but lacking a clear objective. Activates concentration and the ability to find a desired path in life.;Accomplish / Saavutama
+2838;Wild Rose (Rose);Apaatia/tundetus ei lase tunda entusiasmi ja elurõõmu. Aktiveerib oskust elu mõtestada ja tunda rõõmu.;Apathy/numbness keep from feeling enthusiastic and cheerful. Activates the ability to find meaning in life and to feel joy.;"Apathy / Apaatsus; Joy / Rõõm; Resignation / Soov kellestki või millestki eemalduda"
+2839;Willow (Bach);Pahameel ja tunne, et elu on ebaõiglane. Teiste rõõmsameelsus võib ärritada. Aktiveerib võtma vastutust oma elu eest.;Resentment and feeling that life is unfair, may be irritated by the cheerfulness of others. Activates the ability to take responsibility for one's life.;Resentment / Pahameel
+2840;WOMAN´S HARMONY;Nais- ja meesenergia tasakaalustamine, aktiveerides juurdepääsu kõigile oma sisemistele ressurssidele ja tasakaalu.;Balancing feminine and masculine energies by activating access to all of one's inner resources, and balance.;Female / Naiselikkus
+2841;WRMLV;Valus emotsionaalne kiindumussuhe/side ning südamevaluga seotud tunded ja mõttemustrid (keegi või midagi tekitab südamevalu). Soov olla omaette ja/või olukorrast põgeneda, võib esineda ükskõiksust lähedaste suhtes. Aktiveerib harmooniat. ;A painful emotional relationship/attachment and emotions and thought patterns associated with heartache (someone or something is causing heartache), a desire to isolate and/or escape from the situation, may be accompanied by indifference towards loved ones. Activates harmony.;"Attachment / Kiindumus; Heartache / Südamevalu; Pain / Valu"
+2938;Pineal Gland;Kontakt sisetundega #1 (mis on õige/vale, mida sina soovid/ei soovi).;Being in touch with intuition #1 (what is right/wrong, what you wish / do not wish).;Pineal / Kontakt sisetundega
+3691;Dopamine #1;Meeleolu, motivatsiooni ja rahulolu tasakaalustamine #1;Balancing mood, motivation and satisfaction #1;Dopamine / Dopamiin
+3692;Dopamine #2;Meeleolu, motivatsiooni ja rahulolu tasakaalustamine #2;Balancing mood, motivation and satisfaction #2;Dopamine / Dopamiin
+3748;Oxytocin;Armastuse tunde aktiveerimine.;Activating the feeling of love.;Oxytocin / Armastuse tunde tõstmine
+3773;Serotonin;Meeleolu, kognitiivsete võimete, õppimise, tähelepanu ja mälu tasakaalustamine.;Balancing mood, cognitive abilities, learning, attention, and memory.;Serotonin / Serotoniin
+4219;Abandonment;Hüljatuse tunne: hirm mahajätmise, hülgamise ja/või üksinduse ees.;A sense of abandonment: fear of rejection, abandonment and/or loneliness.;Abandonment / Hüljatus
+4221;Ability to accept praise;Võime/oskus võtta vastu kiitust ja tunnustust.;Ability/capacity to receive praise and recognition.;Accept / Aktsepteerima
+4222;Abusive;Pahatahtlikkus tekkinud traumadest.;Malevolence caused by trauma.;Abusive / Pahatahtlikkus
+4223;Accept masculine side;Oma mehelike omaduste aktsepteerimine ja vastuvõtmine.;Accepting and embracing one's masculine qualities.;Masculine / Maskuliinsus
+4224;Acceptance of female aspe;Oma naiselike omaduste aktsepteerimine ja vastuvõtmine.;Accepting and embracing one's feminine qualities.;Female / Naiselikkus
+4225;Acceptance;Aktsepteerimine: olukorra ja/või inimese vastuvõtmine sellisena nagu see/ta on.;Acceptance: embracing situations and/or people as they are.;Accept / Aktsepteerima
+4231;Addictive;Sõltuvus millegi või kellegi suhtes.;Dependence on something or someone.;Addictive / Sõltuvust tekitav
+4232;Adjustment disorder;Kohanemisraskus: ärevusega seotud reaktsioon mingile elusündmusele/olukorrale.;Adjustment difficulties: an anxiety-related reaction to a life event / situation.;Adjustment / Kohanemine
+4241;Aggression;Agressiivsus, mis on tekkinud traumadest, foobiatest, usaldamatusest, ebakindlusest ja kinnismõtetest.;Aggression brought on by trauma, phobias, mistrust, insecurity and obsessions.;Aggression / Agressiivsus
+4242;Aggression Release;Agressiivsuse neutraliseerimine.;Neutralizing aggression.;Aggression / Agressiivsus
+4243;Aging conflict;Vananemise konflikt: üks osa sinust aktsepteerib vananemist, teine osa ei aktsepteeri.;Aging conflict: a part of you accepts aging, while the other does not.;"Aging / Vananemine; Conflict / Konflikt"
+4244;Agitation;Ärevusest ja/või närvilisusest tekkinud rahutus #1;Restlessness caused by anxiety and/or nervousness #1;Agitation / Rahutus
+4245;Aimless activity;Sihitu tegutsemine/tegevus.;Aimless actions/activity.;Aimless / Sihitu
+4247;Alienation;Võõrandumine (sh inimeste vältimine, soov hoida teistest eemale ja olla omaette).;Alienation (including avoiding people, a wish to isolate and be alone).;Alienation / Võõrandumine
+4260;Anger #1;Viha #1;Anger #1;Anger / Viha
+4261;Anger #2;Viha #2;Anger #2;Anger / Viha
+4262;Anger #3;Viha #3;Anger #3;Anger / Viha
+4263;Anger #4;Viha #4;Anger #4;Anger / Viha
+4264;ANGER #5;Viha #5;Anger #5;Anger / Viha
+4265;Anger #6;Viha #6;Anger #6;Anger / Viha
+4266;ANGER MED;Viha ja ärrituvus on tekkinud pikaajalisest stressist.;Anger and irritability are caused by prolonged stress.;Anger / Viha
+4267;Anger Release;Viha neutraliseerimine #1;Neutralizing anger #1;Anger / Viha
+4268;Anguish #1;Ängistus, ahastus, hingepiin #1;Distress, anguish, torment #1;Anguish / Ängistus
+4269;Anguish #2;Ängistus, ahastus, hingepiin #2;Distress, anguish, torment #2;Anguish / Ängistus
+4270;Anguish #3;Ängistus, ahastus, hingepiin #3;Distress, anguish, torment #3;Anguish / Ängistus
+4290;Anxiety #1;Ärevus #1;Anxiety #1;Anxiety / Ärevus
+4291;Anxiety #2;Ärevus #2;Anxiety #2;Anxiety / Ärevus
+4292;Anxiety #3;Ärevus #3;Anxiety #3;Anxiety / Ärevus
+4293;Anxiety #4;Ärevus #4;Anxiety #4;Anxiety / Ärevus
+4294;ANXIETY #5;Ärevus #5;Anxiety #5;Anxiety / Ärevus
+4295;Anxiety #6;Ärevus #6;Anxiety #6;Anxiety / Ärevus
+4296;ANXIETY MED;Ärevus on tekkinud pikaajalisest stressist.;Anxiety is caused by prolonged stress.;Anxiety / Ärevus
+4297;Anxious worry;Ärevuslik muretsemine.;Anxious worrying.;"Anxious / Ärev, murelik; Worry / Muretsemine"
+4298;Anxiousness;Ärevuslikkus.;Anxiousness.;Anxious / Ärev, murelik
+4299;Apathy;Apaatsus (huvi ja entusiasmi puudus).;Apathy (lack of interest and enthusiasm).;Apathy / Apaatsus
+4300;Appreciation;Tänulikkus kellegi või millegi suhtes.;Gratitude towards someone or something.;Appreciation / Tänulikkus
+4301;Apprehension #1;Kartlikkus #1: ärevus/hirm, et võib juhtuda midagi halba või ebameeldivat.;Apprehension #1: anxiety/fear that something bad or unpleasant may happen.;Apprehension / Kartlikkus
+4302;Apprehension #2;Kartlikkus #2: ärevus/hirm, et võib juhtuda midagi halba või ebameeldivat.;Apprehension #2: anxiety/fear that something bad or unpleasant may happen.;Apprehension / Kartlikkus
+4305;Arousal Awareness Stim;Teadlikkuse stimuleerimine.;Stimulating awareness.;Awareness / Teadlikkus
+4308;Arrogance;Üleolevus, mis on tekkinud usaldamatusest ja ebakindlusest.;Superiority caused by mistrust and insecurity.;Arrogance / Ülbus
+4313;Assertiveness conflict;Enesekehtestamise konflikt: üks osa sinust soovib kehtestada ennast selgelt ja konkreetselt, kuid teisi austavalt, teine osa mitte.;Assertiveness conflict: a part of you wishes to assert yourself clearly and incisively yet respectfully, while the other does not.;"Assertiveness / Enesekehtestamine; Conflict / Konflikt"
+4317;Attention Deficit;Tähelepanupuudulikkus #3;Attention deficit.;Attention / Tähelepanu
+4318;Attention Stim 1;Tähelepanu stimuleerimine #1;Attention Stim #1;"Attention / Tähelepanu; Focus / Keskenduma"
+4319;Attention Stim 2;Tähelepanu stimuleerimine #2;Attention Stim #2;"Attention / Tähelepanu; Focus / Keskenduma"
+4320;Attitude Change;Aktiveerib võimet/oskust suhtumist ümber hinnata, kui oled saanud uut informatsiooni/teavet.;Activates the ability/capacity to reconsider responses in light of new information/insights.;Attitude / Suhtumine
+4321;Autism;Sotsiaalsus, suhtlemine, väljendusoskus #4;Sociability, communication, expression #4;Autism / Autism
+4322;Avoidence;Vältimine.;Avoidance.;Avoid / Vältimine
+4331;Bargaining;Läbirääkimine/tingimine.;Bargaining.;Bargaining / Läbirääkimine
+4332;Base;Emotsionaalsed traumad seotud ellujäämisega, sh traumad, viha, väärkohtlemine, vägivald + enese mitte väärtustamine. Elus edasi liikumine.;Emotional trauma associated with survival, including trauma, anger, abuse, violence + self-neglect. Moving on with life.;"Chakra / Energiakeskused; Life / Elu eesmärk; Trust / Usaldus; Vitality / Elujõud"
+4334;Behavior Change;Erinevate negatiivsete käitumismustrite neutraliseerimine.;Neutralizing various negative behavioural patterns.;Behavior / Käitumine
+4335;Being stuck;Kinnijäämise tunne: tunne, et ei saa elus edasi liikuda - midagi justkui hoiab kinni.;Feeling stuck: feeling unable to progress in life, something seems to be holding one back.;"Being stuck / Kinnijäämine; Stuck / Kinni olema"
+4336;Belief conflict;Uskumuste konflikt: üks osa usub millessegi/kellessegi, teine osa ei usu. Erinevad uskumused võivad tekitada segadust.;Conflicting beliefs: a part of you believes in something/someone, while the other does not, contradictory beliefs may cause confusion.;Conflict / Konflikt
+4340;Betrayal;Tunne, et on reedetud (usaldus, printsiibid, sõbrad jne).;A sense of betrayal (of trust, principles, friendship, etc.).;Betrayal / Reedetuse tunne
+4341;Bi-Polar Disorder;Tujude kõikumine pikaajalisest stressist.;Mood swings caused by prolonged stress.;Bi-polar / Tujude kõikumine
+4343;BIO-CLOCK REGULATOR;Unetus/raske uinuda.;Insomnia / trouble falling asleep.;Insomnia / Unetus
+4348;Bliss;Õnnetunne / suur rõõm.;Bliss.;Bliss / Suur rõõm
+4354;Body/Mind Integration;Keha/vaimu integreerimine psühhoteraapia kontekstis: aitab mõista ja aru saada, kuidas kõik erinevad eluosad on omavahel seotud.;Integrating body/mind in the context of psychotherapy: helps to realize and understand how all aspects of life are interconnected.;Body-mind integration / Keha-vaimu integreerimine
+4369;Brow;Otsustamine ja sisetunne.;Making decisions and intuition.;Chakra / Energiakeskused
+4384;Calmness;Rahulikkus.;Calmness.;Calm / Rahulikkus
+4392;Carelessness #1;Hoolimatus tekkinud traumadest #1;Neglect caused by trauma #1;Carelessness / Hoolimatus
+4393;Carelessness #2;Hoolimatus tekkinud traumadest #2;Neglect caused by trauma #2;Carelessness / Hoolimatus
+4401;Centering;Tähelepanu koondamine konkreetsele stiimulile või olemasolevale keskkonnale/olukorrale.;Focusing the attention on a specific stimulus or the present environment/situation.;Centering / Tähelepanu koondamine
+4403;CEPHALO-LD;Õppimise soodustamine ja mentaalne selgus.;Stimulating learning and mental clarity.;Learn / Õppimine
+4406;CEREBRAL-MET;Õppimine ja mälu.;Learning and memory.;Learn / Õppimine
+4408;Change conflict;Muutuste konflikt: üks osa sinust soovib muutusi ja teine osa ei soovi.;Feeling conflicted regarding change: a part of you desires change, while the other does not.;"Change / Muutused; Conflict / Konflikt"
+4409;Change in personality;Aktiveerib positiivseid mõttemustreid, käitumist ja emotsioone.;Activates positive thought patterns, behaviour and emotions.;Change / Muutused
+4421;Cognitive function;Kognitiivsete võimete (nt taju, tähelepanu, mälu) aktiveerimine.;Activating cognitive skills (e.g. perception, attention, memory).;Cognitive / Kognitiivsed võimed
+4427;Commitment conflict;Pühendumise konflikt: üks osa sinust soovib kellelegi/millelegi pühenduda, teine osa mitte.;Commitment conflict: a part of you wishes to commit to someone/something, while the other does not.;Conflict / Konflikt
+4428;Communication;Kommunikatsioon/suhtlemine, tasakaalustades aktiveerib paremat suhtlemis- ja eneseväljendamisoskust.;Communication/interaction, by balancing activates improved communication and self-expression skills.;Communication / Kommunikatsioon
+4429;Communication conflict;Kommunikatsiooni/suhtlemise konflikt: üks osa sinust soovib suhelda, teine osa ei soovi.;Communication/interaction conflict: a part of you wishes to communicate, while the other does not.;"Communication / Kommunikatsioon; Conflict / Konflikt"
+4430;Compassion;Kaastundlikkus, tasakaalustades aktiveerib kaastundlikkust ja teiste suhtes paremat mõistmist.;Compassion, by balancing activates compassion and an improved understanding of others.;Compassion / Kaastundlikkus
+4431;Completion conflict;Lõpetamise konflikt: üks osa sinust tahab mingit protsessi lõpetada, teine osa mitte.;Completion conflict: a part of you wishes to complete a process, while the other does not.;Conflict / Konflikt
+4432;Compulsive;Kompulsiivsus/korduvad sundteod ja kinnisideed, mida võidakse kasutada ärevuse maandamiseks.;Compulsion / repetitive compulsive behaviour and obsessions that may be used to channel anxiety.;Compulsive / Kompulsiivsus
+4433;Compulsive thinking;Kompulsiivne mõtlemine (korduvad mõtted, millest on raske vabaneda), mida võidakse kasutada ärevuse maandamiseks.;Compulsive thinking (repetitive thoughts that are hard to release) that may be used to channel anxiety.;Compulsive / Kompulsiivsus
+4435;Concentration Stim;Keskendumise stimuleerimine (õppimise, töötamise jms kontekstis).;Stimulating focus (in terms of studies, work, etc.).;"Concentration / Kontsentratsioon; Focus / Keskenduma"
+4437;Confusion #1;Meelte segadus #1: ebaselgus, kaos, raske mõista käimasolevat protsessi/olukorda/seisundit.;Disorientation #1: confusion, chaos, trouble understanding a present process/situation/condition.;Confusion / Segadus
+4438;Confusion #2;Meelte segadus #2: ebaselgus, kaos, raske mõista käimasolevat protsessi/olukorda/seisundit.;Disorientation #2: confusion, chaos, trouble understanding a present process/situation/condition.;Confusion / Segadus
+4439;Confusion #3;Meelte segadus #3: ebaselgus, kaos, raske mõista käimasolevat protsessi/olukorda/seisundit.;Disorientation #3: confusion, chaos, trouble understanding a present process/situation/condition.;Confusion / Segadus
+4441;Constant brooding over tr;Ärevuslik ja pidev muretsemine mingi teema osas, millest on keeruline vabaneda.;Anxious and constant worrying about a topic that is hard to release.;Brood / Pidev muretsemine
+4444;Contempt;Põlgus kellegi või millegi suhtes.;Contempt towards someone or something.;Contempt / Põlgamine
+4447;Cooperative;Koostöö/koostöövalmidus.;Cooperative.;Cooperative / Koostöövalmidus
+4453;Courage;Julgus.;Courage.;Courage / Julgus
+4454;Cowardice;Arglikkus.;Cowardice.;Coward / Arglikkus
+4456;Craving for sympathy;Soov kaastunde järgi.;Longing for compassion.;Craving for sympathy / Soov kaastunde järgi
+4457;Craving;Soov/isu millegi või kellegi järgi, nt mingi emotsiooni, toidu, suitsetamise jne.;Longing/appetite for something or someone, e.g. an emotion, food, cigarettes, etc.;Craving / Soov-isu millegi järgi
+4459;Creative expression.;Loominguline väljendamine: kunst, muusika, kirjutamine vms.;Creative expression: art, music, writing, etc.;Expression / Eneseväljendamine
+4460;Creativity conflict;Loomingulisuse konflikt: üks osa sinust tahab olla loominguline, teine osa ei taha.;Creativity conflict: a part of you wishes to be creative, while the other does not.;"Creativity / Loovus; Conflict / Konflikt"
+4462;Crown;Närvisüsteemi rahustamine, sisemine tasakaal, ideede ja lahenduste leidmine.;Calming the nervous system, inner balance, finding ideas and solutions.;Chakra / Energiakeskused
+4463;Cruelty;Julmus tekkinud traumadest.;Cruelty caused by trauma.;Cruelty / Julmus
+4464;Crying #1;Nutmine #1;Crying #1;Cry / Nutmine
+4465;CRYING #2;Nutmine #2;Crying #2;Cry / Nutmine
+4466;Cultural conflict;Kultuuriline konflikt/erinevad arusaamised.;Cultural conflict / opposing beliefs.;Conflict / Konflikt
+4470;Daydreaming;Liigne unistamine, mille tulemusel on keskendumisvõime häiritud. Aktiveerib keskendumisvõimet.;Excessive daydreaming resulting in impaired concentration, activates focus.;Daydreaming / Unistamine
+4473;Debility;Füüsiline nõrkus, mis on tekkinud haigustest.;Physical frailty caused by illness.;Debility / Nõrkus
+4474;Decision conflict;Otsuse vastuvõtmise konflikt: üks osa sinust soovib vastu võtta mingi otsuse, teine osa mitte.;Decisiveness conflict: a part of you wishes to make a decision, while the other does not.;Conflict / Konflikt
+4475;Decisive;Otsusekindlus.;Resolve.;Decisive / Otsusekindlus
+4476;Decisiveness;Otsustusvõime - aktiveerib võimet võtta otsuseid vastu kiiresti ja efektiivselt.;Decisiveness, activates the ability to make quick and effective decisions.;Decisive / Otsusekindlus
+4477;Deep inner tiredness from #1;Sügav sisemine väsimus #1;Deep inner tiredness #1;Tiredness / Väsimus
+4478;Deep inner tiredness from #2;Sügav sisemine väsimus #2;Deep inner tiredness #2;Tiredness / Väsimus
+4479;Deep inner tiredness from #3;Sügav sisemine väsimus #3;Deep inner tiredness #3;Tiredness / Väsimus
+4482;Delirium #1;Deliirium #1;Delirium #1;Delirium / Deliirium
+4483;Delirium #2;Deliirium #2;Delirium #2;Delirium / Deliirium
+4484;DELIRIUM MED;Deliirium tekkinud pikaajalisest stressist ja traumadest.;Delirium caused by prolonged stress and trauma.;Delirium / Deliirium
+4485;Delusion #1;Pettekujutlus #1;Delusion #1;Delusion / Pettekujutelm
+4486;DELUSION #2;Pettekujutlus #2;Delusion #2;Delusion / Pettekujutelm
+4487;Delusion #3;Pettekujutlus #3;Delusion #3;Delusion / Pettekujutelm
+4488;Delusions;Pettekujutlused.;Delusions.;Delusion / Pettekujutelm
+4490;Denial;Eitamine/salgamine.;Denial.;Denial / Eitamine
+4493;Depression #1;Pikaajaline stress #1;Prolonged stress #1;Depression / Pikaajaline stress
+4494;Depression #2;Pikaajaline stress #2;Prolonged stress #2;Depression / Pikaajaline stress
+4495;Depression #3;Pikaajaline stress #3;Prolonged stress #3;Depression / Pikaajaline stress
+4496;DEPRESSION #4;Pikaajaline stress #4;Prolonged stress #4;Depression / Pikaajaline stress
+4497;Depression #5;Pikaajaline stress #5;Prolonged stress #5;Depression / Pikaajaline stress
+4498;DEPRESSION ANTITOX;Pikaajalise stressi neutraliseerimine.;Neutralizing prolonged stress.;Depression / Pikaajaline stress
+4499;DEPRESSION MED;Pikaajaline stress ja melanhoolsus.;Prolonged stress and melancholy.;"Depression / Pikaajaline stress; Melanholic / Melanhoolsus"
+4503;Desire conflict;Soovide/ihalduste konflikt: üks osa sinust soovib/ihaldab midagi/kedagi, teine osa mitte.;Conflicting wishes/desires: a part of you wishes/desires something/someone, while the other does not.;"Desire / Iha; Conflict / Konflikt"
+4504;Desire for solitude;Soov olla üksinda/omaette.;A wish to be alone / by oneself.;Desire / Iha
+4505;Desire to run away;Soov põgeneda mingist olukorrast/situatsioonist, otsides väljapääsu. Võib olla põhjustatud stressist.;A wish to escape from a circumstance/situation by looking for a way out, may be caused by stress.;"Desire / Iha; Run away / Soov minema joosta"
+4506;Despair of recovery;Lootusetuse tunne paranemise suhtes.;Despair of recovery.;Despair / Meeleheide
+4507;Despondency;Ahastus/lootusetus/meeleheide.;Anguish/hopelessness/despair.;Despond / Ahastus
+4508;Despondent;Meeleheide/rusutus/lootusetus.;Despair/despondence/hopelessness.;Despond / Ahastus
+4511;Difficulty to forgive;Raske andestada.;Difficulty to forgive.;Forgive / Andestamine
+4517;Disappointment #1;Pettumus #1;Disappointment #1;Disappointment / Pettumus
+4518;Disappointment #2;Pettumus #2;Disappointment #2;Disappointment / Pettumus
+4519;Disappointment #3;Pettumus #3;Disappointment #3;Disappointment / Pettumus
+4520;Discipline conflict;Distsipliini konflikt: üks osa sinust soovib kokkulepitud reeglitest kinni pidada, teine osa ei soovi.;Conflict of discipline: a part of you wishes to honour the agreed-upon rules, while the other does not.;Conflict / Konflikt
+4521;Discouragement;Arglikkus. Enesekindluse ja entusiasmi puudus, mis on tekkinud hirmudest.;Shyness, lack of confidence and enthusiasm caused by fears.;"Courage / Julgus; Discouragement / Arglikkus"
+4523;Displeasure;Meelepaha/rahulolematus.;Frustration/dissatisfaction.;"Displeasure / Meelepaha; Pleasure / Nauding"
+4524;Distrust;Üleüldine usaldamatus kellegi või millegi suhtes (ei usalda elu, ennast ega teisi inimesi).;A general mistrust of someone or something (not trusting life, oneself or other people).;Trust / Usaldus
+4526;Dogmatic;Dogmaatiline: kindlad fikseeritud seisukohad.;Dogmatic: specific solidified positions.;Dogmatic / Dogmaatiline
+4527;Dominating;Domineerimine tekkinud stressist ja traumadest.;Domination caused by stress and trauma.;Dominating / Domineeriv
+4528;Dread of future;Hirm tuleviku ees, võib olla seotud ärevuse ja paanikaga.;Fear of the future, may be associated with anxiety and panic.;Future / Tulevik
+4529;Dwelling on unpleasant th;Pidevalt mõtlemine ebameeldivate asjade peale ja/või nendest rääkimine.;Ruminating about unpleasant topics and/or discussing such topics.;Dwelling on unpleasent / Ebameeldivatest asjadest mõtlemine
+4535;Easily Influenced;Kergesti mõjutatav.;Easily influenced.;Easily / Kergesti mõjutatav-solvuv
+4536;Easily offended #1;Kergesti solvuv #1;Easily offended #1;Easily / Kergesti mõjutatav-solvuv
+4537;Easily offended #2;Kergesti solvuv #2;Easily offended #2;Easily / Kergesti mõjutatav-solvuv
+4538;Easy laugh/cry;Nutmine ja/või naermine tühistel põhjustel.;Easy to laugh/cry.;"Cry / Nutmine; Laugh / Naermine"
+4539;Ecstasy;Ekstaasi tunne: ülevoolav rõõmutunne ja/või elevus.;A feeling of ecstasy: unbridled joy and/or excitement.;Ecstasy / Ekstaasi tunne
+4541;Effects of childhood abus;Lapsepõlves toimunud väärkohtlemised: emotsionaalsed ja/või füüsilised traumad.;Effects of childhood abuse: emotional and/or physical trauma.;Childhood / Lapsepõlv
+4542;Effects of shock;Erinevate šokkide mõju.;Impact of multiple shocks.;Shock / Šokk
+4543;Egoistical;Egoistlikkus, võib olla tekkinud madalast enesehinnangust, šokkidest või traumadest.;Egoism, may be caused by low self-esteem, shock or trauma.;Ego / Ego
+4547;Embarrassment;Piinlikkus.;Embarrassment.;Embarrasment / Piinlikkus
+4548;EMOTION MED;Meeleolumuutused tekkinud pikaajalisest stressist.;Mood swings caused by prolonged stress.;"Emotion / Emotsioonid; Mood / Meeleolu"
+4549;Emotional conflict;Emotsionaalsuse konflikt: üks osa sinust soovib vabaneda mingitest negatiivsetest emotsioonidest, teine osa mitte.;Conflicting emotions: a part of you wishes to release certain negative emotions, while the other does not.;"Emotion / Emotsioonid; Conflict / Konflikt"
+4550;Emotional instability;Emotsionaalne ebastabiilsus.;Emotional instability.;Emotion / Emotsioonid
+4551;Emotional Release;Negatiivsete emotsioonide vabastamine.;Releasing negative emotions.;Emotion / Emotsioonid
+4552;Emotional Stability;Emotsionaalne stabiilsus.;Emotional stability.;Emotion / Emotsioonid
+4553;Emotional tension;Emotsionaalne pinge/stress.;Emotional tension.;"Emotion / Emotsioonid; Tension / Pinged"
+4554;Emotional Trauma;Emotsionaalne trauma.;Emotional trauma.;"Emotion / Emotsioonid; Trauma / Trauma"
+4555;Emotions;Emotsioonide tasakaalustamine.;Balancing emotions.;Emotion / Emotsioonid
+4560;Enthusiasm #1;Entusiasm #1;Enthusiasm. #1;Enthusiasm / Entusiasm
+4561;Enthusiasm #2;Entusiasm #2;Enthusiasm. #2;Enthusiasm / Entusiasm
+4564;Environmental;Elektromagnetiline reostus.;Electromagnetic pollution.;Environment / Keskkond
+4569;Escapism;Põgenemine aktuaalsest reaalsusest (karjäär, usulised tõekspidamised, arvutimängud, st kõik, mida saab kasutada kompenseeriva vahendina, sh asendades erinevaid lahendamata probleeme).;Escaping from actual reality (into work, religious beliefs, computer games, i.e. anything that can be used as compensation, including by substituting various unresolved issues).;Escapism / Põgenemine reaalsusest
+4571;Ethical conflict;Eetiline konflikt: üks osa soovib käituda eetiliselt, teine osa mitte.;Ethical conflict: a part of you wishes to behave ethically, while the other does not.;Conflict / Konflikt
+4573;Exhausted;Kurnatus/vaevatus, nt tööst, mingist tegevusest.;Exhaustion/depletion, e.g. because of work, an activity, etc.;Exhaust / Kurnatus
+4574;Exhaustion;Füüsiline või mentaalne väsimus, sh mingi pingutuse tagajärjena.;Physical or mental fatigue, including due to a strenuous activity.;Exhaust / Kurnatus
+4575;Exhaustion due to sedenta;Istuvast tööst/tegevusest tulenev väsimus.;Fatigue caused by sedentary work/activities.;Exhaust / Kurnatus
+4577;Extroverted depression;Tunnete välja elamine (nt viha) on tekitanud pikaaegset stressi.;Venting emotions (e.g. anger) has caused prolonged stress.;"Depression / Pikaajaline stress; Extrovert / Ekstravert"
+4584;Faith;Täielik usk endasse ning usaldus kellegi või millegi vastu.;Complete self-confidence and trust in someone or something.;Faith / Usk
+4585;Family conflict;Perekondlik konflikt: keerulised perekondlikud suhted, milles üks osa sinust soovib konflikti lahendada, teine osa ei soovi.;Family conflict: complicated family dynamics where a part of you wishes to resolve the conflict, while the other does not.;"Family / Peresuhted; Conflict / Konflikt"
+4586;FATIGUE MED;Mentaalne ja/või füüsiline väsimus tekkinud pikaaegsest stressist;Mental and/or physical fatigue caused by prolonged stress.;Fatigue / Väsimus
+4587;Fatigue Reduction;Mentaalse ja/või füüsilise väsimuse vähendamine.;Reducing mental and/or physical fatigue.;Fatigue / Väsimus
+4590;Fear #1;Hirm #1 ;Fear #1;Fear / Hirmud
+4591;Fear #2;Hirm #2;Fear #2;Fear / Hirmud
+4592;Fear #3;Hirm #3;Fear #3;Fear / Hirmud
+4593;FEAR #4;Hirm #4;FEAR #4;Fear / Hirmud
+4594;Fear #5;Hirm #5;Fear #5;Fear / Hirmud
+4595;Fear of aging;Hirm vananemise ees.;Fear of aging.;"Aging / Vananemine; Fear / Hirmud"
+4596;Fear of change #1;Hirm muutuste ees #1;Fear of change #1;"Change / Muutused; Fear / Hirmud"
+4597;Fear of change #2;Hirm muutuste ees #2;Fear of change #2;"Change / Muutused; Fear / Hirmud"
+4598;Fear of death;Hirm surma ees.;Fear of death.;Fear / Hirmud
+4599;Fear of exams;Hirm hakkama saamise ees olukordades, mis nõuavad suurt pingutust ja tähelepanu - võib esineda stressi ja ärevust, nt eksamid.;Fear regarding coping in situations that require much effort and attention, may be accompanied by stress and anxiety, e.g. exams.;Fear / Hirmud
+4600;Fear of intimacy;Hirm intiimsuse ees.;Fear of intimacy.;"Fear / Hirmud; Intimacy / Intiimsus"
+4601;Fear Reduction;Hirmude vähendamine.;Reduction of fears.;Fear / Hirmud
+4602;Fear something bad will h;Hirm, et võib juhtuda midagi halba.;Fear of something bad happening.;Fear / Hirmud
+4603;Fears from past emotional;Emotsionaalsed hirmud minevikust.;Emotional fears from the past.;"Fear / Hirmud; Past / Minevik"
+4604;Fears from past rejection;Hirmud, mis tulenevad minevikus toimunud äraütlemistest ja/või tõrjumisest.;Fears resulting from past dismissals and/or rejection.;"Fear / Hirmud; Past / Minevik; Rejection / Tagasilükkamine"
+4606;Feel a victim;Ohvri tunne: tunne, et on haiget tehtud ning enda ohvrina tundmine.;Victimhood: feeling hurt and like a victim.;Victim / Ohvritunne
+4607;Feeling free;Enda vabalt tundmine. Vabadus, sh kellestki/millestki lahtilaskmine.;Feeling free, freedom, including letting go of someone/something.;Feeling / Enesetunne
+4608;Feeling inferior;Alaväärsustunne.;Inferiority.;"Feeling / Enesetunne; Inferior / Väärtusetuse tunne"
+4609;Feeling useless;Tunne, et olen kasutu.;Feeling useless.;Feeling / Enesetunne
+4610;Feelings of worthlessness;Tunne, et olen väärtusetu.;Feeling worthless.;Feeling / Enesetunne
+4622;Financial conflict;Finantskonflikt: üks osa sinust soovib raha vastu võtta/teenida, teine osa ei soovi.;Financial conflict: a part of you wishes to accept/earn money, while the other does not.;Conflict / Konflikt
+4624;Fixed negative ideas;Fikseeritud negatiivsed ideed.;Solidified negative ideas.;Fixed negative ideas / Fikseeritud negatiivsed ideed
+4625;Fleeting attention;Raske hoida tähelepanu ühel objektil/tegevusel, tähelepanu liigub pidevalt ühelt objektilt teisele.;Trouble focusing on one object/activity, attention keeps flitting from one object to another.;Attention / Tähelepanu
+4626;FLEX MED;Paindumatus tekkinud pikaajalisest stressist.;Rigidity caused by prolonged stress.;Flexibility / Paindlikkus
+4627;Flexibility Stimulation;Paindlikkuse stimuleerimine.;Stimulating flexibility.;Flexibility / Paindlikkus
+4628;Floating sensation;Ujuv/kõikuv tunne (seotud paanika, pingete, ärevuse või tinnitusega).;A swimming/floating feeling (associated with panic, tension and anxiety or tinnitus).;Floating / Ujuv tunne
+4633;Focus-Mind/Body;Keskendumine (meeled/keha).;Concentration (senses/body).;Focus / Keskenduma
+4636;Food conflict;Toidukonflikt: üks osa sinust soovib toituda kehavajadustest lähtuvalt, teine osa ei soovi (nt süües rämpstoitu, näljutades ennast vms).;Food conflict: a part of you wishes to eat according to bodily needs, while the other does not (e.g. by eating junk food, starving, etc.).;Conflict / Konflikt
+4639;Forgiveness;Andestamine #1;Forgiveness #1;Forgive / Andestamine
+4641;Friendship;Sõprussuhted: aktiveerib sõprussuhete loomist ja nende hoidmist.;Friendships: activates making and keeping friends.;Friendship / Sõprussuhted
+4642;Fright;Äkiline võimas hirmutunne, mis võib aktiveerida ärevust, paanikat (nii sisemine kui väline ehmumine/reageerimine, sh tühistel põhjustel).;A sudden powerful fear that may activate anxiety and panic (both mental and physical startling/reacting, including for insignificant reasons).;Fright / Äkiline hirm
+4644;Frustration;Frustratsioon.;Frustration.;Frustration / Frustratsioon
+4656;Gender conflict;Soorolli konflikt.;Gender conflict.;Conflict / Konflikt
+4657;Generosity;Suuremeelsus.;Generosity.;Generosity / Suuremeelsus
+4658;Gentleness;Õrnus.;Gentleness.;Gentleness / Õrnus
+4668;Great fright;Suur äkiline võimas hirmutunne, mis võib aktiveerida ärevust, paanikat (nii sisemine kui väline ehmumine/reageerimine, sh tühistel põhjustel).;A sudden powerful massive fear that may activate anxiety and panic (both mental and physical startling/reacting, including for insignificant reasons).;Fright / Äkiline hirm
+4669;Greed;Ahnus tekkinud traumadest #1;Greed caused by trauma #1;Greed / Ahnus
+4670;Greed;Ahnus tekkinud traumadest #2;Greed caused by trauma #2;Greed / Ahnus
+4672;Grief #1;Lein #1: surm, kaotus, lahkuminek, mingi eluperioodi lõppemine.;Grief #1: death, loss, a break-up, ending of a life phase.;Grief / Lein
+4673;Grief #2;Lein #2: surm, kaotus, lahkuminek, mingi eluperioodi lõppemine.;Grief #2: death, loss, a break-up, ending of a life phase.;Grief / Lein
+4674;Grief #3;Lein #3: surm, kaotus, lahkuminek, mingi eluperioodi lõppemine.;Grief #3: death, loss, a break-up, ending of a life phase.;Grief / Lein
+4675;Grief #4;Lein #4: surm, kaotus, lahkuminek, mingi eluperioodi lõppemine.;Grief #4: death, loss, a break-up, ending of a life phase.;Grief / Lein
+4677;Grounded;Vaimne tasakaal (arusaav, mõistev, hooliv).;Mental balance (understanding, accommodating, caring).;Grounded / Vaimne tasakaal
+4679;Harshness;Karmus tekkinud traumadest.;Harshness caused by trauma.;Harsh / Karmus
+4680;Hate #1;Vihkamine tekkinud traumadest #1;Hatred caused by trauma #1;Hate / Vihkamine
+4681;HATE #2;Vihkamine tekkinud traumadest #2;Hatred caused by trauma #2;Hate / Vihkamine
+4684;Health conflict;Tervise konflikt: üks osa soovib terve olla, teine osa ei taha.;Health conflict: a part of you wishes to be healthy, while the other does not.;Conflict / Konflikt
+4686;Heart #2;Armastus ja andestus.;Love and forgiveness.;"Chakra / Energiakeskused; Compassion / Kaastundlikkus; Life / Elu eesmärk; Love / Armastus; Passion / Kirglikkus"
+4691;Heartache;Südamevalu: keegi või midagi tekitab südamevalu.;Heartache: someone or something is causing heartache.;Heartache / Südamevalu
+4693;Helplessness;Abituse tunne tekkinud traumadest ja pikaajalisest stressist.;Helplessness caused by trauma and prolonged stress.;Helplessness / Abitusetunne
+4703;Hesitation;Kahtlemine/kõhklemine, aitab võtta otsuseid paremini vastu.;Doubt/hesitation, improves decision making.;Hesitation / Kahtlemine
+4706;Honesty;Ausus.;Honesty.;Honesty / Ausus
+4707;Honesty conflict;Aususe konflikt: üks osa soovib olla aus, teine osa ei soovi.;Honesty conflict: a part of you wishes to be honest, while the other does not.;"Honesty / Ausus; Conflict / Konflikt"
+4708;Hope;Lootus.;Hope.;Hope / Lootus
+4709;Hopelessness #1;Lootusetuse tunne #1;Hopelessness #1;Hope / Lootus
+4710;Hopelessness #2;Lootusetuse tunne #2;Hopelessness #2;Hope / Lootus
+4712;Hostility;Vaenulikkus tekkinud traumadest.;Hostility caused by trauma.;Hostility / Vaenulikkus
+4716;Hurtfull memories of trau;Valusad mälestused traumadest.;Painful memories from trauma.;Hurtfull / Valusad mälestused
+4718;Hyperactivity;Hüperaktiivsus #1;Hyperactivity #1;Hyperactivity / Hüperaktiivsus
+4719;Hyperactivity Disorder;Hüperaktiivsus #2;Hyperactivity #2;Hyperactivity / Hüperaktiivsus
+4728;Hysteria #1;Hüsteeria #1;Hysteria #1;Hysteria / Hüsteeria
+4729;Hysteria #2;Hüsteeria #2;Hysteria #2;Hysteria / Hüsteeria
+4730;HYSTERIA MED;Hüsteeria tekkinud pikaajalisest stressist.;Hysteria caused by prolonged stress.;Hysteria / Hüsteeria
+4731;Identity;Identiteet: kellena ennast tajun ja kuhu sobitun.;Identity: how do I perceive myself and where do I fit in?;Identity / Identiteet
+4732;Identity conflict;Identiteedi konflikt: üks osa tajub, kuhu sa kuulud/sobitud, teine osa ei taju.;Identity conflict: a part of you perceives where you belong / fit in, while the other does not.;"Identity / Identiteet; Conflict / Konflikt"
+4736;Impatience;Kannatamatus.;Impatience.;Impatience / Kannatamatus
+4737;Impulsivity;Impulsiivsus.;Impulsivity.;Impulsivity / Impulsiivsus
+4738;Inability to accept love;Raske võtta armastust vastu.;Difficulties receiving love.;"Inability / Suutmatus; Love / Armastus"
+4739;Inability to adapt to new;Raskus kohaneda uute tingimuste/olukordadega.;Difficulties adapting to new circumstances/situations.;Inability / Suutmatus
+4740;Inability to cooordinate;Raskus koordineerida/kooskõlla viia/juhtida mingit protsessi.;Difficulties coordinating/synchronizing/managing a process.;Inability / Suutmatus
+4741;Inability to express ones;Raske ennast väljendada.;Difficulties with self-expression.;Inability / Suutmatus
+4742;Inability to face challen;Raske võtta vastu väljakutseid / seista nendega silmitsi.;Difficulties accepting/facing challenges.;Inability / Suutmatus
+4743;Inability to fix mind on;Raskused keskendumisel/tähelepanu suunamisel konkreetsele tegevusele.;Difficulties concentrating / focusing on specific tasks.;Inability / Suutmatus
+4744;Inability to grasp ideas;Raskused ideedest arusaamisel.;Difficulties discerning ideas.;Inability / Suutmatus
+4745;Inability to perform cont;Raskused enda teostamisel.;Difficulties with self-realization.;Inability / Suutmatus
+4746;Inadequate;Ebapiisavuse/puudulikkuse tunne (emotsionaalses, intellektuaalses, sotsiaalses kontekstis).;Feeling insufficient/lacking (in an emotional, intellectual, social context).;Inadequate / Ebapiisavus
+4747;Inattentiveness;Tähelepanematus.;Inattention.;Inattentiveness / Tähelepanematus
+4748;Inclination to constantly;Oma eesmärkidest ja soovidest kõrvale kaldumine.;Deviating from one's goals and desires.;Inclination / Kõrvale kalduma
+4749;Indifference;Ükskõiksuse tunne/tundetus.;Indifference/apathy.;Indifference / Ükskõiksus
+4750;Indifference to loved one;Ükskõiksuse tunne/tundetus lähedaste inimeste suhtes.;Indifference/apathy towards loved ones.;"Indifference / Ükskõiksus; Love / Armastus"
+4751;Indignation;Nördimus seotud viha ja ärrituvusega.;Indignation associated with anger and irritability.;Indignation / Nördimus
+4755;Iner Awareness;Sisemine teadlikkus.;Internal awareness.;Awareness / Teadlikkus
+4757;Inferiority;Alaväärsus.;Inferiority.;Inferior / Väärtusetuse tunne
+4760;Inflexibility;Paindumatus #1;Rigidity #1;Flexibility / Paindlikkus
+4761;Inflexible;Paindumatus #2;Rigidity #2;Flexibility / Paindlikkus
+4767;Inner conflict;Sisemine konflikt.;Internal conflict.;Conflict / Konflikt
+4768;Inner Guidance;Sisetunne/sisemine teejuht, aktiveerides paremat arusaamist inimestest, olukordadest ning otsuste vastu võtmist.;Intuition / inner guidance, by activating a better understanding of people and situations, and decision making.;Inner guidance / Sisemine teejuht
+4769;Inner joy;Sisemine rõõm.;Inner joy.;Joy / Rõõm
+4770;Inner Peace;Sisemine rahu #1;Inner peace #1;Inner peace / Sisemine rahu
+4771;Inner peace;Sisemine rahu #2;Inner peace #2;Inner peace / Sisemine rahu
+4772;Inner Wisdom;Sisemine tarkus #1;Inner wisdom.;Wisdom / Tarkus
+4774;Insensitivity;Tundetus, sh ükskõiksus teiste inimeste tunnete suhtes.;Apathy, including disregard for the feelings of others.;Insensitivity / Tundetus
+4775;Insight;Taipamine/arusaamine/läbinägelikkus.;Insight/understanding/discernment.;Insight / Taipamine
+4776;INSOMNIA MED;Unetus tekkinud pikaajalisest stressist.;Insomnia caused by prolonged stress.;Insomnia / Unetus
+4777;Inspiration;Inspiratsioon.;Inspiration.;Inspiration / Inspiratsioon
+4779;Integrity conflict;Põhimõtete ja väärtushinnangute konflikt.;Conflict of principles and value judgments.;Conflict / Konflikt
+4780;Intellectual conflict;Intellektuaalne/vaimse arengu konflikt: üks osa soovib vaimselt areneda, teine osa ei soovi.;Intellectual / spiritual progress conflict: a part of you wishes to progress spiritually, while the other does not.;Conflict / Konflikt
+4781;Intelligence Stim;Intelligentsuse/arukuse stimuleerimine.;Stimulating intelligence/wisdom.;Focus / Keskenduma
+4785;Intimacy;Intiimsus.;Intimacy.;Intimacy / Intiimsus
+4786;Introverted depression;Tunnete (nt viha, kurbus) sisse hoidmine on tekitanud pikaaegset stressi.;Pent up feelings (e.g. anger, sadness) have caused prolonged stress.;Depression / Pikaajaline stress
+4787;Intuition;Intuitsioon.;Intuition.;Intuition / Intuitsioon
+4789;Irresponsibility;Vastutustundetus tekkinud traumadest.;Irresponsibility caused by trauma.;Irresponsibility / Vastutustundetus
+4790;Irritability;Ärrituvus #1;Irritability #1;Irritability / Ärrituvus
+4791;Irritable depression;Ärrituvus tekkinud pikaajalisest stressist.;Irritability caused by prolonged stress.;"Depression / Pikaajaline stress; Irritability / Ärrituvus"
+4792;Irritability;Ärrituvus #2;Irritability #2;Irritability / Ärrituvus
+4794;Jealousy #1;Armukadedus #1;Jealousy #1;Jealousy / Armukadedus
+4795;Jealousy #2;Armukadedus #2;Jealousy #2;Jealousy / Armukadedus
+4796;JEALOUSY #3;Armukadedus #3;Jealousy #3;Jealousy / Armukadedus
+4797;Jealousy #4;Armukadedus #4;Jealousy #4;Jealousy / Armukadedus
+4798;Joy #1;Rõõm #1;Joy #1;Joy / Rõõm
+4799;JOY #2;Rõõm #2;Joy #2;Joy / Rõõm
+4800;Joy #3;Rõõm #3;Joy #3;Joy / Rõõm
+4810;Kindness;Heatahtlikkus.;Kindness.;Kindness / Heatahtlikkus
+4819;Lack of clarity of purpos;Eesmärkide ebaselgus.;Vague objectives.;Clarity / Selgus
+4820;Lack of female expression;Naiselik väljendus.;Feminine expression.;"Expression / Eneseväljendamine; Female / Naiselikkus"
+4821;Lack of forgiveness;Andestamine #2;Forgiveness #2;Forgive / Andestamine
+4822;Lack of grit;Mentaalne tugevus/meelekindlus.;Mental strength/perseverance.;Grit / Meelekindlus
+4823;Lack of imagination;Kujutlusvõime.;Imagination.;Imagination / Kujutlusvõime
+4824;Lack of intrest;Huvipuudus.;Lack of interest.;Intrest / Huvipuudus
+4825;Lack of vitality from emo;Elujõu puudus (tekkinud pikaajalisest stressist).;Lack of vitality (caused by prolonged stress).;Vitality / Elujõud
+4832;Laughter #1;Naermine #1;Laughter #1;Laugh / Naermine
+4833;LAUGHTER #2;Naermine #2;Laughter #2;Laugh / Naermine
+4835;Learning Disibility;Õpiraskused.;Learning difficulties.;Learn / Õppimine
+4836;LEARNING MED;Raskused õppimisel tekkinud pikaajalisest stressist.;Learning difficulties caused by prolonged stress.;Learn / Õppimine
+4837;Learning Stim #1;Õppimise stimuleerimine #1;Stimulating learning #1;"Focus / Keskenduma; Learn / Õppimine"
+4838;Learning Stim #2;Õppimise stimuleerimine #2;Stimulating learning #2;"Focus / Keskenduma; Learn / Õppimine"
+4843;Legal conflict;Õiguslik konflikt: üks osa soovib käituda nii nagu on ühiskondlikete reeglitele vastav/lubatud, teine ei osa ei soovi.;Statutory conflict: a part of you wishes to behave in conformity with social rules, while the other does not.;Conflict / Konflikt
+4844;Lethargy #1;Täielik tundetus pikaajalisest stressist #1;Complete apathy caused by prolonged stress #1;Lethargy / Letargia
+4845;Lethargy #2;Täielik tundetus pikaajalisest stressist #2;Complete apathy caused by prolonged stress #2;Lethargy / Letargia
+4846;Letting go of false image;Oma valest/mitte toetavast mina-pildist lahti laskmine.;Releasing one's false/unproductive self-image.;False image / Vale enesepilt
+4849;Life purpose;Oma elu eesmärgi mõistmise ja tasakaalu aktiveerimine.;Activating discovery of life purpose and balance.;Life / Elu eesmärk
+4850;Life-Direction conflict;Elusuuna konflikt: üks osa soovib elusuunda muuta/valida, teine osa ei soovi.;Life path conflict: a part of you wishes to change/choose your life path, while the other does not.;"Life / Elu eesmärk; Conflict / Konflikt"
+4854;Listless;Huvi-, energia- ja entusiasmipuudus.;Lack of interest, energy and enthusiasm.;Listless / Tuim
+4862;Logic Stim;Loogilise mõtlemise stimuleerimine.;Stimulating logical thinking.;"Focus / Keskenduma; Logic / Loogika"
+4863;Loneliness;Üksindus.;Loneliness.;Lone / Üksindus
+4865;Long/lasting grief;Kauakestev lein.;Long-lasting grief.;Grief / Lein
+4866;Loss;Kaotus.;Loss.;Loss / Kaotus
+4867;Loss of confidence;Enesekindluse kaotus.;Loss of confidence;"Confidence / Enesekindlus; Loss / Kaotus"
+4868;Loss of vigor;Sisemise jõu kaotus.;Loss of vigor.;Loss / Kaotus
+4869;Love;Armastuse tunne.;Love.;Love / Armastus
+4870;Low confidence;Madal enesekindlus.;Low confidence;Confidence / Enesekindlus
+4871;Low self-esteem;Madal enesehinnang.;Low self-esteem.;Self-esteem / Enesehinnang
+4872;Loyalty;Lojaalsus kellegi või millegi suhtes.;Loyalty to something or someone.;Loyalty / Lojaalsus
+4878;Lust #1;Iha #1;Lust #1;Lust / Iha
+4879;LUST #2;Iha #2;Lust #2;Lust / Iha
+4880;Lust #3;Iha #3;Lust #3;Lust / Iha
+4899;Male/female balance;Mees- ja naisenergia tasakaal.;Balanced masculine and feminine energies.;"Female / Naiselikkus; Male-female balance / Mees-naisenergia tasakaal"
+4901;Mania #1;Maania tekkinud stressist #1;Mania caused by stress #1;Mania / Maania
+4902;Mania #2;Maania tekkinud stressist #2;Mania caused by stress #2;Mania / Maania
+4903;Mania #3;Maania tekkinud stressist #3;Mania caused by stress #3;Mania / Maania
+4904;MANIA #4;Maania tekkinud stressist #4;Mania caused by stress #4;Mania / Maania
+4905;MANIA MED;Maania tekkinud pikaajalisest stressist.;Mania caused by prolonged stress.;Mania / Maania
+4906;Manipulative;Manipuleerivus tekkinud traumadest.;Manipulation caused by trauma.;Manipulative / Manipuleeriv
+4909;Melancholic #1;Melanhoolik/olemuselt kurvameelne #1, sh kurbade mälestuste meenutamine.;Melancholic / sad by nature #1, including reliving sad memories.;Melanholic / Melanhoolsus
+4910;Melancholic #2;Melanhoolik/olemuselt kurvameelne #2, sh kurbade mälestuste meenutamine.;Melancholic / sad by nature #2, including reliving sad memories.;Melanholic / Melanhoolsus
+4911;Melancholy;Melanhoolsus/kurvameelsus.;Melancholy/sadness.;Melanholic / Melanhoolsus
+4912;Melatonin;Hea une aktiveerimine.;Activating restful sleep.;Sleep / Uni
+4913;Memory conflict;Mälu konflikt: üks osa soovib mäletada, teine osa ei soovi.;Memory conflict: a part of you wishes to remember, while the other does not.;"Memory / Mälu; Conflict / Konflikt"
+4914;MEMORY MED;Raske asju meelde jätta, tekkinud pikaajalisest stressist.;Difficulties retaining information caused by prolonged stress.;Memory / Mälu
+4918;Mental blocks;Mentaalsed blokid (võimatu jälgida mõtteid, mis mõjutavad käitumist, vähendavad efektiivsust ja piiravad potentsiaali lõpliku eesmärgi saavutamisel).;Mental blockages (unable to discern thoughts that affect behaviour, reduce effectiveness and limit one's potential in achieving final goals).;Mental blocks / Mentaalsus
+4919;Mental confusion #1;Mentaalne segadus #1;Mental confusion #1;Confusion / Segadus
+4920;Mental confusion #2;Mentaalne segadus #2;Mental confusion #2;Confusion / Segadus
+4921;Mental Energy Stim;Mentaalse energia stimuleerimine.;Stimulating mental energy.;"Focus / Keskenduma; Mental blocks / Mentaalsus"
+4922;Mental fatigue;Mentaalne tugev väsimus.;Strong mental fatigue.;"Fatigue / Väsimus; Mental blocks / Mentaalsus"
+4924;Mental weakness;Mentaalne nõrkus.;Mental frailty.;Mental blocks / Mentaalsus
+4940;Mind/Body Unity;Meele/keha tasakaal/sünkroonsus.;Mind/body balance/synchronicity.;Unity / Ühtsus
+4944;Monotony;Monotoonsus/üksluisus.;Monotony/tedium.;Monotony / Üksluisus
+4945;Mood disorders;Meeleolu kõikumised tekkinud traumadest.;Mood swings caused by trauma.;Mood / Meeleolu
+4946;Mood Elevation;Meeleolu tõus/kõrgendatud meeleolu.;Upliftment / heightened mood.;Mood / Meeleolu
+4947;Mood swings;Meeleolu kõikumine/tujukus.;Mood swings / moodiness.;Mood / Meeleolu
+4948;Moral conflict;Moraalne konflikt: üks osa soovib olla õiglane, teine osa ei soovi.;Moral conflict: a part of you wishes to do the right thing, while the other does not.;Conflict / Konflikt
+4949;Motivation conflict;Motivatsiooni konflikt: üks osa soovib olla motiveeritud, teine osa ei soovi.;Motivation conflict: a part of you wishes to be motivated, while the other does not.;Conflict / Konflikt
+4960;Need for positive involvm;Vajadus positiivse kaasamise järele.;A need for positive inclusion.;Positive involvm / Positiivne kaasatus
+4961;Need of enthusiasm;Vajadus entusiasmi järgi.;A need for enthusiasm.;Enthusiasm / Entusiasm
+4962;Need to change;Vajadus muutuda, kuid samas enesele valetamine ja muutuste keelamine (leitakse vabandusi, miks ei saa muutusi teha, nt ei ole õige aeg, kunagi hiljem, ootan õiget aega, ei ole turvaline jne).;A need for change, while lying to oneself and denying changes (by making excuses as to why this is not possible, e.g. the timing is not right, later on, I'm waiting for the right moment, it is not safe, etc.).;Change / Muutused
+4963;Need to recognize & resol;Oma probleemide tunnistamine ja soov leida neile lahendus.;Acknowledging one's problems and a desire to find solutions.;Need to recognize / Oma probleemide tunnistamine
+4964;Needing comfort but unabl;Vajadus tunda heaolutunnet, kuid ei ole selleks võimeline (tulenevalt näiteks käesolevast eluperioodist vms).;A need to experience well-being, while not being able to (e.g. due to current life circumstances, etc.).;Comfort / Mugavus
+4965;Negativity;Negatiivsus tekkinud stressist.;Negativity caused by stress.;Negativity / Negatiivsus
+4974;Nervous exhaustion;Kurnatus, mis on tekkinud närvilisusest.;Exhaustion caused by nervousness.;"Exhaust / Kurnatus; Nervousness / Närvilisus"
+4975;Nervousness;Närvilisus tekkinud stressist #1;Nervousness caused by stress.#1;Nervousness / Närvilisus
+4978;NEUROCALM;Närvisüsteemi rahustamine.;Calming the nervous system.;Calm / Rahulikkus
+4983;No zest for life;Elurõõmu ja entusiasmi puudus.;Lack of enjoyment and enthusiasm.;Life / Elu eesmärk
+4984;Non-communicative;Ei soovi suhelda/kommunikeeruda.;No desire to interact/communicate.;Non-communicative / Suhtlematus
+4985;Not knowing where one fit;Ei tea, kuhu kuuluda/sobituda.;Not knowing where to belong / fit in.;Fit / Sobitumine
+4986;Nurturing #1;Hoolimise tunne/hoolitsemine #1;Caring/nurturing #1;Nurturing / Hoolimise tunne
+4987;Nurturing #2;Hoolimise tunne/hoolitsemine #2;Caring/nurturing #2;Nurturing / Hoolimise tunne
+4988;Observant;Tähelepanelikkus, sh teiste suhtes.;Being considerate, including towards others.;Observant / Tähelepanelikkus
+4989;Obsession;Sundmõtted ja/või sundteod #1 (korduvad mõtted ehk mõtled pidevalt ühtesid ja samasid mõtteid, korduvad hirmudest tulenevad teod).;Compulsive thinking and/or compulsive behaviour #1 (rumination, i.e. the same thoughts on a loop, repetitive fear-driven behaviour).;Obsess / Sundmõtted
+4990;Obsessive;Sundmõtted ja/või sundteod #2 (korduvad mõtted ehk mõtled pidevalt ühtesid ja samasid mõtteid, korduvad hirmudest tulenevad teod).;Compulsive thinking and/or compulsive behaviour #2 (rumination, i.e. the same thoughts on a loop, repetitive fear-driven behaviour).;Obsess / Sundmõtted
+4991;Open-mind;Avatud meel (võime suhtuda eelarvamusteta uutesse ja/või erinevatesse ja/või enda senistele arusaamadele vastukäivatesse vaadetesse).;An open mind (not having prejudices regarding new and/or different and/or opposing views and opinions).;Open-mind / Avatud meel
+4992;Optimistic;Optimistlikkus.;Optimism.;Optimistic / Optimistlikkus
+4995;Orderliness conflict;Korralikkuse konflikt: üks osa soovib olla korralik, teine osa ei soovi.;Properness conflict: a part of you wishes to act properly, while the other does not.;Conflict / Konflikt
+5002;Over sensativity to all I;Ülitundlikkus kõige suhtes.;Hypersensitivity towards everything.;Sensativity / Ülitundlikkus
+5003;Over talkativeness;Ülevoolav rääkimine, mis on tekkinud traumadest ja/või stressist.;Excessively talkative due to trauma and/or stress.;Talkativeness / Ülevoolav rääkimine
+5004;Over-sensativity to exter;Liigne ülitundlikkus välismõjude suhtes.;Excessive hypersensitivity towards external stimuli.;Sensativity / Ülitundlikkus
+5005;Overly ambitious;Liigne ambitsioonikus, mis on tekkinud traumadest.;Excessive ambition caused by trauma.;Overly ambitious / Liigne ambitsioonikus
+5006;Oversensativity;Ülitundlikkus.;Hypersensitivity.;Sensativity / Ülitundlikkus
+5007;Overworked;Ületöötamine.;Overworking.;Overworked / Ületöötanud
+5016;Painfull emotional attached;Valus emotsionaalne side, st kellestki/millestki kinni hoidmine/ei soovita lahti lasta, sh võib olla ka kiindumussuhte trauma.;A painful emotional attachment, including clinging to someone/something / not wishing to let go, may also be accompanied by attachment trauma.;"Attachment / Kiindumus; Pain / Valu"
+5017;Painfull events in past;Valusad sündmused/mälestused minevikust.;Painful events/memories from the past.;"Pain / Valu; Past / Minevik"
+5023;Panic;Paanika.;Panic.;Panic / Paanika
+5029;Passion;Kirglikkus.;Passion.;Passion / Kirglikkus
+5030;Past humiliations;Alandused minevikust.;Past humiliation.;"Humiliations / Alandamised; Past / Minevik"
+5032;Patience;Kannatlikkus.;Patience;Impatience / Kannatamatus
+5033;Peaceful;Rahumeelsus.;Peacefulness.;Peaceful / Rahumeelsus
+5034;Perfectionistic;Liigne perfektsionism, mis tekitab igapäevaelus stressi.;Excessive perfectionism causing stress in daily life.;Perfect / Perfektsionism
+5035;Performance conflict;Soorituse konflikt: üks osa on valmis sooritamise nimel pingutama, teine osa ei ole.;Performance conflict: a part of you is willing to make an effort to perform, while the other is not.;Conflict / Konflikt
+5036;Perseverance;Püsivus/sihikindlus.;Perseverance.;Perseverance / Püsivus
+5037;Persistence;Järjekindlus.;Perseverance.;Pesistence / Järjekindlus
+5038;Pessimistice;Pessimistlikkus tekkinud traumadest.;Pessimism caused by trauma.;Pessimist / Pessimistlik
+5040;Philosophical conflict;Filosoofiline konflikt: üks osa soovib olla filosoofiline, teine osa ei soovi.;Philosophical conflict: a part of you wishes to be philosophical, while the other does not.;Conflict / Konflikt
+5041;Phobias;Foobiad #1;Phobias #1;Phobias / Foobiad
+5042;Physical conflict;Füüsiline konflikt: üks osa soovib olla füüsiliselt aktiivne, teine osa ei soovi.;Physical conflict: a part of you wishes to be physically active, while the other does not.;Conflict / Konflikt
+5044;Pineal;Kontakt sisetundega #2 (mis on õige/vale, mida sina soovid/ei soovi).;Being in touch with intuition #2 (what is right/wrong, what you wish / do not wish).;Pineal / Kontakt sisetundega
+5060;PINEAL-MET;Stressist tulenev unetus, aktiveerib head und ja neutraliseerib stressi.;Insomnia caused by stress, activates restful sleep and neutralizes stress.;Pineal / Kontakt sisetundega
+5065;Pleasure;Nauding.;Pleasure.;Pleasure / Nauding
+5071;Political conflict;Poliitiline konflikt.;Political conflict.;Conflict / Konflikt
+5077;Power;Sisemine jõud #1 (aitab inimestel tegutseda ja otsuseid vastu võtta).;Vigor #1 (helps people act and make decisions).;Power / Sisemine jõud
+5078;Power conflict;Sisemise jõu konflikt, sh oma sisemise jõu andmine teistele (oma jõu ja vabaduse ära andmine, tegutsedes nii nagu teistele meeldib).;Vigor conflict, including giving away one's inner power (giving away one's power and freedom by people pleasing).;"Power / Sisemine jõud; Conflict / Konflikt"
+5079;Power;Sisemine jõud #2 (aitab saada oma vajadused täidetud läbi eneseväljenduse).;Vigor #2 (helps to meet one's needs by self-expression).;Power / Sisemine jõud
+5081;Pride;Liigne uhkus tekkinud traumadest.;Excessive pride caused by trauma.;Pride / Uhkus
+5083;Projection #1;Oma negatiivsete tunnete teistele projetseerimine #1 (kaitstes kuvandit endast ja oma maailmapilti).;Projecting one's negative feelings onto others #1 (by protecting one's self-image and worldview).;Projection / Projetseerimine
+5084;Projection #2;Oma negatiivsete tunnete teistele projetseerimine #2 (kaitstes kuvandit endast ja oma maailmapilti).;Projecting one's negative feelings onto others #2 (by protecting one's self-image and worldview).;Projection / Projetseerimine
+5093;Protection conflict;Kaitsekonflikt (mingil põhjusel laseb ise kaitse maha, st tahab olla hea, hakkab kahju, soovib anda enda eluenergiat jne).;Protection conflict (relinquishing protection for some reason, i.e. wishing to be kind, feeling sorry, wanting to share vital energy, etc.).;"Protection / Kaitse; Conflict / Konflikt"
+5096;PSY-ADJ;Raske sotsiaalselt kohaneda.;Social adaptation issues.;"Adjustment / Kohanemine; Social / Sotsiaalsus"
+5097;PSY-ANX;Ärevus on tekkinud traumadest.;Anxiety is caused by trauma.;Anxiety / Ärevus
+5100;PSY-DEP;Pikaajaline stress.;Prolonged stress.;Depression / Pikaajaline stress
+5101;PSY-DEP/EX;Väljaelatud tunded on põhjustanud pikaajalist stressi.;Venting feelings has caused prolonged stress.;Depression / Pikaajaline stress
+5102;PSY-DEP/IN;Sissehoitud tunded  on põhjustanud pikaajalist stressi.;Pent up feelings have caused prolonged stress.;Depression / Pikaajaline stress
+5103;PSY-DIS;Psühholoogiline tasakaalutus tekkinud traumadest ja/või pikaajalisest stressist.;Psychological imbalance caused by trauma and/or prolonged stress.;Logic / Loogika
+5104;PSY-HYS;Hüsteeria tekkinud traumadest ja/või pikaajalisest stressist.;Hysteria caused by trauma and/or prolonged stress.;Hysteria / Hüsteeria
+5105;PSY-MANIA;Maania tekkinud traumadest ja/või pikaajalisest stressist.;Mania caused by trauma and/or prolonged stress #2;Mania / Maania
+5106;PSY-MOOD;Sage meeleolu kõikumine tekkinud stressist.;Frequent mood swings caused by stress.;Mood / Meeleolu
+5107;PSY-PER;Sage meeleolu kõikumine.;Frequent mood swings.;Personality disorder / Isiksusehäire
+5109;PSY-SEX;Psühholoogiline tasakaalutus seoses seksuaalsusega.;Psychological imbalance associated with sexuality.;Sex / Seksuaalsus
+5110;Psychic clarity;Psüühiline selgus.;Psychic clarity ;Clarity / Selgus
+5111;Psychic pain;Psüühiline valu (emotsionaalne valu/kannatus).;Psychic pain (emotional pain/suffering).;Pain / Valu
+5112;Psychic protection;Psüühiline kaitse/piiride seadmine: luba olla rahulik ja õnnelik (vajalik selleks, et me suudaksime end igapäevase stressi keskel maandada, olla rahulikud ja õnnelikud).;Psychic protection / setting boundaries: permission to be calm and happy (needed to be able to ground ourselves amid daily stresses, to be able to be calm and happy).;Protection / Kaitse
+5113;Psychic tension;Psüühilised pinged (liiga palju mõtteid peas).;Psychic tension (mind chatter).;Tension / Pinged
+5114;Psychogenic stress;Emotsionaalne/psüühiline stress.;Emotional/psychic stress.;Stress / Stress
+5115;Psychological conflict;Psühholoogiline konflikt.;Psychological conflict;"Logic / Loogika; Conflict / Konflikt"
+5121;Qi Gong Stim;Meele ja keha tasakaalustamine/stimuleerimine.;Balancing/stimulating mind and body.;Qi Gong stim / Meele ja keha tasakaalustamine
+5122;Quarrelsome;Riiakus tekkinud stressist.;Contentiousness caused by stress.;Quarrelsome / Riiakus
+5126;Rage;Raev (äkiline võimas tunne).;Rage (a sudden powerful feeling).;Rage / Raev
+5127;Rage from slightest contr;Raev tühistest asjadest.;Rage brought on by minor factors.;Rage / Raev
+5128;Rationalization #1;Ratsionaliseerimine #1;Rationalizing #1;Rationalization / Ratsionaliseerimine
+5129;RATIONALIZATION #2;Ratsionaliseerimine #2;Rationalizing #2;Rationalization / Ratsionaliseerimine
+5131;Reckless;Hooletus tekkinud traumadest/pikaajalisest stressist #1;Neglect caused by trauma / prolonged stress #1;Reckless / Hoolimatus
+5132;Recklessness;Hooletus tekkinud traumadest/pikaajalisest stressist #2;Neglect caused by trauma / prolonged stress #2;Reckless / Hoolimatus
+5135;REDUCE ANGER;Viha neutraliseerimine #2;Neutralizing anger #2;Anger / Viha
+5136;Reduce irritability;Ärrituvuse neutraliseerimine.;Neutralizing irritability.;Irritability / Ärrituvus
+5137;Regret;Kahetsus.;Regret.;Regret / Kahetsus
+5139;Relationship conflict;Suhtekonflikt: üks osa soovib olla suhtes, teine osa ei soovi.;Relationship conflict: a part you of you wishes to be in a relationship, while the other does not.;Conflict / Konflikt
+5140;Relax-Mind, Body, Spirit;Meele, keha ja vaimu lõõgastumine.;Relaxing the mind, body and spirit.;Relax / Lõdvestuma
+5141;Relaxation conflict;Lõõgastuskonflikt: üks osa soovib lõõgastuda, teine osa ei soovi.;Relaxation conflict: a part of you wishes to relax, while the other does not.;"Relax / Lõdvestuma; Conflict / Konflikt"
+5142;Relaxation;Lõõgastus.;Relaxation.;Relax / Lõdvestuma
+5143;Relaxed Focus;Lõdvestunud keskendumine.;Relaxed focus.;"Focus / Keskenduma; Relax / Lõdvestuma"
+5144; Reliability conflict;Usaldusväärsuse konflikt: üks osa usaldab kedagi/midagi, teine osa ei usalda.;Reliability conflict: a part of you trusts someone/something, while the other does not.;"Reliability / Usaldusväärsus; Conflict / Konflikt"
+5147;Repressed emotion connect #1;Allasurutud emotsioonide teadvustamine #1;Recognizing repressed emotions #1;Repressed / Allasurutus
+5148;Repressed emotion connect #2;Allasurutud emotsioonide teadvustamine #2;Recognizing repressed emotions #2;Repressed / Allasurutus
+5149;Repressed emotions;Allasurutud emotsioonid.;Repressed emotions.;Repressed / Allasurutus
+5150;Repression;Survestatud olemine kellegi ja/või millegi poolt.;Experiencing pressure by someone and/or something.;Repressed / Allasurutus
+5151;Resentment;Vimm ja pahameel.;Grudge and resentment;Resentment / Pahameel
+5152;Reservedness;Reserveeritus.;Reservedness;Reservedness / Reserveeritus
+5153;Resignation;Soov kellestki ja/või millestki eemalduda/tagasi astuda.;A wish to distance/withdraw from someone and/or something.;Resignation / Soov kellestki või millestki eemalduda
+5154;Resistance to change;Vastuseis muutuste ees.;Opposition to change.;"Change / Muutused; Resistance / Vastuseis"
+5155;Resistance to confront em;Vaidlustes raske kontrollida oma emotsioone.;Difficulties managing emotions during arguments.;Resistance / Vastuseis
+5156;Respect;Austus, aukartus, lugupidamine.;Respect, reverence, esteem.;Respect / Austus
+5158;Responsibility conflict;Vastutuse konflikt: üks osa soovib võtta vastutust, teine osa ei soovi.;Responsibility conflict: a part of you wishes to take responsibility, while the other does not.;Conflict / Konflikt
+5159;Restless;Rahutus ja püsimatus.;Restlessness and agitation.;Restless / Rahutus
+5160;Restlessness #1;Rahutus #1;Restlessness #1;Restless / Rahutus
+5161;Restlessness #2;Rahutus #2;Restlessness #2;Restless / Rahutus
+5162;Restlessness #3;Rahutus #3;Restlessness #3;Restless / Rahutus
+5165;Rett Syndrome;Raskusi kõnelemisel #1;Trouble speaking #1;Speech / Kõne
+5174;Rigidity;Jäikus/paindumatus.;Rigidity/inflexibility.;Rigidity / Jäikus
+5175;RLX-ESSENCE;Lõdvestus (lihaste lõdvestamine, unetus ja stress).;Relaxation (muscle relaxation, insomnia and stress).;Nervousness / Närvilisus
+5177;Ruthlessness;Halastamatus (võitlus ja konkureerimine tekkinud traumadest).;Ruthlessness (opposition and competition caused by trauma).;Ruthlessness / Halastamatus
+5183;Saddness;Kurbus.;Sadness.;Sadness / Kurbus
+5184;Sadness #1;Kurbus #1;Sadness #1;Sadness / Kurbus
+5185;SADNESS #2;Kurbus #2;Sadness #2;Sadness / Kurbus
+5186;Sarcasm;Sarkasm tekkinud traumadest.;Sarcasm caused by trauma.;Sarcasm / Sarkasm
+5192;Self-blame;Enese süüdistamine.;Self-blame.;Blame / Süütunne
+5193;Self-care;Enese eest hoolitsemine.;Self-care.;Self-care / Enese eest hoolitsemine
+5194;Self-condeming;Ennast hukkamõistev.;Self-deprecating.;Self-condeming / Enese hukkamõistmine
+5195;Self-confidence;Enesekindlus.;Self-confidence;Confidence / Enesekindlus
+5196;Self-deception;Enesepettus/enesele valetamine.;Self-deceit / lying to oneself.;Self-deception / Enesepettus
+5197;Self-destructive;Ennasthävitav käitumine.;Self-destructive behaviour.;Self-destructive / Ennasthävitav käitumine
+5198;Self-determination;Enesemääratlemine/võtad ise otsuseid vastu, ei lase teistel ennast mõjutada.;Self-determination / making decisions on one's own, not succumbing to external influence.;Self-determination / Enesekehtestamine
+5199;Self-esteem conflict;Enesehinnangu konflikt: ühel osal sinust on hea enesehinnang ja teisel osal ei ole.;Self-esteem conflict: a part of you has high self-esteem, while the other does not.;"Self-esteem / Enesehinnang; Conflict / Konflikt"
+5200;Self-expression;Eneseväljendamine.;Self-expression.;Expression / Eneseväljendamine
+5201;Self-importance;Liigne enesetähtsustamine tekkinud traumadest ja šokkidest.;Excessive self-importance caused by trauma and shock.;Self-importance / Liigne enesetähtsus
+5202;Self-reliance;Enesekindlus/vastutuse võtmine oma elu eest/iseseisvus ja iseseisvalt hakkama saamine.;Confidence / taking responsibility for one's life / independence and coping independently.;Self-reliance / Eneseusaldus
+5203;Selfishness;Isekus tekkinud traumadest ja šokkidest.;Selfishness caused by trauma and shock.;Selfishness / Isekus
+5204;Sensativity to disorder;Liigne ülitundlikkus on tekkinud traumadest.;Excessive hypersensitivity is caused by trauma.;Sensativity / Ülitundlikkus
+5205;Sense of fun;Lõbususe tunne.;Cheerfulness.;Sense of fun / Lõbususe tunne
+5206;Sensual conflict;Sensuaalsuse konflikt: üks osa soovib olla sensuaalne, teine osa ei soovi.;Sensuality conflict: a part of you wishes to be sensual, while the other does not.;"Sensual / Sensuaalsus; Conflict / Konflikt"
+5207;Sensuality;Sensuaalsus.;Sensuality.;Sensual / Sensuaalsus
+5208;SERENAFEM;Emotsionaalsuse rahustamine.;Pacifying emotional volatility.;Calm / Rahulikkus
+5209;Serenity;Rahulikkus.;Tranquillity.;Serenity / Rahulikkus
+5211;Sexual conflict;Seksuaalsuse konflikt: üks osa soovib olla seksuaalne, teine osa ei soovi.;Sexuality conflict: a part of you wishes to be sexual, while the other does not.;"Sex / Seksuaalsus; Conflict / Konflikt"
+5212;Sexual confusion;Segadus orientatsiooni osas.;Sexual confusion.;Sex / Seksuaalsus
+5213;Sexual pleasure;Seksuaalne nauding.;Sexual pleasure.;"Pleasure / Nauding; Sex / Seksuaalsus"
+5214;Sexuality;Seksuaalsus.;Sexuality.;Sex / Seksuaalsus
+5215;Shame;Häbi.;Shame.;Shame / Häbi
+5217;Shock #1;Šokk #1;Shock #1;Shock / Šokk
+5218;Shock #2;Šokk #2;Shock #2;Shock / Šokk
+5219;Shyness #1;Häbelikkus #1;Shyness #1;Shy / Häbelikkus
+5220;Shyness #2;Häbelikkus #2;Shyness #2;Shy / Häbelikkus
+5221;SHYNESS #3;Häbelikkus #3;Shyness #3;Shy / Häbelikkus
+5227;Skepticism;Skeptilisus.;Scepticism.;Skepticism / Skeptilisus
+5234;Sleep conflict;Une konflikt.;Sleep conflict.;"Sleep / Uni; Conflict / Konflikt"
+5235;Sluggishness;Loidus.;Sluggishness.;Sluggishness / Loidus
+5243;Social conflict;Sotsiaalsuse konflikt: üks osa soovib olla sotsiaalne, teine osa ei soovi.;Sociability conflict: a part of you wishes to be sociable, while the other does not.;"Social / Sotsiaalsus; Conflict / Konflikt"
+5247;Space conflict;Sobitumise konflikt: üks osa sobib olemasolevasse keskkonda/struktuuri, teine osa ei sobi.;Adjustment conflict: a part of you adjusts to a current environment/structure, while the other does not.;Conflict / Konflikt
+5249;Speech Impediment;Raskusi kõnelemisel #2;Trouble speaking #2;Speech / Kõne
+5252;Spiritual balance;Vaimne tasakaal.;Mental balance.;Spirit / Vaimne
+5253;Spiritual conflict;Mõistuse ja südametunde konflikt #1: mõistus tahab ühte, kuid süda teist asja (mõistus juhib ja ei kuula südametunnet).;Conflict between mind and heart #1: the mind wants one thing, while the heart another (the mind leads and disregards the heart).;"Spirit / Vaimne; Conflict / Konflikt"
+5254;Spiritual conflict;Mõistuse ja südametunde konflikt #2: mõistus tahab ühte, kuid süda teist asja (mõistus juhib ja ei kuula südametunnet).;Conflict between mind and heart #2: the mind wants one thing, while the heart another (the mind leads and disregards the heart).;"Spirit / Vaimne; Conflict / Konflikt"
+5255;Spiritual connection;Vaimne ühenduvus kõige ja kõigiga.;Spiritual connection with everything and everyone.;Spirit / Vaimne
+5256;Spiritual healing;Hingehaavad, mis on tekkinud traumadest ja šokkidest.;Emotional wounds caused by trauma and shock.;Spirit / Vaimne
+5257;Spiritual longing;Soov vaimselt areneda ja kuuluda vastavasse toetavasse gruppi.;A desire for spiritual progress and to belong to a supportive community.;Spirit / Vaimne
+5258;Spiritual search;Elu tähenduse otsimine ja oma eluülesande/teekonna mõistmine.;Searching for the meaning of life and recognizing one's mission/path in life.;Spirit / Vaimne
+5261;Spleen #2;Optimism, suhted (abielu, sõprus või tööalane partnerlus) ja seksuaalsus.;Optimism, relationships (marriage, friendship or professional partnership) and sexuality.;"Chakra / Energiakeskused; Anger / Viha; Confidence / Enesekindlus; Creativity / Loovus; Fear / Hirmud; Female / Naiselikkus; Male-female balance / Mees-naisenergia tasakaal; Sex / Seksuaalsus"
+5266;SRT-ESSENCE;Raskused uinumisel/uneprobleemid ja pikaaegne stress.;Trouble falling asleep / sleep issues and prolonged stress.;Depression / Pikaajaline stress
+5268;Starting project with ent;Mingi tegevuse või projektiga entusiastlikult alustamine.;Embarking on an activity or project enthusiastically.;Starting project / Millegagi alustamine
+5271;Stomach #2;Enesehinnang, enesekindlus, tahtejõud ja eneseaustus.;Self-esteem, confidence, willpower and self-respect.;"Chakra / Energiakeskused; Lust / Iha; Mood / Meeleolu; Nervousness / Närvilisus; Self-esteem / Enesehinnang"
+5278;Strength;Sisemine tugevus #1;Vigor #1;Strength / Tugevus
+5279;Strength;Sisemine tugevus #2;Vigor #2;Strength / Tugevus
+5280;Stress #1;Stress #1;Stress #1;Stress / Stress
+5281;STRESS #2;Stress #2;Stress #2;Stress / Stress
+5282;Stress #3;Stress #3;Stress #3;Stress / Stress
+5283;STRESS MED;Pikaajaline ja tugev stress tekkinud pingetest ja kurnatusest.;Prolonged and deep stress caused by tension and exhaustion.;Stress / Stress
+5284;STRESS RESISTANCE;Võime igapäevase stressiga toime tulla/vastupanuvõime stressile.;Ability to cope with daily stress / resilience to stress.;Stress / Stress
+5287;Stubborness;Kangekaelsus #1;Stubbornness #1;Stubborness / Kangekaelsus
+5288;Stubbornness;Kangekaelsus #2;Stubbornness #2;Stubborness / Kangekaelsus
+5289;Submissive;Allaheitlik/alistuv.;Submissive/obedient.;Submissive / Allaheitlik
+5291;Sullenness;Pahurus.;Sullenness.;Sullenness / Pahurus
+5293;Suppression;Allasurutus.;Repression.;Suppression / Allasurumine
+5294;Supression of important n;Emotsionaalsete ja füüsiliste vajaduste mahasurumine.;Repressing emotional and physical needs.;Supression / Oluliste vajaduste allasurumine
+5296;Suspicion;Kahtlus.;Suspicion.;Suspicious / Kahtlus
+5297;Suspicious;Kahtlustamine.;Suspicious.;Suspicious / Kahtlus
+5318;Tension held in muscles/o;Pinged, mis on hoitud lihastes ja organites.;Pent up tension in muscles and organs.;Tension / Pinged
+5327;Thought disturbances;Segavad mõtted (võivad olla seotud ärevuse ja stressiga).;Disturbing thoughts (may be associated with anxiety and stress).;Thought disturbances / Segavad mõtted
+5329;Throat #2;Sissehoitud tunded ja eneseväljendamine.;Pent up feelings and self-expression.;"Chakra / Energiakeskused; Communication / Kommunikatsioon; Expression / Eneseväljendamine"
+5339;Time conflict;Aja konflikt: soovib jõuda õigeks ajaks, kuid arvestab valesti ning jääb hiljaks.;Time conflict: wishes to be on time, but miscalculates and is late.;Conflict / Konflikt
+5340;Timidity;Pelglikkus: julguse ja enesekindluse puudus.;Timidity: lack of courage and confidence.;Timidity / Pelglikkus
+5346;Tolerance;Tolerantsus.;Tolerance.;Tolerance / Tolerantsus
+5349;Torment;Piinlemine/kannatamine, mis on tekkinud traumadest.;Torture/suffering caused by trauma.;Torment / Piin
+5354;Transformation;Transformatsioon/muutumine: aitab meil muutuda, õpetab kuulama oma sisetunnet, aitab vabaneda vanadest ja samas ka hävitavatest programmidest.;Transformation/change: helps us change, teaches us to listen to our intuition, helps to release old and destructive programmes.;Transformation / Muutumine
+5355;Transformation conflict;Transformatsiooni/muutuste konflikt: üks osa sinust soovib muutuda + kuulata oma hinge ning teine osa ei soovi.;Transformation/change conflict: a part of you wishes to change + listen to your soul, while the other does not.;"Transformation / Muutumine; Conflict / Konflikt"
+5356;Trauma;Trauma.;Trauma.;Trauma / Trauma
+5357;Trauma/psychical shock;Trauma ja füüsiline šokk.;Trauma from the past.;"Shock / Šokk; Trauma / Trauma"
+5358;Traumas from past;Traumad minevikust.;Trauma from the past.;"Past / Minevik; Trauma / Trauma"
+5361;Trembling;Ärevusest tekkinud sisemine värin.;Internal tremor caused by anxiety.;Trembling / Sisemine värin
+5364;Unconditional love;Tingimusteta armastus: tähendab lubamist olla kõigel just nii nagu see on.;Unconditional love: letting everything be just as it is.;Love / Armastus
+5365;Under valuing of ability;Enda võimete/võimekuse alahindamine.;Underestimating one's abilities/capacity.;Under valuing / Oma võimete alahindamine
+5366;Understanding;Asjadest/olukordadest arusaamine.;Understanding things/situations.;Understanding / Arusaamine
+5367;Uneasiness about future;Liigne muretsemine/rahutus, mis tulevikus võib juhtuda.;Excessive worry/anxiety about future scenarios.;Future / Tulevik
+5368;Unfit for exersions;Raskused pingutamisel.;Trouble exerting effort.;Exersion / Pingutus
+5369;Unity With All;Soov olla ühenduses kõigega.;A wish to be connected to everything.;Unity / Ühtsus
+5370;Unworthiness;Tunne, et ei ole kellegi või millegi vääriline.;Feeling unworthy of anyone or anything.;Unworthiness / Ei ole vääriline
+5376;Utterly apathetic;Täielik apaatsus tekkinud pikaajalisest stressist.;Complete apathy caused by prolonged stress.;"Apathy / Apaatsus; Utterly apathetic / Täielik apaatsus"
+5379;Vaniety;Edevus tekkinud traumadest.;Vanity caused by trauma.;Vaniety / Edevus
+5394;VITALIFEM;Naiselik vitaalsus.;Feminine vitality.;Female / Naiselikkus
+5395;VITALITY MED;Vitaalsuse puudus, mis on tekkinud pikaajalisest stressist.;Loss of vitality caused by prolonged stress.;Vitality / Elujõud
+5399;Vulnerability;Haavatavus.;Vulnerability.;Vulnerability / Haavatavus
+5400;Wandering mind;Uitmõtted.;Random thoughts.;Wandering mind / Uitmõtted
+5404;Will To Live Stim;Elutahte stimuleerimine.;Stimulating the will to live.;Will to live / Elutahte stimuleerimine
+5405;Willingness to give;Valmisolek anda.;Willingness to give.;Willingness / Valmisolek anda
+5406;Willingness to receive;Valmisolek vastu võtta.;Willingness to receive.;Willingness / Valmisolek anda
+5407;Willpower;Tahtejõud.;Willpower.;Power / Sisemine jõud
+5409;Wisdom;Sisemine tarkus #2;Internal wisdom.;Wisdom / Tarkus
+5411;Work conflict;Töökonflikt: üks osa soovib antud tööd teha, teine osa ei soovi.;Professional conflict: a part of you wishes to engage in the work at hand, while the other does not.;Conflict / Konflikt
+5412;Worry #1;Muretsemine #1;Worry #1;Worry / Muretsemine
+5413;Worry #2;Muretsemine #2;Worry #2;Worry / Muretsemine
+5414;WORRY #3;Muretsemine #3;Worry #3;Worry / Muretsemine
+5415;Worry #4;Muretsemine #4;Worry #4;Worry / Muretsemine
+5420;Youthfullness;Nooruslikkus.;Youthfulness.;Youthfullness / Nooruslikkus
+5635;Autism;Sotsiaalsus, suhtlemine, väljendusoskus #5;Sociability, communication, expression #5;Autism / Autism
+5655;Nervousness;Närvilisus tekkinud stressist #2;Nervousness caused by stress.#2;Nervousness / Närvilisus
+5664;Restless Agitation;Ärevusest ja/või närvilisusest tekkinud rahutus #2;Restlessness caused by anxiety and/or nervousness #2;"Agitation / Rahutus; Restless / Rahutus"
+6428;Pineal;Kontakt sisetundega #3 (mis on õige/vale, mida sina soovid/ei soovi).;Being in touch with intuition #3 (what is right/wrong, what you wish / do not wish).;Pineal / Kontakt sisetundega
+6429;PINEAL GLAND;Kontakt sisetundega #4 (mis on õige/vale, mida sina soovid/ei soovi).;Being in touch with intuition #4 (what is right/wrong, what you wish / do not wish).;Pineal / Kontakt sisetundega
+Wellness_25;Tourette;Sundhäälitsused ja -liigutused #3;Forced sounds and movements #3;Tourette / Tourette
+Biofeedback Gems;Phobias;Foobiad #2;Phobias #2;Phobias / Foobiad
+Timed specific_1;Pineal gland-to stimulate;Kontakt sisetundega (mis on õige/vale, mida soovid);Being in touch with intuition (what is right/wrong, what you wish / do not wish).;Brain / Aju
+Wellness_1;Basal Ganglia;Ühendab tunded ja tegutsema hakkamise. ;Combines feelings and taking action.;Brain / Aju
+Wellness_2;Brainstem;Brainstem?;Brainstem?;Brain / Aju
+Wellness_3;Cerebellum;Cerebellum?;Cerebellum?;Brain / Aju
+Wellness_4;Cerebral Cortex;Uue teabe õppimine, mõtete kujundamine ja otsuste langetamine;Learning new information, forming thoughts, and making decisions;Brain / Aju
+Wellness_5;Corpus Callosum;Corpus Callosum?;Corpus Callosum?;Brain / Aju
+Wellness_6;Frontal Lobe;Enesekontroll: mõtete ja emotsioonide reguleerimine.;Self-control: regulating thoughts and emotions.;Brain / Aju
+Wellness_7;Hypothalamus;"""Võitle-põgene-tardu"" stressireaktsioon. Pidev nö valvel olek, mis takistab lõdvestumist.";Fight-flight-freeze stress response. A constant state of alertness that prevents relaxation.;Brain / Aju
+Wellness_8;Internal Capsule;Internal Capsule?;Internal Capsule?;Brain / Aju
+Wellness_9;Left Hemisphere;Left Hemisphere?;Left Hemisphere?;Brain / Aju
+Wellness_10;Limpic System;Mitte teadvustatud shokid/traumad, sh mälupildid traumadest. Emotsionaalne tasakaal.;Unrecognized shocks/traumas, including memories of traumas. Emotional balance.;Brain / Aju
+Wellness_11;Medulla Oblongata;Medulla Oblongata?;Medulla Oblongata?;Brain / Aju
+Wellness_12;Midbrain;Midbrain?;Midbrain?;Brain / Aju
+Wellness_13;Occipital Lobe;Occipital Lobe?;Occipital Lobe?;Brain / Aju
+Wellness_14;Parietal Lobe;Parietal Lobe?;Parietal Lobe?;Brain / Aju
+Wellness_15;Pons;Pons?;Pons?;Brain / Aju
+Wellness_16;Reticular Activating Sys.;Vastutab une, teadveloleku ja tähelepanu eest. Muutunud teadvuse seisund.;Responsible for sleep, awareness, and attention. Altered state of consciousness.;Brain / Aju
+Wellness_17;Right Hemisphere;Right Hemisphere?;Right Hemisphere?;Brain / Aju
+Wellness_18;Temporal Lobe;Temporal Lobe?;Temporal Lobe?;Brain / Aju
+Wellness_19;Thalamus;Aitab kaasa afektiivsele väljendusele. Teadvuse taseme muutus. Taju kaotus.;Contributes to affective expression. Altered level of consciousness. Loss of perception.;Brain / Aju
+Wellness_20;Beta;Fookus;Focus;Brain / Aju
+Wellness_21;Alpha;Lõdvestus;Relaxation;Brain / Aju
+Wellness_22;Theta;Sügav lõdvestus;Deep relaxation;Brain / Aju
+Wellness_23;Delta;Sügav uni;Deep sleep;Brain / Aju
+Wellness_24;Brain Feedback;Ajuosade tasakaalustamine;Balancing the parts of the brain;Brain / Aju
+Sarcode_1;Vagus Nerve;Närvisüsteemi rahustamine;Calming the nervous system;"Sarcode; Nervous system / Närvisüsteem"
+Sarcode_2;Brain Detox;Ajupuhastus?;Brain detox?;Sarcode
+Timed specific_2;Sympathetic;Sümpaatilise närvisüsteemi rahustamine;Calming the sympathetic nervous system;Nervous system / Närvisüsteem
+Timed specific_3;Para-sympathetic;Parasümpaatilise närvisüsteemi rahustamine;Calming the parasympathetic nervous system;Nervous system / Närvisüsteem

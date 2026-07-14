@@ -60,3 +60,17 @@ button { cursor: pointer; border: none; background: none; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--color-border-strong); border-radius: 3px; }
+
+/* Eemalda number input nooled globaalselt */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Sundi 24h formaat time input'ile */
+input[type="time"]::-webkit-datetime-edit-ampm-field { display: none; }
+input[type="time"] { -webkit-appearance: none; }
