@@ -9,7 +9,8 @@ export default function BackupPage() {
     setDownloading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/auth/backup', {
+      const base = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+      const res = await fetch(`${base}/auth/backup`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (!res.ok) throw new Error('Varukoopia ebaõnnestus');
