@@ -154,14 +154,23 @@ router.post('/users', requireAuth, requireAdmin, async (req, res) => {
     const expires = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 päeva
     await pool.query('INSERT INTO password_tokens (user_id, token, expires_at) VALUES ($1,$2,$3)', [rows[0].id, token, expires]);
     const link = `${process.env.APP_URL || 'http://localhost:5173'}/set-password?token=${token}`;
-    await sendMail(email, 'Tere tulemast Salus kliendihaldussüsteemi!', `
-      <p>Tere ${name},</p>
-      <p>Sind on lisatud Salus kliendihaldussüsteemi kasutajaks.</p>
-      <p>Loo endale parool, klikkides lingil:</p>
-      <p><a href="${link}">${link}</a></p>
-      <p>Link kehtib 7 päeva.</p>
-    `);
-    res.json(rows[0]);
+
+    // Email saatmine ei tohi takistada kasutaja loomist — kui see ebaõnnestub, tagastame lingi ikkagi
+    let emailSent = true;
+    try {
+      await sendMail(email, 'Tere tulemast Salus kliendihaldussüsteemi!', `
+        <p>Tere ${name},</p>
+        <p>Sind on lisatud Salus kliendihaldussüsteemi kasutajaks.</p>
+        <p>Loo endale parool, klikkides lingil:</p>
+        <p><a href="${link}">${link}</a></p>
+        <p>Link kehtib 7 päeva.</p>
+      `);
+    } catch (mailErr) {
+      console.error('Emaili saatmine ebaõnnestus (kasutaja loodi siiski):', mailErr.message);
+      emailSent = false;
+    }
+
+    res.json({ ...rows[0], setupLink: link, emailSent });
   } catch (e) {
     if (e.code === '23505') return res.status(400).json({ error: 'See email on juba kasutusel' });
     res.status(500).json({ error: 'Serveri viga' });

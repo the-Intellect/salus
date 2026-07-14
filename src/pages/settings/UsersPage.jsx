@@ -73,7 +73,10 @@ function UserModal({ user, onClose, onSave }) {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [emailSent, setEmailSent] = useState(false);
+  const [userCreated, setUserCreated] = useState(false);
+  const [emailSent, setEmailSent] = useState(true);
+  const [setupLink, setSetupLink] = useState('');
+  const [linkCopied, setLinkCopied] = useState(false);
 
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }));
 
@@ -83,9 +86,14 @@ function UserModal({ user, onClose, onSave }) {
     setError('');
     try {
       if (isNew) {
-        await api.createUser(form);
-        setEmailSent(true);
-        setTimeout(() => { onSave(); }, 2500);
+        const result = await api.createUser(form);
+        setUserCreated(true);
+        setEmailSent(result.emailSent !== false);
+        setSetupLink(result.setupLink || '');
+        if (result.emailSent !== false) {
+          setTimeout(() => { onSave(); }, 2500);
+        }
+        // Kui email ei õnnestunud, jääb modaal lahti et admin saaks linki kopeerida
       } else {
         await api.updateUser(user.id, form);
         onSave();
@@ -97,6 +105,12 @@ function UserModal({ user, onClose, onSave }) {
     }
   };
 
+  const copyLink = () => {
+    navigator.clipboard.writeText(setupLink);
+    setLinkCopied(true);
+    setTimeout(() => setLinkCopied(false), 2000);
+  };
+
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modal} onClick={e => e.stopPropagation()}>
@@ -105,12 +119,36 @@ function UserModal({ user, onClose, onSave }) {
           <button className={styles.closeBtn} onClick={onClose}>✕</button>
         </div>
 
-        {emailSent ? (
-          <div className={styles.emailSent}>
-            <div style={{ fontSize: 36 }}>✉️</div>
-            <p>Sisselogimise link saadetud aadressile <strong>{form.email}</strong></p>
-            <p style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>Link kehtib 7 päeva.</p>
-          </div>
+        {userCreated ? (
+          emailSent ? (
+            <div className={styles.emailSent}>
+              <div style={{ fontSize: 36 }}>✉️</div>
+              <p>Sisselogimise link saadetud aadressile <strong>{form.email}</strong></p>
+              <p style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>Link kehtib 7 päeva.</p>
+            </div>
+          ) : (
+            <div style={{ padding: '1rem' }}>
+              <div style={{ fontSize: 36, textAlign: 'center' }}>⚠️</div>
+              <p style={{ textAlign: 'center', marginBottom: 12 }}>
+                Kasutaja <strong>{form.name}</strong> on loodud, aga emaili ei õnnestunud saata.
+              </p>
+              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', marginBottom: 8 }}>
+                Kopeeri see link ja saada see kasutajale käsitsi (nt Slack, WhatsApp, SMS):
+              </p>
+              <div style={{
+                background: 'var(--color-surface-2)', padding: '10px 12px', borderRadius: 'var(--radius-md)',
+                fontSize: 12, fontFamily: 'var(--font-mono)', wordBreak: 'break-all', marginBottom: 12
+              }}>
+                {setupLink}
+              </div>
+              <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
+                <Button variant="secondary" onClick={copyLink}>
+                  {linkCopied ? '✓ Kopeeritud' : '📋 Kopeeri link'}
+                </Button>
+                <Button variant="primary" onClick={() => onSave()}>Sulge</Button>
+              </div>
+            </div>
+          )
         ) : (
           <div className={styles.modalBody}>
             <Field label="Täisnimi *">
